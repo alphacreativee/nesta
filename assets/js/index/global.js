@@ -105,3 +105,4 @@ export function createFilterTab() {
     });
   });
 }
+export function scrollChangeBgHeader() {}
