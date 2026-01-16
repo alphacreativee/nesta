@@ -120,17 +120,21 @@ export function scrollChangeBgHeader() {
   });
 }
 export function scrollFixedBookingForm() {
-  const header = document.querySelector("#header");
   const bookingFormWrapper = document.querySelector(".booking-form-wrapper");
+  const headerHeight = document.querySelector("#header").clientHeight;
 
-  if (!header || !bookingFormWrapper) return;
+  if (!bookingFormWrapper) return;
+
+  const bookingTop =
+    bookingFormWrapper.getBoundingClientRect().top + window.pageYOffset;
 
   ScrollTrigger.create({
-    trigger: header,
-    start: "bottom top",
-    end: "bottom top",
+    trigger: "body",
+    start: `${bookingTop}px ${headerHeight}px`,
+    endTrigger: "body",
+    end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
     onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
-    // markers: true,
+    markers: true,
   });
 }

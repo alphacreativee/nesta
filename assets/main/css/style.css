@@ -709,6 +709,15 @@ body {
   right: 0;
   width: calc(100% - 160px);
   background-color: var(--color-white);
-  height: 64px;
+  height: 60px;
   margin: 0 auto;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.hero .booking-form-wrapper.booking-fixed {
+  position: fixed;
+  bottom: auto;
+  top: 60px;
+  width: 100%;
+  border-radius: 0;
 }
