@@ -107,7 +107,7 @@ export function createFilterTab() {
 }
 export function scrollChangeBgHeader() {
   const header = document.querySelector("#header");
-  if (!header) return;
+  if (!header || header.classList.contains("without-home")) return;
   gsap.to(header, {
     scrollTrigger: {
       trigger: "body",
@@ -117,5 +117,20 @@ export function scrollChangeBgHeader() {
       onLeaveBack: () => header.classList.remove("header-theme-light"),
       // markers: true,
     },
+  });
+}
+export function scrollFixedBookingForm() {
+  const header = document.querySelector("#header");
+  const bookingFormWrapper = document.querySelector(".booking-form-wrapper");
+
+  if (!header || !bookingFormWrapper) return;
+
+  ScrollTrigger.create({
+    trigger: header,
+    start: "bottom top",
+    end: "bottom top",
+    onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
+    // markers: true,
   });
 }

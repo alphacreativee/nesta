@@ -3,6 +3,7 @@ import {
   customDropdown,
   createFilterTab,
   scrollChangeBgHeader,
+  scrollFixedBookingForm,
 } from "../../main/js/global.min.js";
 ("use strict");
 $ = jQuery;
@@ -20,6 +21,7 @@ const init = () => {
   customDropdown();
   createFilterTab();
   scrollChangeBgHeader();
+  scrollFixedBookingForm();
 };
 preloadImages("img").then(() => {
   init();

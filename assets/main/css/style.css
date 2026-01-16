@@ -686,3 +686,29 @@ body {
 #header.header-theme-light .header-lang .value-select span {
   color: var(--color-gray-2);
 }
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero .booking-form-wrapper {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  width: calc(100% - 160px);
+  background-color: var(--color-white);
+  height: 64px;
+  margin: 0 auto;
+}
