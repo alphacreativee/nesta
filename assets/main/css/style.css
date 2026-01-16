@@ -262,6 +262,7 @@ body {
 .button-global span {
   position: relative;
   z-index: 2;
+  white-space: nowrap;
 }
 
 .footer {
@@ -474,6 +475,7 @@ body {
   right: 0;
   width: 100%;
   z-index: 999;
+  transition: background-color 0.3s ease;
 }
 #header .header-lang .dropdown-custom {
   position: relative;
@@ -494,6 +496,9 @@ body {
   line-height: 20px;
   font-weight: 600;
   color: var(--color-white);
+}
+#header .header-lang .dropdown-custom-btn .value-select .icon svg path {
+  transition: stroke 0.3s ease;
 }
 #header .header-lang .dropdown-custom-menu {
   position: absolute;
@@ -548,6 +553,9 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+#header .header-menu ul li.menu-item-has-children > a .icon svg path {
+  transition: stroke 0.3s ease;
 }
 #header .header-menu ul li.menu-item-has-children > a.menu-full-ks {
   position: relative;
@@ -618,25 +626,32 @@ body {
   line-height: 20px;
   text-transform: uppercase;
   color: var(--color-white);
+  transition: color 0.3s ease;
 }
 #header .header-container {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
   padding: 5.5px 0;
   max-width: calc(100% - 160px);
   margin: 0 auto;
   border-bottom: 1px solid var(--color-white);
 }
 #header .header-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 40px;
 }
 #header .header-cta {
   display: flex;
   justify-content: flex-end;
+}
+#header .header-logo-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #header .header-logo-group .logo {
   position: relative;
@@ -650,4 +665,24 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  z-index: 2;
+}
+#header.header-theme-light {
+  background-color: var(--color-white);
+}
+#header.header-theme-light .header-menu ul li.menu-item-has-children > a .icon svg path {
+  stroke: var(--color-gray-2);
+}
+#header.header-theme-light .header-menu ul li a {
+  color: var(--color-gray-2);
+}
+#header.header-theme-light .header-logo-group .logo img:last-child {
+  opacity: 1;
+  visibility: visible;
+}
+#header.header-theme-light .header-lang .icon svg path {
+  stroke: var(--color-gray-2);
+}
+#header.header-theme-light .header-lang .value-select span {
+  color: var(--color-gray-2);
 }

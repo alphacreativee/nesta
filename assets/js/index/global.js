@@ -105,4 +105,17 @@ export function createFilterTab() {
     });
   });
 }
-export function scrollChangeBgHeader() {}
+export function scrollChangeBgHeader() {
+  const header = document.querySelector("#header");
+  if (!header) return;
+  gsap.to(header, {
+    scrollTrigger: {
+      trigger: "body",
+      start: "top -10px",
+      end: "+=100",
+      onEnter: () => header.classList.add("header-theme-light"),
+      onLeaveBack: () => header.classList.remove("header-theme-light"),
+      // markers: true,
+    },
+  });
+}
