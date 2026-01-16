@@ -12,14 +12,4 @@
       object-fit: cover;
     }
   }
-  .booking-form-wrapper {
-    position: absolute;
-    bottom: 32px;
-    left: 0;
-    right: 0;
-    width: calc(100% - 160px);
-    background-color: var(--color-white);
-    height: 64px;
-    margin: 0 auto;
-  }
 }
