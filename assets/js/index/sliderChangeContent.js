@@ -46,7 +46,7 @@ export function sliderChangeContent() {
                 y: -10,
                 ease: "power2.in",
                 duration: 0.3,
-                stagger: 0.05,
+                stagger: 0.015,
               });
             } else {
               gsap.to(currentTitle, {

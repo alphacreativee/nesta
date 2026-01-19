@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/libs/lenis.css" />
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/libs/glightbox.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
     <link rel="stylesheet" href="./assets/fonts/montserrat/font.css" />
@@ -100,7 +101,7 @@
           <!-- end option image -->
           <!-- option slider change content -->
           <div class="hero-option-slider">
-            <div class="swiper hero-slider">
+            <div class="swiper hero-slider h-100">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="hero-slider-img">
@@ -162,7 +163,62 @@
           </div>
           <!-- end option video -->
           <div class="booking-form-wrapper">
-            <div class="booking-form-container"></div>
+            <div class="booking-form-container">
+              <form action="">
+                <div class="booking-form-item">
+                  <div class="dropdown-custom-select select-destination">
+                    <div
+                      class="dropdown-custom-btn d-flex align-items-center justify-content-between"
+                    >
+                      <div
+                        class="d-flex align-items-center dropdown-custom-label gap-2"
+                      >
+                        <div class="icon">
+                          <img
+                            src="./assets/images/icons/icon-location.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="dropdown-custom-text">Điểm đến</div>
+                      </div>
+                      <div class="icon-arrow">
+                        <img
+                          src="./assets/images/icons/icon-arrow-down.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="dropdown-custom-menu">
+                      <div class="dropdown-custom-item">Hà Nội</div>
+                      <div class="dropdown-custom-item">Đà Nẵng</div>
+                      <div class="dropdown-custom-item">Hội An</div>
+                      <div class="dropdown-custom-item">Đà Lạt</div>
+                      <div class="dropdown-custom-item">Hồ Chí Minh</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div class="booking-calendar">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="icon">
+                        <img
+                          src="./assets/images/icons/icon-calendar.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="booking-time d-flex align-items-center gap-2">
+                        <input type="text" id="checkInDate" />
+                        -
+                        <input type="text" id="checkOutDate" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item"></div>
+                <div class="booking-form-item"></div>
+                <div class="booking-form-item"></div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -187,7 +243,7 @@
                       style="--height-desc: 50px"
                       data-fade-item
                     >
-                      <div class="tag btn-body-font color-gray-2">Hà Nội</div>
+                      <div class="tag btn-body-font color-gray-2">Tập đoàn</div>
                       <div class="image">
                         <img src="./assets/images/del/offer-1.jpg" alt="" />
                       </div>
@@ -209,7 +265,7 @@
                       style="--height-desc: 50px"
                       data-fade-item
                     >
-                      <div class="tag btn-body-font color-gray-2">Hội An</div>
+                      <div class="tag btn-body-font color-gray-2">Tập đoàn</div>
                       <div class="image">
                         <img src="./assets/images/del/offer-2.jpg" alt="" />
                       </div>
@@ -231,7 +287,7 @@
                       style="--height-desc: 50px"
                       data-fade-item
                     >
-                      <div class="tag btn-body-font color-gray-2">Đà Nẵng</div>
+                      <div class="tag btn-body-font color-gray-2">Tập đoàn</div>
                       <div class="image">
                         <img src="./assets/images/del/offer-3.jpg" alt="" />
                       </div>
@@ -755,8 +811,11 @@
     <script src="./assets/libs/ScrollTrigger.min.js"></script>
     <script src="./assets/libs/SplitText.min.js"></script>
     <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/moment.min.js"></script>
     <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/lightpick.min.js"></script>
     <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/glightbox.min.js"></script>
     <!-- import custom js -->
     <script type="module" src="./assets/main/js/script.min.js"></script>
 

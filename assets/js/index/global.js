@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select"
+    ".dropdown-custom, .dropdown-custom-select",
   );
 
   dropdowns.forEach((dropdown) => {
@@ -84,9 +84,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light")
+      onLeaveBack: () => header.classList.remove("header-theme-light"),
       // markers: true,
-    }
+    },
   });
 }
 export function scrollFixedBookingForm() {
@@ -104,8 +104,25 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
     // markers: true,
+  });
+}
+export function checkScrollBookingUp() {
+  const bookingFormWrapper = document.querySelector(".booking-form-wrapper");
+
+  if (!bookingFormWrapper) return;
+
+  const bookingTop =
+    bookingFormWrapper.getBoundingClientRect().top + window.pageYOffset;
+  ScrollTrigger.create({
+    trigger: "body",
+    start: `${bookingTop}px center`,
+    endTrigger: "body",
+    end: "bottom bottom",
+    onEnter: () => bookingFormWrapper.classList.add("booking-up"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
+    markers: true,
   });
 }
 
