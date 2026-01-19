@@ -1,11 +1,11 @@
 import { preloadImages } from "../../main/js/utils.min.js";
 import {
   customDropdown,
-  createFilterTab,
   scrollChangeBgHeader,
-  scrollFixedBookingForm
+  scrollFixedBookingForm,
 } from "../../main/js/global.min.js";
 import { sectionNews } from "../../main/js/slider.min.js";
+import { createFilterTab } from "../../main/js/tab.min.js";
 ("use strict");
 $ = jQuery;
 
