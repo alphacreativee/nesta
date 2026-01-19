@@ -670,6 +670,32 @@ body {
   font-family: var(--font-heading);
   margin-top: 64px;
 }
+#header .header-menu ul li.menu-item-has-children > .sub-menu {
+  position: absolute;
+  background-color: var(--color-white);
+  top: 100%;
+  width: max-content;
+  left: -24px;
+  margin-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+#header .header-menu ul li.menu-item-has-children > .sub-menu.menu-max-width ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  align-items: flex-start;
+}
+#header .header-menu ul li.menu-item-has-children > .sub-menu.menu-max-width ul li a {
+  color: var(--color-gray-2);
+  font-size: 15px;
+  line-height: 20px;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 #header .header-menu ul li a {
   display: inline-block;
   font-family: var(--font-heading);
