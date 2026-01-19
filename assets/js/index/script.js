@@ -5,6 +5,7 @@ import {
   scrollFixedBookingForm,
   setOfferDescHeight,
   checkScrollBookingUp,
+  bookingTime,
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
@@ -30,6 +31,7 @@ const init = () => {
   setOfferDescHeight();
   sliderChangeContent();
   checkScrollBookingUp();
+  bookingTime();
 };
 preloadImages("img").then(() => {
   init();

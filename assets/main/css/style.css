@@ -386,6 +386,73 @@ body {
   color: var(--color-gray-2);
   font-weight: 500;
 }
+.booking-form-container form .booking-time {
+  cursor: pointer;
+}
+.booking-form-container form .booking-time input {
+  outline: none;
+  border: none;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--color-gray-2);
+  width: 80px;
+}
+.booking-form-container form .booking-time span {
+  padding: 0 2px;
+  transform: translateY(-2px);
+}
+
+section.lightpick {
+  border-radius: 0;
+  padding: 16px;
+  box-shadow: none;
+}
+section.lightpick > * {
+  font-family: var(--font-body);
+}
+section.lightpick .lightpick__day.is-end-date.is-in-range.is-flipped,
+section.lightpick .lightpick__day.is-start-date.is-in-range,
+section.lightpick .lightpick__day.is-end-date.is-in-range,
+section.lightpick .lightpick__day.is-start-date.is-in-range.is-flipped {
+  background-color: var(--color-primary-3);
+}
+section.lightpick .lightpick__day.is-end-date,
+section.lightpick .lightpick__day.is-end-date:hover,
+section.lightpick .lightpick__day.is-start-date,
+section.lightpick .lightpick__day.is-start-date:hover {
+  background-image: none;
+  background-color: var(--color-primary-3);
+}
+section.lightpick .lightpick__day.is-today {
+  background-image: none;
+  font-weight: 600;
+}
+section.lightpick .lightpick__day-of-the-week {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+section.lightpick .lightpick__month-title {
+  margin-left: 0;
+  padding-left: 0;
+  transform: translateX(-2px);
+}
+section.lightpick .lightpick__previous-action,
+section.lightpick .lightpick__next-action {
+  font-size: 0;
+}
+section.lightpick .lightpick__next-action {
+  background-image: url("../../images/icons/icon-arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.lightpick .lightpick__previous-action {
+  background-image: url("../../images/icons/icon-arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
 
 .footer {
   color: var(--color-white);

@@ -164,6 +164,74 @@
           font-weight: 500;
         }
       }
+      .booking-time {
+        cursor: pointer;
+        input {
+          outline: none;
+          border: none;
+          font-size: 15px;
+          line-height: 25px;
+          font-weight: 500;
+          font-family: var(--font-body);
+          color: var(--color-gray-2);
+          width: 80px;
+        }
+        span {
+          padding: 0 2px;
+          transform: translateY(-2px);
+        }
+      }
     }
+  }
+}
+// css lightpick
+section.lightpick {
+  border-radius: 0;
+  padding: 16px;
+  box-shadow: none;
+  & > * {
+    font-family: var(--font-body);
+  }
+  .lightpick__day.is-end-date.is-in-range.is-flipped,
+  .lightpick__day.is-start-date.is-in-range,
+  .lightpick__day.is-end-date.is-in-range,
+  .lightpick__day.is-start-date.is-in-range.is-flipped {
+    background-color: var(--color-primary-3);
+  }
+  .lightpick__day.is-end-date,
+  .lightpick__day.is-end-date:hover,
+  .lightpick__day.is-start-date,
+  .lightpick__day.is-start-date:hover {
+    background-image: none;
+    background-color: var(--color-primary-3);
+  }
+  .lightpick__day.is-today {
+    // color: var(--color-gray-2);
+    background-image: none;
+    font-weight: 600;
+  }
+  .lightpick__day-of-the-week {
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+  .lightpick__month-title {
+    margin-left: 0;
+    padding-left: 0;
+    transform: translateX(-2px);
+  }
+  .lightpick__previous-action,
+  .lightpick__next-action {
+    font-size: 0;
+  }
+  .lightpick__next-action {
+    background-image: url("../../images/icons/icon-arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .lightpick__previous-action {
+    background-image: url("../../images/icons/icon-arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
   }
 }

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./assets/libs/lenis.css" />
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/libs/glightbox.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
     <link rel="stylesheet" href="./assets/fonts/montserrat/font.css" />
@@ -173,7 +174,7 @@
                       <div
                         class="d-flex align-items-center dropdown-custom-label gap-2"
                       >
-                        <div class="icon">
+                        <div class="icon flex-shrink-0">
                           <img
                             src="./assets/images/icons/icon-location.svg"
                             alt=""
@@ -198,19 +199,27 @@
                   </div>
                 </div>
                 <div class="booking-form-item">
-                  <div class="booking-calendar">
+                  <div
+                    class="booking-calendar d-flex align-items-center justify-content-between"
+                  >
                     <div class="d-flex align-items-center gap-2">
-                      <div class="icon">
+                      <div class="icon flex-shrink-0">
                         <img
                           src="./assets/images/icons/icon-calendar.svg"
                           alt=""
                         />
                       </div>
-                      <div class="booking-time d-flex align-items-center gap-2">
+                      <div class="booking-time d-flex align-items-center">
                         <input type="text" id="checkInDate" />
-                        -
+                        <span>-</span>
                         <input type="text" id="checkOutDate" />
                       </div>
+                    </div>
+                    <div class="icon-arrow">
+                      <img
+                        src="./assets/images/icons/icon-arrow-down.svg"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
