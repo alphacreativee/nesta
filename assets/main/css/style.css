@@ -454,6 +454,10 @@ section.lightpick .lightpick__previous-action {
   transform: rotate(180deg);
 }
 
+.title .line {
+  line-height: 1.6;
+}
+
 .footer {
   color: var(--color-white);
 }
@@ -496,6 +500,8 @@ section.lightpick .lightpick__previous-action {
   font-family: var(--font-heading);
   display: block;
   margin-bottom: 20px;
+  transition: unset;
+  pointer-events: none;
 }
 .footer-menu .menu > ul .menu-item-has-children li:not(:first-child) {
   margin-top: 8px;
