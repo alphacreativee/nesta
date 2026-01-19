@@ -65,14 +65,27 @@
     border-radius: 20px;
     overflow: hidden;
 
+    &:hover {
+      .content-title,
+      .btn-arrow {
+        color: var(--color-primary-3);
+      }
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
     .image {
       width: 100%;
       aspect-ratio: 410 / 313;
+      overflow: hidden;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
       }
     }
 
@@ -84,6 +97,7 @@
 
       .content-title {
         margin-bottom: 12px;
+        transition: all 0.4s ease;
       }
 
       .content-desc {
@@ -92,6 +106,7 @@
 
       .btn-arrow {
         margin-top: auto;
+        transition: all 0.4s ease;
       }
     }
   }

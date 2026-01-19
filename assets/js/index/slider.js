@@ -6,7 +6,7 @@ export function sectionNews() {
 
     new Swiper(swiperEl, {
       slidesPerView: 3,
-      spaceBetween: 40,
+      spaceBetween: 24,
       loop: false,
       speed: 800,
       autoplay: false,
@@ -17,7 +17,7 @@ export function sectionNews() {
       breakpoints: {
         1024: {
           slidesPerView: 3,
-          spaceBetween: 40
+          spaceBetween: 24
         },
         768: {
           slidesPerView: 2,
