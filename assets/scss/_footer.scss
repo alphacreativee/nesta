@@ -51,6 +51,8 @@
             font-family: var(--font-heading);
             display: block;
             margin-bottom: 20px;
+            transition: unset;
+            pointer-events: none;
           }
 
           li {

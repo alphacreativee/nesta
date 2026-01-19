@@ -337,6 +337,10 @@ body {
   transition: all 0.3s ease;
 }
 
+.title .line {
+  line-height: 1.6;
+}
+
 .footer {
   color: var(--color-white);
 }
@@ -379,6 +383,8 @@ body {
   font-family: var(--font-heading);
   display: block;
   margin-bottom: 20px;
+  transition: unset;
+  pointer-events: none;
 }
 .footer-menu .menu > ul .menu-item-has-children li:not(:first-child) {
   margin-top: 8px;

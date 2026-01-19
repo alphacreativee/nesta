@@ -3,7 +3,10 @@ import {
   customDropdown,
   scrollChangeBgHeader,
   scrollFixedBookingForm,
-  setOfferDescHeight
+  setOfferDescHeight,
+  effectText,
+  animationItemsSection,
+  fadeTextFooter
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
@@ -21,6 +24,9 @@ gsap.ticker.lagSmoothing(0);
 
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
+  effectText();
+  animationItemsSection();
+  fadeTextFooter();
   customDropdown();
   createFilterTab();
   sectionNews();

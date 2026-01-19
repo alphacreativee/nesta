@@ -121,3 +121,138 @@ export function setOfferDescHeight() {
     item.style.setProperty("--height-desc", `${height}px`);
   });
 }
+
+export function effectText() {
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  gsap.utils.toArray(".data-fade-in").forEach((element) => {
+    const delay = parseFloat(element.getAttribute("data-delay")) || 0;
+
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+        willChange: "opacity, transform"
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "sine.out",
+        delay: delay,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "bottom 80%"
+        }
+      }
+    );
+  });
+
+  gsap.utils.toArray(".effect-line-auto").forEach((description) => {
+    const delay = parseFloat(description.getAttribute("data-delay")) || 0;
+
+    const split = new SplitText(description, {
+      type: "lines",
+      linesClass: "line",
+      mask: "lines"
+    });
+
+    gsap.fromTo(
+      split.lines,
+      { yPercent: 100, willChange: "transform" },
+      {
+        yPercent: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.05,
+        delay: delay
+      }
+    );
+  });
+
+  gsap.utils.toArray(".effect-line").forEach((description) => {
+    const split = new SplitText(description, {
+      type: "lines",
+      linesClass: "line",
+      mask: "lines"
+    });
+
+    gsap.fromTo(
+      split.lines,
+      { yPercent: 100, willChange: "transform" },
+      {
+        yPercent: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: description,
+          start: "top 80%"
+        }
+      }
+    );
+  });
+}
+
+export function animationItemsSection() {
+  if ($(window).width() < 992) return;
+
+  // fade each items
+  gsap.utils.toArray("[section-fade-each-item]").forEach((section) => {
+    const items = section.querySelectorAll("[data-fade-item]");
+
+    gsap.set(items, { y: 40, opacity: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        end: "bottom bottom",
+        toggleActions: "play none none none"
+        // markers: true,
+      }
+    });
+
+    tl.to(items, {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.2
+    });
+  });
+}
+
+export function fadeTextFooter() {
+  gsap.set("[data-text-footer]", {
+    opacity: 0,
+    y: 20
+  });
+  let tlf = gsap.timeline({ paused: true });
+
+  tlf.fromTo(
+    "[data-text-footer]",
+    {
+      opacity: 0,
+      y: 20
+    },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.05,
+      duration: 0.6,
+      ease: "power2.out"
+    }
+  );
+  ScrollTrigger.create({
+    trigger: "footer",
+    start: "top 80%",
+    // markers: true,
+    animation: tlf,
+    toggleActions: "play none none none"
+  });
+
+  return tlf;
+}
