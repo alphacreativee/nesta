@@ -323,6 +323,19 @@ body {
   width: 100%;
   border-radius: 0;
 }
+.booking-form-wrapper.booking-fixed .booking-form-container {
+  width: calc(100% - 160px);
+  border-radius: 0px;
+}
+.booking-form-container {
+  background-color: red;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
 
 .footer {
   color: var(--color-white);
@@ -839,7 +852,10 @@ body {
   height: 100svh;
   overflow: hidden;
 }
-.hero::before {
+.hero-image, .hero-option-slider {
+  position: relative;
+}
+.hero-image::before, .hero-option-slider::before {
   content: "";
   position: absolute;
   top: 0;
@@ -899,14 +915,16 @@ body {
   text-transform: uppercase;
 }
 .hero .slider-content-main .slider-pagination {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   color: var(--color-white);
   margin-top: 24px;
   padding-left: 2px;
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
+  font-size: 13px;
   line-height: 20px;
+  font-weight: 600;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -918,11 +936,6 @@ body {
   transform: translateY(0);
 }
 .hero .slider-content-main .slider-pagination span {
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 600;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -950,6 +963,20 @@ body {
 }
 .hero .slider-content-import {
   height: auto;
+}
+.hero-video-banner {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+.hero-video-banner video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 .section-experience {
