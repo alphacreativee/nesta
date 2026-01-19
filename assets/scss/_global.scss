@@ -102,6 +102,8 @@
         border-radius: 0px;
         padding-left: 0;
         padding-right: 0;
+        border-left: 0;
+        border-right: 0;
       }
     }
     &.booking-up {
@@ -110,6 +112,14 @@
         transform: translateY(0);
         margin-top: 19px;
         border-radius: 0 0 12px 12px;
+      }
+      .select-people {
+        .select-box {
+          top: 100%;
+          transform: translateY(0);
+          margin-top: 18px;
+          border-radius: 0 0 12px 12px;
+        }
       }
     }
   }
@@ -178,7 +188,7 @@
           font-weight: 500;
           font-family: var(--font-body);
           color: var(--color-gray-2);
-          width: 80px;
+          width: 82px;
         }
         span {
           padding: 0 2px;
@@ -220,6 +230,63 @@
         &:first-child {
           border-left: 0;
           padding-left: 0;
+        }
+      }
+      .select-people {
+        position: relative;
+        .select-box {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: var(--color-white);
+          margin-top: -20px;
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          border-radius: 12px 12px 0 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          transform: translateY(-100%);
+          &.active {
+            opacity: 1;
+            visibility: visible;
+          }
+          .select {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .min,
+            .plus {
+              width: 24px;
+              height: 24px;
+              border: 1px solid var(--color-black);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .val {
+              width: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          .adult,
+          .child {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+          }
+        }
+        .label {
+          font-size: 15px;
+          line-height: 25px;
+          font-family: var(--font-body);
+          color: var(--color-gray-2);
+          font-weight: 500;
         }
       }
     }

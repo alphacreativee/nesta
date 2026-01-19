@@ -10,7 +10,8 @@ import {
   animationItemsSection,
   fadeTextFooter,
   ctaRun,
-  scrollToTop
+  scrollToTop,
+  initGuestSelector,
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
@@ -42,6 +43,7 @@ const init = () => {
   scrollToTop();
   bookingTime();
   ctaRun();
+  initGuestSelector();
 };
 preloadImages("img").then(() => {
   init();

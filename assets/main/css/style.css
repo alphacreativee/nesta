@@ -329,11 +329,19 @@ body {
   border-radius: 0px;
   padding-left: 0;
   padding-right: 0;
+  border-left: 0;
+  border-right: 0;
 }
 .booking-form-wrapper.booking-up .dropdown-custom-menu {
   top: 100%;
   transform: translateY(0);
   margin-top: 19px;
+  border-radius: 0 0 12px 12px;
+}
+.booking-form-wrapper.booking-up .select-people .select-box {
+  top: 100%;
+  transform: translateY(0);
+  margin-top: 18px;
   border-radius: 0 0 12px 12px;
 }
 .booking-form-container {
@@ -401,7 +409,7 @@ body {
   font-weight: 500;
   font-family: var(--font-body);
   color: var(--color-gray-2);
-  width: 80px;
+  width: 82px;
 }
 .booking-form-container form .booking-time span {
   padding: 0 2px;
@@ -441,6 +449,63 @@ body {
 .booking-form-container form .booking-form-item:first-child {
   border-left: 0;
   padding-left: 0;
+}
+.booking-form-container form .select-people {
+  position: relative;
+}
+.booking-form-container form .select-people .select-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  margin-top: -20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 12px 12px 0 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-100%);
+}
+.booking-form-container form .select-people .select-box.active {
+  opacity: 1;
+  visibility: visible;
+}
+.booking-form-container form .select-people .select-box .select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.booking-form-container form .select-people .select-box .select .min,
+.booking-form-container form .select-people .select-box .select .plus {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.booking-form-container form .select-people .select-box .select .val {
+  width: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.booking-form-container form .select-people .select-box .adult,
+.booking-form-container form .select-people .select-box .child {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.booking-form-container form .select-people .label {
+  font-size: 15px;
+  line-height: 25px;
+  font-family: var(--font-body);
+  color: var(--color-gray-2);
+  font-weight: 500;
 }
 
 section.lightpick {
@@ -1442,6 +1507,10 @@ section.lightpick .lightpick__previous-action {
 #cta .cta-wrapper {
   position: relative;
 }
+#cta .cta-wrapper:hover .cta-global + .cta-list {
+  opacity: 1;
+  visibility: visible;
+}
 #cta .cta-wrapper:hover .cta-global + .cta-list .cta-item {
   transform: scale(1) translateY(0%);
 }
@@ -1453,6 +1522,9 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3 ease;
 }
 #cta .cta-item {
   width: 54px;
