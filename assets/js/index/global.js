@@ -108,3 +108,4 @@ export function scrollFixedBookingForm() {
     // markers: true,
   });
 }
+export function checkScrollBookingUp() {}
