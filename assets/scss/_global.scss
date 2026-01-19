@@ -101,6 +101,14 @@
         border-radius: 0px;
       }
     }
+    &.booking-up {
+      .dropdown-custom-menu {
+        top: 100%;
+        transform: translateY(0);
+        margin-top: 15px;
+        border-radius: 0 0 12px 12px;
+      }
+    }
   }
   &-container {
     max-width: calc(100%);
@@ -121,19 +129,20 @@
         }
         &-menu {
           position: absolute;
-          top: 100%;
+          top: 0;
           left: 0;
           width: 100%;
           background-color: var(--color-white);
-          margin-top: 15px;
+          margin-top: -15px;
           padding: 24px;
           display: flex;
           flex-direction: column;
           gap: 8px;
-          border-radius: 0 0 12px 12px;
+          border-radius: 12px 12px 0 0;
           opacity: 0;
           visibility: hidden;
           transition: all 0.3s ease;
+          transform: translateY(-100%);
           &.dropdown--active {
             opacity: 1;
             visibility: visible;
@@ -145,6 +154,14 @@
           line-height: 25px;
           font-family: var(--font-body);
           color: var(--color-gray-2);
+          font-weight: 500;
+        }
+        &-item {
+          font-size: 15px;
+          line-height: 25px;
+          font-family: var(--font-body);
+          color: var(--color-gray-2);
+          font-weight: 500;
         }
       }
     }

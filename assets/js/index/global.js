@@ -108,7 +108,23 @@ export function scrollFixedBookingForm() {
     // markers: true,
   });
 }
-export function checkScrollBookingUp() {}
+export function checkScrollBookingUp() {
+  const bookingFormWrapper = document.querySelector(".booking-form-wrapper");
+
+  if (!bookingFormWrapper) return;
+
+  const bookingTop =
+    bookingFormWrapper.getBoundingClientRect().top + window.pageYOffset;
+  ScrollTrigger.create({
+    trigger: "body",
+    start: `${bookingTop}px center`,
+    endTrigger: "body",
+    end: "bottom bottom",
+    onEnter: () => bookingFormWrapper.classList.add("booking-up"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
+    markers: true,
+  });
+}
 
 export function setOfferDescHeight() {
   const items = document.querySelectorAll(".featured-offers .offer-item");
