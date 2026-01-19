@@ -6,6 +6,7 @@ import {
 } from "../../main/js/global.min.js";
 import { sectionNews } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
+import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 ("use strict");
 $ = jQuery;
 
@@ -24,6 +25,7 @@ const init = () => {
   sectionNews();
   scrollChangeBgHeader();
   scrollFixedBookingForm();
+  sliderChangeContent();
 };
 preloadImages("img").then(() => {
   init();
