@@ -7,7 +7,8 @@ import {
   effectText,
   animationItemsSection,
   fadeTextFooter,
-  checkScrollBookingUp
+  checkScrollBookingUp,
+  scrollToTop
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
@@ -36,6 +37,7 @@ const init = () => {
   setOfferDescHeight();
   sliderChangeContent();
   checkScrollBookingUp();
+  scrollToTop();
 };
 preloadImages("img").then(() => {
   init();
