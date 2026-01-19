@@ -97,20 +97,20 @@
       top: 60px;
       width: calc(100%);
       border-radius: 0;
+      border-left: 0;
+      border-right: 0;
       .booking-form-container {
         width: calc(100% - 160px);
         border-radius: 0px;
         padding-left: 0;
         padding-right: 0;
-        border-left: 0;
-        border-right: 0;
       }
     }
     &.booking-up {
       .dropdown-custom-menu {
         top: 100%;
         transform: translateY(0);
-        margin-top: 19px;
+        margin-top: 18px;
         border-radius: 0 0 12px 12px;
       }
       .select-people {
@@ -188,7 +188,7 @@
           font-weight: 500;
           font-family: var(--font-body);
           color: var(--color-gray-2);
-          width: 82px;
+          width: 85px;
         }
         span {
           padding: 0 2px;
@@ -266,6 +266,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
+              cursor: pointer;
             }
             .val {
               width: 10px;

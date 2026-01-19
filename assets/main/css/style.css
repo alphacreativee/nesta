@@ -323,19 +323,19 @@ body {
   top: 60px;
   width: 100%;
   border-radius: 0;
+  border-left: 0;
+  border-right: 0;
 }
 .booking-form-wrapper.booking-fixed .booking-form-container {
   width: calc(100% - 160px);
   border-radius: 0px;
   padding-left: 0;
   padding-right: 0;
-  border-left: 0;
-  border-right: 0;
 }
 .booking-form-wrapper.booking-up .dropdown-custom-menu {
   top: 100%;
   transform: translateY(0);
-  margin-top: 19px;
+  margin-top: 18px;
   border-radius: 0 0 12px 12px;
 }
 .booking-form-wrapper.booking-up .select-people .select-box {
@@ -409,7 +409,7 @@ body {
   font-weight: 500;
   font-family: var(--font-body);
   color: var(--color-gray-2);
-  width: 82px;
+  width: 85px;
 }
 .booking-form-container form .booking-time span {
   padding: 0 2px;
@@ -487,6 +487,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .booking-form-container form .select-people .select-box .select .val {
   width: 10px;
