@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./assets/libs/lenis.css" />
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/libs/glightbox.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
     <link rel="stylesheet" href="./assets/fonts/montserrat/font.css" />
@@ -173,9 +174,9 @@
                       <div
                         class="d-flex align-items-center dropdown-custom-label gap-2"
                       >
-                        <div class="icon">
+                        <div class="icon flex-shrink-0">
                           <img
-                            src="./assets/images/icons/icon-location.svg"
+                            src="./assets/images/icons/icon-destination.svg"
                             alt=""
                           />
                         </div>
@@ -189,34 +190,100 @@
                       </div>
                     </div>
                     <div class="dropdown-custom-menu">
-                      <div class="dropdown-custom-item">Hà Nội</div>
-                      <div class="dropdown-custom-item">Đà Nẵng</div>
-                      <div class="dropdown-custom-item">Hội An</div>
-                      <div class="dropdown-custom-item">Đà Lạt</div>
-                      <div class="dropdown-custom-item">Hồ Chí Minh</div>
+                      <div class="dropdown-custom-item">
+                        Nesta The Grand Haonam
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Hanoi Hotel</div>
+                      <div class="dropdown-custom-item">
+                        Nesta Celia Danang Hotel
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Danang Hotel</div>
+                      <div class="dropdown-custom-item">
+                        Nesta Hoian Resort & Spa
+                      </div>
+                      <div class="dropdown-custom-item">
+                        Nesta Valley Dalat Hotel
+                      </div>
+                      <div class="dropdown-custom-item">Nesta Saigon Hotel</div>
                     </div>
                   </div>
                 </div>
                 <div class="booking-form-item">
-                  <div class="booking-calendar">
+                  <div
+                    class="booking-calendar d-flex align-items-center justify-content-between"
+                  >
                     <div class="d-flex align-items-center gap-2">
-                      <div class="icon">
+                      <div class="icon flex-shrink-0">
                         <img
                           src="./assets/images/icons/icon-calendar.svg"
                           alt=""
                         />
                       </div>
-                      <div class="booking-time d-flex align-items-center gap-2">
+                      <div class="booking-time d-flex align-items-center">
                         <input type="text" id="checkInDate" />
-                        -
+                        <span>-</span>
                         <input type="text" id="checkOutDate" />
+                      </div>
+                    </div>
+                    <div class="icon-arrow">
+                      <img
+                        src="./assets/images/icons/icon-arrow-down.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="booking-form-item">
+                  <div class="dropdown-custom-select select-people">
+                    <div
+                      class="dropdown-custom-btn d-flex align-items-center justify-content-between"
+                    >
+                      <div
+                        class="d-flex align-items-center dropdown-custom-label gap-2"
+                      >
+                        <div class="icon flex-shrink-0">
+                          <img
+                            src="./assets/images/icons/icon-people.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="dropdown-custom-text">Số khách</div>
+                      </div>
+                      <div class="icon-arrow">
+                        <img
+                          src="./assets/images/icons/icon-arrow-down.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div class="dropdown-custom-menu">
+                      <div class="dropdown-custom-item">
+                        2 Người lớn, 1 Trẻ em
+                      </div>
+                      <div class="dropdown-custom-item">
+                        2 Người lớn, 2 Trẻ em
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="booking-form-item"></div>
-                <div class="booking-form-item"></div>
-                <div class="booking-form-item"></div>
+                <div class="booking-form-item">
+                  <div
+                    class="booking-promotion d-flex align-items-center gap-2"
+                  >
+                    <div class="icon flex-shrink-0">
+                      <img
+                        src="./assets/images/icons/icon-promotion.svg"
+                        alt=""
+                      />
+                    </div>
+                    <input type="text" placeholder="Mã khuyến mãi" />
+                  </div>
+                </div>
+                <div
+                  class="booking-form-item button-find-room d-flex justify-content-end"
+                >
+                  <button>Tìm phòng</button>
+                </div>
               </form>
             </div>
           </div>
@@ -793,6 +860,16 @@
       </section>
     </main>
     <!-- layout -->
+    <!-- cta -->
+    <script>
+      fetch("./components/cta.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("cta").innerHTML = data;
+        });
+    </script>
+    <div id="cta"></div>
+    <!-- end cta -->
     <!-- footer -->
     <script>
       fetch("./components/footer.html")

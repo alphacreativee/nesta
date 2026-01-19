@@ -121,8 +121,8 @@ export function checkScrollBookingUp() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-up"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
-    markers: true
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up")
+    // markers: true,
   });
 }
 
@@ -138,7 +138,62 @@ export function setOfferDescHeight() {
     item.style.setProperty("--height-desc", `${height}px`);
   });
 }
+export function bookingTime() {
+  if (!document.querySelector(".booking-form-wrapper")) return;
 
+  function positionCalendar() {
+    var input = picker._opts.field;
+    var rect = input.getBoundingClientRect();
+    var calendar = picker.el;
+
+    if (rect.top >= window.innerHeight / 2) {
+      calendar.style.top =
+        rect.top + window.scrollY - calendar.offsetHeight - 20 + "px";
+      calendar.style.left = rect.left + window.scrollX - 30 + "px";
+      calendar.style.borderRadius = "12px 12px 0 0";
+    } else {
+      calendar.style.top = rect.bottom + window.scrollY + 15 + "px";
+      calendar.style.left = rect.left + window.scrollX - 30 + "px";
+      calendar.style.borderRadius = "0 0 12px 12px";
+    }
+  }
+
+  var picker = new Lightpick({
+    field: document.getElementById("checkInDate"),
+    secondField: document.getElementById("checkOutDate"),
+    singleDate: false,
+    minDate: moment().startOf("now"),
+    numberOfMonths: 2,
+    startDate: moment().startOf("day").toDate(),
+    endDate: moment().startOf("day").add(1, "days").toDate(),
+
+    onOpen: function () {
+      positionCalendar();
+      setTimeout(positionCalendar, 50);
+    },
+
+    onMonthChange: function () {
+      setTimeout(positionCalendar, 10);
+    },
+
+    onYearChange: function () {
+      setTimeout(positionCalendar, 10);
+    }
+  });
+
+  const bookingCalendar = document.querySelector(".booking-calendar");
+  if (bookingCalendar) {
+    bookingCalendar.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      picker.show();
+
+      document.getElementById("checkInDate").focus();
+    });
+
+    bookingCalendar.style.cursor = "pointer";
+  }
+}
 export function effectText() {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -282,4 +337,7 @@ export function scrollToTop() {
     .addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+}
+export function ctaRun() {
+  if (!document.getElementById("cta")) return;
 }

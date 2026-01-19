@@ -4,10 +4,12 @@ import {
   scrollChangeBgHeader,
   scrollFixedBookingForm,
   setOfferDescHeight,
+  checkScrollBookingUp,
+  bookingTime,
   effectText,
   animationItemsSection,
   fadeTextFooter,
-  checkScrollBookingUp,
+  ctaRun,
   scrollToTop
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
@@ -38,6 +40,8 @@ const init = () => {
   sliderChangeContent();
   checkScrollBookingUp();
   scrollToTop();
+  bookingTime();
+  ctaRun();
 };
 preloadImages("img").then(() => {
   init();
