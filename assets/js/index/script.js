@@ -3,7 +3,8 @@ import {
   customDropdown,
   scrollChangeBgHeader,
   scrollFixedBookingForm,
-  setOfferDescHeight
+  setOfferDescHeight,
+  checkScrollBookingUp,
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
@@ -28,6 +29,7 @@ const init = () => {
   scrollFixedBookingForm();
   setOfferDescHeight();
   sliderChangeContent();
+  checkScrollBookingUp();
 };
 preloadImages("img").then(() => {
   init();
