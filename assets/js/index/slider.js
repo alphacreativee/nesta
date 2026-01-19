@@ -36,11 +36,12 @@ export function sectionNews() {
   });
 }
 
-export function hotelFilterSlider() {
-  if ($(".hotel-filter").length < 1) return;
+export function sliderWithShadow() {
+  // slider with shadow
+  if ($(".slider-with-shadow").length < 1) return;
 
-  document.querySelectorAll(".hotel-filter__slider").forEach((section) => {
-    const swiperEl = section.querySelector(".hotel-filter__slider .swiper");
+  document.querySelectorAll(".slider-with-shadow").forEach((section) => {
+    const swiperEl = section.querySelector(".slider-with-shadow .swiper");
 
     new Swiper(swiperEl, {
       slidesPerView: 3,

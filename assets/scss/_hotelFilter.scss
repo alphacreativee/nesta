@@ -40,8 +40,6 @@
   &__slider {
     .swiper {
       margin: 0 -12px;
-      overflow-y: visible;
-      overflow-x: hidden;
     }
     .swiper-wrapper {
       align-items: stretch;
@@ -102,6 +100,10 @@
 
       .content-desc {
         margin-bottom: 32px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
 
       .btn-arrow {

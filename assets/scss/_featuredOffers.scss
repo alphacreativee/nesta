@@ -1,0 +1,87 @@
+.featured-offers {
+  background-color: var(--color-white);
+
+  .section-wrapper {
+    padding: 80px;
+
+    .swiper {
+      margin: 0 -12px;
+    }
+    .swiper-wrapper {
+      align-items: stretch;
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      height: auto;
+      padding: 0 12px 40px;
+    }
+  }
+
+  .section-top {
+    margin-bottom: 48px;
+  }
+}
+
+.offer-item {
+  position: relative;
+  //   overflow: hidden;
+  display: block;
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+
+    .content {
+      transform: translateY(0);
+
+      .content-desc {
+        opacity: 1;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    aspect-ratio: 410 / 510;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+    }
+  }
+
+  .content {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    padding: 32px;
+    transform: translateY(calc(var(--height-desc) + 16px));
+    transition: transform 0.5s ease;
+
+    .content-desc {
+      margin-top: 16px;
+      opacity: 0;
+
+      transition: opacity 0.4s ease;
+    }
+  }
+
+  .tag {
+    padding: 8px 16px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    z-index: 3;
+    width: max-content;
+  }
+}

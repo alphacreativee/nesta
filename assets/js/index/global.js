@@ -109,3 +109,16 @@ export function scrollFixedBookingForm() {
   });
 }
 export function checkScrollBookingUp() {}
+
+export function setOfferDescHeight() {
+  const items = document.querySelectorAll(".featured-offers .offer-item");
+
+  items.forEach((item) => {
+    const desc = item.querySelector(".content-desc");
+    if (!desc) return;
+
+    const height = desc.offsetHeight;
+
+    item.style.setProperty("--height-desc", `${height}px`);
+  });
+}
