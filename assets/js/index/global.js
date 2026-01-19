@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select",
+    ".dropdown-custom, .dropdown-custom-select"
   );
 
   dropdowns.forEach((dropdown) => {
@@ -84,9 +84,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light"),
+      onLeaveBack: () => header.classList.remove("header-theme-light")
       // markers: true,
-    },
+    }
   });
 }
 export function scrollFixedBookingForm() {
@@ -104,7 +104,20 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
     // markers: true,
+  });
+}
+
+export function setOfferDescHeight() {
+  const items = document.querySelectorAll(".featured-offers .offer-item");
+
+  items.forEach((item) => {
+    const desc = item.querySelector(".content-desc");
+    if (!desc) return;
+
+    const height = desc.offsetHeight;
+
+    item.style.setProperty("--height-desc", `${height}px`);
   });
 }

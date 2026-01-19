@@ -2,9 +2,10 @@ import { preloadImages } from "../../main/js/utils.min.js";
 import {
   customDropdown,
   scrollChangeBgHeader,
-  scrollFixedBookingForm
+  scrollFixedBookingForm,
+  setOfferDescHeight
 } from "../../main/js/global.min.js";
-import { sectionNews, hotelFilterSlider } from "../../main/js/slider.min.js";
+import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
 ("use strict");
 $ = jQuery;
@@ -24,13 +25,14 @@ const init = () => {
   sectionNews();
   scrollChangeBgHeader();
   scrollFixedBookingForm();
+  setOfferDescHeight();
 };
 preloadImages("img").then(() => {
   init();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  hotelFilterSlider();
+  sliderWithShadow();
 });
 
 // event click element a
