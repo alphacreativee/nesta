@@ -9,6 +9,7 @@ import {
   effectText,
   animationItemsSection,
   fadeTextFooter,
+  ctaRun,
 } from "../../main/js/global.min.js";
 import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
@@ -38,6 +39,7 @@ const init = () => {
   sliderChangeContent();
   checkScrollBookingUp();
   bookingTime();
+  ctaRun();
 };
 preloadImages("img").then(() => {
   init();

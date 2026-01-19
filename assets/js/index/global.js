@@ -328,3 +328,6 @@ export function fadeTextFooter() {
 
   return tlf;
 }
+export function ctaRun() {
+  if (!document.getElementById("cta")) return;
+}
