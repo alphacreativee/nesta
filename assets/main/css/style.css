@@ -1331,3 +1331,89 @@ section.lightpick .lightpick__previous-action {
   z-index: 3;
   width: max-content;
 }
+
+#cta {
+  position: fixed;
+  right: 12px;
+  bottom: 35px;
+  z-index: 126;
+}
+#cta .cta-wrapper {
+  position: relative;
+}
+#cta .cta-wrapper:hover .cta-global + .cta-list .cta-item {
+  transform: scale(1) translateY(0%);
+}
+#cta .cta-list {
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  margin-top: -12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#cta .cta-item {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-2);
+  transition: all 0.3s ease;
+  transform: scale(0) translateY(-100%);
+  transform-origin: bottom;
+}
+#cta .cta-item:hover {
+  background-color: var(--color-primary-1);
+}
+#cta .cta-global {
+  width: 54px;
+  height: 54px;
+  background-color: var(--color-black);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#cta .cta-global::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  width: 54px;
+  height: 54px;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+#cta .cta-global:hover {
+  background-color: var(--color-primary-3);
+}
+#cta .cta-global:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+#cta .cta-global:hover img:first-child {
+  transform: scale(0);
+}
+#cta .cta-global:hover img:last-child {
+  transform: translate(-50%, -50%) scale(1);
+}
+#cta .cta-global img {
+  transition: all 0.3s ease;
+}
+#cta .cta-global img:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.3s ease;
+}
