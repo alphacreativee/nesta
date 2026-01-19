@@ -4,7 +4,7 @@ import {
   scrollChangeBgHeader,
   scrollFixedBookingForm,
 } from "../../main/js/global.min.js";
-import { sectionNews } from "../../main/js/slider.min.js";
+import { sectionNews, hotelFilterSlider } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 ("use strict");
@@ -29,6 +29,10 @@ const init = () => {
 };
 preloadImages("img").then(() => {
   init();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  hotelFilterSlider();
 });
 
 // event click element a
