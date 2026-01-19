@@ -310,11 +310,12 @@ body {
   right: 0;
   width: calc(100% - 160px);
   background-color: var(--color-white);
-  height: 60px;
+  height: 64px;
   margin: 0 auto;
   border-radius: 12px;
   transition: all 0.3s ease;
   z-index: 123;
+  border: 1px solid rgba(64, 64, 64, 0.3);
 }
 .booking-form-wrapper.booking-fixed {
   position: fixed;
@@ -326,11 +327,13 @@ body {
 .booking-form-wrapper.booking-fixed .booking-form-container {
   width: calc(100% - 160px);
   border-radius: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .booking-form-wrapper.booking-up .dropdown-custom-menu {
   top: 100%;
   transform: translateY(0);
-  margin-top: 15px;
+  margin-top: 19px;
   border-radius: 0 0 12px 12px;
 }
 .booking-form-container {
@@ -340,11 +343,12 @@ body {
   margin: 0 auto;
   border-radius: 12px;
   transition: all 0.3s ease;
-  padding: 20px 12px 20px 24px;
+  padding: 12px 12px 12px 24px;
 }
 .booking-form-container form {
   display: grid;
-  grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+  align-items: center;
+  grid-template-columns: 3fr 2.75fr 2.75fr 1.5fr max-content;
   gap: 24px;
 }
 .booking-form-container form .dropdown-custom-select {
@@ -357,7 +361,7 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--color-white);
-  margin-top: -15px;
+  margin-top: -20px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -402,6 +406,41 @@ body {
 .booking-form-container form .booking-time span {
   padding: 0 2px;
   transform: translateY(-2px);
+}
+.booking-form-container form .booking-promotion input {
+  outline: none;
+  border: none;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--color-gray-2);
+}
+.booking-form-container form .booking-promotion input::placeholder {
+  color: var(--color-gray-2);
+}
+.booking-form-container form .button-find-room {
+  padding-left: 0 !important;
+  border-left: 0 !important;
+}
+.booking-form-container form .button-find-room button {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-primary-3);
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  border-radius: 8px;
+}
+.booking-form-container form .booking-form-item {
+  border-left: 1px solid rgba(64, 64, 64, 0.3);
+  padding-left: 24px;
+}
+.booking-form-container form .booking-form-item:first-child {
+  border-left: 0;
+  padding-left: 0;
 }
 
 section.lightpick {
