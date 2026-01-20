@@ -567,6 +567,23 @@ section.lightpick .lightpick__previous-action {
   line-height: 1.6;
 }
 
+[slider-parallax] {
+  position: relative;
+}
+[slider-parallax] .swiper-slide {
+  overflow: hidden;
+}
+[slider-parallax] .swiper-slide .image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+[slider-parallax] .swiper-slide .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .footer {
   color: var(--color-white);
   overflow: hidden;
@@ -1509,6 +1526,123 @@ section.lightpick .lightpick__previous-action {
 }
 .accommodation-item .content .btn-wrapper a:hover {
   color: var(--color-primary-3);
+}
+
+.accommodation-detail .section-wrapper {
+  padding: 80px;
+}
+.accommodation-detail .swiper {
+  border-radius: 12px;
+}
+.accommodation-detail .swiper .image {
+  width: 100%;
+  aspect-ratio: 628/471;
+  max-height: 471px;
+}
+.accommodation-detail .swiper .swiper-arrow {
+  z-index: 3;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+.accommodation-detail .swiper .swiper-arrow:hover {
+  border-color: var(--color-primary-3);
+}
+.accommodation-detail .swiper .swiper-arrow.arrow-prev {
+  left: 56px;
+}
+.accommodation-detail .swiper .swiper-arrow.arrow-next {
+  right: 56px;
+}
+.accommodation-detail .col-left .title {
+  max-width: 520px;
+}
+.accommodation-detail .col-left .desc {
+  margin-top: 24px;
+  max-width: 520px;
+}
+.accommodation-detail .col-left .contact {
+  margin-top: 40px;
+  max-width: 520px;
+}
+.accommodation-detail .col-left .contact li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.accommodation-detail .col-left .contact li .icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 1;
+}
+.accommodation-detail .col-left .contact li:not(:first-child) {
+  margin-top: 8px;
+}
+.accommodation-detail .col-left .contact li a {
+  transition: all 0.4s ease;
+}
+.accommodation-detail .col-left .contact li a:hover {
+  color: var(--color-primary-3);
+}
+.accommodation-detail .col-left .facilities {
+  margin-top: 64px;
+  max-width: 520px;
+}
+.accommodation-detail .col-left .facilities h4 {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.accommodation-detail .col-left .facilities-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.accommodation-detail .col-left .facilities-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.accommodation-detail .col-left .facilities-list li .icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 1;
+  transform: translateY(4px);
+}
+.accommodation-detail .col-left .facilities-more {
+  margin-top: 8px;
+}
+.accommodation-detail .col-left .facilities-view-more {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  margin-top: 22px;
+  width: max-content;
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  color: var(--color-black);
+  transition: all 0.4s ease;
+}
+.accommodation-detail .col-left .facilities-view-more:hover {
+  color: var(--color-primary-3);
+}
+.accommodation-detail .col-left .facilities-view-more:hover .icon {
+  transform: rotate(90deg);
+}
+.accommodation-detail .col-left .facilities-view-more .icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 1;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+.accommodation-detail .col-left .facilities-view-more .icon svg {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
 }
 
 #cta {

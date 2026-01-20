@@ -504,3 +504,7 @@ export function initGuestSelector() {
       });
     });
 }
+
+export function accommodationDetail(){
+  if($(".accommodation-detail").length < 1) return;
+}
