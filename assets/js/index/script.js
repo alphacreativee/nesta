@@ -51,7 +51,7 @@ const init = () => {
   createFilterTab();
   sectionNews();
   scrollChangeBgHeader();
-  scrollFixedBookingForm();
+  // scrollFixedBookingForm();
   setOfferDescHeight();
   // sliderChangeContent();
   checkScrollBookingUp();
