@@ -1788,3 +1788,110 @@ section.lightpick .lightpick__previous-action {
   object-fit: cover;
   z-index: 2;
 }
+
+.slider-gallery {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+.slider-gallery .thumbnail-list {
+  position: absolute;
+  bottom: 24px;
+  z-index: 4;
+  right: 80px;
+  left: 80px;
+  max-width: calc(100% - 160px);
+  width: 100%;
+}
+.slider-gallery .thumbnail-list .swiper-slide {
+  cursor: pointer;
+}
+.slider-gallery .thumbnail-list .swiper-slide:hover .thumbnail-image {
+  border: 1px solid var(--color-primary-3);
+}
+.slider-gallery .thumbnail-list .swiper-slide:hover .thumbnail-name {
+  color: var(--color-primary-3);
+}
+.slider-gallery .thumbnail-list .swiper-slide.swiper-slide-thumb-active .thumbnail-image {
+  border: 1px solid var(--color-primary-3);
+}
+.slider-gallery .thumbnail-list .swiper-slide.swiper-slide-thumb-active .thumbnail-name {
+  color: var(--color-primary-3);
+}
+.slider-gallery .thumbnail-list .thumbnail-image {
+  width: 100%;
+  aspect-ratio: 203/112;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.slider-gallery .thumbnail-list .thumbnail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-gallery .thumbnail-list .thumbnail-name {
+  margin-top: 8px;
+  font-family: var(--font-heading);
+  font-weight: 13px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--color-white);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.slider-gallery .image-bg-list {
+  position: relative;
+}
+.slider-gallery .image-bg-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.51%, #000000 100%);
+}
+.slider-gallery .content-thumbnail-group {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translate(0%, -50%);
+  z-index: 3;
+  min-height: 330px;
+  max-width: 33.3333333333%;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: rgba(24, 24, 25, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+.slider-gallery .content-thumbnail-group .name-room {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.slider-gallery .content-thumbnail-group .description {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--color-white);
+}
+.slider-gallery .content-thumbnail-group a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+.slider-gallery .content-thumbnail-group a span {
+  font-size: 13px;
+  line-height: 15px;
+  font-family: var(--font-heading);
+  color: var(--color-white);
+}

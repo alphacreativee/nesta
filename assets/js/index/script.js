@@ -21,6 +21,7 @@ import {
 import { createFilterTab } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
+import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 ("use strict");
 $ = jQuery;
 
@@ -64,6 +65,7 @@ const init = () => {
   ctaRun();
   initGuestSelector();
   sliderParallax();
+  sliderGallery();
 };
 preloadImages("img").then(() => {
   init();
