@@ -1352,7 +1352,7 @@ section.lightpick .lightpick__previous-action {
   display: block;
 }
 .offer-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .offer-item:hover .content {
   transform: translateY(0);
