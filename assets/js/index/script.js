@@ -11,9 +11,13 @@ import {
   fadeTextFooter,
   ctaRun,
   scrollToTop,
-  initGuestSelector,
+  initGuestSelector
 } from "../../main/js/global.min.js";
-import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
+import {
+  sectionNews,
+  sliderWithShadow,
+  sliderParallax
+} from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
@@ -60,6 +64,7 @@ const init = () => {
   bookingTime();
   ctaRun();
   initGuestSelector();
+  sliderParallax();
   sliderGallery();
 };
 preloadImages("img").then(() => {

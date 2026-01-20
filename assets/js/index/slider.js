@@ -74,3 +74,77 @@ export function sliderWithShadow() {
     });
   });
 }
+
+export function sliderParallax() {
+  if ($("[slider-parallax]").length < 1) return;
+
+  var interleaveOffset = 0.8;
+
+  $("[slider-parallax]").each(function () {
+    const swiperEl = this;
+    const $swiper = $(this);
+
+    const hasAutoplay = swiperEl.hasAttribute("slider-autoplay");
+    const hasArrow = swiperEl.hasAttribute("slider-arrow");
+
+    const swiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      init: true,
+      loop: true,
+      speed: 1500,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      mousewheel: true,
+      keyboard: true,
+
+      autoplay: hasAutoplay
+        ? {
+            delay: 3500,
+            disableOnInteraction: true
+          }
+        : false,
+
+      navigation: hasArrow
+        ? {
+            nextEl: $swiper.find(".arrow-next")[0],
+            prevEl: $swiper.find(".arrow-prev")[0]
+          }
+        : false,
+      on: {
+        progress: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            const slideProgress = slide.progress || 0;
+            const innerOffset = swiper.width * interleaveOffset;
+            const innerTranslate = slideProgress * innerOffset;
+
+            if (!isNaN(innerTranslate)) {
+              const slideInner = slide.querySelector(".image");
+              if (slideInner) {
+                slideInner.style.transform = `translate3d(${innerTranslate}px, 0, 0)`;
+              }
+            }
+          });
+        },
+
+        touchStart: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = "";
+          });
+        },
+
+        setTransition: function (swiper, speed) {
+          const easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = `${speed}ms ${easing}`;
+
+            const slideInner = slide.querySelector(".image");
+            if (slideInner) {
+              slideInner.style.transition = `${speed}ms ${easing}`;
+            }
+          });
+        }
+      }
+    });
+  });
+}
