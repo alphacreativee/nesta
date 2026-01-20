@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select"
+    ".dropdown-custom, .dropdown-custom-select",
   );
 
   dropdowns.forEach((dropdown) => {
@@ -84,9 +84,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light")
+      onLeaveBack: () => header.classList.remove("header-theme-light"),
       // markers: true,
-    }
+    },
   });
 }
 export function scrollFixedBookingForm() {
@@ -104,7 +104,7 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
     // markers: true,
   });
 }
@@ -121,7 +121,7 @@ export function checkScrollBookingUp() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-up"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
     // markers: true,
   });
 }
@@ -188,7 +188,7 @@ export function bookingTime() {
 
     onYearChange: function () {
       setTimeout(positionCalendar, 10);
-    }
+    },
   });
 
   const bookingCalendar = document.querySelector(".booking-calendar");
@@ -213,7 +213,7 @@ export function effectText() {
       {
         opacity: 0,
         y: 20,
-        willChange: "opacity, transform"
+        willChange: "opacity, transform",
       },
       {
         opacity: 1,
@@ -224,9 +224,9 @@ export function effectText() {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%"
-        }
-      }
+          end: "bottom 80%",
+        },
+      },
     );
   });
 
@@ -236,7 +236,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     gsap.fromTo(
@@ -247,8 +247,8 @@ export function effectText() {
         duration: 1,
         ease: "power3.out",
         stagger: 0.05,
-        delay: delay
-      }
+        delay: delay,
+      },
     );
   });
 
@@ -256,7 +256,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     gsap.fromTo(
@@ -269,9 +269,9 @@ export function effectText() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: description,
-          start: "top 80%"
-        }
-      }
+          start: "top 80%",
+        },
+      },
     );
   });
 }
@@ -290,9 +290,9 @@ export function animationItemsSection() {
         trigger: section,
         start: "top 70%",
         end: "bottom bottom",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
         // markers: true,
-      }
+      },
     });
 
     tl.to(items, {
@@ -300,7 +300,7 @@ export function animationItemsSection() {
       opacity: 1,
       duration: 0.6,
       ease: "power2.out",
-      stagger: 0.2
+      stagger: 0.2,
     });
   });
 }
@@ -310,7 +310,7 @@ export function fadeTextFooter() {
 
   gsap.set("[data-text-footer]", {
     opacity: 0,
-    y: 20
+    y: 20,
   });
   let tlf = gsap.timeline({ paused: true });
 
@@ -318,22 +318,22 @@ export function fadeTextFooter() {
     "[data-text-footer]",
     {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     {
       opacity: 1,
       y: 0,
       stagger: 0.05,
-      duration: 0.6,
-      ease: "power2.out"
-    }
+      duration: 0.4,
+      ease: "power2.out",
+    },
   );
   ScrollTrigger.create({
     trigger: "footer",
     start: "top 80%",
     // markers: true,
     animation: tlf,
-    toggleActions: "play none none none"
+    toggleActions: "play none none none",
   });
 
   return tlf;
@@ -350,14 +350,47 @@ export function ctaRun() {
   const cta = document.getElementById("cta");
   if (!cta) return;
 
+  const footer = document.querySelector("footer");
+  if (!footer) return;
+
   gsap.registerPlugin(ScrollTrigger);
+
+  let isInFooter = false;
 
   ScrollTrigger.create({
     trigger: "body",
     start: "top top",
     end: "bottom bottom",
     onUpdate: (self) => {
-      cta.classList.toggle("run-right", self.direction === 1);
+      if (!isInFooter) {
+        cta.classList.toggle("run-right", self.direction === 1);
+      }
+    },
+  });
+
+  ScrollTrigger.create({
+    trigger: "footer",
+    start: "top bottom",
+    end: "bottom bottom",
+    onEnter: () => {
+      isInFooter = true;
+      cta.classList.remove("run-right");
+    },
+    onLeaveBack: () => {
+      isInFooter = false;
+      cta.style.position = "fixed";
+      cta.style.top = "";
+    },
+    onUpdate: (self) => {
+      if (isInFooter) {
+        const footerRect = footer.getBoundingClientRect();
+        const ctaHeight = cta.offsetHeight;
+
+        if (footerRect.top < window.innerHeight) {
+          cta.style.position = "absolute";
+          cta.style.top = footer.offsetTop - ctaHeight - 80 + "px";
+        }
+      }
     },
   });
 }
