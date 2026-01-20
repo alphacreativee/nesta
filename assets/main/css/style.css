@@ -332,6 +332,9 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
+.booking-form-wrapper.booking-fixed .booking-form-container form .button-find-room button {
+  border-radius: 0;
+}
 .booking-form-wrapper.booking-up .dropdown-custom-menu {
   top: 100%;
   transform: translateY(0);
@@ -441,6 +444,7 @@ body {
   text-transform: uppercase;
   font-family: var(--font-heading);
   border-radius: 8px;
+  transition: all 0.3s ease;
 }
 .booking-form-container form .booking-form-item {
   border-left: 1px solid rgba(64, 64, 64, 0.3);
@@ -1602,9 +1606,25 @@ section.lightpick .lightpick__previous-action {
   left: 0;
   width: 100%;
   height: 100svh;
-  background-color: var(--color-primary-2);
+  background-color: var(--color-secondary-1);
   z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+#loading .loading-video {
+  position: relative;
+}
+#loading .loading-video::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-secondary-1);
+  mask-mode: alpha;
+  mask-image: url("../../images/icons/intro-bg.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transform: scale(1);
+  mask-size: 100% 100%;
 }
