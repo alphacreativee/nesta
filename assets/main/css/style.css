@@ -569,6 +569,7 @@ section.lightpick .lightpick__previous-action {
 
 .footer {
   color: var(--color-white);
+  overflow: hidden;
 }
 .footer-main {
   background-color: var(--color-black);

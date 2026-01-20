@@ -306,16 +306,19 @@ export function animationItemsSection() {
 }
 
 export function fadeTextFooter() {
-  if ($(".section-accommodation").length > 0) return;
+  // if ($(".section-accommodation").length > 0) return;
 
-  gsap.set("[data-text-footer]", {
+  const elements = document.querySelectorAll("[data-text-footer]");
+
+  gsap.set(elements, {
     opacity: 0,
     y: 20,
   });
+
   let tlf = gsap.timeline({ paused: true });
 
   tlf.fromTo(
-    "[data-text-footer]",
+    elements,
     {
       opacity: 0,
       y: 20,
@@ -328,12 +331,14 @@ export function fadeTextFooter() {
       ease: "power2.out",
     },
   );
+
   ScrollTrigger.create({
     trigger: "footer",
     start: "top 80%",
-    // markers: true,
     animation: tlf,
     toggleActions: "play none none none",
+    invalidateOnRefresh: true, // Reset animation khi refresh
+    // markers: true,
   });
 
   return tlf;
