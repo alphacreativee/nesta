@@ -65,6 +65,7 @@
     padding: 32px;
     transform: translateY(calc(var(--height-desc) + 16px));
     transition: transform 0.5s ease;
+    pointer-events: none;
 
     .content-desc {
       margin-top: 16px;

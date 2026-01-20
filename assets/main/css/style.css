@@ -567,7 +567,10 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-white);
 }
 .footer-main {
-  background-color: var(--color-black);
+  background: url("../../images/bg-footer-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding: 40px 80px 20px;
 }
 .footer-main .column-title {
@@ -751,6 +754,7 @@ section.lightpick .lightpick__previous-action {
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
+  min-height: 44px;
 }
 .footer-term .copyright {
   opacity: 0.5;
@@ -763,6 +767,7 @@ section.lightpick .lightpick__previous-action {
 .footer-term a {
   transition: all 0.4s ease;
   opacity: 0.5;
+  display: block;
 }
 .footer-term a:hover {
   opacity: 1;
@@ -1381,6 +1386,7 @@ section.lightpick .lightpick__previous-action {
   padding: 32px;
   transform: translateY(calc(var(--height-desc) + 16px));
   transition: transform 0.5s ease;
+  pointer-events: none;
 }
 .offer-item .content .content-desc {
   margin-top: 16px;

@@ -280,27 +280,56 @@ export function animationItemsSection() {
   if ($(window).width() < 992) return;
 
   // fade each items
+  const FADE_EASE = "ease";
+  const LINE_EASE = "power1.out";
+  const ITEM_DURATION = 0.3;
+
   gsap.utils.toArray("[section-fade-each-item]").forEach((section) => {
     const items = section.querySelectorAll("[data-fade-item]");
-
-    gsap.set(items, { y: 40, opacity: 0 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top 70%",
-        end: "bottom bottom",
         toggleActions: "play none none none"
-        // markers: true,
       }
     });
 
-    tl.to(items, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.2
+    items.forEach((item) => {
+      const isLineItem = item.hasAttribute("fade-item-line");
+
+      // ITEM LINE
+      if (isLineItem) {
+        const split = new SplitText(item, {
+          type: "lines",
+          linesClass: "line",
+          mask: "lines"
+        });
+
+        gsap.set(split.lines, { yPercent: 120 });
+
+        tl.to(split.lines, {
+          yPercent: 0,
+          duration: ITEM_DURATION,
+          ease: LINE_EASE,
+          stagger: {
+            each: ITEM_DURATION / split.lines.length,
+            ease: "none"
+          }
+        });
+      }
+
+      // ITEM FADE
+      else {
+        gsap.set(item, { y: 30, opacity: 0 });
+
+        tl.to(item, {
+          y: 0,
+          opacity: 1,
+          duration: ITEM_DURATION,
+          ease: FADE_EASE
+        });
+      }
     });
   });
 }
@@ -358,7 +387,7 @@ export function ctaRun() {
     end: "bottom bottom",
     onUpdate: (self) => {
       cta.classList.toggle("run-right", self.direction === 1);
-    },
+    }
   });
 }
 export function initGuestSelector() {

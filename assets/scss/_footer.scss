@@ -2,7 +2,10 @@
   color: var(--color-white);
 
   &-main {
-    background-color: var(--color-black);
+    background: url("../../images/bg-footer-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     padding: 40px 80px 20px;
 
     .column-title {
@@ -239,6 +242,7 @@
     font-size: 12px;
     line-height: 16px;
     font-weight: 500;
+    min-height: 44px;
 
     .copyright {
       opacity: 0.5;
@@ -253,6 +257,7 @@
     a {
       transition: all 0.4s ease;
       opacity: 0.5;
+      display: block;
 
       &:hover {
         opacity: 1;
