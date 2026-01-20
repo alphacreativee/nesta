@@ -92,6 +92,16 @@
     </script>
     <header id="header"></header>
     <!-- end header -->
+    <!-- loading -->
+    <script>
+      fetch("./components/loading.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("loading").innerHTML = data;
+        });
+    </script>
+    <div id="loading"></div>
+    <!-- end loading -->
     <main>
       <section class="hero">
         <div class="container-fluid p-0">
