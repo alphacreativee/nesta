@@ -347,7 +347,19 @@ export function scrollToTop() {
     });
 }
 export function ctaRun() {
-  if (!document.getElementById("cta")) return;
+  const cta = document.getElementById("cta");
+  if (!cta) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: "body",
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: (self) => {
+      cta.classList.toggle("run-right", self.direction === 1);
+    },
+  });
 }
 export function initGuestSelector() {
   document
