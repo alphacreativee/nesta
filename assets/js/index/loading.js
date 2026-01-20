@@ -1,18 +1,13 @@
 export function loading() {
+  if (!document.querySelector("#loading")) return;
   const tl = gsap.timeline();
-
-  // Bước 1: Scale và fade out mask qua CSS vars
   tl.to("#loading .loading-video", {
     "--mask-scale": 3.5,
     "--mask-opacity": 0,
     duration: 1.5,
     ease: "power2.inOut",
   });
-
-  // Bước 2: Delay nhỏ
   tl.add(() => {}, "+=0.5");
-
-  // Bước 3: Clip path loading screen
   tl.fromTo(
     "#loading",
     {
@@ -20,7 +15,7 @@ export function loading() {
     },
     {
       clipPath: "inset(0% 0% 100% 0%)",
-      duration: 2,
+      duration: 1,
       ease: "power2.inOut",
     },
   );

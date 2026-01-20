@@ -27,14 +27,21 @@ gsap.ticker.add((time) => {
 });
 
 gsap.ticker.lagSmoothing(0);
-// document.addEventListener("DOMContentLoaded", () => {
-//   loading()
-//     .then(() => {
-//       sliderChangeContent();
-//     })
-//     .catch((err) => console.error("Loading error:", err));
-// });
-loading();
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingElement = document.getElementById("loading");
+
+  if (loadingElement) {
+    loading()
+      .then(() => {
+        sliderChangeContent();
+      })
+      .catch((err) => console.error("Loading error:", err));
+  } else {
+    sliderChangeContent();
+    init();
+  }
+});
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   effectText();
