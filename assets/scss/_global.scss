@@ -104,6 +104,13 @@
         border-radius: 0px;
         padding-left: 0;
         padding-right: 0;
+        form {
+          .button-find-room {
+            button {
+              border-radius: 0;
+            }
+          }
+        }
       }
     }
     &.booking-up {
@@ -222,6 +229,7 @@
           text-transform: uppercase;
           font-family: var(--font-heading);
           border-radius: 8px;
+          transition: all 0.3s ease;
         }
       }
       .booking-form-item {

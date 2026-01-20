@@ -92,6 +92,16 @@
     </script>
     <header id="header"></header>
     <!-- end header -->
+    <!-- loading -->
+    <script>
+      fetch("./components/loading.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("loading").innerHTML = data;
+        });
+    </script>
+    <div id="loading" class=""></div>
+    <!-- end loading -->
     <main>
       <section class="hero">
         <div class="container-fluid p-0">
@@ -225,7 +235,7 @@
                         <input type="text" id="checkOutDate" />
                       </div>
                     </div>
-                    <div class="icon-arrow">
+                    <div class="icon-arrow d-none">
                       <img
                         src="./assets/images/icons/icon-arrow-down.svg"
                         alt=""
@@ -873,14 +883,14 @@
     </main>
     <!-- layout -->
     <!-- cta -->
-    <script>
+    <!-- <script>
       fetch("./components/cta.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("cta").innerHTML = data;
         });
     </script>
-    <div id="cta"></div>
+    <div id="cta"></div> -->
     <!-- end cta -->
     <!-- footer -->
     <script>

@@ -335,16 +335,19 @@ export function animationItemsSection() {
 }
 
 export function fadeTextFooter() {
-  if ($(".section-accommodation").length > 0) return;
+  // if ($(".section-accommodation").length > 0) return;
 
-  gsap.set("[data-text-footer]", {
+  const elements = document.querySelectorAll("[data-text-footer]");
+
+  gsap.set(elements, {
     opacity: 0,
     y: 20
   });
+
   let tlf = gsap.timeline({ paused: true });
 
   tlf.fromTo(
-    "[data-text-footer]",
+    elements,
     {
       opacity: 0,
       y: 20
@@ -353,16 +356,18 @@ export function fadeTextFooter() {
       opacity: 1,
       y: 0,
       stagger: 0.05,
-      duration: 0.6,
+      duration: 0.4,
       ease: "power2.out"
     }
   );
+
   ScrollTrigger.create({
     trigger: "footer",
     start: "top 80%",
-    // markers: true,
     animation: tlf,
-    toggleActions: "play none none none"
+    toggleActions: "play none none none",
+    invalidateOnRefresh: true // Reset animation khi refresh
+    // markers: true,
   });
 
   return tlf;
@@ -379,14 +384,47 @@ export function ctaRun() {
   const cta = document.getElementById("cta");
   if (!cta) return;
 
+  const footer = document.querySelector("footer");
+  if (!footer) return;
+
   gsap.registerPlugin(ScrollTrigger);
+
+  let isInFooter = false;
 
   ScrollTrigger.create({
     trigger: "body",
     start: "top top",
     end: "bottom bottom",
     onUpdate: (self) => {
-      cta.classList.toggle("run-right", self.direction === 1);
+      if (!isInFooter) {
+        cta.classList.toggle("run-right", self.direction === 1);
+      }
+    }
+  });
+
+  ScrollTrigger.create({
+    trigger: "footer",
+    start: "top bottom",
+    end: "bottom bottom",
+    onEnter: () => {
+      isInFooter = true;
+      cta.classList.remove("run-right");
+    },
+    onLeaveBack: () => {
+      isInFooter = false;
+      cta.style.position = "fixed";
+      cta.style.top = "";
+    },
+    onUpdate: (self) => {
+      if (isInFooter) {
+        const footerRect = footer.getBoundingClientRect();
+        const ctaHeight = cta.offsetHeight;
+
+        if (footerRect.top < window.innerHeight) {
+          cta.style.position = "absolute";
+          cta.style.top = footer.offsetTop - ctaHeight - 80 + "px";
+        }
+      }
     }
   });
 }

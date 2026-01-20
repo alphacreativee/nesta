@@ -2,7 +2,11 @@
   position: fixed;
   right: 12px;
   bottom: 35px;
-  z-index: 126;
+  z-index: 100;
+  transition: all 0.3s ease;
+  &.run-right {
+    right: -60px;
+  }
   .cta {
     &-wrapper {
       position: relative;
