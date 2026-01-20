@@ -17,6 +17,7 @@ import { sectionNews, sliderWithShadow } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
+import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 ("use strict");
 $ = jQuery;
 
@@ -59,6 +60,7 @@ const init = () => {
   bookingTime();
   ctaRun();
   initGuestSelector();
+  sliderGallery();
 };
 preloadImages("img").then(() => {
   init();
