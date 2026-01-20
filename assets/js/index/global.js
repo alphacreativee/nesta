@@ -170,6 +170,16 @@ export function bookingTime() {
     onOpen: function () {
       positionCalendar();
       setTimeout(positionCalendar, 50);
+
+      // Thêm event listener cho scroll khi calendar mở
+      window.addEventListener("scroll", positionCalendar);
+      window.addEventListener("resize", positionCalendar);
+    },
+
+    onClose: function () {
+      // Xóa event listener khi calendar đóng
+      window.removeEventListener("scroll", positionCalendar);
+      window.removeEventListener("resize", positionCalendar);
     },
 
     onMonthChange: function () {
@@ -185,9 +195,7 @@ export function bookingTime() {
   if (bookingCalendar) {
     bookingCalendar.addEventListener("click", function (e) {
       e.stopPropagation();
-
       picker.show();
-
       document.getElementById("checkInDate").focus();
     });
 
