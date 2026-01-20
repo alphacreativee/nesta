@@ -1723,12 +1723,12 @@ section.lightpick .lightpick__previous-action {
 }
 .slider-gallery .content-thumbnail-group {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 80px;
   transform: translate(0%, -50%);
   z-index: 3;
   min-height: 330px;
-  max-width: 33.3333333333%;
+  max-width: calc(33.3333333333% - 64px);
   padding: 32px;
   border-radius: 20px;
   background-color: rgba(24, 24, 25, 0.9);
