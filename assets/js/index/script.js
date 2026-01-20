@@ -27,13 +27,14 @@ gsap.ticker.add((time) => {
 });
 
 gsap.ticker.lagSmoothing(0);
-document.addEventListener("DOMContentLoaded", () => {
-  loading()
-    .then(() => {
-      sliderChangeContent();
-    })
-    .catch((err) => console.error("Loading error:", err));
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   loading()
+//     .then(() => {
+//       sliderChangeContent();
+//     })
+//     .catch((err) => console.error("Loading error:", err));
+// });
+loading();
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   effectText();
@@ -45,7 +46,7 @@ const init = () => {
   scrollChangeBgHeader();
   scrollFixedBookingForm();
   setOfferDescHeight();
-  sliderChangeContent();
+  // sliderChangeContent();
   checkScrollBookingUp();
   scrollToTop();
   bookingTime();

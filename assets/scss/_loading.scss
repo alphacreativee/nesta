@@ -10,8 +10,12 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
   .loading-video {
     position: relative;
+    --mask-scale: 1;
+    --mask-opacity: 1;
+
     &::before {
       content: "";
       position: absolute;
@@ -21,8 +25,12 @@
       mask-image: url("../../images/icons/intro-bg.png");
       mask-repeat: no-repeat;
       mask-position: center;
-      transform: scale(1);
       mask-size: 100% 100%;
+      transform: scale(var(--mask-scale));
+      opacity: var(--mask-opacity);
+      transition:
+        transform 0s,
+        opacity 0s;
     }
   }
 }
