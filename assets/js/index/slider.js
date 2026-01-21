@@ -86,16 +86,19 @@ export function sliderParallax() {
 
     const hasAutoplay = swiperEl.hasAttribute("slider-autoplay");
     const hasArrow = swiperEl.hasAttribute("slider-arrow");
+    const hasNoDrag = swiperEl.hasAttribute("slider-no-drag");
 
     const swiper = new Swiper(swiperEl, {
       slidesPerView: 1,
       init: true,
       loop: true,
       speed: 1500,
-      grabCursor: true,
       watchSlidesProgress: true,
-      mousewheel: true,
-      keyboard: true,
+
+      keyboard: !hasNoDrag,
+      mousewheel: !hasNoDrag,
+      grabCursor: !hasNoDrag,
+      allowTouchMove: !hasNoDrag,
 
       autoplay: hasAutoplay
         ? {
