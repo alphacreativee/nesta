@@ -11,12 +11,12 @@ import {
   fadeTextFooter,
   ctaRun,
   scrollToTop,
-  initGuestSelector
+  initGuestSelector,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
   sliderWithShadow,
-  sliderParallax
+  sliderParallax,
 } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("Loading error:", err));
   } else {
     sliderChangeContent();
-    init();
   }
 });
 
