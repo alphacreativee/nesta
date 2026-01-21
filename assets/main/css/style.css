@@ -2064,3 +2064,18 @@ section.lightpick .lightpick__previous-action {
   grid-template-columns: 8fr 4fr;
   gap: 24px;
 }
+.destination-location .destination-wrapper .location-iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.destination-location .destination-wrapper .location-iframe .iframe {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.destination-location .destination-wrapper .location-iframe .iframe iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
