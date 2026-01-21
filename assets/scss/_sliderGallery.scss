@@ -7,10 +7,46 @@
     position: absolute;
     bottom: 24px;
     z-index: 4;
-    right: 80px;
-    left: 80px;
-    max-width: calc(100% - 160px);
+    right: 0;
+    left: 0;
     width: 100%;
+    &-wrapper {
+      margin: 0 auto;
+      max-width: calc(100% - 160px);
+      position: relative;
+      .swiper-arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--color-white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        transform: translateY(calc(-50% - 15px));
+        transition:
+          border 0.3s ease,
+          background-color 0.3s ease;
+        &:hover {
+          border-color: var(--color-primary-3);
+          background-color: var(--color-primary-3);
+        }
+        &::after {
+          content: unset;
+          font-size: 0;
+        }
+        svg {
+          width: auto;
+          height: auto;
+        }
+      }
+      .swiper-button-next {
+        right: -60px;
+      }
+      .swiper-button-prev {
+        left: -60px;
+      }
+    }
     .swiper-slide {
       cursor: pointer;
       &:hover {

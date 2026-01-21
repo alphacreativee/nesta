@@ -11,6 +11,10 @@ export function sliderGallery() {
     watchSlidesProgress: true,
     observer: true,
     observeParents: true,
+    navigation: {
+      nextEl: ".thumbnail-list-wrapper .swiper-button-next",
+      prevEl: ".thumbnail-list-wrapper .swiper-button-prev",
+    },
     on: {
       init: function () {
         this.el.style.opacity = "1";
