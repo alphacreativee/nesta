@@ -67,6 +67,17 @@
       .content-title,
       .btn-arrow {
         color: var(--color-primary-3);
+        span {
+          color: var(--color-primary-3);
+        }
+        .icon {
+          transform: translateX(5px);
+          svg {
+            path {
+              stroke: var(--color-primary-3);
+            }
+          }
+        }
       }
 
       img {
@@ -107,6 +118,7 @@
       }
 
       .btn-arrow {
+        width: max-content;
         margin-top: auto;
         transition: all 0.4s ease;
       }

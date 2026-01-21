@@ -89,6 +89,16 @@
                 opacity: 1 !important ;
                 visibility: visible !important;
               }
+              & > a {
+                color: var(--color-primary-3);
+                .icon {
+                  svg {
+                    path {
+                      stroke: var(--color-primary-3) !important ;
+                    }
+                  }
+                }
+              }
             }
             & > a {
               display: flex;
@@ -211,6 +221,9 @@
             text-transform: uppercase;
             color: var(--color-white);
             transition: color 0.3s ease;
+            &:hover {
+              color: var(--color-primary-3) !important;
+            }
           }
         }
       }

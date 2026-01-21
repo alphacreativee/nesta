@@ -377,3 +377,39 @@ section.lightpick {
     }
   }
 }
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  &:hover {
+    span {
+      color: var(--color-primary-3);
+    }
+    .icon {
+      transform: translateX(5px);
+      svg {
+        path {
+          stroke: var(--color-primary-3);
+        }
+      }
+    }
+  }
+  span {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 600;
+    color: var(--color-black);
+    transition: all 0.3s ease;
+    display: inline-block;
+    transform: translateY(1px);
+  }
+  .icon {
+    transition: transform 0.3s ease;
+    svg {
+      path {
+        transition: stroke 0.3s ease;
+      }
+    }
+  }
+}
