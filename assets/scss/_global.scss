@@ -401,7 +401,7 @@ section.lightpick {
   gap: 12px;
   &:hover {
     span {
-      color: var(--color-primary-3);
+      color: var(--color-primary-3) !important;
     }
     .icon {
       transform: translateX(5px);

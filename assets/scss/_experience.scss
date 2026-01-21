@@ -1,18 +1,18 @@
 .section-experience {
-  background-image: url("../../images/paper-texture.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: var(--color-secondary-2);
 
   .section-wrapper {
-    padding: 80px;
+    padding: 80px 0;
   }
 
   .col-image {
+    max-width: calc(calc(7 / 10) * 100% + 80px);
+    width: 100%;
+    margin-left: auto;
     .image {
       width: 100%;
-      aspect-ratio: 628 / 471;
-      border-radius: 20px;
+      aspect-ratio: 817 / 600;
+      border-radius: 20px 0 0 20px;
       overflow: hidden;
 
       img {
@@ -24,11 +24,48 @@
   }
 
   .col-content {
-    padding-left: 80px;
-
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
+    z-index: 2;
+    max-width: calc(50% - 40px);
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateX(calc(-1 * calc(1 / 12) * 100% - 40px));
+    border-radius: 20px;
+    padding: 40px;
+    @media screen and (min-width: 1520px) {
+      max-width: 530px;
+    }
+    .tag {
+      text-align: center;
+    }
+    .title {
+      text-align: center;
+      .line {
+        line-height: 1.3;
+      }
+    }
+    .desc {
+      text-align: center;
+    }
+    .btn-wrapper {
+      margin: 64px auto 0;
+    }
+  }
+  .col-image-one {
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .col-wrap {
+    display: flex;
+    position: relative;
+    margin-top: 90px;
   }
 }
