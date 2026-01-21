@@ -279,6 +279,16 @@
           li {
             &.menu-item-has-children {
               & > a {
+                &.active {
+                  color: var(--color-primary-3) !important ;
+                  .icon {
+                    svg {
+                      path {
+                        stroke: var(--color-primary-3) !important ;
+                      }
+                    }
+                  }
+                }
                 .icon {
                   svg {
                     path {

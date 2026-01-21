@@ -1066,6 +1066,12 @@ section.lightpick .lightpick__previous-action {
 #header.header-theme-light {
   background-color: var(--color-white);
 }
+#header.header-theme-light .header-menu ul li.menu-item-has-children > a.active {
+  color: var(--color-primary-3) !important;
+}
+#header.header-theme-light .header-menu ul li.menu-item-has-children > a.active .icon svg path {
+  stroke: var(--color-primary-3) !important;
+}
 #header.header-theme-light .header-menu ul li.menu-item-has-children > a .icon svg path {
   stroke: var(--color-gray-2);
 }
