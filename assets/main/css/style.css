@@ -1308,11 +1308,16 @@ section.lightpick .lightpick__previous-action {
   justify-content: center;
   gap: 24px;
   z-index: 2;
-  max-width: 50%;
+  max-width: calc(50% - 40px);
   background-color: rgba(255, 255, 255, 0.95);
   transform: translateX(calc(-8.3333333333% - 40px));
   border-radius: 20px;
   padding: 40px;
+}
+@media screen and (min-width: 1520px) {
+  .section-experience .col-content {
+    max-width: 530px;
+  }
 }
 .section-experience .col-content .tag {
   text-align: center;
