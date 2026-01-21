@@ -80,8 +80,7 @@ export function sliderGallery() {
             contentHTML += `<div class="name-room">${nameRoom}</div>`;
           if (description)
             contentHTML += `<div class="description">${description}</div>`;
-          if (link)
-            contentHTML += `<a href="${link.href}">${link.innerHTML}</a>`;
+          if (link) contentHTML += `${link.outerHTML}`;
 
           contentGroup.innerHTML = contentHTML;
 
@@ -129,9 +128,8 @@ export function sliderGallery() {
               },
             );
           }
-        }, 350); // chờ fade out xong
+        }, 350);
       },
-
       slideChangeTransitionEnd: function () {
         isTransitioning = false;
       },
@@ -157,35 +155,57 @@ export function sliderGallery() {
     if (nameRoom) initialHTML += `<div class="name-room">${nameRoom}</div>`;
     if (description)
       initialHTML += `<div class="description">${description}</div>`;
-    if (link) initialHTML += `<a href="${link.href}">${link.innerHTML}</a>`;
+    if (link) initialHTML += `${link.outerHTML}`;
 
     contentGroup.innerHTML = initialHTML;
 
-    // Animate lần đầu
+    // Animate lần đầu với ScrollTrigger
     const initName = contentGroup.querySelector(".name-room");
     const initDesc = contentGroup.querySelector(".description");
     const initLink = contentGroup.querySelector("a");
 
-    if (initName) {
-      gsap.fromTo(
-        initName,
-        { autoAlpha: 0, y: 30 },
-        { autoAlpha: 1, y: 0, ease: "power2.out", duration: 0.6, delay: 0.4 },
-      );
-    }
-    if (initDesc) {
-      gsap.fromTo(
-        initDesc,
-        { autoAlpha: 0, y: 30 },
-        { autoAlpha: 1, y: 0, ease: "power2.out", duration: 0.6, delay: 0.6 },
-      );
-    }
-    if (initLink) {
-      gsap.fromTo(
-        initLink,
-        { autoAlpha: 0, y: 30 },
-        { autoAlpha: 1, y: 0, ease: "power2.out", duration: 0.6, delay: 0.8 },
-      );
+    const elementsToAnimate = [initName, initDesc, initLink].filter(Boolean);
+
+    if (elementsToAnimate.length > 0) {
+      // Set initial state
+      gsap.set(elementsToAnimate, { autoAlpha: 0, y: 30 });
+
+      // Create ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: ".slider-gallery",
+        start: "top 50%",
+        once: true,
+        // markers: true,
+        onEnter: () => {
+          if (initName) {
+            gsap.to(initName, {
+              autoAlpha: 1,
+              y: 0,
+              ease: "power2.out",
+              duration: 0.6,
+              delay: 0.2,
+            });
+          }
+          if (initDesc) {
+            gsap.to(initDesc, {
+              autoAlpha: 1,
+              y: 0,
+              ease: "power2.out",
+              duration: 0.6,
+              delay: 0.4,
+            });
+          }
+          if (initLink) {
+            gsap.to(initLink, {
+              autoAlpha: 1,
+              y: 0,
+              ease: "power2.out",
+              duration: 0.6,
+              delay: 0.6,
+            });
+          }
+        },
+      });
     }
   }
 }

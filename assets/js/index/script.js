@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("Loading error:", err));
   } else {
     sliderChangeContent();
-    // init();
   }
 });
 

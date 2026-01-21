@@ -584,6 +584,37 @@ section.lightpick .lightpick__previous-action {
   object-fit: cover;
 }
 
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-arrow:hover span {
+  color: var(--color-primary-3);
+}
+.btn-arrow:hover .icon {
+  transform: translateX(5px);
+}
+.btn-arrow:hover .icon svg path {
+  stroke: var(--color-primary-3);
+}
+.btn-arrow span {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 600;
+  color: var(--color-black);
+  transition: all 0.3s ease;
+  display: inline-block;
+  transform: translateY(1px);
+}
+.btn-arrow .icon {
+  transition: transform 0.3s ease;
+}
+.btn-arrow .icon svg path {
+  transition: stroke 0.3s ease;
+}
+
 .footer {
   color: var(--color-white);
   overflow: hidden;
@@ -876,6 +907,12 @@ section.lightpick .lightpick__previous-action {
   opacity: 1 !important;
   visibility: visible !important;
 }
+#header .header-menu ul li.menu-item-has-children:hover > a {
+  color: var(--color-primary-3);
+}
+#header .header-menu ul li.menu-item-has-children:hover > a .icon svg path {
+  stroke: var(--color-primary-3) !important;
+}
 #header .header-menu ul li.menu-item-has-children > a {
   display: flex;
   align-items: center;
@@ -984,6 +1021,9 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-white);
   transition: color 0.3s ease;
 }
+#header .header-menu ul li a:hover {
+  color: var(--color-primary-3) !important;
+}
 #header .header-container {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -1025,6 +1065,12 @@ section.lightpick .lightpick__previous-action {
 }
 #header.header-theme-light {
   background-color: var(--color-white);
+}
+#header.header-theme-light .header-menu ul li.menu-item-has-children > a.active {
+  color: var(--color-primary-3) !important;
+}
+#header.header-theme-light .header-menu ul li.menu-item-has-children > a.active .icon svg path {
+  stroke: var(--color-primary-3) !important;
 }
 #header.header-theme-light .header-menu ul li.menu-item-has-children > a .icon svg path {
   stroke: var(--color-gray-2);
@@ -1318,6 +1364,18 @@ section.lightpick .lightpick__previous-action {
 .hotel-filter__item:hover .btn-arrow {
   color: var(--color-primary-3);
 }
+.hotel-filter__item:hover .content-title span,
+.hotel-filter__item:hover .btn-arrow span {
+  color: var(--color-primary-3);
+}
+.hotel-filter__item:hover .content-title .icon,
+.hotel-filter__item:hover .btn-arrow .icon {
+  transform: translateX(5px);
+}
+.hotel-filter__item:hover .content-title .icon svg path,
+.hotel-filter__item:hover .btn-arrow .icon svg path {
+  stroke: var(--color-primary-3);
+}
 .hotel-filter__item:hover img {
   transform: scale(1.05);
 }
@@ -1350,6 +1408,7 @@ section.lightpick .lightpick__previous-action {
   -webkit-box-orient: vertical;
 }
 .hotel-filter__item .content .btn-arrow {
+  width: max-content;
   margin-top: auto;
   transition: all 0.4s ease;
 }
@@ -1869,12 +1928,12 @@ section.lightpick .lightpick__previous-action {
 }
 .slider-gallery .content-thumbnail-group {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 80px;
   transform: translate(0%, -50%);
   z-index: 3;
   min-height: 330px;
-  max-width: 33.3333333333%;
+  max-width: calc(33.3333333333% - 64px);
   padding: 32px;
   border-radius: 20px;
   background-color: rgba(24, 24, 25, 0.9);
