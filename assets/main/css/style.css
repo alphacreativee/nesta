@@ -1280,18 +1280,20 @@ section.lightpick .lightpick__previous-action {
 }
 
 .section-experience {
-  background-image: url("../../images/paper-texture.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: var(--color-secondary-2);
 }
 .section-experience .section-wrapper {
-  padding: 80px;
+  padding: 80px 0;
+}
+.section-experience .col-image {
+  max-width: calc(70% + 80px);
+  width: 100%;
+  margin-left: auto;
 }
 .section-experience .col-image .image {
   width: 100%;
-  aspect-ratio: 628/471;
-  border-radius: 20px;
+  aspect-ratio: 817/600;
+  border-radius: 20px 0 0 20px;
   overflow: hidden;
 }
 .section-experience .col-image .image img {
@@ -1300,11 +1302,46 @@ section.lightpick .lightpick__previous-action {
   object-fit: cover;
 }
 .section-experience .col-content {
-  padding-left: 80px;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  gap: 24px;
+  z-index: 2;
+  max-width: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateX(calc(-8.3333333333% - 40px));
+  border-radius: 20px;
+  padding: 40px;
+}
+.section-experience .col-content .tag {
+  text-align: center;
+}
+.section-experience .col-content .title {
+  text-align: center;
+}
+.section-experience .col-content .title .line {
+  line-height: 1.3;
+}
+.section-experience .col-content .desc {
+  text-align: center;
+}
+.section-experience .col-content .btn-wrapper {
+  margin: 64px auto 0;
+}
+.section-experience .col-image-one {
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+}
+.section-experience .col-image-one img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-experience .col-wrap {
+  display: flex;
+  position: relative;
+  margin-top: 110px;
 }
 
 .hotel-filter {
