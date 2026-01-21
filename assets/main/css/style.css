@@ -2418,3 +2418,20 @@ section.lightpick .lightpick__previous-action {
   align-items: center;
   justify-content: space-between;
 }
+#locationModal .sth-here {
+  margin-bottom: 40px;
+}
+#locationModal .sth-here .title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+#locationModal .sth-here .description {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--color-black);
+}
