@@ -232,6 +232,7 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
   font-family: var(--font-body);
   background-color: var(--color-bg);
+  overflow-x: hidden;
 }
 
 .swiper-arrows .swiper-arrow {
@@ -2050,4 +2051,16 @@ section.lightpick .lightpick__previous-action {
   line-height: 15px;
   font-family: var(--font-heading);
   color: var(--color-white);
+}
+
+.destination-location {
+  padding: 0px 80px 80px;
+}
+.destination-location .destination-title {
+  margin-bottom: 24px;
+}
+.destination-location .destination-wrapper {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 24px;
 }

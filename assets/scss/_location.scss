@@ -1,0 +1,11 @@
+.destination-location {
+  padding: 0px 80px 80px;
+  .destination-title {
+    margin-bottom: 24px;
+  }
+  .destination-wrapper {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 24px;
+  }
+}
