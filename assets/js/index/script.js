@@ -12,11 +12,12 @@ import {
   ctaRun,
   scrollToTop,
   initGuestSelector,
+  accommodationDetail
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
   sliderWithShadow,
-  sliderParallax,
+  sliderParallax
 } from "../../main/js/slider.min.js";
 import { createFilterTab } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
@@ -65,6 +66,7 @@ const init = () => {
   initGuestSelector();
   sliderParallax();
   sliderGallery();
+  accommodationDetail();
 };
 preloadImages("img").then(() => {
   init();

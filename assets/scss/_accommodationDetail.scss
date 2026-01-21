@@ -1,4 +1,6 @@
 .accommodation-detail {
+  background-color: var(--color-white);
+
   .section-wrapper {
     padding: 80px;
   }
@@ -103,6 +105,8 @@
 
       &-more {
         margin-top: 8px;
+        height: 0;
+        overflow: hidden;
       }
 
       &-view-more {
@@ -119,11 +123,23 @@
         color: var(--color-black);
         transition: all 0.4s ease;
 
+        &.active {
+          .icon {
+            svg {
+              opacity: 0;
+            }
+
+            svg:nth-child(2) {
+              opacity: 1;
+            }
+          }
+        }
+
         &:hover {
           color: var(--color-primary-3);
 
           .icon {
-            transform: rotate(90deg);
+            // transform: rotate(180deg);
           }
         }
 
@@ -138,6 +154,11 @@
             position: absolute;
             inset: 0;
             opacity: 1;
+            transition: all 0.3s ease;
+
+            &:nth-child(2) {
+              opacity: 0;
+            }
           }
         }
       }
