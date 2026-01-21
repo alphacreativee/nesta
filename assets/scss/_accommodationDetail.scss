@@ -13,24 +13,6 @@
       aspect-ratio: 628 / 471;
       max-height: 471px;
     }
-
-    .swiper-arrow {
-      z-index: 3;
-      color: var(--color-white);
-      border-color: var(--color-white);
-
-      &:hover {
-        border-color: var(--color-primary-3);
-      }
-
-      &.arrow-prev {
-        left: 56px;
-      }
-
-      &.arrow-next {
-        right: 56px;
-      }
-    }
   }
 
   .col-left {
