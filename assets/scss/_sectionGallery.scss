@@ -1,0 +1,36 @@
+.section-gallery {
+  background-color: var(--color-white);
+
+  .section-wrapper {
+    padding: 80px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+
+    &__item {
+      width: 100%;
+      aspect-ratio: 410 / 260;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover {
+        img {
+          transform: scale(1.03);
+        }
+      }
+
+      img,
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+      }
+    }
+  }
+}
