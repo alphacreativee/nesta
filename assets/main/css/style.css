@@ -590,7 +590,7 @@ section.lightpick .lightpick__previous-action {
   gap: 12px;
 }
 .btn-arrow:hover span {
-  color: var(--color-primary-3);
+  color: var(--color-primary-3) !important;
 }
 .btn-arrow:hover .icon {
   transform: translateX(5px);
@@ -1913,6 +1913,15 @@ section.lightpick .lightpick__previous-action {
   height: 100%;
   z-index: 2;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.51%, #000000 100%);
+}
+.slider-gallery .image-bg-list .image-bg {
+  width: 100%;
+  height: 100%;
+}
+.slider-gallery .image-bg-list .image-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .slider-gallery .content-thumbnail-group {
   position: absolute;
