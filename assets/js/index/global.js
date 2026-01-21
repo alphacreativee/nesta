@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select"
+    ".dropdown-custom, .dropdown-custom-select",
   );
 
   dropdowns.forEach((dropdown) => {
@@ -84,9 +84,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light")
+      onLeaveBack: () => header.classList.remove("header-theme-light"),
       // markers: true,
-    }
+    },
   });
 }
 export function scrollFixedBookingForm() {
@@ -104,7 +104,7 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
     // markers: true,
   });
 }
@@ -121,7 +121,7 @@ export function checkScrollBookingUp() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-up"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
     // markers: true,
   });
 }
@@ -188,7 +188,7 @@ export function bookingTime() {
 
     onYearChange: function () {
       setTimeout(positionCalendar, 10);
-    }
+    },
   });
 
   const bookingCalendar = document.querySelector(".booking-calendar");
@@ -213,7 +213,7 @@ export function effectText() {
       {
         opacity: 0,
         y: 20,
-        willChange: "opacity, transform"
+        willChange: "opacity, transform",
       },
       {
         opacity: 1,
@@ -224,9 +224,9 @@ export function effectText() {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%"
-        }
-      }
+          end: "bottom 80%",
+        },
+      },
     );
   });
 
@@ -236,7 +236,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     gsap.fromTo(
@@ -247,8 +247,8 @@ export function effectText() {
         duration: 1,
         ease: "power3.out",
         stagger: 0.05,
-        delay: delay
-      }
+        delay: delay,
+      },
     );
   });
 
@@ -256,7 +256,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     gsap.fromTo(
@@ -269,9 +269,9 @@ export function effectText() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: description,
-          start: "top 80%"
-        }
-      }
+          start: "top 80%",
+        },
+      },
     );
   });
 }
@@ -290,9 +290,10 @@ export function animationItemsSection() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: "top 70%",
-        toggleActions: "play none none none"
-      }
+        start: "top 65%",
+        toggleActions: "play none none none",
+        // markers: true,
+      },
     });
 
     items.forEach((item) => {
@@ -303,7 +304,7 @@ export function animationItemsSection() {
         const split = new SplitText(item, {
           type: "lines",
           linesClass: "line",
-          mask: "lines"
+          mask: "lines",
         });
 
         gsap.set(split.lines, { yPercent: 120 });
@@ -314,8 +315,8 @@ export function animationItemsSection() {
           ease: LINE_EASE,
           stagger: {
             each: ITEM_DURATION / split.lines.length,
-            ease: "none"
-          }
+            ease: "none",
+          },
         });
       }
 
@@ -327,7 +328,7 @@ export function animationItemsSection() {
           y: 0,
           opacity: 1,
           duration: ITEM_DURATION,
-          ease: FADE_EASE
+          ease: FADE_EASE,
         });
       }
     });
@@ -341,7 +342,7 @@ export function fadeTextFooter() {
 
   gsap.set(elements, {
     opacity: 0,
-    y: 20
+    y: 20,
   });
 
   let tlf = gsap.timeline({ paused: true });
@@ -350,15 +351,15 @@ export function fadeTextFooter() {
     elements,
     {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     {
       opacity: 1,
       y: 0,
       stagger: 0.05,
       duration: 0.4,
-      ease: "power2.out"
-    }
+      ease: "power2.out",
+    },
   );
 
   ScrollTrigger.create({
@@ -366,7 +367,7 @@ export function fadeTextFooter() {
     start: "top 80%",
     animation: tlf,
     toggleActions: "play none none none",
-    invalidateOnRefresh: true // Reset animation khi refresh
+    invalidateOnRefresh: true, // Reset animation khi refresh
     // markers: true,
   });
 
@@ -399,7 +400,7 @@ export function ctaRun() {
       if (!isInFooter) {
         cta.classList.toggle("run-right", self.direction === 1);
       }
-    }
+    },
   });
 
   ScrollTrigger.create({
@@ -425,7 +426,7 @@ export function ctaRun() {
           cta.style.top = footer.offsetTop - ctaHeight - 80 + "px";
         }
       }
-    }
+    },
   });
 }
 export function initGuestSelector() {
@@ -517,7 +518,7 @@ export function accommodationDetail() {
   $more.css({
     overflow: "hidden",
     height: 0,
-    transition: `height ${duration}ms ease`
+    transition: `height ${duration}ms ease`,
   });
 
   $btn.on("click", function () {
@@ -534,7 +535,7 @@ export function accommodationDetail() {
       $more.css({
         height: fullHeight + "px",
         overflow: "hidden",
-        transition: `height ${duration}ms ease`
+        transition: `height ${duration}ms ease`,
       });
 
       setTimeout(() => {
