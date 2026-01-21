@@ -87,6 +87,10 @@ export function sliderParallax() {
     const hasAutoplay = swiperEl.hasAttribute("slider-autoplay");
     const hasArrow = swiperEl.hasAttribute("slider-arrow");
     const hasNoDrag = swiperEl.hasAttribute("slider-no-drag");
+    const hasChangeLabel = swiperEl.hasAttribute("slider-change-label");
+
+    const $sliderTitle = $swiper.find(".slider-title");
+    const $pagination = $swiper.find(".slider-pagination");
 
     const swiper = new Swiper(swiperEl, {
       slidesPerView: 1,
@@ -114,6 +118,14 @@ export function sliderParallax() {
           }
         : false,
       on: {
+        init(swiper) {
+          if (hasChangeLabel) updateLabel(swiper);
+        },
+
+        slideChange(swiper) {
+          if (hasChangeLabel) updateLabel(swiper);
+        },
+
         progress: function (swiper) {
           swiper.slides.forEach(function (slide) {
             const slideProgress = slide.progress || 0;
@@ -149,5 +161,25 @@ export function sliderParallax() {
         }
       }
     });
+
+    function updateLabel(swiper) {
+      const realIndex = swiper.realIndex;
+
+      const realSlides = swiper.el.querySelectorAll(
+        ".swiper-slide:not(.swiper-slide-duplicate)"
+      );
+
+      const total = realSlides.length;
+      const currentSlide = realSlides[realIndex];
+      const title = currentSlide?.dataset?.title || "";
+
+      if ($sliderTitle.length) {
+        $sliderTitle.text(title);
+      }
+
+      if ($pagination.length) {
+        $pagination.text(`${realIndex + 1}/${total}`);
+      }
+    }
   });
 }

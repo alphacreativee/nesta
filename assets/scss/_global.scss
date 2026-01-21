@@ -394,6 +394,21 @@ section.lightpick {
       right: 56px;
     }
   }
+
+  .slider-title {
+    left: 16px;
+    bottom: 16px;
+
+    position: absolute;
+    z-index: 3;
+  }
+
+  .slider-pagination {
+    right: 16px;
+    bottom: 16px;
+    position: absolute;
+    z-index: 3;
+  }
 }
 .btn-arrow {
   display: flex;
