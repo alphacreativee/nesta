@@ -505,6 +505,56 @@ export function initGuestSelector() {
     });
 }
 
-export function accommodationDetail(){
-  if($(".accommodation-detail").length < 1) return;
+export function accommodationDetail() {
+  const $btn = $(".accommodation-detail .facilities-view-more");
+  if ($btn.length < 1) return;
+
+  const $more = $(".accommodation-detail .facilities-more");
+  const $btnTextMore = $btn.data("read-more");
+  const $btnTextLess = $btn.data("read-less");
+  const duration = 500;
+
+  $more.css({
+    overflow: "hidden",
+    height: 0,
+    transition: `height ${duration}ms ease`
+  });
+
+  $btn.on("click", function () {
+    const isOpen = $more.hasClass("is-open");
+    const duration = 500;
+
+    $btn.toggleClass("active");
+
+    if (!isOpen) {
+      // OPEN
+      $more.addClass("is-open");
+
+      const fullHeight = $more[0].scrollHeight;
+      $more.css({
+        height: fullHeight + "px",
+        overflow: "hidden",
+        transition: `height ${duration}ms ease`
+      });
+
+      setTimeout(() => {
+        $more.css("height", "auto");
+      }, duration);
+
+      $btn.find("span").text($btnTextLess);
+    } else {
+      // CLOSE
+      const currentHeight = $more[0].scrollHeight;
+
+      $more.css("height", currentHeight + "px");
+      $more[0].offsetHeight;
+      $more.css("height", 0);
+
+      setTimeout(() => {
+        $more.removeClass("is-open");
+      }, duration);
+
+      $btn.find("span").text($btnTextMore);
+    }
+  });
 }

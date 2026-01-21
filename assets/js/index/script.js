@@ -11,7 +11,8 @@ import {
   fadeTextFooter,
   ctaRun,
   scrollToTop,
-  initGuestSelector
+  initGuestSelector,
+  accommodationDetail
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.error("Loading error:", err));
   } else {
     sliderChangeContent();
-    init();
+    // init();
   }
 });
 
@@ -66,6 +67,7 @@ const init = () => {
   initGuestSelector();
   sliderParallax();
   sliderGallery();
+  accommodationDetail();
 };
 preloadImages("img").then(() => {
   init();

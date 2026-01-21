@@ -1528,6 +1528,9 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-primary-3);
 }
 
+.accommodation-detail {
+  background-color: var(--color-white);
+}
 .accommodation-detail .section-wrapper {
   padding: 80px;
 }
@@ -1612,6 +1615,8 @@ section.lightpick .lightpick__previous-action {
 }
 .accommodation-detail .col-left .facilities-more {
   margin-top: 8px;
+  height: 0;
+  overflow: hidden;
 }
 .accommodation-detail .col-left .facilities-view-more {
   font-size: 13px;
@@ -1626,11 +1631,14 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-black);
   transition: all 0.4s ease;
 }
+.accommodation-detail .col-left .facilities-view-more.active .icon svg {
+  opacity: 0;
+}
+.accommodation-detail .col-left .facilities-view-more.active .icon svg:nth-child(2) {
+  opacity: 1;
+}
 .accommodation-detail .col-left .facilities-view-more:hover {
   color: var(--color-primary-3);
-}
-.accommodation-detail .col-left .facilities-view-more:hover .icon {
-  transform: rotate(90deg);
 }
 .accommodation-detail .col-left .facilities-view-more .icon {
   width: 12px;
@@ -1643,6 +1651,10 @@ section.lightpick .lightpick__previous-action {
   position: absolute;
   inset: 0;
   opacity: 1;
+  transition: all 0.3s ease;
+}
+.accommodation-detail .col-left .facilities-view-more .icon svg:nth-child(2) {
+  opacity: 0;
 }
 
 #cta {
