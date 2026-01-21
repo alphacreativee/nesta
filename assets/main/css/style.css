@@ -2222,7 +2222,7 @@ section.lightpick .lightpick__previous-action {
 }
 
 .destination-location {
-  padding: 0px 80px 80px;
+  padding: 80px;
 }
 .destination-location .destination-title {
   margin-bottom: 24px;
@@ -2232,20 +2232,208 @@ section.lightpick .lightpick__previous-action {
   grid-template-columns: 8fr 4fr;
   gap: 24px;
 }
-.destination-location .destination-wrapper .location-iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-}
 .destination-location .destination-wrapper .location-iframe .iframe {
   width: 100%;
-  height: 100%;
   overflow: hidden;
+  aspect-ratio: 16/9;
   border-radius: 12px;
 }
 .destination-location .destination-wrapper .location-iframe .iframe iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.destination-location .destination-wrapper .location-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.destination-location .destination-wrapper .location-review .location-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 24px;
+}
+.destination-location .destination-wrapper .location-review .location-item:hover .location-image img {
+  transform: scale(1.03);
+}
+.destination-location .destination-wrapper .location-review .location-item:hover .location-info .time {
+  color: rgba(0, 0, 0, 0.5);
+}
+.destination-location .destination-wrapper .location-review .location-image {
+  width: 100%;
+  aspect-ratio: 195/104;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.destination-location .destination-wrapper .location-review .location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.destination-location .destination-wrapper .location-review .location-info {
+  margin-top: 12px;
+}
+.destination-location .destination-wrapper .location-review .location-info .name {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 4px;
+}
+.destination-location .destination-wrapper .location-review .location-info .time {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--color-black);
+  transition: color 0.3s ease;
+}
+
+#locationModal .modal-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--color-black);
+}
+#locationModal .btn-close {
+  background: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 24, 25, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+}
+#locationModal .btn-close:focus {
+  box-shadow: none;
+}
+#locationModal .btn-close:hover {
+  opacity: 1;
+}
+#locationModal .modal-content {
+  border-radius: 12px;
+  background-image: url("../../images/paper-texture-big.jpg");
+  background-size: 100% 100%;
+}
+#locationModal .modal-header {
+  border-radius: 0;
+  border-bottom: 0;
+  padding: 32px 24px 24px;
+}
+#locationModal .modal-body {
+  padding-top: 0;
+  padding: 0 24px 32px;
+  overflow-y: scroll;
+}
+#locationModal .modal-body::-webkit-scrollbar {
+  width: 3px;
+}
+#locationModal .modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+#locationModal .modal-body::-webkit-scrollbar-thumb {
+  background: var(--color-primary-3);
+  border-radius: 10px;
+}
+#locationModal .modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-2);
+}
+#locationModal .modal-dialog {
+  max-width: 900px;
+}
+#locationModal .location-popup-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+#locationModal .location-popup-list .location-popup-item .location-info {
+  margin-top: 12px;
+}
+#locationModal .location-popup-list .location-popup-item .location-info .name {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 4px;
+}
+#locationModal .location-popup-list .location-popup-item .location-info .time {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--color-black);
+  transition: color 0.3s ease;
+}
+#locationModal .location-popup-list .location-popup-item:hover .location-image img {
+  transform: scale(1.03);
+}
+#locationModal .location-popup-list .location-popup-item .location-image {
+  overflow: hidden;
+  border-radius: 12px;
+}
+#locationModal .location-popup-list .location-popup-item .location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+#locationModal .location-popup-list .location-popup-item:first-child {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+#locationModal .location-popup-list .location-popup-item:first-child .location-image {
+  width: 100%;
+  aspect-ratio: 410/230;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#locationModal .location-popup-list .location-popup-item:first-child .location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#locationModal .location-popup-list .location-popup-item:nth-child(2) {
+  grid-column: auto/span 2;
+  grid-row: 1/span 2;
+}
+#locationModal .location-popup-list .location-popup-item:nth-child(2) .location-image {
+  width: 100%;
+  aspect-ratio: 410/230;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#locationModal .location-popup-list .location-popup-item:nth-child(2) .location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#locationModal .location-popup-list .location-popup-item:first-child .location-info, #locationModal .location-popup-list .location-popup-item:nth-child(2) .location-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#locationModal .sth-here {
+  margin-bottom: 40px;
+}
+#locationModal .sth-here .title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+#locationModal .sth-here .description {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--color-black);
 }
 
 .section-gallery {
