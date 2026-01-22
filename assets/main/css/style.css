@@ -1310,17 +1310,17 @@ section.lightpick .lightpick__previous-action {
   background-color: var(--color-secondary-2);
 }
 .section-experience .section-wrapper {
-  padding: 80px 0;
+  padding: 80px;
 }
 .section-experience .col-image {
-  max-width: calc(70% + 80px);
+  max-width: 66.6666666667%;
   width: 100%;
   margin-left: auto;
 }
 .section-experience .col-image .image {
   width: 100%;
-  aspect-ratio: 817/600;
-  border-radius: 20px 0 0 20px;
+  aspect-ratio: 625/600;
+  border-radius: 20px;
   overflow: hidden;
 }
 .section-experience .col-image .image img {
@@ -1335,15 +1335,16 @@ section.lightpick .lightpick__previous-action {
   justify-content: center;
   gap: 24px;
   z-index: 2;
-  max-width: calc(50% - 40px);
+  max-width: 66.6666666667%;
   background-color: rgba(255, 255, 255, 0.95);
   transform: translateX(calc(-8.3333333333% - 40px));
   border-radius: 20px;
   padding: 40px;
+  top: 32px;
 }
 @media screen and (min-width: 1520px) {
   .section-experience .col-content {
-    max-width: 530px;
+    max-width: 625px;
   }
 }
 .section-experience .col-content .tag {
@@ -1362,8 +1363,10 @@ section.lightpick .lightpick__previous-action {
   margin: 64px auto 0;
 }
 .section-experience .col-image-one {
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 382/485;
 }
 .section-experience .col-image-one img {
   width: 100%;
