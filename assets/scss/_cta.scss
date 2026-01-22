@@ -10,8 +10,25 @@
   .cta {
     &-wrapper {
       position: relative;
+
       &:hover {
-        .cta-global + .cta-list {
+        .cta-global {
+          background-color: var(--color-primary-3);
+          &::before {
+            opacity: 1;
+            visibility: visible;
+          }
+          img {
+            &:first-child {
+              transform: scale(0);
+            }
+            &:last-child {
+              transform: translate(-50%, -50%) scale(1);
+            }
+          }
+        }
+
+        .cta-list {
           opacity: 1;
           visibility: visible;
           transition-delay: 0s;
@@ -45,27 +62,21 @@
       justify-content: center;
       align-items: center;
       background-color: var(--color-primary-2);
-      transform: translateY(30px) scale(0);
+      transform: translateY(20px) scale(0);
       transform-origin: center;
       opacity: 0;
       transition:
-        transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        opacity 0.4s ease;
-
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.3s ease,
+        background-color 0.3s ease;
       &:nth-child(1) {
-        transition-delay: 0.2s;
-      }
-      &:nth-child(2) {
-        transition-delay: 0.15s;
-      }
-      &:nth-child(3) {
-        transition-delay: 0.1s;
-      }
-      &:nth-child(4) {
         transition-delay: 0.05s;
       }
-      &:nth-child(5) {
-        transition-delay: 0s;
+      &:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.15s;
       }
 
       &:hover {
@@ -98,21 +109,7 @@
         visibility: hidden;
         transition: all 0.3s ease;
       }
-      &:hover {
-        background-color: var(--color-primary-3);
-        &::before {
-          opacity: 1;
-          visibility: visible;
-        }
-        img {
-          &:first-child {
-            transform: scale(0);
-          }
-          &:last-child {
-            transform: translate(-50%, -50%) scale(1);
-          }
-        }
-      }
+
       img {
         transition: all 0.3s ease;
         &:last-child {
