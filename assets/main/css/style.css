@@ -1338,15 +1338,10 @@ section.lightpick .lightpick__previous-action {
   z-index: 2;
   max-width: 66.6666666667%;
   background-color: rgba(255, 255, 255, 0.95);
-  transform: translateX(calc(-8.3333333333% - 40px));
+  transform: translateX(calc(-16.6666666667% - 40px));
   border-radius: 20px;
   padding: 40px;
   top: 32px;
-}
-@media screen and (min-width: 1520px) {
-  .section-experience .col-content {
-    max-width: 625px;
-  }
 }
 .section-experience .col-content .tag {
   text-align: center;

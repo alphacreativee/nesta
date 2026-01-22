@@ -32,13 +32,13 @@
     z-index: 2;
     max-width: calc(calc(6 / 9) * 100%);
     background-color: rgba(255, 255, 255, 0.95);
-    transform: translateX(calc(-1 * calc(1 / 12) * 100% - 40px));
+    transform: translateX(calc(-1 * calc(2 / 12) * 100% - 40px));
     border-radius: 20px;
     padding: 40px;
     top: 32px;
-    @media screen and (min-width: 1520px) {
-      max-width: 625px;
-    }
+    // @media screen and (min-width: 1520px) {
+    //   max-width: 625px;
+    // }
     .tag {
       text-align: center;
     }
