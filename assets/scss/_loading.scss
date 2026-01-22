@@ -26,7 +26,7 @@
       mask-image: url("../../images/icons/intro-bg.png");
       mask-repeat: no-repeat;
       mask-position: center;
-      mask-size: 100% 100%;
+      mask-size: cover;
       transform: scale(var(--mask-scale));
       opacity: var(--mask-opacity);
       transition:
