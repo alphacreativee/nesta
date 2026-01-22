@@ -401,6 +401,10 @@ body {
   font-family: var(--font-body);
   color: var(--color-gray-2);
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+.booking-form-container form .dropdown-custom-item:hover {
+  color: var(--color-primary-3);
 }
 .booking-form-container form .booking-time {
   cursor: pointer;

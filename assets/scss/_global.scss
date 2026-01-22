@@ -183,6 +183,10 @@
           font-family: var(--font-body);
           color: var(--color-gray-2);
           font-weight: 500;
+          transition: color 0.3s ease;
+          &:hover {
+            color: var(--color-primary-3);
+          }
         }
       }
       .booking-time {
