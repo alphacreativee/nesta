@@ -38,11 +38,20 @@
         &-menu {
           position: absolute;
           top: 100%;
-          left: 0;
+          left: -16px;
           margin-top: 20px;
           opacity: 0;
           visibility: hidden;
           transition: all 0.3s ease;
+          background-color: var(--color-white);
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          &.dropdown--active {
+            opacity: 1;
+            visibility: visible;
+          }
         }
         &-item {
           display: flex;
@@ -55,7 +64,7 @@
             font-size: 13px;
             line-height: 20px;
             font-weight: 600;
-            color: var(--color-white);
+            color: var(--color-black);
           }
         }
       }

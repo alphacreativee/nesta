@@ -888,11 +888,20 @@ section.lightpick .lightpick__previous-action {
 #header .header-lang .dropdown-custom-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -16px;
   margin-top: 20px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  background-color: var(--color-white);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#header .header-lang .dropdown-custom-menu.dropdown--active {
+  opacity: 1;
+  visibility: visible;
 }
 #header .header-lang .dropdown-custom-item {
   display: flex;
@@ -905,7 +914,7 @@ section.lightpick .lightpick__previous-action {
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 #header .header-menu ul {
   display: flex;
