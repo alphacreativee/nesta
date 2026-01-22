@@ -163,6 +163,7 @@
                       justify-content: flex-end;
                       margin-bottom: 8px;
                       &.location-hotel {
+                        pointer-events: none;
                         &:hover {
                           color: var(--color-black) !important ;
                         }

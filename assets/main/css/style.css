@@ -1009,6 +1009,9 @@ section.lightpick .lightpick__previous-action {
   justify-content: flex-end;
   margin-bottom: 8px;
 }
+#header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a.location-hotel {
+  pointer-events: none;
+}
 #header .header-menu ul li.menu-item-has-children > a.menu-full-ks + .sub-menu > ul > li.menu-item-has-children a.location-hotel:hover {
   color: var(--color-black) !important;
 }
