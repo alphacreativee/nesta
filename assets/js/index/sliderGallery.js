@@ -3,6 +3,7 @@ export function sliderGallery() {
   if (!gallerySection) return;
 
   let isTransitioning = false;
+  let contentTimeout = null; // Thêm biến để track timeout
 
   const swiperThumbnails = new Swiper(".slider-thumbnail", {
     spaceBetween: 12,
@@ -35,18 +36,28 @@ export function sliderGallery() {
     },
     on: {
       slideChangeTransitionStart: function () {
-        if (isTransitioning) return;
-        isTransitioning = true;
+        // Clear timeout cũ nếu có
+        if (contentTimeout) {
+          clearTimeout(contentTimeout);
+          contentTimeout = null;
+        }
 
+        // Kill tất cả animation đang chạy
         const contentGroup = gallerySection.querySelector(
           ".content-thumbnail-group",
         );
+        if (contentGroup) {
+          gsap.killTweensOf(contentGroup.querySelectorAll("*"));
+        }
+
+        isTransitioning = true;
+
         if (!contentGroup) {
           isTransitioning = false;
           return;
         }
 
-        // Fade out nội dung cũ
+        // Fade out nội dung cũ nhanh hơn
         const currentElements = contentGroup.querySelectorAll(
           ".name-room, .description, a",
         );
@@ -55,12 +66,13 @@ export function sliderGallery() {
             autoAlpha: 0,
             y: -10,
             ease: "power2.in",
-            duration: 0.3,
-            stagger: 0.05,
+            duration: 0.2,
+            stagger: 0.03,
           });
         }
 
-        setTimeout(() => {
+        // Dùng biến timeout để có thể clear
+        contentTimeout = setTimeout(() => {
           const activeSlide = this.slides[this.activeIndex];
           const contentWrapper = activeSlide?.querySelector(
             ".thumbnail-content-wrapper",
@@ -93,8 +105,10 @@ export function sliderGallery() {
           const newDesc = contentGroup.querySelector(".description");
           const newLink = contentGroup.querySelector("a");
 
+          const animationPromises = [];
+
           if (newName) {
-            gsap.fromTo(
+            const tween = gsap.fromTo(
               newName,
               { autoAlpha: 0, y: 20 },
               {
@@ -105,9 +119,10 @@ export function sliderGallery() {
                 delay: 0.1,
               },
             );
+            animationPromises.push(tween);
           }
           if (newDesc) {
-            gsap.fromTo(
+            const tween = gsap.fromTo(
               newDesc,
               { autoAlpha: 0, y: 20 },
               {
@@ -118,9 +133,10 @@ export function sliderGallery() {
                 delay: 0.2,
               },
             );
+            animationPromises.push(tween);
           }
           if (newLink) {
-            gsap.fromTo(
+            const tween = gsap.fromTo(
               newLink,
               { autoAlpha: 0, y: 20 },
               {
@@ -129,13 +145,25 @@ export function sliderGallery() {
                 ease: "power2.out",
                 duration: 0.5,
                 delay: 0.3,
+                onComplete: () => {
+                  isTransitioning = false;
+                },
               },
             );
+            animationPromises.push(tween);
+          } else {
+            // Nếu không có link thì set lại flag sau animation cuối
+            setTimeout(() => {
+              isTransitioning = false;
+            }, 700);
           }
-        }, 350);
+        }, 250);
       },
       slideChangeTransitionEnd: function () {
-        isTransitioning = false;
+        // Backup: đảm bảo reset flag
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 100);
       },
     },
   });
@@ -179,7 +207,6 @@ export function sliderGallery() {
         trigger: ".slider-gallery",
         start: "top 50%",
         once: true,
-        // markers: true,
         onEnter: () => {
           if (initName) {
             gsap.to(initName, {
