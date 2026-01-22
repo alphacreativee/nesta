@@ -284,7 +284,8 @@ body {
   overflow: hidden;
 }
 .button-global:hover::before {
-  transform: translate3d(0, -5%, 0) scale3d(1, 1, 1);
+  transition: height 0.5s ease-in-out;
+  height: 170%;
 }
 .button-global:hover span {
   color: var(--color-white);
@@ -293,15 +294,14 @@ body {
   content: "";
   position: absolute;
   background-color: var(--color-black);
-  width: 130%;
+  width: 100%;
   height: 0;
-  padding-bottom: 130%;
-  top: -65%;
-  left: -15%;
-  border-radius: 50%;
-  transform: translate3d(0, 75%, 0) scale3d(0, 0, 0);
-  transition: transform 0.6s cubic-bezier(0.1, 0, 0.3, 1);
   z-index: 2;
+  transition: 0.5s;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  border-radius: 100% 100% 0 0/100% 100% 0 0;
 }
 .button-global span {
   position: relative;
