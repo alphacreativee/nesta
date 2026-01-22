@@ -282,9 +282,13 @@ export function animationItemsSection() {
   // fade each items
   const FADE_EASE = "ease";
   const LINE_EASE = "power1.out";
-  const ITEM_DURATION = 0.3;
+  let ITEM_DURATION = 0.3;
 
   gsap.utils.toArray("[section-fade-each-item]").forEach((section) => {
+    if (section.hasAttribute("data-item-duration")) {
+      ITEM_DURATION = parseFloat(section.getAttribute("data-item-duration"));
+    }
+
     const items = section.querySelectorAll("[data-fade-item]");
 
     const tl = gsap.timeline({
@@ -563,41 +567,73 @@ export function accommodationDetail() {
 export function sectionGallery() {
   if ($(".section-gallery").length < 1) return;
 
-  const lightbox = GLightbox({
-    touchNavigation: true,
-    loop: true,
-    autoplayVideos: true,
+  let tabLightbox = null;
+  let outsideLightbox = null;
 
-    onOpen: (instance) => {
-      // arrows
-      const prev = document.querySelector(".gprev");
-      const next = document.querySelector(".gnext");
+  function createLightbox(selector) {
+    if (!document.querySelector(`${selector} .glightbox`)) return null;
 
-      if (prev && !prev.classList.contains("custom")) {
-        prev.classList.add("custom");
-        prev.innerHTML = `
-          <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
-            <path
-              d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
-              stroke="currentColor"
-              stroke-linejoin="bevel"
-            />
-          </svg>
-        `;
-      }
+    return GLightbox({
+      selector: `${selector} .glightbox`,
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+      onOpen: handleCustomArrow
+    });
+  }
 
-      if (next && !next.classList.contains("custom")) {
-        next.classList.add("custom");
-        next.innerHTML = `
-          <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
-            <path
-              d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
-              stroke="currentColor"
-              stroke-linejoin="bevel"
-            />
-          </svg>
-        `;
-      }
+  outsideLightbox = createLightbox(".section-gallery");
+
+  function initTabLightbox(selector) {
+    if (tabLightbox) {
+      tabLightbox.destroy();
+      tabLightbox = null;
     }
+
+    tabLightbox = createLightbox(selector);
+  }
+
+  // Init tab active
+  const activeTab = document.querySelector(".tab-pane.active.show");
+  if (activeTab) {
+    initTabLightbox(`#${activeTab.id}`);
+  }
+
+  // On tab change
+  document.querySelectorAll('[data-bs-toggle="tab"]').forEach((btn) => {
+    btn.addEventListener("shown.bs.tab", (e) => {
+      initTabLightbox(e.target.getAttribute("data-bs-target"));
+    });
   });
+
+  function handleCustomArrow() {
+    const prev = document.querySelector(".gprev");
+    const next = document.querySelector(".gnext");
+
+    if (prev && !prev.classList.contains("custom")) {
+      prev.classList.add("custom");
+      prev.innerHTML = `
+        <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
+          <path
+            d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+            stroke="currentColor"
+            stroke-linejoin="bevel"
+          />
+        </svg>
+      `;
+    }
+
+    if (next && !next.classList.contains("custom")) {
+      next.classList.add("custom");
+      next.innerHTML = `
+        <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
+          <path
+            d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+            stroke="currentColor"
+            stroke-linejoin="bevel"
+          />
+        </svg>
+      `;
+    }
+  }
 }

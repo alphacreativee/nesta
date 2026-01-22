@@ -294,18 +294,23 @@
           </div>
         </div>
       </section>
-      <section class="accommodation-detail">
+      <section class="accommodation-detail" section-fade-each-item>
         <div class="section-wrapper row g-0">
           <div class="col-lg-6 col-md-12 col-left">
-            <h2 class="title heading-1 color-black">Nesta The Grand Haonam</h2>
-            <div class="desc body-1 color-black">
-              Tọa lạc tại vị trí đắc địa trên tuyến phố Hào Nam sầm uất, Nesta –
-              The Grand Haonam là tổ hợp hiện đại bao gồm trung tâm thương mại,
-              văn phòng, căn hộ cao cấp và nhà ở thấp tầng. Không chỉ mang đến
-              không gian sống tiện nghi, dự án còn kết nối dễ dàng đến các khu
-              vực thương mại, văn hóa.
+            <div data-fade-item>
+              <h2 class="title heading-1 color-black">
+                Nesta The Grand Haonam
+              </h2>
+              <div class="desc body-1 color-black">
+                Tọa lạc tại vị trí đắc địa trên tuyến phố Hào Nam sầm uất, Nesta
+                – The Grand Haonam là tổ hợp hiện đại bao gồm trung tâm thương
+                mại, văn phòng, căn hộ cao cấp và nhà ở thấp tầng. Không chỉ
+                mang đến không gian sống tiện nghi, dự án còn kết nối dễ dàng
+                đến các khu vực thương mại, văn hóa.
+              </div>
             </div>
-            <ul class="contact body-1 color-black">
+
+            <ul class="contact body-1 color-black" data-fade-item>
               <li>
                 <div class="icon">
                   <img
@@ -333,7 +338,7 @@
                 >
               </li>
             </ul>
-            <div class="facilities body-1 color-black">
+            <div class="facilities body-1 color-black" data-fade-item>
               <h4>TIỆN ÍCH CHUNG</h4>
               <div class="facilities-wrapper">
                 <ul class="facilities-main facilities-list">
@@ -495,7 +500,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-right">
+          <div class="col-lg-6 col-md-12 col-right" data-fade-item>
             <div class="swiper" slider-parallax slider-arrow slider-autoplay>
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -1767,7 +1772,7 @@
         <!-- Khu vực hiển thị nội dung động (tên + mô tả + link) -->
         <div class="content-thumbnail-group"></div>
       </section>
-      <section class="section-gallery">
+      <section class="section-gallery" section-fade-each-item>
         <div class="section-wrapper">
           <div
             class="section-top d-flex align-items-center justify-content-between"
@@ -1808,6 +1813,7 @@
               data-type="image"
               data-effect="fade"
               data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
             >
               <img src="./assets/images/del/gallery-thumbnail-1.webp" alt="" />
             </a>
@@ -1819,6 +1825,7 @@
               data-type="image"
               data-effect="fade"
               data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
             >
               <img src="./assets/images/del/gallery-thumbnail-2.webp" alt="" />
             </a>
@@ -1830,6 +1837,7 @@
               data-type="image"
               data-effect="fade"
               data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
             >
               <img src="./assets/images/del/gallery-thumbnail-3.webp" alt="" />
             </a>
@@ -1841,6 +1849,7 @@
               data-type="image"
               data-effect="fade"
               data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
             >
               <img src="./assets/images/del/gallery-thumbnail-4.webp" alt="" />
             </a>
@@ -1852,6 +1861,7 @@
               data-type="image"
               data-effect="fade"
               data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
             >
               <img src="./assets/images/del/gallery-thumbnail-5.webp" alt="" />
             </a>
@@ -1863,6 +1873,7 @@
               data-type="image"
               data-effect="fade"
               data-sizes="(max-width: 767px) 480px, 850px"
+              data-fade-item
             >
               <img src="./assets/images/del/gallery-thumbnail-6.webp" alt="" />
             </a>
@@ -1901,137 +1912,293 @@
               </svg>
             </button>
             <div class="modal-body">
-              <div class="filter-section">
-                <div class="filter-list-button d-flex">
-                  <div
-                    class="filter-button active btn-body-font color-black"
-                    data-type="all"
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active btn-body-font color-black"
+                    id="gallery-tab-1"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-1"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-1"
+                    aria-selected="true"
                   >
                     Tất cả
-                  </div>
-                  <div
-                    class="filter-button btn-body-font color-black"
-                    data-type="type-1"
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-2"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-2"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-2"
+                    aria-selected="false"
                   >
                     Tổng quan
-                  </div>
-                  <div
-                    class="filter-button btn-body-font color-black"
-                    data-type="type-2"
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-3"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-3"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-3"
+                    aria-selected="false"
                   >
                     Phòng nghỉ
-                  </div>
-                  <div
-                    class="filter-button btn-body-font color-black"
-                    data-type="type-3"
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-4"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-4"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-4"
+                    aria-selected="false"
                   >
                     Sân vườn
-                  </div>
-                  <div
-                    class="filter-button btn-body-font color-black"
-                    data-type="type-4"
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-5"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-5"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-5"
+                    aria-selected="false"
                   >
                     Nhà hàng
-                  </div>
-                  <div
-                    class="filter-button btn-body-font color-black"
-                    data-type="type-5"
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link btn-body-font color-black"
+                    id="gallery-tab-6"
+                    data-bs-toggle="tab"
+                    data-bs-target="#gallery-6"
+                    type="button"
+                    role="tab"
+                    aria-controls="gallery-6"
+                    aria-selected="false"
                   >
                     Hồ bơi
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div
+                  class="tab-pane fade show active"
+                  id="gallery-1"
+                  role="tabpanel"
+                >
+                  <div class="gallery-grid">
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-1.webp"
+                      data-title="My title"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-1.webp"
+                        alt=""
+                      />
+                    </a>
+
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-3.webp"
+                      data-title="My title 3"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-3.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      data-title="My title 2"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox item-video"
+                      data-type="video"
+                      data-source="mp4"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <div class="icon-play">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="8.5"
+                          fill="none"
+                          overflow="visible"
+                        >
+                          <path
+                            d="M 0 0 L 0 8.5 L 6 4.5 Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </div>
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-2.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-4.webp"
+                      data-title="My title 4"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-4.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-5.webp"
+                      data-title="My title 5"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-5.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-6.webp"
+                      data-title="My title 6"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-6.webp"
+                        alt=""
+                      />
+                    </a>
                   </div>
                 </div>
-              </div>
-              <div class="gallery-grid filter-section-result">
-                <a
-                  href="./assets/images/del/gallery-thumbnail-1.webp"
-                  data-title="My title"
-                  data-desc-position="center"
-                  class="gallery-grid__item glightbox filter-item"
-                  data-type="image"
-                  data-effect="fade"
-                  data-sizes="(max-width: 767px) 480px, 850px"
-                  data-filter="type-1"
-                >
-                  <img
-                    src="./assets/images/del/gallery-thumbnail-1.webp"
-                    alt=""
-                  />
-                </a>
-                <a
-                  href="./assets/images/del/gallery-thumbnail-2.webp"
-                  data-title="My title 2"
-                  data-desc-position="center"
-                  class="gallery-grid__item glightbox filter-item"
-                  data-type="image"
-                  data-effect="fade"
-                  data-sizes="(max-width: 767px) 480px, 850px"
-                  data-filter="type-1"
-                >
-                  <img
-                    src="./assets/images/del/gallery-thumbnail-2.webp"
-                    alt=""
-                  />
-                </a>
-                <a
-                  href="./assets/images/del/gallery-thumbnail-3.webp"
-                  data-title="My title 3"
-                  data-desc-position="center"
-                  class="gallery-grid__item glightbox filter-item"
-                  data-type="image"
-                  data-effect="fade"
-                  data-sizes="(max-width: 767px) 480px, 850px"
-                  data-filter="type-2"
-                >
-                  <img
-                    src="./assets/images/del/gallery-thumbnail-3.webp"
-                    alt=""
-                  />
-                </a>
-                <a
-                  href="./assets/images/del/gallery-thumbnail-4.webp"
-                  data-title="My title 4"
-                  data-desc-position="center"
-                  class="gallery-grid__item glightbox filter-item"
-                  data-type="image"
-                  data-effect="fade"
-                  data-sizes="(max-width: 767px) 480px, 850px"
-                  data-filter="type-2"
-                >
-                  <img
-                    src="./assets/images/del/gallery-thumbnail-4.webp"
-                    alt=""
-                  />
-                </a>
-                <a
-                  href="./assets/images/del/gallery-thumbnail-5.webp"
-                  data-title="My title 5"
-                  data-desc-position="center"
-                  class="gallery-grid__item glightbox filter-item"
-                  data-type="image"
-                  data-effect="fade"
-                  data-sizes="(max-width: 767px) 480px, 850px"
-                  data-filter="type-3"
-                >
-                  <img
-                    src="./assets/images/del/gallery-thumbnail-5.webp"
-                    alt=""
-                  />
-                </a>
-                <a
-                  href="./assets/images/del/gallery-thumbnail-6.webp"
-                  data-title="My title 6"
-                  data-desc-position="center"
-                  class="gallery-grid__item glightbox filter-item"
-                  data-type="image"
-                  data-effect="fade"
-                  data-sizes="(max-width: 767px) 480px, 850px"
-                  data-filter="type-1"
-                >
-                  <img
-                    src="./assets/images/del/gallery-thumbnail-6.webp"
-                    alt=""
-                  />
-                </a>
+                <div class="tab-pane fade" id="gallery-2" role="tabpanel">
+                  <div class="gallery-grid">
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-1.webp"
+                      data-title="My title"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-1.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-2.webp"
+                      data-title="My title 2"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-2.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-3.webp"
+                      data-title="My title 3"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-3.webp"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="gallery-3" role="tabpanel">
+                  <div class="gallery-grid">
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-4.webp"
+                      data-title="My title 4"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-4.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-5.webp"
+                      data-title="My title 5"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-5.webp"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="./assets/images/del/gallery-thumbnail-6.webp"
+                      data-title="My title 6"
+                      data-desc-position="center"
+                      class="gallery-grid__item glightbox"
+                      data-type="image"
+                      data-effect="fade"
+                      data-sizes="(max-width: 767px) 480px, 850px"
+                    >
+                      <img
+                        src="./assets/images/del/gallery-thumbnail-6.webp"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

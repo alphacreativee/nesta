@@ -18,6 +18,26 @@
       overflow: hidden;
       cursor: pointer;
 
+      &.item-video {
+        position: relative;
+
+        .icon-play {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: var(--color-primary-3);
+          color: var(--color-white);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+        }
+      }
+
       &:hover {
         img {
           transform: scale(1.03);
@@ -193,45 +213,56 @@
     background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat
       center;
     background-size: cover;
-
     display: flex;
     flex-direction: column;
     position: unset;
-
     overflow-y: scroll;
 
-    .filter {
-      &-section {
-        position: absolute;
-        top: 16px;
-        right: 80px;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-primary-3);
+      border-radius: 10px;
+
+      &:hover {
+        background: var(--color-primary-2);
       }
+    }
 
-      &-list-button {
-        gap: 8px;
+    .nav-tabs {
+      gap: 8px;
+      border: none;
 
-        .filter-button {
-          padding: 8px 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 20px;
-          margin: 0;
-          border: none;
-          transition: all 0.4s ease;
-          cursor: pointer;
-          background-color: var(--color-white);
+      position: absolute;
+      top: 16px;
+      right: 80px;
+      z-index: 3;
 
-          &.active,
-          &:hover {
-            background-color: var(--color-black);
-            color: var(--color-white);
-            // pointer-events: none;
-          }
+      .nav-link {
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        margin: 0;
+        background-color: var(--color-white);
+        transition: all 0.4s ease;
+        border: none;
 
-          &.active {
-            pointer-events: none;
-          }
+        &.active,
+        &:hover {
+          color: var(--color-white);
+          background-color: var(--color-black);
+        }
+
+        &.active {
+          pointer-events: none;
         }
       }
     }
@@ -244,6 +275,27 @@
       &__item {
         overflow: hidden;
         cursor: pointer;
+        border-radius: 12px;
+
+        &.item-video {
+          position: relative;
+
+          .icon-play {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-primary-3);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+          }
+        }
 
         &:nth-child(6n + 1) {
           grid-column: span 5;

@@ -2565,6 +2565,24 @@ section.lightpick .lightpick__previous-action {
   overflow: hidden;
   cursor: pointer;
 }
+.section-gallery .gallery-grid__item.item-video {
+  position: relative;
+}
+.section-gallery .gallery-grid__item.item-video .icon-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary-3);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
 .section-gallery .gallery-grid__item:hover img {
   transform: scale(1.03);
 }
@@ -2717,31 +2735,43 @@ section.lightpick .lightpick__previous-action {
   position: unset;
   overflow-y: scroll;
 }
-#modal-gallery .modal-body .filter-section {
+#modal-gallery .modal-body::-webkit-scrollbar {
+  width: 3px;
+}
+#modal-gallery .modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+#modal-gallery .modal-body::-webkit-scrollbar-thumb {
+  background: var(--color-primary-3);
+  border-radius: 10px;
+}
+#modal-gallery .modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-2);
+}
+#modal-gallery .modal-body .nav-tabs {
+  gap: 8px;
+  border: none;
   position: absolute;
   top: 16px;
   right: 80px;
+  z-index: 3;
 }
-#modal-gallery .modal-body .filter-list-button {
-  gap: 8px;
-}
-#modal-gallery .modal-body .filter-list-button .filter-button {
+#modal-gallery .modal-body .nav-tabs .nav-link {
   padding: 8px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   margin: 0;
-  border: none;
-  transition: all 0.4s ease;
-  cursor: pointer;
   background-color: var(--color-white);
+  transition: all 0.4s ease;
+  border: none;
 }
-#modal-gallery .modal-body .filter-list-button .filter-button.active, #modal-gallery .modal-body .filter-list-button .filter-button:hover {
-  background-color: var(--color-black);
+#modal-gallery .modal-body .nav-tabs .nav-link.active, #modal-gallery .modal-body .nav-tabs .nav-link:hover {
   color: var(--color-white);
+  background-color: var(--color-black);
 }
-#modal-gallery .modal-body .filter-list-button .filter-button.active {
+#modal-gallery .modal-body .nav-tabs .nav-link.active {
   pointer-events: none;
 }
 #modal-gallery .modal-body .gallery-grid {
@@ -2752,6 +2782,25 @@ section.lightpick .lightpick__previous-action {
 #modal-gallery .modal-body .gallery-grid__item {
   overflow: hidden;
   cursor: pointer;
+  border-radius: 12px;
+}
+#modal-gallery .modal-body .gallery-grid__item.item-video {
+  position: relative;
+}
+#modal-gallery .modal-body .gallery-grid__item.item-video .icon-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-primary-3);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 #modal-gallery .modal-body .gallery-grid__item:nth-child(6n+1) {
   grid-column: span 5;

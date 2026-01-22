@@ -5,8 +5,6 @@ export function createFilterTab() {
 
     section.querySelectorAll(".filter-button[data-type]").forEach((btn) => {
       btn.addEventListener("click", function () {
-        console.log("123");
-
         section
           .querySelectorAll(".filter-button")
           .forEach((b) => b.classList.remove("active"));
