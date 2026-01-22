@@ -2289,6 +2289,9 @@ section.lightpick .lightpick__previous-action {
   transition: color 0.3s ease;
 }
 
+#locationModal .modal-content {
+  border: 0;
+}
 #locationModal .modal-title {
   font-size: 20px;
   line-height: 28px;
@@ -2380,6 +2383,9 @@ section.lightpick .lightpick__previous-action {
 }
 #locationModal .location-popup-list .location-popup-item:hover .location-image img {
   transform: scale(1.03);
+}
+#locationModal .location-popup-list .location-popup-item:hover .location-info .time {
+  color: rgba(0, 0, 0, 0.5);
 }
 #locationModal .location-popup-list .location-popup-item .location-image {
   overflow: hidden;
