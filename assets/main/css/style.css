@@ -1151,7 +1151,7 @@ section.lightpick .lightpick__previous-action {
   position: relative;
 }
 .news-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .news-item:hover .content-title {
   color: var(--color-primary-3);
@@ -1469,7 +1469,7 @@ section.lightpick .lightpick__previous-action {
   stroke: var(--color-primary-3);
 }
 .hotel-filter__item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .hotel-filter__item .image {
   width: 100%;
