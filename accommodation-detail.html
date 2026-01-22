@@ -1274,9 +1274,6 @@
             class="section-top d-flex align-items-center justify-content-between"
           >
             <h2 class="title heading-1 effect-line">ƯU ĐÃI NỔI BẬT</h2>
-            <div class="btn-wrapper data-fade-in">
-              <a href="#" class="btn text-uppercase color-black">Xem thêm</a>
-            </div>
           </div>
           <div class="offer-main">
             <div class="offer-slider slider-with-shadow position-relative">
@@ -1775,7 +1772,12 @@
           >
             <h2 class="title heading-1 effect-line">THƯ VIỆN</h2>
             <div class="btn-wrapper data-fade-in">
-              <a href="#" class="btn-arrow text-uppercase color-black">
+              <div
+                class="btn-arrow text-uppercase color-black"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-gallery"
+              >
                 <span>xem tất cả</span>
                 <div class="icon">
                   <svg
@@ -1792,31 +1794,249 @@
                     />
                   </svg>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
           <div class="gallery-grid">
-            <div class="gallery-grid__item">
+            <a
+              href="./assets/images/del/gallery-thumbnail-1.webp"
+              data-title="My title"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+            >
               <img src="./assets/images/del/gallery-thumbnail-1.webp" alt="" />
-            </div>
-            <div class="gallery-grid__item">
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-2.webp"
+              data-title="My title 2"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+            >
               <img src="./assets/images/del/gallery-thumbnail-2.webp" alt="" />
-            </div>
-            <div class="gallery-grid__item">
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-3.webp"
+              data-title="My title 3"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+            >
               <img src="./assets/images/del/gallery-thumbnail-3.webp" alt="" />
-            </div>
-            <div class="gallery-grid__item">
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-4.webp"
+              data-title="My title 4"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+            >
               <img src="./assets/images/del/gallery-thumbnail-4.webp" alt="" />
-            </div>
-            <div class="gallery-grid__item">
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-5.webp"
+              data-title="My title 5"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+            >
               <img src="./assets/images/del/gallery-thumbnail-5.webp" alt="" />
-            </div>
-            <div class="gallery-grid__item">
+            </a>
+            <a
+              href="./assets/images/del/gallery-thumbnail-6.webp"
+              data-title="My title 6"
+              data-desc-position="center"
+              class="gallery-grid__item glightbox"
+              data-type="image"
+              data-effect="fade"
+              data-sizes="(max-width: 767px) 480px, 850px"
+            >
               <img src="./assets/images/del/gallery-thumbnail-6.webp" alt="" />
-            </div>
+            </a>
           </div>
         </div>
       </section>
+
+      <!-- modal gallery -->
+      <div
+        class="modal fade"
+        id="modal-gallery"
+        tabindex="-1"
+        aria-hidden="true"
+        data-lenis-prevent
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="button-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 20.5C15.1538 19.1364 19.3077 14.3636 19.3077 13M11 20.5C15.1538 21.8636 19.3077 26.6364 19.3077 28M11 20.5H29"
+                  stroke="currentColor"
+                  stroke-linejoin="bevel"
+                />
+              </svg>
+            </button>
+            <div class="modal-body">
+              <div class="filter-section">
+                <div class="filter-list-button d-flex">
+                  <div
+                    class="filter-button active btn-body-font color-black"
+                    data-type="all"
+                  >
+                    Tất cả
+                  </div>
+                  <div
+                    class="filter-button btn-body-font color-black"
+                    data-type="type-1"
+                  >
+                    Tổng quan
+                  </div>
+                  <div
+                    class="filter-button btn-body-font color-black"
+                    data-type="type-2"
+                  >
+                    Phòng nghỉ
+                  </div>
+                  <div
+                    class="filter-button btn-body-font color-black"
+                    data-type="type-3"
+                  >
+                    Sân vườn
+                  </div>
+                  <div
+                    class="filter-button btn-body-font color-black"
+                    data-type="type-4"
+                  >
+                    Nhà hàng
+                  </div>
+                  <div
+                    class="filter-button btn-body-font color-black"
+                    data-type="type-5"
+                  >
+                    Hồ bơi
+                  </div>
+                </div>
+              </div>
+              <div class="gallery-grid filter-section-result">
+                <a
+                  href="./assets/images/del/gallery-thumbnail-1.webp"
+                  data-title="My title"
+                  data-desc-position="center"
+                  class="gallery-grid__item glightbox filter-item"
+                  data-type="image"
+                  data-effect="fade"
+                  data-sizes="(max-width: 767px) 480px, 850px"
+                  data-filter="type-1"
+                >
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-1.webp"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="./assets/images/del/gallery-thumbnail-2.webp"
+                  data-title="My title 2"
+                  data-desc-position="center"
+                  class="gallery-grid__item glightbox filter-item"
+                  data-type="image"
+                  data-effect="fade"
+                  data-sizes="(max-width: 767px) 480px, 850px"
+                  data-filter="type-1"
+                >
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-2.webp"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="./assets/images/del/gallery-thumbnail-3.webp"
+                  data-title="My title 3"
+                  data-desc-position="center"
+                  class="gallery-grid__item glightbox filter-item"
+                  data-type="image"
+                  data-effect="fade"
+                  data-sizes="(max-width: 767px) 480px, 850px"
+                  data-filter="type-2"
+                >
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-3.webp"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="./assets/images/del/gallery-thumbnail-4.webp"
+                  data-title="My title 4"
+                  data-desc-position="center"
+                  class="gallery-grid__item glightbox filter-item"
+                  data-type="image"
+                  data-effect="fade"
+                  data-sizes="(max-width: 767px) 480px, 850px"
+                  data-filter="type-2"
+                >
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-4.webp"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="./assets/images/del/gallery-thumbnail-5.webp"
+                  data-title="My title 5"
+                  data-desc-position="center"
+                  class="gallery-grid__item glightbox filter-item"
+                  data-type="image"
+                  data-effect="fade"
+                  data-sizes="(max-width: 767px) 480px, 850px"
+                  data-filter="type-3"
+                >
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-5.webp"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="./assets/images/del/gallery-thumbnail-6.webp"
+                  data-title="My title 6"
+                  data-desc-position="center"
+                  class="gallery-grid__item glightbox filter-item"
+                  data-type="image"
+                  data-effect="fade"
+                  data-sizes="(max-width: 767px) 480px, 850px"
+                  data-filter="type-1"
+                >
+                  <img
+                    src="./assets/images/del/gallery-thumbnail-6.webp"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
       <section class="destination-location">
         <h2 class="destination-title effect-line heading-1">vị trí điểm đến</h2>
         <div class="destination-wrapper">

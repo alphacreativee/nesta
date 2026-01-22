@@ -34,3 +34,260 @@
     }
   }
 }
+
+.glightbox {
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ginner-container {
+      width: 850px;
+      flex-direction: column;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .gslide-media {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .gcontainer {
+      width: 850px;
+      height: auto;
+      margin: auto;
+      overflow: visible;
+    }
+
+    .glightbox-pagination {
+      position: absolute;
+      z-index: 3;
+      right: 16px;
+      bottom: 16px;
+    }
+
+    .gslide-description {
+      background-color: transparent;
+      width: max-content;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 16px;
+      z-index: 3;
+    }
+
+    .gslide-title {
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      color: var(--color-white);
+    }
+
+    .gslider {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .gdesc-inner {
+      padding: 0;
+    }
+
+    .gnext,
+    .gprev {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-white);
+      color: var(--color-white);
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(50%);
+      transition: all 0.4s ease;
+
+      svg {
+        width: 13px;
+      }
+
+      &:hover {
+        background-color: var(--color-primary-3);
+        border-color: var(--color-primary-3);
+        color: var(--color-white);
+      }
+    }
+
+    .gprev {
+      left: -20px;
+      transform: translate(-100%, -50%);
+
+      svg {
+        transform: scaleX(-1);
+      }
+    }
+
+    .gnext {
+      right: -20px;
+      transform: translate(100%, -50%);
+    }
+
+    .gclose {
+      opacity: 1;
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(225, 225, 225, 0.3);
+      border-radius: 50%;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background-color: var(--color-primary-3);
+        border-color: var(--color-primary-3);
+        color: var(--color-white);
+      }
+
+      svg {
+        width: 12px;
+      }
+    }
+  }
+}
+
+#modal-gallery {
+  height: 100vh;
+  overflow: hidden;
+
+  .button-close {
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    color: var(--color-black);
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: var(--color-primary-3);
+    }
+  }
+
+  .modal-content {
+    border: none;
+    border-radius: unset;
+    height: 100vh;
+  }
+
+  .modal-body {
+    padding: 100px 80px;
+    display: flex;
+    width: 100%;
+    background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat
+      center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    position: unset;
+
+    overflow-y: scroll;
+
+    .filter {
+      &-section {
+        position: absolute;
+        top: 16px;
+        right: 80px;
+      }
+
+      &-list-button {
+        gap: 8px;
+
+        .filter-button {
+          padding: 8px 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 20px;
+          margin: 0;
+          border: none;
+          transition: all 0.4s ease;
+          cursor: pointer;
+          background-color: var(--color-white);
+
+          &.active,
+          &:hover {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            // pointer-events: none;
+          }
+
+          &.active {
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+
+      &__item {
+        overflow: hidden;
+        cursor: pointer;
+
+        &:nth-child(6n + 1) {
+          grid-column: span 5;
+        }
+
+        &:nth-child(6n + 2) {
+          grid-column: span 3;
+        }
+
+        &:nth-child(6n + 3) {
+          grid-column: span 4;
+        }
+
+        &:nth-child(6n + 4) {
+          grid-column: span 4;
+        }
+
+        &:nth-child(6n + 5) {
+          grid-column: span 3;
+        }
+
+        &:nth-child(6n + 6) {
+          grid-column: span 5;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+}

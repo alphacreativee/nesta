@@ -2469,3 +2469,213 @@ section.lightpick .lightpick__previous-action {
   object-fit: cover;
   transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
 }
+
+.glightbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.glightbox-container .ginner-container {
+  width: 850px;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.glightbox-container .gslide-media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.glightbox-container .gcontainer {
+  width: 850px;
+  height: auto;
+  margin: auto;
+  overflow: visible;
+}
+.glightbox-container .glightbox-pagination {
+  position: absolute;
+  z-index: 3;
+  right: 16px;
+  bottom: 16px;
+}
+.glightbox-container .gslide-description {
+  background-color: transparent;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  z-index: 3;
+}
+.glightbox-container .gslide-title {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--color-white);
+}
+.glightbox-container .gslider {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.glightbox-container .gdesc-inner {
+  padding: 0;
+}
+.glightbox-container .gnext,
+.glightbox-container .gprev {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  transition: all 0.4s ease;
+}
+.glightbox-container .gnext svg,
+.glightbox-container .gprev svg {
+  width: 13px;
+}
+.glightbox-container .gnext:hover,
+.glightbox-container .gprev:hover {
+  background-color: var(--color-primary-3);
+  border-color: var(--color-primary-3);
+  color: var(--color-white);
+}
+.glightbox-container .gprev {
+  left: -20px;
+  transform: translate(-100%, -50%);
+}
+.glightbox-container .gprev svg {
+  transform: scaleX(-1);
+}
+.glightbox-container .gnext {
+  right: -20px;
+  transform: translate(100%, -50%);
+}
+.glightbox-container .gclose {
+  opacity: 1;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(225, 225, 225, 0.3);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+.glightbox-container .gclose:hover {
+  background-color: var(--color-primary-3);
+  border-color: var(--color-primary-3);
+  color: var(--color-white);
+}
+.glightbox-container .gclose svg {
+  width: 12px;
+}
+
+#modal-gallery {
+  height: 100vh;
+  overflow: hidden;
+}
+#modal-gallery .button-close {
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  color: var(--color-black);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+#modal-gallery .button-close:hover {
+  color: var(--color-primary-3);
+}
+#modal-gallery .modal-content {
+  border: none;
+  border-radius: unset;
+  height: 100vh;
+}
+#modal-gallery .modal-body {
+  padding: 100px 80px;
+  display: flex;
+  width: 100%;
+  background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  position: unset;
+  overflow-y: scroll;
+}
+#modal-gallery .modal-body .filter-section {
+  position: absolute;
+  top: 16px;
+  right: 80px;
+}
+#modal-gallery .modal-body .filter-list-button {
+  gap: 8px;
+}
+#modal-gallery .modal-body .filter-list-button .filter-button {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0;
+  border: none;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background-color: var(--color-white);
+}
+#modal-gallery .modal-body .filter-list-button .filter-button.active, #modal-gallery .modal-body .filter-list-button .filter-button:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+#modal-gallery .modal-body .filter-list-button .filter-button.active {
+  pointer-events: none;
+}
+#modal-gallery .modal-body .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+#modal-gallery .modal-body .gallery-grid__item {
+  overflow: hidden;
+  cursor: pointer;
+}
+#modal-gallery .modal-body .gallery-grid__item:nth-child(6n+1) {
+  grid-column: span 5;
+}
+#modal-gallery .modal-body .gallery-grid__item:nth-child(6n+2) {
+  grid-column: span 3;
+}
+#modal-gallery .modal-body .gallery-grid__item:nth-child(6n+3) {
+  grid-column: span 4;
+}
+#modal-gallery .modal-body .gallery-grid__item:nth-child(6n+4) {
+  grid-column: span 4;
+}
+#modal-gallery .modal-body .gallery-grid__item:nth-child(6n+5) {
+  grid-column: span 3;
+}
+#modal-gallery .modal-body .gallery-grid__item:nth-child(6n+6) {
+  grid-column: span 5;
+}
+#modal-gallery .modal-body .gallery-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+}
+#modal-gallery .modal-body .gallery-grid__item:hover img {
+  transform: scale(1.03);
+}
+#modal-gallery .modal-dialog {
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+}

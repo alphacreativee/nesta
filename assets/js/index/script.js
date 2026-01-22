@@ -12,7 +12,8 @@ import {
   ctaRun,
   scrollToTop,
   initGuestSelector,
-  accommodationDetail
+  accommodationDetail,
+  sectionGallery
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -67,6 +68,7 @@ const init = () => {
   sliderParallax();
   sliderGallery();
   accommodationDetail();
+  sectionGallery();
 };
 preloadImages("img").then(() => {
   init();
