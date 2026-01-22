@@ -289,6 +289,13 @@
               justify-content: center;
               align-items: center;
               cursor: pointer;
+              transition: all 0.4s ease;
+
+              &:hover {
+                border-color: var(--color-primary-3);
+                background-color: var(--color-primary-3);
+                color: var(--color-white);
+              }
             }
             .val {
               width: 10px;

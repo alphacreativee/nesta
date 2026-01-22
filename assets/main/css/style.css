@@ -502,6 +502,13 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.4s ease;
+}
+.booking-form-container form .select-people .select-box .select .min:hover,
+.booking-form-container form .select-people .select-box .select .plus:hover {
+  border-color: var(--color-primary-3);
+  background-color: var(--color-primary-3);
+  color: var(--color-white);
 }
 .booking-form-container form .select-people .select-box .select .val {
   width: 10px;
