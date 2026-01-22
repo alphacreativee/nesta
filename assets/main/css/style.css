@@ -1118,6 +1118,7 @@ section.lightpick .lightpick__previous-action {
 
 .news-wrapper {
   padding: 80px;
+  background-color: var(--color-secondary-1);
 }
 .news-wrapper .section-top {
   margin-bottom: 48px;
@@ -1307,10 +1308,10 @@ section.lightpick .lightpick__previous-action {
 }
 
 .section-experience {
-  background-color: var(--color-secondary-2);
+  background-color: var(--color-secondary-1);
 }
 .section-experience .section-wrapper {
-  padding: 80px;
+  padding: 40px 80px;
 }
 .section-experience .col-image {
   max-width: 66.6666666667%;
