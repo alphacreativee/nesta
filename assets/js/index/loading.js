@@ -1,9 +1,9 @@
 export function loading() {
   if (!document.querySelector("#loading")) return;
   const tl = gsap.timeline();
-  tl.to("#loading .loading-video", {
-    "--mask-scale": 3.5,
-    "--mask-opacity": 0,
+  tl.to("#loading .loading-logo", {
+    opacity: 0,
+    scale: 3.5,
     duration: 1.5,
     ease: "power2.inOut",
   });
