@@ -132,6 +132,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: var(--color-primary-3);
+  color: var(--color-white);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -401,6 +406,10 @@ body {
   font-family: var(--font-body);
   color: var(--color-gray-2);
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+.booking-form-container form .dropdown-custom-item:hover {
+  color: var(--color-primary-3);
 }
 .booking-form-container form .booking-time {
   cursor: pointer;
@@ -888,11 +897,20 @@ section.lightpick .lightpick__previous-action {
 #header .header-lang .dropdown-custom-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -16px;
   margin-top: 20px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  background-color: var(--color-white);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#header .header-lang .dropdown-custom-menu.dropdown--active {
+  opacity: 1;
+  visibility: visible;
 }
 #header .header-lang .dropdown-custom-item {
   display: flex;
@@ -905,7 +923,7 @@ section.lightpick .lightpick__previous-action {
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 #header .header-menu ul {
   display: flex;
@@ -2507,12 +2525,6 @@ section.lightpick .lightpick__previous-action {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4px 40px;
-}
-#locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-9), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-8), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-7), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-6), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-5) {
-  margin-bottom: 0;
-}
-#locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-4), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-3), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-2), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-1), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n) {
-  margin-bottom: 0;
 }
 #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n) {
   margin-bottom: 20px;
