@@ -2231,6 +2231,7 @@ section.lightpick .lightpick__previous-action {
   align-items: center;
   gap: 8px;
   margin-top: auto;
+  width: max-content;
 }
 .slider-gallery .content-thumbnail-group a span {
   font-size: 13px;
