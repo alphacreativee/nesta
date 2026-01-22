@@ -2746,13 +2746,13 @@ section.lightpick .lightpick__previous-action {
   border: none;
   border-radius: unset;
   height: 100vh;
+  background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat center;
+  background-size: cover;
 }
 #modal-gallery .modal-body {
   padding: 100px 80px;
   display: flex;
   width: 100%;
-  background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat center;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   position: unset;
