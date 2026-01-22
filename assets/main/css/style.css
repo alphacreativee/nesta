@@ -285,7 +285,7 @@ body {
 }
 .button-global:hover::before {
   transition: height 0.5s ease-in-out;
-  height: 170%;
+  height: 200%;
 }
 .button-global:hover span {
   color: var(--color-white);
