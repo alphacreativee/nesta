@@ -14,8 +14,10 @@
         .cta-global + .cta-list {
           opacity: 1;
           visibility: visible;
+          transition-delay: 0s;
           .cta-item {
-            transform: scale(1) translateY(0%);
+            transform: translateY(0) scale(1);
+            opacity: 1;
           }
         }
       }
@@ -30,7 +32,10 @@
       gap: 12px;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3 ease;
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+      transition-delay: 0.3s;
     }
     &-item {
       width: 54px;
@@ -40,13 +45,34 @@
       justify-content: center;
       align-items: center;
       background-color: var(--color-primary-2);
-      transition: all 0.3s ease;
-      transform: scale(0) translateY(-100%);
-      transform-origin: bottom;
+      transform: translateY(30px) scale(0);
+      transform-origin: center;
+      opacity: 0;
+      transition:
+        transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        opacity 0.4s ease;
+
+      &:nth-child(1) {
+        transition-delay: 0.2s;
+      }
+      &:nth-child(2) {
+        transition-delay: 0.15s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.1s;
+      }
+      &:nth-child(4) {
+        transition-delay: 0.05s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0s;
+      }
+
       &:hover {
         background-color: var(--color-primary-1);
       }
     }
+
     &-global {
       width: 54px;
       height: 54px;
