@@ -2508,6 +2508,15 @@ section.lightpick .lightpick__previous-action {
   grid-template-columns: 1fr 1fr;
   gap: 4px 40px;
 }
+#locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-9), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-8), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-7), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-6), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-5) {
+  margin-bottom: 0;
+}
+#locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-4), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-3), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-2), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n-1), #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n) {
+  margin-bottom: 0;
+}
+#locationModal .location-filter .filter-section-result .filter-item:nth-child(10n) {
+  margin-bottom: 20px;
+}
 #locationModal .location-filter .location-result {
   display: flex;
   align-items: center;
