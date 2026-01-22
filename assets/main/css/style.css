@@ -1012,6 +1012,9 @@ section.lightpick .lightpick__previous-action {
   font-family: var(--font-heading);
   margin-top: 64px;
 }
+#header .header-menu ul li.menu-item-has-children > a.active .icon svg path {
+  stroke: var(--color-primary-3) !important;
+}
 #header .header-menu ul li.menu-item-has-children > .sub-menu {
   position: absolute;
   background-color: var(--color-white);
@@ -1047,6 +1050,9 @@ section.lightpick .lightpick__previous-action {
   text-transform: uppercase;
   color: var(--color-white);
   transition: color 0.3s ease;
+}
+#header .header-menu ul li a.active {
+  color: var(--color-primary-3) !important;
 }
 #header .header-menu ul li a:hover {
   color: var(--color-primary-3) !important;
