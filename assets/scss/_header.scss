@@ -179,6 +179,15 @@
                   margin-top: 64px;
                 }
               }
+              &.active {
+                .icon {
+                  svg {
+                    path {
+                      stroke: var(--color-primary-3) !important ;
+                    }
+                  }
+                }
+              }
             }
             & > .sub-menu {
               position: absolute;
@@ -221,6 +230,9 @@
             text-transform: uppercase;
             color: var(--color-white);
             transition: color 0.3s ease;
+            &.active {
+              color: var(--color-primary-3) !important;
+            }
             &:hover {
               color: var(--color-primary-3) !important;
             }

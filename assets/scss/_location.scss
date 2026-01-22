@@ -1,7 +1,7 @@
 .destination-location {
   padding: 80px;
   .destination-title {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
   .destination-wrapper {
     display: grid;
@@ -78,6 +78,9 @@
 }
 
 #locationModal {
+  .modal-content {
+    border: 0;
+  }
   .modal-title {
     font-size: 20px;
     line-height: 28px;
@@ -97,11 +100,24 @@
     opacity: 1;
     margin: 0;
     padding: 0;
+    transition: all 0.3s ease;
+    svg {
+      path {
+        transition: stroke 0.3s ease;
+      }
+    }
     &:focus {
       box-shadow: none;
     }
     &:hover {
       opacity: 1;
+      background-color: var(--color-primary-3);
+      border: 1px solid var(--color-primary-3);
+      svg {
+        path {
+          stroke: var(--color-white);
+        }
+      }
     }
   }
   .modal-content {
@@ -167,6 +183,9 @@
       &:hover {
         .location-image img {
           transform: scale(1.03);
+        }
+        .location-info .time {
+          color: rgba(0, 0, 0, 0.5);
         }
       }
       .location-image {
@@ -234,6 +253,96 @@
       line-height: 25px;
       font-weight: 500;
       color: var(--color-black);
+    }
+  }
+  .location-filter {
+    .filter-section-multi {
+      margin-bottom: 40px;
+    }
+    .filter-list-button {
+      gap: 8px;
+      .filter-button {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 600;
+        color: var(--color-black);
+        padding: 8px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(24, 24, 25, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: var(--color-black);
+          color: var(--color-white);
+          border: 1px solid var(--color-black);
+        }
+        &.active {
+          background-color: var(--color-black);
+          color: var(--color-white);
+          border: 1px solid var(--color-black);
+        }
+      }
+    }
+
+    .filter-section-result {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 40px;
+
+      .filter-item {
+        // Thêm margin-bottom cho item thứ 5, 10, 15... (items cuối mỗi nhóm 5)
+        &:nth-child(10n-9), // Item 1, 11, 21...
+    &:nth-child(10n-8), // Item 2, 12, 22...
+    &:nth-child(10n-7), // Item 3, 13, 23...
+    &:nth-child(10n-6), // Item 4, 14, 24...
+    &:nth-child(10n-5) {
+          // Item 5, 15, 25...
+          margin-bottom: 0;
+        }
+
+        &:nth-child(10n-4), // Item 6, 16, 26...
+    &:nth-child(10n-3), // Item 7, 17, 27...
+    &:nth-child(10n-2), // Item 8, 18, 28...
+    &:nth-child(10n-1), // Item 9, 19, 29...
+    &:nth-child(10n) {
+          // Item 10, 20, 30...
+          margin-bottom: 0;
+        }
+
+        // Thêm khoảng cách lớn sau item thứ 10, 20, 30...
+        &:nth-child(10n) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .location-result {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      position: relative;
+      padding-left: 8px;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: var(--color-black);
+        left: 0;
+        border-radius: 50%;
+      }
+      .name {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: bold;
+        color: var(--color-black);
+      }
+      .time {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 500;
+        color: var(--color-black);
+      }
     }
   }
 }
