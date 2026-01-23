@@ -838,9 +838,9 @@ export function animationSubMenu() {
         gsap.to(subMenuItems, {
           y: 0,
           opacity: 1,
-          duration: 0.3,
-          stagger: 0.05,
-          ease: "power2.out",
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power3.out",
         });
       }
 
@@ -848,9 +848,9 @@ export function animationSubMenu() {
         gsap.to(btnViewHotel, {
           y: 0,
           opacity: 1,
-          duration: 0.3,
-          delay: subMenuItems.length * 0.05, // Chạy sau khi items chạy xong
-          ease: "power2.out",
+          duration: 0.8,
+          delay: subMenuItems.length * 0.08,
+          ease: "power3.out",
         });
       }
     });
@@ -860,9 +860,9 @@ export function animationSubMenu() {
         gsap.to(subMenuItems, {
           y: 10,
           opacity: 0,
-          duration: 0.3,
-          stagger: 0.05,
-          ease: "power2.in",
+          duration: 0.6,
+          stagger: 0.04,
+          ease: "power3.in",
         });
       }
 
@@ -870,8 +870,8 @@ export function animationSubMenu() {
         gsap.to(btnViewHotel, {
           y: 10,
           opacity: 0,
-          duration: 0.3,
-          ease: "power2.in",
+          duration: 0.6,
+          ease: "power3.in",
         });
       }
     });
