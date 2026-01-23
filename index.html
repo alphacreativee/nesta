@@ -310,7 +310,7 @@
             class="section-top d-flex align-items-center justify-content-between"
           >
             <h2 class="title heading-1 effect-line">ƯU ĐÃI NỔI BẬT</h2>
-            <div class="btn-wrapper data-fade-in">
+            <div class="btn-wrapper data-fade-in d-lg-block d-none">
               <a href="#" class="btn-arrow text-uppercase color-black">
                 <span>xem thêm</span>
                 <div class="icon">
@@ -404,36 +404,58 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-arrows">
-                <div class="arrow-prev swiper-arrow">
-                  <svg
-                    width="14"
-                    height="11"
-                    viewBox="0 0 14 11"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
-                      stroke="currentColor"
-                      stroke-linejoin="bevel"
-                    />
-                  </svg>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="swiper-arrows">
+                  <div class="arrow-prev swiper-arrow">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="currentColor"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                  <div class="arrow-next swiper-arrow">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="currentColor"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
                 </div>
-                <div class="arrow-next swiper-arrow">
-                  <svg
-                    width="14"
-                    height="11"
-                    viewBox="0 0 14 11"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
-                      stroke="currentColor"
-                      stroke-linejoin="bevel"
-                    />
-                  </svg>
+                <div class="btn-wrapper d-lg-none d-block">
+                  <a href="#" class="btn-arrow text-uppercase color-black">
+                    <span>xem thêm</span>
+                    <div class="icon">
+                      <svg
+                        width="14"
+                        height="11"
+                        viewBox="0 0 14 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                          stroke="#181819"
+                          stroke-linejoin="bevel"
+                        />
+                      </svg>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -447,7 +469,10 @@
           >
             <h2 class="title heading-1 effect-line">KHÁCH SẠN</h2>
 
-            <ul class="nav nav-tabs data-fade-in" role="tablist">
+            <ul
+              class="nav nav-tabs data-fade-in d-none d-lg-flex"
+              role="tablist"
+            >
               <li class="nav-item" role="presentation">
                 <button
                   class="nav-link active btn-body-font color-black"
@@ -491,6 +516,36 @@
                 </button>
               </li>
             </ul>
+          </div>
+          <div class="dropdown-custom filter-dropdown d-none">
+            <div class="dropdown-custom-btn">
+              <div class="value-select">
+                <span>Tất cả</span>
+              </div>
+              <div class="icon">
+                <svg
+                  width="8"
+                  height="5"
+                  viewBox="0 0 8 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.34082 0.5C6.67415 0.5 4.34082 2.5 3.67415 4.5C3.00749 2.5 0.674153 0.5 0.0074861 0.5"
+                    stroke="white"
+                    stroke-linejoin="bevel"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="dropdown-custom-menu">
+              <div class="dropdown-custom-item">
+                <span>Hà Nội</span>
+              </div>
+              <div class="dropdown-custom-item">
+                <span>Đà Nẵng</span>
+              </div>
+            </div>
           </div>
           <div class="hotel-filter__main">
             <div class="tab-content" id="myTabContent">
@@ -906,7 +961,7 @@
             class="section-top d-flex align-items-center justify-content-between"
           >
             <h2 class="title heading-1 effect-line">TIN TỨC & SỰ KIỆN</h2>
-            <div class="btn-wrapper data-fade-in">
+            <div class="btn-wrapper data-fade-in d-lg-block d-none">
               <a href="#" class="btn-arrow text-uppercase color-black">
                 <span>xem thêm</span>
                 <div class="icon">
@@ -1010,36 +1065,60 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-arrows">
-              <div class="arrow-prev swiper-arrow">
-                <svg
-                  width="14"
-                  height="11"
-                  viewBox="0 0 14 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
-                    stroke="currentColor"
-                    stroke-linejoin="bevel"
-                  />
-                </svg>
+            <div
+              class="d-flex align-items-center justify-content-between wrapper-arrows"
+            >
+              <div class="swiper-arrows">
+                <div class="arrow-prev swiper-arrow">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="currentColor"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
+                <div class="arrow-next swiper-arrow">
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                      stroke="currentColor"
+                      stroke-linejoin="bevel"
+                    />
+                  </svg>
+                </div>
               </div>
-              <div class="arrow-next swiper-arrow">
-                <svg
-                  width="14"
-                  height="11"
-                  viewBox="0 0 14 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
-                    stroke="currentColor"
-                    stroke-linejoin="bevel"
-                  />
-                </svg>
+              <div class="btn-wrapper d-lg-none d-block">
+                <a href="#" class="btn-arrow text-uppercase color-black">
+                  <span>xem thêm</span>
+                  <div class="icon">
+                    <svg
+                      width="14"
+                      height="11"
+                      viewBox="0 0 14 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13 5.5C10 4.5 7 1 7 0M13 5.5C10 6.5 7 10 7 11M13 5.5H0"
+                        stroke="#181819"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
