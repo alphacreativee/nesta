@@ -639,6 +639,7 @@ export function headerMobile() {
 
   const hamburger = document.getElementById("hamburger");
   const subMenu = document.querySelector(".header-sub-menu");
+  const header = document.querySelector("header");
 
   // Toggle hamburger menu
   hamburger.addEventListener("click", function () {
@@ -649,12 +650,22 @@ export function headerMobile() {
       // Disable scroll
       document.body.classList.add("overflow-hidden");
 
+      // Thêm header-theme-light khi mở hamburger menu
+      if (header) {
+        header.classList.add("header-theme-light");
+      }
+
       if (window.lenis) {
         window.lenis.stop();
       }
     } else {
       // Enable scroll
       document.body.classList.remove("overflow-hidden");
+
+      // Remove header-theme-light khi đóng hamburger menu
+      if (header) {
+        header.classList.remove("header-theme-light");
+      }
 
       if (window.lenis) {
         window.lenis.start();
