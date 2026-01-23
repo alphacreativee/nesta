@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select"
+    ".dropdown-custom, .dropdown-custom-select",
   );
 
   dropdowns.forEach((dropdown) => {
@@ -84,9 +84,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light")
+      onLeaveBack: () => header.classList.remove("header-theme-light"),
       // markers: true,
-    }
+    },
   });
 }
 export function scrollFixedBookingForm() {
@@ -104,7 +104,7 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
     // markers: true,
   });
 }
@@ -121,7 +121,7 @@ export function checkScrollBookingUp() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-up"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up")
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
     // markers: true,
   });
 }
@@ -190,7 +190,7 @@ export function bookingTime() {
 
     onYearChange: function () {
       setTimeout(positionCalendar, 10);
-    }
+    },
   });
 
   const bookingCalendar = document.querySelector(".booking-calendar");
@@ -215,7 +215,7 @@ export function effectText() {
       {
         opacity: 0,
         y: 20,
-        willChange: "opacity, transform"
+        willChange: "opacity, transform",
       },
       {
         opacity: 1,
@@ -226,9 +226,9 @@ export function effectText() {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%"
-        }
-      }
+          end: "bottom 80%",
+        },
+      },
     );
   });
 
@@ -238,7 +238,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     gsap.fromTo(
@@ -249,8 +249,8 @@ export function effectText() {
         duration: 1,
         ease: "power3.out",
         stagger: 0.05,
-        delay: delay
-      }
+        delay: delay,
+      },
     );
   });
 
@@ -258,7 +258,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines"
+      mask: "lines",
     });
 
     gsap.fromTo(
@@ -271,9 +271,9 @@ export function effectText() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: description,
-          start: "top 80%"
-        }
-      }
+          start: "top 80%",
+        },
+      },
     );
   });
 }
@@ -297,9 +297,9 @@ export function animationItemsSection() {
       scrollTrigger: {
         trigger: section,
         start: "top 65%",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
         // markers: true,
-      }
+      },
     });
 
     items.forEach((item) => {
@@ -310,7 +310,7 @@ export function animationItemsSection() {
         const split = new SplitText(item, {
           type: "lines",
           linesClass: "line",
-          mask: "lines"
+          mask: "lines",
         });
 
         gsap.set(split.lines, { yPercent: 120 });
@@ -321,8 +321,8 @@ export function animationItemsSection() {
           ease: LINE_EASE,
           stagger: {
             each: ITEM_DURATION / split.lines.length,
-            ease: "none"
-          }
+            ease: "none",
+          },
         });
       }
 
@@ -334,7 +334,7 @@ export function animationItemsSection() {
           y: 0,
           opacity: 1,
           duration: ITEM_DURATION,
-          ease: FADE_EASE
+          ease: FADE_EASE,
         });
       }
     });
@@ -348,7 +348,7 @@ export function fadeTextFooter() {
 
   gsap.set(elements, {
     opacity: 0,
-    y: 20
+    y: 20,
   });
 
   let tlf = gsap.timeline({ paused: true });
@@ -357,15 +357,15 @@ export function fadeTextFooter() {
     elements,
     {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     {
       opacity: 1,
       y: 0,
       stagger: 0.05,
       duration: 0.4,
-      ease: "power2.out"
-    }
+      ease: "power2.out",
+    },
   );
 
   ScrollTrigger.create({
@@ -373,7 +373,7 @@ export function fadeTextFooter() {
     start: "top 80%",
     animation: tlf,
     toggleActions: "play none none none",
-    invalidateOnRefresh: true // Reset animation khi refresh
+    invalidateOnRefresh: true, // Reset animation khi refresh
     // markers: true,
   });
 
@@ -410,7 +410,7 @@ export function ctaRun() {
       if (!isInFooter && !isShortPage()) {
         cta.classList.toggle("run-right", self.direction === 1);
       }
-    }
+    },
   });
 
   ScrollTrigger.create({
@@ -429,7 +429,7 @@ export function ctaRun() {
       isInFooter = false;
       cta.style.position = "fixed";
       cta.style.top = "";
-    }
+    },
   });
 }
 export function initGuestSelector() {
@@ -521,7 +521,7 @@ export function accommodationDetail() {
   $more.css({
     overflow: "hidden",
     height: 0,
-    transition: `height ${duration}ms ease`
+    transition: `height ${duration}ms ease`,
   });
 
   $btn.on("click", function () {
@@ -538,7 +538,7 @@ export function accommodationDetail() {
       $more.css({
         height: fullHeight + "px",
         overflow: "hidden",
-        transition: `height ${duration}ms ease`
+        transition: `height ${duration}ms ease`,
       });
 
       setTimeout(() => {
@@ -577,7 +577,7 @@ export function sectionGallery() {
       touchNavigation: true,
       loop: true,
       autoplayVideos: true,
-      onOpen: handleCustomArrow
+      onOpen: handleCustomArrow,
     });
   }
 
@@ -641,6 +641,7 @@ export function headerMobile() {
 
   const hamburger = document.getElementById("hamburger");
   const subMenu = document.querySelector(".header-sub-menu");
+  const header = document.querySelector("header");
 
   // Toggle hamburger menu
   hamburger.addEventListener("click", function () {
@@ -651,6 +652,11 @@ export function headerMobile() {
       // Disable scroll
       document.body.classList.add("overflow-hidden");
 
+      // Thêm header-theme-light khi mở hamburger menu
+      if (header) {
+        header.classList.add("header-theme-light");
+      }
+
       if (window.lenis) {
         window.lenis.stop();
       }
@@ -658,13 +664,18 @@ export function headerMobile() {
       // Enable scroll
       document.body.classList.remove("overflow-hidden");
 
+      // Remove header-theme-light khi đóng hamburger menu
+      if (header) {
+        header.classList.remove("header-theme-light");
+      }
+
       if (window.lenis) {
         window.lenis.start();
       }
 
       // Remove active từ tất cả menu-item-has-children
       const menuItemsWithChildren = document.querySelectorAll(
-        ".menu-item-has-children"
+        ".menu-item-has-children",
       );
       menuItemsWithChildren.forEach((item) => {
         item.classList.remove("active");
@@ -680,7 +691,7 @@ export function headerMobile() {
 
   // Toggle submenu cho menu-item-has-children
   const menuItemsWithChildren = document.querySelectorAll(
-    ".menu-item-has-children"
+    ".menu-item-has-children",
   );
 
   menuItemsWithChildren.forEach((menuItem) => {
@@ -741,9 +752,9 @@ export function sectionExperiences() {
             trigger: ".section-experience",
             start: "top bottom",
             end: "bottom top",
-            scrub: true
-          }
-        }
+            scrub: true,
+          },
+        },
       );
     });
 
@@ -777,9 +788,92 @@ export function sectionExperiences() {
           trigger: section,
           start: "top bottom",
           end: "bottom top",
-          scrub: true
-        }
-      }
+          scrub: true,
+        },
+      },
     );
+  });
+}
+
+export function popupBookingMobile() {
+  if (window.innerWidth >= 992) return;
+  const ctaBooking = document.querySelector(".cta-booking");
+  const popupBookingMobile = document.querySelector(".booking-form-wrapper");
+  const closeBtnPopup = popupBookingMobile.querySelector(".btn-booking-close");
+  ctaBooking.addEventListener("click", function () {
+    popupBookingMobile.classList.add("active");
+  });
+  closeBtnPopup.addEventListener("click", function () {
+    popupBookingMobile.classList.remove("active");
+  });
+}
+export function animationSubMenu() {
+  const menuItemsWithChildren = document.querySelectorAll(
+    "#header .header-menu > ul > li.menu-item-has-children",
+  );
+
+  menuItemsWithChildren.forEach((menuItem) => {
+    const subMenu = menuItem.querySelector(".sub-menu");
+    const subMenuItems = subMenu ? subMenu.querySelectorAll("li") : [];
+    const btnViewHotel = subMenu
+      ? subMenu.querySelector(".btn-view-hotel")
+      : null;
+
+    if (subMenuItems.length > 0) {
+      gsap.set(subMenuItems, {
+        y: 10,
+        opacity: 0,
+      });
+    }
+
+    if (btnViewHotel) {
+      gsap.set(btnViewHotel, {
+        y: 10,
+        opacity: 0,
+      });
+    }
+
+    menuItem.addEventListener("mouseenter", function () {
+      if (subMenuItems.length > 0) {
+        gsap.to(subMenuItems, {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.out",
+        });
+      }
+
+      if (btnViewHotel) {
+        gsap.to(btnViewHotel, {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          delay: subMenuItems.length * 0.05, // Chạy sau khi items chạy xong
+          ease: "power2.out",
+        });
+      }
+    });
+
+    menuItem.addEventListener("mouseleave", function () {
+      if (subMenuItems.length > 0) {
+        gsap.to(subMenuItems, {
+          y: 10,
+          opacity: 0,
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.in",
+        });
+      }
+
+      if (btnViewHotel) {
+        gsap.to(btnViewHotel, {
+          y: 10,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+      }
+    });
   });
 }

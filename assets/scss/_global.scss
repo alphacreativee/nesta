@@ -117,6 +117,41 @@
     transition: all 0.3s ease;
     z-index: 123;
     border: 1px solid rgba(64, 64, 64, 0.3);
+    .btn-booking-close {
+      display: none;
+      @media (max-width: 991px) {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-bottom: 32px;
+        position: relative;
+        transform: translateX(13px);
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -10px;
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      position: fixed;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
     &.booking-fixed {
       position: fixed;
       bottom: auto;
@@ -145,6 +180,10 @@
         transform: translateY(0);
         margin-top: 18px;
         border-radius: 0 0 12px 12px;
+        @media (max-width: 991px) {
+          margin-top: 12px;
+          border: 1px solid rgba(64, 64, 64, 0.3);
+        }
       }
       .select-people {
         .select-box {
@@ -152,6 +191,9 @@
           transform: translateY(0);
           margin-top: 18px;
           border-radius: 0 0 12px 12px;
+          @media (max-width: 991px) {
+            margin-top: 12px;
+          }
         }
       }
     }
@@ -164,11 +206,18 @@
     border-radius: 12px;
     transition: all 0.3s ease;
     padding: 12px 12px 12px 24px;
+    @media (max-width: 991px) {
+      padding: 0;
+    }
     form {
       display: grid;
       align-items: center;
       grid-template-columns: 3fr 2.75fr 2.75fr 1.5fr max-content;
       gap: 24px;
+      @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
       .dropdown-custom {
         &-select {
           position: relative;
@@ -190,6 +239,7 @@
           visibility: hidden;
           transition: all 0.3s ease;
           transform: translateY(-100%);
+          z-index: 3;
           &.dropdown--active {
             opacity: 1;
             visibility: visible;
@@ -228,7 +278,7 @@
           width: 85px;
         }
         span {
-          padding: 0 2px;
+          padding: 0 5.5px 0 2px;
           transform: translateY(-2px);
         }
       }
@@ -260,14 +310,29 @@
           font-family: var(--font-heading);
           border-radius: 8px;
           transition: all 0.3s ease;
+          @media (max-width: 991px) {
+            display: block;
+            width: 100%;
+          }
         }
       }
       .booking-form-item {
         border-left: 1px solid rgba(64, 64, 64, 0.3);
         padding-left: 24px;
+        @media (max-width: 991px) {
+          padding-left: 0;
+          border-left: none;
+          border-bottom: 1px solid rgba(64, 64, 64, 0.3);
+          padding-bottom: 12px;
+        }
         &:first-child {
           border-left: 0;
           padding-left: 0;
+        }
+        &:last-child {
+          @media (max-width: 991px) {
+            border-bottom: none;
+          }
         }
       }
       .select-people {
@@ -288,6 +353,10 @@
           visibility: hidden;
           transition: all 0.3s ease;
           transform: translateY(-100%);
+          z-index: 3;
+          @media (max-width: 991px) {
+            border: 1px solid rgba(64, 64, 64, 0.3);
+          }
           &.active {
             opacity: 1;
             visibility: visible;

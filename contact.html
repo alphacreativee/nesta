@@ -96,12 +96,12 @@
       <section class="hero">
         <div class="container-fluid p-0">
           <!-- option image -->
-          <div class="hero-image">
+          <div class="hero-image d-none">
             <img src="./assets/images/del/banner-1.webp" alt="" />
           </div>
           <!-- end option image -->
           <!-- option slider change content -->
-          <!-- <div class="hero-option-slider d-none">
+          <div class="hero-option-slider">
             <div class="swiper hero-slider h-100">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -141,13 +141,13 @@
               </div>
             </div>
           </div>
-          <div class="slider-content-wrapper d-none">
+          <div class="slider-content-wrapper">
             <div class="slider-content-line-vertical"></div>
             <div class="slider-content-main">
               <div class="slider-content-import"></div>
               <div class="slider-pagination"></div>
             </div>
-          </div> -->
+          </div>
           <!-- end option slider change content -->
           <!-- option video -->
           <div class="hero-video-banner d-none">
@@ -163,7 +163,19 @@
             </video>
           </div>
           <!-- end option video -->
-          <div class="booking-form-wrapper d-none">
+          <div class="booking-form-wrapper">
+            <div class="btn-booking-close">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12.3535 0.353516L0.353516 12.3535" stroke="#181819" />
+                <path d="M0.353516 0.353516L12.3535 12.3535" stroke="#181819" />
+              </svg>
+            </div>
             <div class="booking-form-container">
               <form action="">
                 <div class="booking-form-item">
@@ -285,7 +297,9 @@
                 <div
                   class="booking-form-item button-find-room d-flex justify-content-end"
                 >
-                  <button>Tìm phòng</button>
+                  <button class="button-global">
+                    <span>tìm phòng</span>
+                  </button>
                 </div>
               </form>
             </div>
@@ -304,7 +318,7 @@
           document.getElementById("footer").innerHTML = data;
         });
     </script>
-    <footer id="footer" class="footer d-none"></footer>
+    <footer id="footer" class="footer"></footer>
     <!-- end footer -->
     <!-- end layout -->
 

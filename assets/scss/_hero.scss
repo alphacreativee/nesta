@@ -68,6 +68,12 @@
     align-items: stretch;
     display: flex;
     gap: 24px;
+    @media (max-width: 991px) {
+      left: 24px;
+      top: auto;
+      transform: translate(0, 0);
+      bottom: 24px;
+    }
     .current-tag {
       display: inline-block;
       font-family: var(--font-body);
@@ -87,6 +93,10 @@
       line-height: 64px;
       color: var(--color-white);
       text-transform: uppercase;
+      @media (max-width: 991px) {
+        font-size: 32px;
+        line-height: 40px;
+      }
     }
   }
   .slider-content-main {
@@ -125,6 +135,9 @@
     display: block;
     flex-shrink: 0;
     position: relative;
+    @media (max-width: 991px) {
+      display: none;
+    }
     &.active {
       &::before {
         height: 100%;

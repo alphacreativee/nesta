@@ -4,6 +4,12 @@
   bottom: 35px;
   z-index: 100;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  @media (max-width: 991px) {
+    right: 24px;
+  }
   &.run-right {
     right: -60px;
   }
@@ -120,6 +126,22 @@
           transition: all 0.3s ease;
         }
       }
+    }
+  }
+  .cta-booking {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: var(--color-primary-3);
+    display: none;
+    transition: all 0.3s ease;
+    @media (max-width: 991px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover {
+      background-color: var(--color-black);
     }
   }
 }
