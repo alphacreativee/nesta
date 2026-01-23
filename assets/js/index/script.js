@@ -13,16 +13,16 @@ import {
   scrollToTop,
   initGuestSelector,
   accommodationDetail,
-  sectionGallery
+  sectionGallery,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
   sliderWithShadow,
-  sliderParallax
+  sliderParallax,
 } from "../../main/js/slider.min.js";
 import {
   createFilterTab,
-  createFilterTabMulti
+  createFilterTabMulti,
 } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
@@ -51,29 +51,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const init = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  effectText();
-  animationItemsSection();
-  fadeTextFooter();
-  customDropdown();
-  createFilterTab();
-  sectionNews();
-  scrollChangeBgHeader();
-  // scrollFixedBookingForm();
-  setOfferDescHeight();
-  // sliderChangeContent();
-  checkScrollBookingUp();
-  scrollToTop();
-  bookingTime();
-  ctaRun();
-  initGuestSelector();
-  sliderParallax();
-  sliderGallery();
-  accommodationDetail();
-  sectionGallery();
-  createFilterTabMulti();
-};
+const init = () => {};
+gsap.registerPlugin(ScrollTrigger);
+effectText();
+animationItemsSection();
+fadeTextFooter();
+customDropdown();
+createFilterTab();
+sectionNews();
+scrollChangeBgHeader();
+// scrollFixedBookingForm();
+setOfferDescHeight();
+// sliderChangeContent();
+checkScrollBookingUp();
+scrollToTop();
+bookingTime();
+ctaRun();
+initGuestSelector();
+sliderParallax();
+sliderGallery();
+accommodationDetail();
+sectionGallery();
+createFilterTabMulti();
 preloadImages("img").then(() => {
   init();
 });
