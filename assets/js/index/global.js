@@ -634,4 +634,88 @@ export function sectionGallery() {
     }
   }
 }
-export function headerMobile() {}
+export function headerMobile() {
+  if (window.innerWidth >= 992) return;
+
+  const hamburger = document.getElementById("hamburger");
+  const subMenu = document.querySelector(".header-sub-menu");
+
+  // Toggle hamburger menu
+  hamburger.addEventListener("click", function () {
+    this.classList.toggle("active");
+    subMenu.classList.toggle("active");
+
+    if (this.classList.contains("active")) {
+      // Disable scroll
+      document.body.classList.add("overflow-hidden");
+
+      if (window.lenis) {
+        window.lenis.stop();
+      }
+    } else {
+      // Enable scroll
+      document.body.classList.remove("overflow-hidden");
+
+      if (window.lenis) {
+        window.lenis.start();
+      }
+
+      // Remove active từ tất cả menu-item-has-children
+      const menuItemsWithChildren = document.querySelectorAll(
+        ".menu-item-has-children",
+      );
+      menuItemsWithChildren.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      // Remove show-menu từ tất cả sub-menu
+      const allSubMenus = document.querySelectorAll(".sub-menu");
+      allSubMenus.forEach((menu) => {
+        menu.classList.remove("show-menu");
+      });
+    }
+  });
+
+  // Toggle submenu cho menu-item-has-children
+  const menuItemsWithChildren = document.querySelectorAll(
+    ".menu-item-has-children",
+  );
+
+  menuItemsWithChildren.forEach((menuItem) => {
+    const menuLink = menuItem.querySelector("a");
+
+    if (menuLink) {
+      menuLink.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const subMenuElement = menuItem.querySelector(".sub-menu");
+        if (subMenuElement) {
+          subMenuElement.classList.toggle("show-menu");
+          menuItem.classList.toggle("active");
+        }
+      });
+    }
+  });
+
+  // Handle all back buttons
+  const backButtons = document.querySelectorAll(".sub-menu-back");
+  backButtons.forEach((backButton) => {
+    backButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const currentSubMenu = this.closest(".sub-menu");
+      if (currentSubMenu) {
+        currentSubMenu.classList.remove("show-menu");
+
+        const parentMenuItem = currentSubMenu.parentElement;
+        if (
+          parentMenuItem &&
+          parentMenuItem.classList.contains("menu-item-has-children")
+        ) {
+          parentMenuItem.classList.remove("active");
+        }
+      }
+    });
+  });
+}
