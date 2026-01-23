@@ -634,3 +634,4 @@ export function sectionGallery() {
     }
   }
 }
+export function headerMobile() {}
