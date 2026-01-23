@@ -240,6 +240,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  min-height: 100vh;
+}
+
 .swiper-arrows .swiper-arrow {
   width: 40px;
   height: 40px;
