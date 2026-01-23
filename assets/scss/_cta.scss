@@ -133,10 +133,13 @@
     height: 54px;
     border-radius: 50%;
     background-color: var(--color-primary-3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     transition: all 0.3s ease;
+    @media (max-width: 991px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     &:hover {
       background-color: var(--color-black);
     }

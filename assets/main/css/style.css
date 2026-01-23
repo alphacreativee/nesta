@@ -2437,10 +2437,15 @@ section.lightpick .lightpick__previous-action {
   height: 54px;
   border-radius: 50%;
   background-color: var(--color-primary-3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   transition: all 0.3s ease;
+}
+@media (max-width: 991px) {
+  #cta .cta-booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 #cta .cta-booking:hover {
   background-color: var(--color-black);
