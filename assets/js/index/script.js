@@ -14,6 +14,7 @@ import {
   initGuestSelector,
   accommodationDetail,
   sectionGallery,
+  headerMobile,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -73,6 +74,7 @@ const init = () => {
   accommodationDetail();
   sectionGallery();
   createFilterTabMulti();
+  headerMobile();
 };
 
 preloadImages("img").then(() => {
