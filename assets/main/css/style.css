@@ -1572,6 +1572,11 @@ section.lightpick .lightpick__previous-action {
   z-index: 2;
   pointer-events: none;
 }
+.hero-image img, .hero-option-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .hero-video-banner {
   position: relative;
   width: 100%;
@@ -1587,8 +1592,10 @@ section.lightpick .lightpick__previous-action {
   object-fit: cover;
 }
 .hero-image {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100svh;
+  overflow: hidden;
 }
 .hero-image img {
   width: 100%;
