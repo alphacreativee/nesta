@@ -730,3 +730,65 @@ export function headerMobile() {
     });
   });
 }
+
+export function sectionExperiences() {
+  if ($(".section-experience").length < 1) return;
+
+  document
+    .querySelectorAll(".section-experience .image-parallax")
+    .forEach((wrap) => {
+      const img = wrap.querySelector("img");
+      if (!img) return;
+
+      gsap.fromTo(
+        img,
+        { yPercent: -10 },
+        {
+          yPercent: 10, // parallax 10%
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".section-experience",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        },
+      );
+    });
+
+  const section = document.querySelector(".section-experience");
+
+  if ($(window).width() < 992) return;
+
+  section.querySelectorAll(".box-parallax").forEach((box) => {
+    let fromY = 0;
+    let toY = 0;
+
+    if (box.classList.contains("box-parallax-top")) {
+      fromY = 0;
+      toY = -15;
+    }
+
+    if (box.classList.contains("box-parallax-bottom")) {
+      fromY = 0;
+      toY = 15;
+    }
+
+    if (fromY === toY) return;
+
+    gsap.fromTo(
+      box,
+      { yPercent: fromY },
+      {
+        yPercent: toY,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      },
+    );
+  });
+}
