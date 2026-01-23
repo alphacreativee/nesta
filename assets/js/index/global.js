@@ -813,9 +813,19 @@ export function animationSubMenu() {
   menuItemsWithChildren.forEach((menuItem) => {
     const subMenu = menuItem.querySelector(".sub-menu");
     const subMenuItems = subMenu ? subMenu.querySelectorAll("li") : [];
+    const btnViewHotel = subMenu
+      ? subMenu.querySelector(".btn-view-hotel")
+      : null;
 
     if (subMenuItems.length > 0) {
       gsap.set(subMenuItems, {
+        y: 10,
+        opacity: 0,
+      });
+    }
+
+    if (btnViewHotel) {
+      gsap.set(btnViewHotel, {
         y: 10,
         opacity: 0,
       });
@@ -831,6 +841,16 @@ export function animationSubMenu() {
           ease: "power2.out",
         });
       }
+
+      if (btnViewHotel) {
+        gsap.to(btnViewHotel, {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          delay: subMenuItems.length * 0.05, // Chạy sau khi items chạy xong
+          ease: "power2.out",
+        });
+      }
     });
 
     menuItem.addEventListener("mouseleave", function () {
@@ -840,6 +860,15 @@ export function animationSubMenu() {
           opacity: 0,
           duration: 0.3,
           stagger: 0.05,
+          ease: "power2.in",
+        });
+      }
+
+      if (btnViewHotel) {
+        gsap.to(btnViewHotel, {
+          y: 10,
+          opacity: 0,
+          duration: 0.3,
           ease: "power2.in",
         });
       }
