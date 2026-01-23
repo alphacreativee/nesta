@@ -33,6 +33,7 @@ import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 $ = jQuery;
 
 const lenis = new Lenis();
+window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);

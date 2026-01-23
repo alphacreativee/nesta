@@ -26,6 +26,9 @@
               line-height: 20px;
               font-weight: 600;
               color: var(--color-white);
+              @media (max-width: 991px) {
+                display: none;
+              }
             }
             .icon {
               svg {
@@ -49,6 +52,10 @@
           display: flex;
           flex-direction: column;
           gap: 8px;
+          z-index: 997;
+          @media (max-width: 991px) {
+            margin-top: 22px;
+          }
           &.dropdown--active {
             opacity: 1;
             visibility: visible;
@@ -111,6 +118,9 @@
                   svg {
                     path {
                       stroke: var(--color-primary-3) !important ;
+                      @media (max-width: 991px) {
+                        stroke: var(--color-black) !important ;
+                      }
                     }
                   }
                 }
@@ -310,14 +320,30 @@
         }
       }
     }
-    &-hambuger {
+    &-hamburger {
       &-container {
         width: 24px;
         height: 16px;
-        background-color: red;
+        // background-color: red;
         position: relative;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        &.active {
+          span {
+            &:nth-child(1) {
+              top: 7.5px;
+              transform: rotate(135deg);
+            }
+            &:nth-child(2) {
+              transform: scaleX(0);
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              top: 7.5px;
+              transform: rotate(-135deg);
+            }
+          }
+        }
         span {
           position: absolute;
           display: block;
@@ -325,20 +351,117 @@
           height: 1px;
           background-color: var(--color-white);
           left: 0;
-          transition: all 0.3s ease;
+          transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
           opacity: 1;
+
           &:nth-child(1) {
             top: 0;
-            // top: 7.5px;
-            // transform: rotate(135deg);
           }
           &:nth-child(2) {
             top: 7.5px;
           }
           &:nth-child(3) {
             top: 15px;
-            // top: 7.5px;
-            // transform: rotate(-135deg);
+          }
+        }
+      }
+    }
+    &-sub-menu {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-white);
+      top: 59px;
+      height: calc(100dvh - 60px);
+      padding: 24px;
+      z-index: 990;
+      transform: translateX(100%);
+      transition: all 0.3s ease;
+      &.active {
+        transform: translateX(0);
+      }
+      .header-menu {
+        &.mobile-layout {
+          ul {
+            flex-direction: column;
+            align-items: flex-start;
+            li {
+              &.menu-item-has-children {
+                & > a.menu-full-ks {
+                  & + .sub-menu {
+                    position: fixed;
+                    opacity: 1;
+                    visibility: visible;
+                    background-color: var(--color-white);
+                    left: 0;
+                    top: 0;
+                    max-width: 100%;
+                    width: 100%;
+                    height: calc(100dvh - 60px);
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.3s ease;
+                    transform: translateX(100%);
+                    z-index: 888;
+                    &.show-menu {
+                      transform: translateX(0);
+                    }
+                    & > ul {
+                      grid-template-columns: 1fr;
+                      gap: 32px;
+                    }
+                    .btn-view-hotel {
+                      margin-top: auto;
+                    }
+                  }
+                }
+                & > .sub-menu {
+                  &.menu-max-width {
+                    position: fixed;
+                    opacity: 1;
+                    visibility: visible;
+                    background-color: var(--color-white);
+                    left: 0;
+                    top: 0;
+                    max-width: 100%;
+                    width: 100%;
+                    height: calc(100dvh - 60px);
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.3s ease;
+                    transform: translateX(100%);
+                    z-index: 888;
+                    margin-top: 0;
+                    padding: 24px;
+                    &.show-menu {
+                      transform: translateX(0);
+                    }
+                    & > ul {
+                      grid-template-columns: 1fr;
+                      gap: 32px;
+                      padding: 0;
+                    }
+                    .btn-view-hotel {
+                      margin-top: auto;
+                    }
+                  }
+                }
+              }
+              a {
+                color: var(--color-black);
+              }
+            }
+          }
+          .sub-menu-back {
+            width: max-content;
+            position: relative;
+            margin-bottom: 40px;
+            &::before {
+              content: "";
+              position: absolute;
+              inset: -20px;
+              background-color: transparent;
+            }
           }
         }
       }
@@ -399,6 +522,13 @@
         .value-select {
           span {
             color: var(--color-gray-2);
+          }
+        }
+      }
+      &-hamburger {
+        &-container {
+          span {
+            background-color: var(--color-black);
           }
         }
       }
