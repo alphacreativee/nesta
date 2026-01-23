@@ -792,3 +792,17 @@ export function sectionExperiences() {
     );
   });
 }
+
+export function popupBookingMobile() {
+  if (window.innerWidth >= 992) return;
+  const ctaBooking = document.querySelector(".cta-booking");
+  const popupBookingMobile = document.querySelector(".booking-form-wrapper");
+  const closeBtnPopup = popupBookingMobile.querySelector(".btn-booking-close");
+  ctaBooking.addEventListener("click", function () {
+    popupBookingMobile.classList.add("active");
+  });
+  closeBtnPopup.addEventListener("click", function () {
+    popupBookingMobile.classList.remove("active");
+    console.log("123");
+  });
+}
