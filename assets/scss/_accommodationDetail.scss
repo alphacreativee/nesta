@@ -37,7 +37,7 @@
         .icon {
           width: 16px;
           height: 16px;
-          flex-shrink: 1;
+          flex-shrink: 0;
         }
 
         &:not(:first-child) {
@@ -79,7 +79,7 @@
           .icon {
             width: 16px;
             height: 16px;
-            flex-shrink: 1;
+            flex-shrink: 0;
             transform: translateY(4px);
           }
         }
@@ -128,7 +128,7 @@
         .icon {
           width: 12px;
           height: 12px;
-          flex-shrink: 1;
+          flex-shrink: 0;
           position: relative;
           transition: transform 0.4s ease;
 
