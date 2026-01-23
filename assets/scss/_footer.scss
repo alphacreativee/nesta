@@ -1,12 +1,22 @@
 .footer {
   color: var(--color-white);
   overflow: hidden;
+
+  &-top {
+    @media (max-width: 992px) {
+      gap: 40px;
+    }
+  }
   &-main {
     background: url("../../images/bg-footer-desktop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 40px 80px 20px;
+
+    @media (max-width: 992px) {
+      padding: 40px 24px 20px;
+    }
 
     .column-title {
       font-size: 13px;
@@ -20,14 +30,30 @@
   &-right {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 55px;
+    gap: 55px 24px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-brands {
     ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px 130px;
+      gap: 8px 120px;
+
+      @media (max-width: 1400px) {
+        gap: 8px 40px;
+      }
+
+      @media (max-width: 767px) {
+        gap: 8px 24px;
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     a {
@@ -45,6 +71,10 @@
         display: flex;
         align-items: flex-start;
         column-gap: 110px;
+
+        @media (max-width: 1400px) {
+          column-gap: 64px;
+        }
 
         .menu-item-has-children {
           & > a {
@@ -78,6 +108,7 @@
 
   &-logo {
     display: block;
+    width: max-content;
 
     img {
       width: 100px;
@@ -161,6 +192,7 @@
       margin-left: 32px;
       font-size: 13px;
       line-height: 15px;
+      font-weight: 600;
       font-family: var(--font-heading);
       color: var(--color-white);
       text-transform: uppercase;
@@ -225,6 +257,10 @@
   &-bottom {
     margin-top: 48px;
 
+    @media (max-width: 992px) {
+      gap: 24px;
+    }
+
     .bct-desc {
       font-size: 12px;
       line-height: 16px;
@@ -244,14 +280,48 @@
     font-weight: 500;
     min-height: 44px;
 
+    @media (max-width: 992px) {
+      padding: 14px 24px;
+      width: 100%;
+      gap: 12px;
+      // flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
     .copyright {
-      opacity: 0.5;
+      @media (max-width: 992px) {
+        width: max-content;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+      }
+
+      span {
+        opacity: 0.5;
+      }
+    }
+
+    &__menu {
+      @media (max-width: 992px) {
+        width: max-content;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 767px) {
+        gap: 12px;
+      }
     }
 
     ul {
       display: flex;
       align-items: center;
       gap: 24px;
+
+      li {
+        @media (max-width: 767px) {
+          flex-shrink: 0;
+        }
+      }
     }
 
     a {
@@ -261,6 +331,12 @@
 
       &:hover {
         opacity: 1;
+      }
+    }
+
+    .alpha {
+      @media (max-width: 767px) {
+        flex-shrink: 0;
       }
     }
   }
