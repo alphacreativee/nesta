@@ -2178,12 +2178,6 @@ section.lightpick .lightpick__previous-action {
 .accommodation-item .content .btn-wrapper .button-global {
   padding: 8px 20px 7px;
 }
-.accommodation-item .content .btn-wrapper a {
-  transition: all 0.4s ease;
-}
-.accommodation-item .content .btn-wrapper a:hover {
-  color: var(--color-primary-3);
-}
 
 .accommodation-detail {
   background-color: var(--color-white);
