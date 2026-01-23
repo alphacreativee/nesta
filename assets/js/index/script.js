@@ -17,6 +17,7 @@ import {
   headerMobile,
   sectionExperiences,
   popupBookingMobile,
+  animationSubMenu,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -80,6 +81,7 @@ const init = () => {
   headerMobile();
   sectionExperiences();
   popupBookingMobile();
+  animationSubMenu();
 };
 
 preloadImages("img").then(() => {

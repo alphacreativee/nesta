@@ -806,3 +806,4 @@ export function popupBookingMobile() {
     console.log("123");
   });
 }
+export function animationSubMenu() {}
