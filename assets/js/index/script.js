@@ -14,6 +14,7 @@ import {
   initGuestSelector,
   accommodationDetail,
   sectionGallery,
+  headerMobile,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -51,34 +52,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const init = () => {};
-gsap.registerPlugin(ScrollTrigger);
-effectText();
-animationItemsSection();
-fadeTextFooter();
-customDropdown();
-createFilterTab();
-sectionNews();
-scrollChangeBgHeader();
-// scrollFixedBookingForm();
-setOfferDescHeight();
-// sliderChangeContent();
-checkScrollBookingUp();
-scrollToTop();
-bookingTime();
-ctaRun();
-initGuestSelector();
-sliderParallax();
-sliderGallery();
-accommodationDetail();
-sectionGallery();
-createFilterTabMulti();
+const init = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  effectText();
+  animationItemsSection();
+  fadeTextFooter();
+  customDropdown();
+  createFilterTab();
+  sectionNews();
+  scrollChangeBgHeader();
+  // scrollFixedBookingForm();
+  setOfferDescHeight();
+  // sliderChangeContent();
+  checkScrollBookingUp();
+  scrollToTop();
+  bookingTime();
+  ctaRun();
+  initGuestSelector();
+  sliderParallax();
+
+  accommodationDetail();
+  sectionGallery();
+  createFilterTabMulti();
+  headerMobile();
+};
+
 preloadImages("img").then(() => {
   init();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   sliderWithShadow();
+  sliderGallery();
 });
 
 // event click element a

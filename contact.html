@@ -96,12 +96,12 @@
       <section class="hero">
         <div class="container-fluid p-0">
           <!-- option image -->
-          <div class="hero-image d-none">
+          <div class="hero-image">
             <img src="./assets/images/del/banner-1.webp" alt="" />
           </div>
           <!-- end option image -->
           <!-- option slider change content -->
-          <div class="hero-option-slider">
+          <!-- <div class="hero-option-slider d-none">
             <div class="swiper hero-slider h-100">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -141,13 +141,13 @@
               </div>
             </div>
           </div>
-          <div class="slider-content-wrapper">
+          <div class="slider-content-wrapper d-none">
             <div class="slider-content-line-vertical"></div>
             <div class="slider-content-main">
               <div class="slider-content-import"></div>
               <div class="slider-pagination"></div>
             </div>
-          </div>
+          </div> -->
           <!-- end option slider change content -->
           <!-- option video -->
           <div class="hero-video-banner d-none">
@@ -163,7 +163,7 @@
             </video>
           </div>
           <!-- end option video -->
-          <div class="booking-form-wrapper">
+          <div class="booking-form-wrapper d-none">
             <div class="booking-form-container">
               <form action="">
                 <div class="booking-form-item">
@@ -292,6 +292,7 @@
           </div>
         </div>
       </section>
+      <div class="spacing" style="height: 100vh"></div>
     </main>
     <!-- layout -->
 
@@ -303,7 +304,7 @@
           document.getElementById("footer").innerHTML = data;
         });
     </script>
-    <footer id="footer" class="footer"></footer>
+    <footer id="footer" class="footer d-none"></footer>
     <!-- end footer -->
     <!-- end layout -->
 

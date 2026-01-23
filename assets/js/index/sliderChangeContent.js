@@ -1,7 +1,8 @@
 export function sliderChangeContent() {
-  if ($("section.hero .hero-slider").length < 1) return;
-
   document.querySelectorAll("section.hero").forEach((section) => {
+    if (!section.querySelector(".hero-slider")) return;
+    console.log("123");
+
     let isTransitioning = false;
 
     const heroSwiper = new Swiper(section.querySelector(".hero-slider"), {
