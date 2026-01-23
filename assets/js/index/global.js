@@ -803,7 +803,46 @@ export function popupBookingMobile() {
   });
   closeBtnPopup.addEventListener("click", function () {
     popupBookingMobile.classList.remove("active");
-    console.log("123");
   });
 }
-export function animationSubMenu() {}
+export function animationSubMenu() {
+  const menuItemsWithChildren = document.querySelectorAll(
+    "#header .header-menu > ul > li.menu-item-has-children",
+  );
+
+  menuItemsWithChildren.forEach((menuItem) => {
+    const subMenu = menuItem.querySelector(".sub-menu");
+    const subMenuItems = subMenu ? subMenu.querySelectorAll("li") : [];
+
+    if (subMenuItems.length > 0) {
+      gsap.set(subMenuItems, {
+        y: 10,
+        opacity: 0,
+      });
+    }
+
+    menuItem.addEventListener("mouseenter", function () {
+      if (subMenuItems.length > 0) {
+        gsap.to(subMenuItems, {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.out",
+        });
+      }
+    });
+
+    menuItem.addEventListener("mouseleave", function () {
+      if (subMenuItems.length > 0) {
+        gsap.to(subMenuItems, {
+          y: 10,
+          opacity: 0,
+          duration: 0.3,
+          stagger: 0.05,
+          ease: "power2.in",
+        });
+      }
+    });
+  });
+}

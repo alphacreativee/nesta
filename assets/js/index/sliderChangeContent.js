@@ -1,7 +1,6 @@
 export function sliderChangeContent() {
   document.querySelectorAll("section.hero").forEach((section) => {
     if (!section.querySelector(".hero-slider")) return;
-    console.log("123");
 
     let isTransitioning = false;
 
