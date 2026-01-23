@@ -838,7 +838,7 @@ export function animationSubMenu() {
         gsap.to(subMenuItems, {
           y: 0,
           opacity: 1,
-          duration: 0.3,
+          duration: 0.5,
           stagger: 0.05,
           ease: "power2.out",
         });
@@ -848,7 +848,7 @@ export function animationSubMenu() {
         gsap.to(btnViewHotel, {
           y: 0,
           opacity: 1,
-          duration: 0.3,
+          duration: 0.5,
           delay: subMenuItems.length * 0.05, // Chạy sau khi items chạy xong
           ease: "power2.out",
         });
@@ -860,7 +860,7 @@ export function animationSubMenu() {
         gsap.to(subMenuItems, {
           y: 10,
           opacity: 0,
-          duration: 0.3,
+          duration: 0.5,
           stagger: 0.05,
           ease: "power2.in",
         });
@@ -870,7 +870,7 @@ export function animationSubMenu() {
         gsap.to(btnViewHotel, {
           y: 10,
           opacity: 0,
-          duration: 0.3,
+          duration: 0.5,
           ease: "power2.in",
         });
       }
