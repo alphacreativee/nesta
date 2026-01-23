@@ -127,6 +127,8 @@ export function checkScrollBookingUp() {
 }
 
 export function setOfferDescHeight() {
+  if ($("window").width() < 992) return;
+
   const items = document.querySelectorAll(".featured-offers .offer-item");
 
   items.forEach((item) => {

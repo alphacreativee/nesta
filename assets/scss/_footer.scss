@@ -3,7 +3,7 @@
   overflow: hidden;
 
   &-top {
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
       gap: 40px;
     }
   }
@@ -14,7 +14,7 @@
     background-position: center;
     padding: 40px 80px 20px;
 
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
       padding: 40px 24px 20px;
     }
 
@@ -257,7 +257,7 @@
   &-bottom {
     margin-top: 48px;
 
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
       gap: 24px;
     }
 
@@ -280,7 +280,7 @@
     font-weight: 500;
     min-height: 44px;
 
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
       padding: 14px 24px;
       width: 100%;
       gap: 12px;
@@ -289,7 +289,7 @@
     }
 
     .copyright {
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         width: max-content;
         flex-shrink: 0;
         flex-wrap: wrap;
@@ -301,7 +301,7 @@
     }
 
     &__menu {
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         width: max-content;
         gap: 24px;
         flex-wrap: wrap;

@@ -1,6 +1,10 @@
 .section-experience {
   background-color: var(--color-secondary-1);
 
+  @media (max-width: 991px) {
+    display: none;
+  }
+
   .section-wrapper {
     padding: 40px 80px;
   }

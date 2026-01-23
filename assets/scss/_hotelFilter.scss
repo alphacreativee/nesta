@@ -3,10 +3,18 @@
 
   .section-wrapper {
     padding: 80px 80px 60px 80px;
+
+    @media (max-width: 991px) {
+      padding: 48px 24px 32px;
+    }
   }
 
   &__top {
     margin-bottom: 54px;
+
+    @media (max-width: 991px) {
+      margin-bottom: 32px;
+    }
 
     .nav-tabs {
       gap: 8px;
@@ -63,6 +71,10 @@
     border-radius: 20px;
     overflow: hidden;
 
+    @media (max-width: 991px) {
+      box-shadow: 0px 15px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+
     &:hover {
       .content-title,
       .btn-arrow {
@@ -115,6 +127,12 @@
         -webkit-line-clamp: 3;
         line-clamp: 3;
         -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @media (max-width: 991px) {
+          -webkit-line-clamp: 4;
+          line-clamp: 4;
+        }
       }
 
       .btn-arrow {

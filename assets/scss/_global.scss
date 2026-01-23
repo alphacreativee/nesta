@@ -1,4 +1,8 @@
 .swiper-arrows {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
   .swiper-arrow {
     width: 40px;
     height: 40px;
@@ -12,6 +16,10 @@
     top: 50%;
     transform: translateY(50%);
     transition: all 0.4s ease;
+
+    @media (max-width: 991px) {
+      position: unset;
+    }
 
     &:hover {
       background-color: var(--color-primary-3);
@@ -27,11 +35,19 @@
     &.arrow-prev {
       transform: scale(-1) translate(100%, 50%);
       left: -18px;
+
+      @media (max-width: 991px) {
+        transform: scale(-1);
+      }
     }
 
     &.arrow-next {
       right: -18px;
       transform: translate(100%, -50%);
+
+      @media (max-width: 991px) {
+        transform: none;
+      }
     }
   }
 }

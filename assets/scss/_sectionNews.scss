@@ -2,8 +2,17 @@
   &-wrapper {
     padding: 80px;
     background-color: var(--color-secondary-1);
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
+
     .section-top {
       margin-bottom: 48px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 32px;
+      }
     }
   }
 
@@ -47,6 +56,7 @@
         -webkit-line-clamp: 2;
         line-clamp: 2;
         -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       &-desc {
@@ -56,6 +66,7 @@
         -webkit-line-clamp: 3;
         line-clamp: 3;
         -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
 
@@ -73,5 +84,11 @@
 
   &-main {
     position: relative;
+
+    .wrapper-arrows {
+      @media (max-width: 991px) {
+        margin-top: 32px;
+      }
+    }
   }
 }
