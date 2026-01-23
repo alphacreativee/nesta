@@ -58,8 +58,9 @@ export function sliderChangeContent() {
             }
           }
 
+          const swiper = this; // Lưu reference của Swiper
+
           setTimeout(() => {
-            const swiper = this;
             const nextSlide = swiper.slides[swiper.activeIndex];
             const slideContent = nextSlide.querySelector(
               ".hero-slider-content",
