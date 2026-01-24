@@ -2127,6 +2127,17 @@ section.lightpick .lightpick__previous-action {
   aspect-ratio: 410/510;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
+}
+.offer-item .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+  z-index: 2;
 }
 @media (max-width: 991px) {
   .offer-item .image {
@@ -2139,10 +2150,11 @@ section.lightpick .lightpick__previous-action {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+  border-radius: 20px;
 }
 .offer-item .content {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 0;
   left: 0;
   padding: 32px;
@@ -2566,37 +2578,44 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: right 0.5s ease;
+  transition: right 0.5s ease, opacity 0.3s ease 0.15s;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #cta {
     right: 24px;
-    transition: none;
+    transition: opacity 0.3s ease 0.15s;
   }
 }
 #cta.run-right {
-  right: -84px;
+  right: -60px;
+  opacity: 0;
 }
 @media (max-width: 991px) {
   #cta.run-right {
     right: 24px;
   }
   #cta.run-right .cta-booking {
-    transform: translateX(84px);
+    transform: translateX(60px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease 0.15s;
     transition-delay: 0s;
   }
   #cta.run-right .cta-wrapper {
-    transform: translateX(84px);
+    transform: translateX(60px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease 0.15s;
     transition-delay: 0.15s;
   }
 }
 #cta .cta-wrapper {
   position: relative;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #cta .cta-wrapper {
     transform: translateX(0);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
     transition-delay: 0.15s;
   }
 }
@@ -2702,6 +2721,7 @@ section.lightpick .lightpick__previous-action {
   border-radius: 50%;
   background-color: var(--color-primary-3);
   display: none;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #cta .cta-booking {
@@ -2710,7 +2730,7 @@ section.lightpick .lightpick__previous-action {
     align-items: center;
     min-height: 54px;
     transform: translateX(0);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
     transition-delay: 0s;
   }
 }
