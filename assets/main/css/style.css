@@ -2488,16 +2488,18 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: right 0.5s ease;
+  transition: right 0.5s ease, opacity 0.3s ease 0.35s;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #cta {
     right: 24px;
-    transition: none;
+    transition: opacity 0.3s ease 0.35s;
   }
 }
 #cta.run-right {
   right: -84px;
+  opacity: 0;
 }
 @media (max-width: 991px) {
   #cta.run-right {
@@ -2505,20 +2507,25 @@ section.lightpick .lightpick__previous-action {
   }
   #cta.run-right .cta-booking {
     transform: translateX(84px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease 0.35s;
     transition-delay: 0s;
   }
   #cta.run-right .cta-wrapper {
     transform: translateX(84px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease 0.35s;
     transition-delay: 0.15s;
   }
 }
 #cta .cta-wrapper {
   position: relative;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #cta .cta-wrapper {
     transform: translateX(0);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
     transition-delay: 0.15s;
   }
 }
@@ -2624,6 +2631,7 @@ section.lightpick .lightpick__previous-action {
   border-radius: 50%;
   background-color: var(--color-primary-3);
   display: none;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   #cta .cta-booking {
@@ -2632,7 +2640,7 @@ section.lightpick .lightpick__previous-action {
     align-items: center;
     min-height: 54px;
     transform: translateX(0);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
     transition-delay: 0s;
   }
 }
