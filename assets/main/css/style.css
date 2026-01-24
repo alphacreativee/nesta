@@ -2488,17 +2488,17 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: right 0.5s ease, opacity 0.3s ease 0.35s;
+  transition: right 0.5s ease, opacity 0.3s ease 0.15s;
   opacity: 1;
 }
 @media (max-width: 991px) {
   #cta {
     right: 24px;
-    transition: opacity 0.3s ease 0.35s;
+    transition: opacity 0.3s ease 0.15s;
   }
 }
 #cta.run-right {
-  right: -84px;
+  right: -60px;
   opacity: 0;
 }
 @media (max-width: 991px) {
@@ -2506,15 +2506,15 @@ section.lightpick .lightpick__previous-action {
     right: 24px;
   }
   #cta.run-right .cta-booking {
-    transform: translateX(84px);
+    transform: translateX(60px);
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease 0.35s;
+    transition: transform 0.5s ease, opacity 0.3s ease 0.15s;
     transition-delay: 0s;
   }
   #cta.run-right .cta-wrapper {
-    transform: translateX(84px);
+    transform: translateX(60px);
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease 0.35s;
+    transition: transform 0.5s ease, opacity 0.3s ease 0.15s;
     transition-delay: 0.15s;
   }
 }

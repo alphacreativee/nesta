@@ -8,37 +8,37 @@
   gap: 8px;
   transition:
     right 0.5s ease,
-    opacity 0.3s ease 0.35s;
+    opacity 0.3s ease 0.15s; // Delay ngắn hơn để opacity bắt đầu sớm hơn
   opacity: 1;
 
   @media (max-width: 991px) {
     right: 24px;
-    transition: opacity 0.3s ease 0.35s;
+    transition: opacity 0.3s ease 0.15s;
   }
 
   // Khi có class run-right
   &.run-right {
-    right: -84px;
+    right: -60px;
     opacity: 0;
 
     @media (max-width: 991px) {
       right: 24px;
 
       .cta-booking {
-        transform: translateX(84px);
+        transform: translateX(60px);
         opacity: 0;
         transition:
           transform 0.5s ease,
-          opacity 0.3s ease 0.35s;
+          opacity 0.3s ease 0.15s; // Sau 0.15s (khoảng 18px) thì bắt đầu mờ
         transition-delay: 0s;
       }
 
       .cta-wrapper {
-        transform: translateX(84px);
+        transform: translateX(60px);
         opacity: 0;
         transition:
           transform 0.5s ease,
-          opacity 0.3s ease 0.35s;
+          opacity 0.3s ease 0.15s; // Sau 0.15s (khoảng 18px) thì bắt đầu mờ
         transition-delay: 0.15s;
       }
     }
