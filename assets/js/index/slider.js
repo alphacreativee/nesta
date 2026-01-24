@@ -100,7 +100,7 @@ export function sliderParallax() {
       watchSlidesProgress: true,
 
       keyboard: !hasNoDrag,
-      mousewheel: !hasNoDrag,
+      // mousewheel: !hasNoDrag,
       grabCursor: !hasNoDrag,
       allowTouchMove: !hasNoDrag,
 

@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select",
+    ".dropdown-custom, .dropdown-custom-select"
   );
 
   dropdowns.forEach((dropdown) => {
@@ -84,9 +84,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light"),
+      onLeaveBack: () => header.classList.remove("header-theme-light")
       // markers: true,
-    },
+    }
   });
 }
 export function scrollFixedBookingForm() {
@@ -104,7 +104,7 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
     // markers: true,
   });
 }
@@ -121,7 +121,7 @@ export function checkScrollBookingUp() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-up"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up")
     // markers: true,
   });
 }
@@ -190,7 +190,7 @@ export function bookingTime() {
 
     onYearChange: function () {
       setTimeout(positionCalendar, 10);
-    },
+    }
   });
 
   const bookingCalendar = document.querySelector(".booking-calendar");
@@ -215,7 +215,7 @@ export function effectText() {
       {
         opacity: 0,
         y: 20,
-        willChange: "opacity, transform",
+        willChange: "opacity, transform"
       },
       {
         opacity: 1,
@@ -226,9 +226,9 @@ export function effectText() {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%",
-        },
-      },
+          end: "bottom 80%"
+        }
+      }
     );
   });
 
@@ -238,7 +238,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines",
+      mask: "lines"
     });
 
     gsap.fromTo(
@@ -249,8 +249,8 @@ export function effectText() {
         duration: 1,
         ease: "power3.out",
         stagger: 0.05,
-        delay: delay,
-      },
+        delay: delay
+      }
     );
   });
 
@@ -258,7 +258,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines",
+      mask: "lines"
     });
 
     gsap.fromTo(
@@ -271,9 +271,9 @@ export function effectText() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: description,
-          start: "top 80%",
-        },
-      },
+          start: "top 80%"
+        }
+      }
     );
   });
 }
@@ -297,9 +297,9 @@ export function animationItemsSection() {
       scrollTrigger: {
         trigger: section,
         start: "top 65%",
-        toggleActions: "play none none none",
+        toggleActions: "play none none none"
         // markers: true,
-      },
+      }
     });
 
     items.forEach((item) => {
@@ -310,7 +310,7 @@ export function animationItemsSection() {
         const split = new SplitText(item, {
           type: "lines",
           linesClass: "line",
-          mask: "lines",
+          mask: "lines"
         });
 
         gsap.set(split.lines, { yPercent: 120 });
@@ -321,8 +321,8 @@ export function animationItemsSection() {
           ease: LINE_EASE,
           stagger: {
             each: ITEM_DURATION / split.lines.length,
-            ease: "none",
-          },
+            ease: "none"
+          }
         });
       }
 
@@ -334,9 +334,62 @@ export function animationItemsSection() {
           y: 0,
           opacity: 1,
           duration: ITEM_DURATION,
-          ease: FADE_EASE,
+          ease: FADE_EASE
         });
       }
+    });
+  });
+
+  gsap.utils.toArray("[modal-fade-each-item]").forEach((modal) => {
+    let duration = ITEM_DURATION;
+
+    if (modal.hasAttribute("data-item-duration")) {
+      duration = parseFloat(modal.getAttribute("data-item-duration"));
+    }
+
+    const items = modal.querySelectorAll("[data-fade-item]");
+
+    const tl = gsap.timeline({ paused: true });
+
+    items.forEach((item) => {
+      const isLineItem = item.hasAttribute("fade-item-line");
+
+      if (isLineItem) {
+        const split = new SplitText(item, {
+          type: "lines",
+          linesClass: "line",
+          mask: "lines"
+        });
+
+        gsap.set(split.lines, { yPercent: 120 });
+
+        tl.to(split.lines, {
+          yPercent: 0,
+          duration: duration,
+          ease: LINE_EASE,
+          stagger: {
+            each: duration / split.lines.length,
+            ease: "none"
+          }
+        });
+      } else {
+        gsap.set(item, { y: 30, opacity: 0 });
+
+        tl.to(item, {
+          y: 0,
+          opacity: 1,
+          duration: duration,
+          ease: FADE_EASE
+        });
+      }
+    });
+
+    modal.addEventListener("shown.bs.modal", () => {
+      tl.restart();
+    });
+
+    modal.addEventListener("hidden.bs.modal", () => {
+      tl.pause(0);
     });
   });
 }
@@ -348,7 +401,7 @@ export function fadeTextFooter() {
 
   gsap.set(elements, {
     opacity: 0,
-    y: 20,
+    y: 20
   });
 
   let tlf = gsap.timeline({ paused: true });
@@ -357,15 +410,15 @@ export function fadeTextFooter() {
     elements,
     {
       opacity: 0,
-      y: 20,
+      y: 20
     },
     {
       opacity: 1,
       y: 0,
       stagger: 0.05,
       duration: 0.4,
-      ease: "power2.out",
-    },
+      ease: "power2.out"
+    }
   );
 
   ScrollTrigger.create({
@@ -373,7 +426,7 @@ export function fadeTextFooter() {
     start: "top 80%",
     animation: tlf,
     toggleActions: "play none none none",
-    invalidateOnRefresh: true, // Reset animation khi refresh
+    invalidateOnRefresh: true // Reset animation khi refresh
     // markers: true,
   });
 
@@ -410,7 +463,7 @@ export function ctaRun() {
       if (!isInFooter && !isShortPage()) {
         cta.classList.toggle("run-right", self.direction === 1);
       }
-    },
+    }
   });
 
   ScrollTrigger.create({
@@ -429,7 +482,7 @@ export function ctaRun() {
       isInFooter = false;
       cta.style.position = "fixed";
       cta.style.top = "";
-    },
+    }
   });
 }
 export function initGuestSelector() {
@@ -521,7 +574,7 @@ export function accommodationDetail() {
   $more.css({
     overflow: "hidden",
     height: 0,
-    transition: `height ${duration}ms ease`,
+    transition: `height ${duration}ms ease`
   });
 
   $btn.on("click", function () {
@@ -538,7 +591,7 @@ export function accommodationDetail() {
       $more.css({
         height: fullHeight + "px",
         overflow: "hidden",
-        transition: `height ${duration}ms ease`,
+        transition: `height ${duration}ms ease`
       });
 
       setTimeout(() => {
@@ -577,7 +630,7 @@ export function sectionGallery() {
       touchNavigation: true,
       loop: true,
       autoplayVideos: true,
-      onOpen: handleCustomArrow,
+      onOpen: handleCustomArrow
     });
   }
 
@@ -675,7 +728,7 @@ export function headerMobile() {
 
       // Remove active từ tất cả menu-item-has-children
       const menuItemsWithChildren = document.querySelectorAll(
-        ".menu-item-has-children",
+        ".menu-item-has-children"
       );
       menuItemsWithChildren.forEach((item) => {
         item.classList.remove("active");
@@ -691,7 +744,7 @@ export function headerMobile() {
 
   // Toggle submenu cho menu-item-has-children
   const menuItemsWithChildren = document.querySelectorAll(
-    ".menu-item-has-children",
+    ".menu-item-has-children"
   );
 
   menuItemsWithChildren.forEach((menuItem) => {
@@ -752,9 +805,9 @@ export function sectionExperiences() {
             trigger: ".section-experience",
             start: "top bottom",
             end: "bottom top",
-            scrub: true,
-          },
-        },
+            scrub: true
+          }
+        }
       );
     });
 
@@ -788,9 +841,9 @@ export function sectionExperiences() {
           trigger: section,
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
-        },
-      },
+          scrub: true
+        }
+      }
     );
   });
 }
@@ -809,7 +862,7 @@ export function popupBookingMobile() {
 }
 export function animationSubMenu() {
   const menuItemsWithChildren = document.querySelectorAll(
-    "#header .header-menu > ul > li.menu-item-has-children",
+    "#header .header-menu > ul > li.menu-item-has-children"
   );
 
   menuItemsWithChildren.forEach((menuItem) => {
@@ -822,14 +875,14 @@ export function animationSubMenu() {
     if (subMenuItems.length > 0) {
       gsap.set(subMenuItems, {
         y: 10,
-        opacity: 0,
+        opacity: 0
       });
     }
 
     if (btnViewHotel) {
       gsap.set(btnViewHotel, {
         y: 10,
-        opacity: 0,
+        opacity: 0
       });
     }
 
@@ -840,7 +893,7 @@ export function animationSubMenu() {
           opacity: 1,
           duration: 0.6,
           stagger: 0.08,
-          ease: "power3.out",
+          ease: "power3.out"
         });
       }
 
@@ -850,7 +903,7 @@ export function animationSubMenu() {
           opacity: 1,
           duration: 0.8,
           delay: subMenuItems.length * 0.08,
-          ease: "power3.out",
+          ease: "power3.out"
         });
       }
     });
@@ -862,7 +915,7 @@ export function animationSubMenu() {
           opacity: 0,
           duration: 0.6,
           stagger: 0.04,
-          ease: "power3.in",
+          ease: "power3.in"
         });
       }
 
@@ -871,7 +924,7 @@ export function animationSubMenu() {
           y: 10,
           opacity: 0,
           duration: 0.6,
-          ease: "power3.in",
+          ease: "power3.in"
         });
       }
     });
