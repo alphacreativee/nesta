@@ -552,3 +552,49 @@ section.lightpick {
     }
   }
 }
+
+.pagination {
+  margin-top: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  .page-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(64, 64, 64, 0.3);
+
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+
+    &.prev-page {
+      svg {
+        transform: scale(-1);
+      }
+    }
+
+    &:hover {
+      border-color: var(--color-black);
+    }
+
+    &.active {
+      pointer-events: none;
+      background-color: var(--color-black);
+      color: var(--color-white);
+      border-color: var(--color-black);
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+}

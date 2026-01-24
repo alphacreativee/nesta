@@ -780,6 +780,43 @@ section.lightpick .lightpick__previous-action {
   transition: stroke 0.3s ease;
 }
 
+.pagination {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.pagination .page-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(64, 64, 64, 0.3);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+.pagination .page-number.prev-page svg {
+  transform: scale(-1);
+}
+.pagination .page-number:hover {
+  border-color: var(--color-black);
+}
+.pagination .page-number.active {
+  pointer-events: none;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+.pagination .page-number.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 .footer {
   color: var(--color-white);
   overflow: hidden;
@@ -3633,4 +3670,39 @@ section.lightpick .lightpick__previous-action {
   font-weight: 500;
   color: var(--color-black);
   margin-bottom: 8px;
+}
+
+.list-post-filter .section-wrapper {
+  padding: 80px;
+}
+.list-post-filter .section-title {
+  margin-bottom: 45px;
+}
+.list-post-filter .filter-list-button {
+  gap: 8px;
+}
+.list-post-filter .filter-list-button .filter-button {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  backdrop-filter: blur(65px);
+  margin: 0;
+  border: 1px solid rgba(64, 64, 64, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.list-post-filter .filter-list-button .filter-button.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  pointer-events: none;
+}
+.list-post-filter .filter-list-button .filter-button:hover {
+  border-color: var(--color-black);
+}
+.list-post-filter .list-post {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 24px;
 }
