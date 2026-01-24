@@ -16,7 +16,7 @@ export function loading() {
     ease: "power2.inOut",
   });
 
-  tl.add(() => {}, "+=0.5");
+  // tl.add(() => {}, "+=0.5");
 
   tl.fromTo(
     "#loading",
