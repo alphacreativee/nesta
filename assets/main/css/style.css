@@ -2037,6 +2037,17 @@ section.lightpick .lightpick__previous-action {
   aspect-ratio: 410/510;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
+}
+.offer-item .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+  z-index: 2;
 }
 @media (max-width: 991px) {
   .offer-item .image {
@@ -2052,7 +2063,7 @@ section.lightpick .lightpick__previous-action {
 }
 .offer-item .content {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 0;
   left: 0;
   padding: 32px;
