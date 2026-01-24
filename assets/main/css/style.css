@@ -2758,6 +2758,7 @@ section.lightpick .lightpick__previous-action {
   padding: 32px;
   border-radius: 20px;
   background-color: rgba(24, 24, 25, 0.9);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
 }
