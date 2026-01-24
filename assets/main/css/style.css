@@ -3672,6 +3672,9 @@ section.lightpick .lightpick__previous-action {
   margin-bottom: 8px;
 }
 
+.list-post-filter {
+  background-color: var(--color-secondary-1);
+}
 .list-post-filter .section-wrapper {
   padding: 80px;
 }
