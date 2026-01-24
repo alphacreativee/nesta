@@ -87,7 +87,7 @@
       ul {
         display: flex;
         align-items: center;
-        gap: 32px;
+        gap: 24px;
         li {
           &.menu-item-has-children {
             position: relative;
@@ -262,6 +262,9 @@
             text-transform: uppercase;
             color: var(--color-white);
             transition: color 0.3s ease;
+            @media (max-width: 1400px) {
+              font-size: 13px;
+            }
             &.active {
               color: var(--color-primary-3) !important;
             }
@@ -281,6 +284,9 @@
       max-width: calc(100% - 160px);
       margin: 0 auto;
       border-bottom: 1px solid var(--color-white);
+      @media (max-width: 1300px) {
+        gap: 18px;
+      }
       @media (max-width: 991px) {
         max-width: calc(100%);
         padding: 9.5px 24px;
@@ -291,7 +297,7 @@
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      gap: 40px;
+      gap: 32px;
       @media (max-width: 991px) {
         grid-template-columns: 1fr;
       }

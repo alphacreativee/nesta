@@ -1,7 +1,10 @@
 .featured-offers {
   background-color: var(--color-white);
   &.benefit {
+    background-color: var(--color-secondary-1);
     .section-wrapper {
+      padding-top: 0;
+      padding-bottom: 80px;
     }
   }
   .section-wrapper {
