@@ -2465,19 +2465,37 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition: right 0.5s ease;
 }
 @media (max-width: 991px) {
   #cta {
     right: 24px;
+    transition: none;
+  }
+}
+#cta.run-right {
+  right: -84px;
+}
+@media (max-width: 991px) {
+  #cta.run-right {
+    right: 24px;
+  }
+  #cta.run-right .cta-booking {
+    transform: translateX(84px);
+    transition-delay: 0s;
+  }
+  #cta.run-right .cta-wrapper {
+    transform: translateX(84px);
+    transition-delay: 0.15s;
   }
 }
 #cta .cta-wrapper {
   position: relative;
-  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 @media (max-width: 991px) {
   #cta .cta-wrapper {
     transform: translateX(0);
+    transition: transform 0.5s ease;
     transition-delay: 0.15s;
   }
 }
@@ -2583,7 +2601,6 @@ section.lightpick .lightpick__previous-action {
   border-radius: 50%;
   background-color: var(--color-primary-3);
   display: none;
-  transition: transform 0.5s ease;
 }
 @media (max-width: 991px) {
   #cta .cta-booking {
@@ -2592,21 +2609,12 @@ section.lightpick .lightpick__previous-action {
     align-items: center;
     min-height: 54px;
     transform: translateX(0);
+    transition: transform 0.5s ease;
     transition-delay: 0s;
   }
 }
 #cta .cta-booking:hover {
   background-color: var(--color-black);
-}
-@media (max-width: 991px) {
-  #cta.run-right .cta-booking {
-    transform: translateX(84px);
-    transition-delay: 0s;
-  }
-  #cta.run-right .cta-wrapper {
-    transform: translateX(84px);
-    transition-delay: 0.15s;
-  }
 }
 
 #loading {
