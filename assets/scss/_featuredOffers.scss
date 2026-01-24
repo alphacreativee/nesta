@@ -1,6 +1,9 @@
 .featured-offers {
   background-color: var(--color-white);
-
+  &.benefit {
+    .section-wrapper {
+    }
+  }
   .section-wrapper {
     padding: 80px 80px 40px 80px;
 
@@ -53,9 +56,10 @@
 
 .offer-item {
   position: relative;
-  //   overflow: hidden;
+  overflow: hidden;
   display: block;
-
+  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   &:hover {
     img {
       transform: scale(1.03);
@@ -75,7 +79,6 @@
     aspect-ratio: 410 / 510;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
 
     @media (max-width: 991px) {
       box-shadow: 0px 15px 8px 0px rgba(0, 0, 0, 0.1);
@@ -130,6 +133,18 @@
     @media (max-width: 991px) {
       top: 16px;
       left: 16px;
+    }
+  }
+}
+.offer-main {
+  &.benefit-style {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 24px;
+    .offer-item {
+      .tag {
+        display: none;
+      }
     }
   }
 }

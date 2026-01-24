@@ -3,31 +3,59 @@
   right: 12px;
   bottom: 35px;
   z-index: 100;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition: right 0.5s ease;
+
   @media (max-width: 991px) {
     right: 24px;
+    transition: none;
   }
+
+  // Khi có class run-right
   &.run-right {
-    right: -60px;
+    right: -84px; // Chạy ra ngoài trên desktop
+
+    @media (max-width: 991px) {
+      right: 24px;
+
+      .cta-booking {
+        transform: translateX(84px);
+        transition-delay: 0s;
+      }
+
+      .cta-wrapper {
+        transform: translateX(84px);
+        transition-delay: 0.15s;
+      }
+    }
   }
+
   .cta {
     &-wrapper {
       position: relative;
 
+      @media (max-width: 991px) {
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+        transition-delay: 0.15s;
+      }
+
       &:hover {
         .cta-global {
           background-color: var(--color-primary-3);
+
           &::before {
             opacity: 1;
             visibility: visible;
           }
+
           img {
             &:first-child {
               transform: scale(0);
             }
+
             &:last-child {
               transform: translate(-50%, -50%) scale(1);
             }
@@ -38,6 +66,7 @@
           opacity: 1;
           visibility: visible;
           transition-delay: 0s;
+
           .cta-item {
             transform: translateY(0) scale(1);
             opacity: 1;
@@ -45,6 +74,7 @@
         }
       }
     }
+
     &-list {
       position: absolute;
       top: 0;
@@ -60,6 +90,7 @@
         visibility 0.3s ease;
       transition-delay: 0.3s;
     }
+
     &-item {
       width: 54px;
       height: 54px;
@@ -72,15 +103,18 @@
       transform-origin: center;
       opacity: 0;
       transition:
-        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        transform 0.4s ease,
         opacity 0.3s ease,
         background-color 0.3s ease;
+
       &:nth-child(3) {
         transition-delay: 0.05s;
       }
+
       &:nth-child(2) {
         transition-delay: 0.1s;
       }
+
       &:nth-child(1) {
         transition-delay: 0.15s;
       }
@@ -101,6 +135,7 @@
       position: relative;
       transition: all 0.3s ease;
       cursor: pointer;
+
       &::before {
         content: "";
         position: absolute;
@@ -118,6 +153,7 @@
 
       img {
         transition: all 0.3s ease;
+
         &:last-child {
           position: absolute;
           top: 50%;
@@ -128,18 +164,24 @@
       }
     }
   }
+
   .cta-booking {
     width: 54px;
     height: 54px;
     border-radius: 50%;
     background-color: var(--color-primary-3);
     display: none;
-    transition: all 0.3s ease;
+
     @media (max-width: 991px) {
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 54px;
+      transform: translateX(0);
+      transition: transform 0.5s ease;
+      transition-delay: 0s;
     }
+
     &:hover {
       background-color: var(--color-black);
     }
