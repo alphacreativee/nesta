@@ -27,6 +27,22 @@ export function customDropdown() {
       item.addEventListener("click", function (e) {
         e.stopPropagation();
 
+        // dropdown nav tab
+        const isInSectionModel = dropdown.closest(".hotel-filter") !== null;
+        const clickedText =
+          item.querySelector("span")?.textContent.trim() || "";
+        const clickedDataTab = item.dataset.tab || "";
+
+        if (isInSectionModel) {
+          const spanEl = valueSelect.querySelector("span");
+          if (spanEl) spanEl.textContent = clickedText;
+
+          if (clickedDataTab) valueSelect.dataset.tab = clickedDataTab;
+
+          closeAllDropdowns();
+          return;
+        }
+
         if (isSelectType) {
           const optionText = item.textContent;
           displayText.textContent = optionText;
@@ -928,5 +944,22 @@ export function animationSubMenu() {
         });
       }
     });
+  });
+}
+
+export function sectionHotelFilter() {
+  if ($(".hotel-filter").length < 1) return;
+
+  $(".hotel-filter .dropdown-custom-item").on("click", function () {
+    const span = $(this).find("span");
+    if (!span.length) return;
+
+    const tabId = span.data("tab");
+
+    const trigger = $(`[data-bs-target="#${tabId}"]`);
+    if (trigger.length) {
+      const tab = new bootstrap.Tab(trigger[0]);
+      tab.show();
+    }
   });
 }
