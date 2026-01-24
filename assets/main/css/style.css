@@ -1414,16 +1414,29 @@ section.lightpick .lightpick__previous-action {
   position: fixed;
   left: 0;
   width: 100%;
-  background-color: var(--color-white);
   top: 60px;
   height: calc(100dvh - 60px);
-  padding: 64px 24px 24px 24px;
   z-index: 990;
   transform: translateX(100%);
   transition: all 0.3s ease;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  #header .header-sub-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #header .header-sub-menu .header-sub-menu-overlay {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+  }
+}
 #header .header-sub-menu.active {
   transform: translateX(0);
+}
+#header .header-sub-menu .header-menu.mobile-layout {
+  background-color: var(--color-white);
+  padding: 64px 24px 24px 24px;
+  height: 100%;
 }
 #header .header-sub-menu .header-menu.mobile-layout ul {
   flex-direction: column;
@@ -1444,6 +1457,13 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.3s ease;
   transform: translateX(100%);
   z-index: 888;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu {
+    width: 50%;
+    right: 0;
+    left: auto;
+  }
 }
 #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu.show-menu {
   transform: translateX(0);
@@ -1472,6 +1492,13 @@ section.lightpick .lightpick__previous-action {
   z-index: 888;
   margin-top: 0;
   padding: 24px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > .sub-menu.menu-max-width {
+    width: 50%;
+    right: 0;
+    left: auto;
+  }
 }
 #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > .sub-menu.menu-max-width.show-menu {
   transform: translateX(0);
@@ -2062,6 +2089,10 @@ section.lightpick .lightpick__previous-action {
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;
+}
+
+.page-member-style .hotel-filter {
+  background-color: var(--color-white);
 }
 
 .featured-offers {
