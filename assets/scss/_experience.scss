@@ -40,9 +40,9 @@
     border-radius: 20px;
     padding: 40px;
     top: 32px;
-    // @media screen and (min-width: 1520px) {
-    //   max-width: 625px;
-    // }
+    @media screen and (min-width: 1500px) {
+      max-width: 625px;
+    }
     .tag {
       text-align: center;
     }
