@@ -1865,6 +1865,13 @@ section.lightpick .lightpick__previous-action {
     margin-bottom: 32px;
   }
 }
+@media (max-width: 480px) {
+  .hotel-filter__top {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start !important;
+  }
+}
 .hotel-filter__top .nav-tabs {
   gap: 8px;
   border: none;
@@ -1972,6 +1979,89 @@ section.lightpick .lightpick__previous-action {
   width: max-content;
   margin-top: auto;
   transition: all 0.4s ease;
+}
+.hotel-filter .dropdown-custom {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+@media (max-width: 991px) {
+  .hotel-filter .dropdown-custom {
+    width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .hotel-filter .dropdown-custom {
+    width: 100%;
+  }
+}
+.hotel-filter .dropdown-custom-menu {
+  position: absolute;
+  bottom: -1px;
+  left: -50%;
+  transform: translate(50%, 100%);
+  background-color: var(--color-white);
+  width: 100%;
+  padding: 8px;
+  clip-path: inset(0 0 100% 0);
+  will-change: clip-path;
+  transition: clip-path 0.3s ease;
+  pointer-events: none;
+  border-radius: 20px;
+}
+.hotel-filter .dropdown-custom-menu.dropdown--active {
+  clip-path: inset(0 0 0 0);
+  pointer-events: auto;
+}
+.hotel-filter .dropdown-custom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 50px;
+  min-height: 36px;
+  position: relative;
+  width: 100%;
+  background-color: var(--color-black);
+}
+.hotel-filter .dropdown-custom-btn .icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+}
+.hotel-filter .dropdown-custom-btn.--active .icon {
+  transform: translateY(-50%) rotate(180deg);
+}
+.hotel-filter .dropdown-custom-btn .value-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hotel-filter .dropdown-custom-btn .value-select span {
+  color: var(--color-white);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.hotel-filter .dropdown-custom-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.hotel-filter .dropdown-custom-item:hover {
+  background-color: rgba(23, 75, 156, 0.1);
+}
+.hotel-filter .dropdown-custom-item span {
+  color: var(--color-black);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
 }
 
 .featured-offers {
