@@ -1869,6 +1869,11 @@ section.lightpick .lightpick__previous-action {
   padding: 40px;
   top: 32px;
 }
+@media screen and (min-width: 1500px) {
+  .section-experience .col-content {
+    max-width: 625px;
+  }
+}
 .section-experience .col-content .tag {
   text-align: center;
 }
