@@ -40,6 +40,12 @@
   .list-post {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px 24px;
+    gap: 60px 24px;
+  }
+
+  &.offers-post {
+    .list-post {
+      gap: 80px 24px;
+    }
   }
 }

@@ -4149,6 +4149,9 @@ section.lightpick .lightpick__previous-action {
 .list-post-filter .list-post {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 60px 24px;
+}
+.list-post-filter.offers-post .list-post {
   gap: 80px 24px;
 }
 
