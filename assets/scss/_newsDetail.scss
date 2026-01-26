@@ -109,7 +109,7 @@
           align-items: center;
           justify-content: center;
           transition: all 0.4s ease;
-          color: var(--color-black);
+          color: var(--color-black) !important;
 
           &:hover {
             color: var(--color-white) !important;
