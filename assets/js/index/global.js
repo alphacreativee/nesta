@@ -93,7 +93,11 @@ export function customDropdown() {
 
 export function scrollChangeBgHeader() {
   const header = document.querySelector("#header");
+
   if (!header || header.classList.contains("without-home")) return;
+
+  if (header.classList.contains("header-theme-light-first")) return;
+
   gsap.to(header, {
     scrollTrigger: {
       trigger: "body",

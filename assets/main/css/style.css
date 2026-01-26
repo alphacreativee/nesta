@@ -4267,3 +4267,10 @@ section.lightpick .lightpick__previous-action {
 .lightpick-contact .lightpick__month {
   background-color: var(--color-gray-1);
 }
+
+.section-booking {
+  background-color: var(--color-white);
+}
+.section-booking .section-wrapper {
+  padding: 160px 0 80px;
+}
