@@ -140,6 +140,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px 40px;
+
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
   }
 
   .field-item {
@@ -348,6 +353,10 @@
     width: max-content;
     margin-left: auto;
     grid-column: 1 / -1;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
   }
 
   .note {

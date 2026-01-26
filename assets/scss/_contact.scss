@@ -3,11 +3,20 @@
 
   .section-wrapper {
     padding: 80px;
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
   }
 
   .col-left {
     padding-right: 130px;
     padding-top: 60px;
+
+    @media (max-width: 991px) {
+      padding-right: 0;
+      padding-top: 0;
+    }
 
     .title {
       margin-bottom: 24px;
@@ -15,6 +24,10 @@
 
     .contact-box {
       margin-top: 40px;
+
+      @media (max-width: 991px) {
+        margin-top: 24px;
+      }
 
       &__title {
         font-size: 13px;
@@ -44,6 +57,10 @@
     .contact-social {
       margin-top: 48px;
 
+      @media (max-width: 991px) {
+        margin-top: 24px;
+      }
+
       ul {
         display: flex;
         align-items: center;
@@ -61,6 +78,10 @@
   }
 
   .col-right {
+    @media (max-width: 991px) {
+      margin-top: 48px;
+    }
+
     .button-global {
       margin-right: auto;
       margin-left: 0;
@@ -75,8 +96,16 @@
       overflow: hidden;
       background-color: var(--color-white);
 
+      @media (max-width: 991px) {
+        padding: 24px;
+      }
+
       form {
         gap: 40px 24px;
+
+        @media (max-width: 991px) {
+          gap: 32px;
+        }
       }
 
       .select-people {

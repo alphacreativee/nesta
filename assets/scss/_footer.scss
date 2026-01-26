@@ -15,7 +15,11 @@
     padding: 40px 80px 20px;
 
     @media (max-width: 991px) {
-      padding: 40px 24px 20px;
+      padding: 48px 24px 24px;
+    }
+
+    @media (max-width: 480px) {
+      background-image: url("../../images/bg-footer-mobile.jpg");
     }
 
     .column-title {
@@ -34,10 +38,15 @@
 
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
+      gap: 40px 24px;
     }
   }
 
   &-brands {
+    @media (max-width: 767px) {
+      display: none;
+    }
+
     ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -109,6 +118,10 @@
   &-logo {
     display: block;
     width: max-content;
+
+    @media (max-width: 767px) {
+      width: 87px;
+    }
 
     img {
       width: 100px;
@@ -259,6 +272,7 @@
 
     @media (max-width: 991px) {
       gap: 24px;
+      margin-top: 40px;
     }
 
     .bct-desc {
