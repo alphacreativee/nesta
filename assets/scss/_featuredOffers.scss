@@ -1,5 +1,10 @@
 .featured-offers {
   background-color: var(--color-white);
+
+  &.other-post{
+    background-color: var(--color-secondary-1);
+  }
+
   &.benefit {
     background-color: var(--color-secondary-1);
     .section-wrapper {

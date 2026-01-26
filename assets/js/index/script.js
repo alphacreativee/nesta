@@ -18,7 +18,8 @@ import {
   sectionExperiences,
   popupBookingMobile,
   animationSubMenu,
-  sectionHotelFilter
+  sectionHotelFilter,
+  bookingServices
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -84,6 +85,7 @@ const init = () => {
   popupBookingMobile();
   animationSubMenu();
   sectionHotelFilter();
+  bookingServices();
 };
 
 preloadImages("img").then(() => {
