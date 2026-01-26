@@ -3728,6 +3728,11 @@ section.lightpick .lightpick__previous-action {
 .post-detail .section-wrapper {
   padding: 80px;
 }
+.post-detail .col-right {
+  height: max-content;
+  position: sticky;
+  top: 100px;
+}
 .post-detail .col-left {
   padding-right: 130px;
 }
@@ -3736,7 +3741,7 @@ section.lightpick .lightpick__previous-action {
   font-weight: bold;
 }
 .post-detail .col-left .desc {
-  margin-top: 48px;
+  margin-top: 40px;
 }
 .post-detail .col-left .desc p:not(:first-child) {
   margin-top: 24px;

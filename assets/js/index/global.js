@@ -991,29 +991,13 @@ export function sectionHotelFilter() {
 export function bookingServices() {
   if ($("#modal-booking-services").length < 1) return;
 
-  var picker = new Lightpick({
+  var pickerServices = new Lightpick({
     field: document.getElementById("checkInDateServices"),
     secondField: document.getElementById("checkOutDateServices"),
     singleDate: false,
     minDate: moment().startOf("now"),
     numberOfMonths: 1,
     startDate: moment().startOf("day").toDate(),
-    endDate: moment().startOf("day").add(1, "days").toDate(),
-
-    onOpen: function () {
-      positionCalendar();
-      setTimeout(positionCalendar, 50);
-    }
+    endDate: moment().startOf("day").add(1, "days").toDate()
   });
-
-  const bookingCalendar = document.querySelector(".booking-calendar");
-  if (bookingCalendar) {
-    bookingCalendar.addEventListener("click", function (e) {
-      e.stopPropagation();
-      picker.show();
-      document.getElementById("checkInDateServices").focus();
-    });
-
-    bookingCalendar.style.cursor = "pointer";
-  }
 }

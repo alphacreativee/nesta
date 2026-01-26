@@ -5,6 +5,12 @@
     padding: 80px;
   }
 
+  .col-right {
+    height: max-content;
+    position: sticky;
+    top: 100px;
+  }
+
   .col-left {
     padding-right: 130px;
 
@@ -14,7 +20,7 @@
     }
 
     .desc {
-      margin-top: 48px;
+      margin-top: 40px;
 
       p {
         &:not(:first-child) {
