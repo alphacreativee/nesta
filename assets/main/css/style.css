@@ -3766,25 +3766,49 @@ section.lightpick .lightpick__previous-action {
   background-size: cover;
   padding: 40px;
 }
-#modal-booking-services .modal-body .wrapper-form {
+
+#modal-booking-services .button-close,
+.modal-success .button-close {
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#modal-booking-services .button-close:hover,
+.modal-success .button-close:hover {
+  background-color: var(--color-primary-3);
+  border-color: var(--color-primary-3);
+}
+
+.wrapper-form-booking {
   padding-top: 24px;
   margin-top: 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-#modal-booking-services .modal-body .wrapper-form form {
+.wrapper-form-booking form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px 40px;
 }
-#modal-booking-services .modal-body .wrapper-form .field-item {
+.wrapper-form-booking .field-item {
   position: relative;
   border-bottom: 1px solid var(--color-black);
 }
-#modal-booking-services .modal-body .wrapper-form .field-item:has(textarea) {
+.wrapper-form-booking .field-item:has(textarea) {
   grid-column: 1/-1;
 }
-#modal-booking-services .modal-body .wrapper-form .field-item input,
-#modal-booking-services .modal-body .wrapper-form .field-item textarea {
+.wrapper-form-booking .field-item input,
+.wrapper-form-booking .field-item textarea {
   padding-bottom: 8px;
   font-size: 15px;
   line-height: 25px;
@@ -3793,19 +3817,19 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-black);
   width: 100%;
 }
-#modal-booking-services .modal-body .wrapper-form .field-item input:focus-visible + label, #modal-booking-services .modal-body .wrapper-form .field-item input:not(:placeholder-shown) + label,
-#modal-booking-services .modal-body .wrapper-form .field-item textarea:focus-visible + label,
-#modal-booking-services .modal-body .wrapper-form .field-item textarea:not(:placeholder-shown) + label {
+.wrapper-form-booking .field-item input:focus-visible + label, .wrapper-form-booking .field-item input:not(:placeholder-shown) + label,
+.wrapper-form-booking .field-item textarea:focus-visible + label,
+.wrapper-form-booking .field-item textarea:not(:placeholder-shown) + label {
   transform: translateY(-100%);
   font-size: 13px;
   line-height: 20px;
 }
-#modal-booking-services .modal-body .wrapper-form .field-item.active-label label {
+.wrapper-form-booking .field-item.active-label label {
   font-size: 13px;
   line-height: 20px;
   transform: translateY(-100%);
 }
-#modal-booking-services .modal-body .wrapper-form .field-item label {
+.wrapper-form-booking .field-item label {
   position: absolute;
   font-size: 15px;
   line-height: 25px;
@@ -3815,11 +3839,11 @@ section.lightpick .lightpick__previous-action {
   pointer-events: none;
   color: rgba(0, 0, 0, 0.5);
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom {
+.wrapper-form-booking .dropdown-custom {
   position: relative;
   cursor: pointer;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-menu {
+.wrapper-form-booking .dropdown-custom-menu {
   position: absolute;
   top: calc(100% + 9px);
   left: -12px;
@@ -3837,32 +3861,32 @@ section.lightpick .lightpick__previous-action {
   max-height: 145px;
   overflow-y: scroll;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-menu::-webkit-scrollbar {
+.wrapper-form-booking .dropdown-custom-menu::-webkit-scrollbar {
   width: 3px;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-menu::-webkit-scrollbar-track {
+.wrapper-form-booking .dropdown-custom-menu::-webkit-scrollbar-track {
   background: transparent;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-menu::-webkit-scrollbar-thumb {
+.wrapper-form-booking .dropdown-custom-menu::-webkit-scrollbar-thumb {
   background: var(--color-primary-3);
   border-radius: unset;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-menu::-webkit-scrollbar-thumb:hover {
+.wrapper-form-booking .dropdown-custom-menu::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-2);
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-menu.dropdown--active {
+.wrapper-form-booking .dropdown-custom-menu.dropdown--active {
   opacity: 1;
   visibility: visible;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-text,
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom .value-select {
+.wrapper-form-booking .dropdown-custom-text,
+.wrapper-form-booking .dropdown-custom .value-select {
   font-size: 15px;
   line-height: 25px;
   font-family: var(--font-body);
   color: var(--color-gray-2);
   font-weight: 500;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-item {
+.wrapper-form-booking .dropdown-custom-item {
   font-size: 15px;
   line-height: 25px;
   font-family: var(--font-body);
@@ -3870,13 +3894,13 @@ section.lightpick .lightpick__previous-action {
   font-weight: 500;
   transition: color 0.3s ease;
 }
-#modal-booking-services .modal-body .wrapper-form .dropdown-custom-item:hover {
+.wrapper-form-booking .dropdown-custom-item:hover {
   color: var(--color-primary-3);
 }
-#modal-booking-services .modal-body .wrapper-form .booking-time {
+.wrapper-form-booking .booking-time {
   cursor: pointer;
 }
-#modal-booking-services .modal-body .wrapper-form .booking-time input {
+.wrapper-form-booking .booking-time input {
   outline: none;
   border: none;
   font-size: 15px;
@@ -3886,14 +3910,14 @@ section.lightpick .lightpick__previous-action {
   color: var(--color-gray-2);
   width: 85px;
 }
-#modal-booking-services .modal-body .wrapper-form .booking-time span {
+.wrapper-form-booking .booking-time span {
   padding: 0 5.5px 0 2px;
   transform: translateY(-2px);
 }
-#modal-booking-services .modal-body .wrapper-form .select-people {
+.wrapper-form-booking .select-people {
   position: relative;
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box {
+.wrapper-form-booking .select-people .select-box {
   position: absolute;
   top: calc(100% + 9px);
   left: -12px;
@@ -3911,21 +3935,21 @@ section.lightpick .lightpick__previous-action {
   z-index: 3;
 }
 @media (max-width: 991px) {
-  #modal-booking-services .modal-body .wrapper-form .select-people .select-box {
+  .wrapper-form-booking .select-people .select-box {
     border: 1px solid rgba(64, 64, 64, 0.3);
   }
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box.active {
+.wrapper-form-booking .select-people .select-box.active {
   opacity: 1;
   visibility: visible;
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .select {
+.wrapper-form-booking .select-people .select-box .select {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .select .min,
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .select .plus {
+.wrapper-form-booking .select-people .select-box .select .min,
+.wrapper-form-booking .select-people .select-box .select .plus {
   width: 24px;
   height: 24px;
   border: 1px solid var(--color-black);
@@ -3935,56 +3959,49 @@ section.lightpick .lightpick__previous-action {
   cursor: pointer;
   transition: all 0.4s ease;
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .select .min:hover,
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .select .plus:hover {
+.wrapper-form-booking .select-people .select-box .select .min:hover,
+.wrapper-form-booking .select-people .select-box .select .plus:hover {
   border-color: var(--color-primary-3);
   background-color: var(--color-primary-3);
   color: var(--color-white);
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .select .val {
+.wrapper-form-booking .select-people .select-box .select .val {
   width: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .adult,
-#modal-booking-services .modal-body .wrapper-form .select-people .select-box .child {
+.wrapper-form-booking .select-people .select-box .adult,
+.wrapper-form-booking .select-people .select-box .child {
   display: flex;
   justify-content: space-between;
   gap: 12px;
 }
-#modal-booking-services .modal-body .wrapper-form .select-people .label {
+.wrapper-form-booking .select-people .label {
   font-size: 15px;
   line-height: 25px;
   font-family: var(--font-body);
   color: var(--color-gray-2);
   font-weight: 500;
 }
-#modal-booking-services .modal-body .wrapper-form .button-global {
+.wrapper-form-booking .button-global {
   padding: 8px 20px 7px;
   width: max-content;
   margin-left: auto;
   grid-column: 1/-1;
 }
-#modal-booking-services .button-close {
-  position: absolute;
-  z-index: 3;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  color: var(--color-white);
-  cursor: pointer;
-  transition: all 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.wrapper-form-booking .note {
+  grid-column: 1/-1;
 }
-#modal-booking-services .button-close:hover {
-  background-color: var(--color-primary-3);
-  border-color: var(--color-primary-3);
+.wrapper-form-booking .note span {
+  color: var(--color-primary-3);
+}
+.wrapper-form-booking .note a {
+  color: var(--color-primary-3);
+  transition: all 0.4s ease;
+}
+.wrapper-form-booking .note a:hover {
+  color: var(--color-primary-2);
 }
 
 .modal-success .modal-dialog {
@@ -4130,10 +4147,10 @@ section.lightpick .lightpick__previous-action {
 .news-detail .section-wrapper a {
   margin-bottom: 0;
   transition: all 0.4s ease;
-  color: var(--color-black);
+  color: var(--color-primary-3);
 }
 .news-detail .section-wrapper a:hover {
-  color: var(--color-primary-3);
+  color: var(--color-primary-2);
 }
 .news-detail .section-wrapper ul,
 .news-detail .section-wrapper ol {
@@ -4171,4 +4188,82 @@ section.lightpick .lightpick__previous-action {
 .news-detail__cta ul li a:hover {
   color: var(--color-white) !important;
   background: var(--color-primary-3) !important;
+}
+
+.section-contact {
+  background-color: var(--color-secondary-1);
+}
+.section-contact .section-wrapper {
+  padding: 80px;
+}
+.section-contact .col-left {
+  padding-right: 130px;
+  padding-top: 60px;
+}
+.section-contact .col-left .title {
+  margin-bottom: 24px;
+}
+.section-contact .col-left .contact-box {
+  margin-top: 40px;
+}
+.section-contact .col-left .contact-box__title {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  margin-bottom: 20px;
+}
+.section-contact .col-left .contact-box ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-contact .col-left .contact-box a {
+  transition: all 0.4s ease;
+}
+.section-contact .col-left .contact-box a:hover {
+  color: var(--color-primary-3);
+}
+.section-contact .col-left .contact-social {
+  margin-top: 48px;
+}
+.section-contact .col-left .contact-social ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.section-contact .col-left .contact-social ul a {
+  transition: all 0.4s ease;
+}
+.section-contact .col-left .contact-social ul a:hover {
+  color: var(--color-primary-3);
+}
+.section-contact .col-right .button-global {
+  margin-right: auto;
+  margin-left: 0;
+}
+.section-contact .col-right .wrapper-form-booking {
+  padding-top: 0;
+  margin-top: 0;
+  border: none;
+  padding: 64px 64px 48px 64px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+.section-contact .col-right .wrapper-form-booking form {
+  gap: 40px 24px;
+}
+.section-contact .col-right .wrapper-form-booking .select-people .select-box {
+  background-color: var(--color-gray-1);
+}
+.section-contact .col-right .wrapper-form-booking .dropdown-custom-menu {
+  background-color: var(--color-gray-1);
+}
+
+.lightpick-contact {
+  background-color: var(--color-gray-1);
+}
+.lightpick-contact .lightpick__month {
+  background-color: var(--color-gray-1);
 }

@@ -989,7 +989,7 @@ export function sectionHotelFilter() {
 }
 
 export function bookingServices() {
-  if ($("#modal-booking-services").length < 1) return;
+  if ($("#checkInDateServices").length < 1) return;
 
   var pickerServices = new Lightpick({
     field: document.getElementById("checkInDateServices"),
@@ -998,6 +998,11 @@ export function bookingServices() {
     minDate: moment().startOf("now"),
     numberOfMonths: 1,
     startDate: moment().startOf("day").toDate(),
-    endDate: moment().startOf("day").add(1, "days").toDate()
+    endDate: moment().startOf("day").add(1, "days").toDate(),
+    onOpen: function () {
+      if (document.querySelector(".section-contact")) {
+        this.el.classList.add("lightpick-contact");
+      }
+    }
   });
 }
