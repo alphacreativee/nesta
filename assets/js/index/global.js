@@ -1002,11 +1002,6 @@ export function bookingServices() {
     minDate: moment().startOf("now"),
     numberOfMonths: 1,
     startDate: moment().startOf("day").toDate(),
-    endDate: moment().startOf("day").add(1, "days").toDate(),
-    onOpen: function () {
-      if (document.querySelector(".section-contact")) {
-        this.el.classList.add("lightpick-contact");
-      }
-    }
+    endDate: moment().startOf("day").add(1, "days").toDate()
   });
 }

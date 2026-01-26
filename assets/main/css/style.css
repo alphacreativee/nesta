@@ -3812,7 +3812,7 @@ section.lightpick .lightpick__previous-action {
   padding-bottom: 8px;
   font-size: 15px;
   line-height: 25px;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   color: var(--color-black);
   width: 100%;
@@ -4258,13 +4258,6 @@ section.lightpick .lightpick__previous-action {
   background-color: var(--color-gray-1);
 }
 .section-contact .col-right .wrapper-form-booking .dropdown-custom-menu {
-  background-color: var(--color-gray-1);
-}
-
-.lightpick-contact {
-  background-color: var(--color-gray-1);
-}
-.lightpick-contact .lightpick__month {
   background-color: var(--color-gray-1);
 }
 
