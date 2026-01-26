@@ -4249,6 +4249,7 @@ section.lightpick .lightpick__previous-action {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+  color: var(--color-black);
 }
 .news-detail__cta ul li a:hover {
   color: var(--color-white) !important;
