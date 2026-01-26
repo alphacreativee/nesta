@@ -584,7 +584,7 @@
                   <textarea name="message" rows="3" placeholder=" "></textarea>
                   <label for="message">Nội dung cần tư vấn</label>
                 </div>
-                <button type="submit" class="button-global">
+                <button type="button" class="button-global" data-bs-target="#modal-success-services" data-bs-toggle="modal" data-bs-dismiss="modal">
                   <span>đặt ngay</span>
                 </button>
                 </form>
@@ -593,6 +593,27 @@
           </div>
         </div>
       </div>
+
+       <div
+      class="modal modal-success fade"
+      tabindex="-1"
+      id="modal-success-services"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="icon">
+              <img src="./assets/images/icons/logo-modal-success.svg" alt="" />
+            </div>
+            <div class="title heading-3 text-center">đặt gói <br> thành công</div>
+            <div class="desc body-1 text-center">
+              Chúng tôi đã tiếp nhận thông tin, đội ngũ tư vấn sẽ liên hệ Quý khách sớm để xác nhận!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
       <section class="featured-offers other-post" section-fade-each-item>
         <div class="section-wrapper">
           <div
