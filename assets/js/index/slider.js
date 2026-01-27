@@ -84,13 +84,23 @@ export function sliderParallax() {
     const swiperEl = this;
     const $swiper = $(this);
 
-    const hasAutoplay = swiperEl.hasAttribute("slider-autoplay");
-    const hasArrow = swiperEl.hasAttribute("slider-arrow");
+    const hasAutoplay =
+      window.innerWidth < 992
+        ? false
+        : swiperEl.hasAttribute("slider-autoplay");
+
     const hasNoDrag = swiperEl.hasAttribute("slider-no-drag");
     const hasChangeLabel = swiperEl.hasAttribute("slider-change-label");
 
     const $sliderTitle = $swiper.find(".slider-title");
     const $pagination = $swiper.find(".slider-pagination");
+
+    const $wrapper = $swiper.closest(".wrapper-slider-parallax");
+    const nextBtn = $wrapper.find(".arrow-next")[0];
+    const prevBtn = $wrapper.find(".arrow-prev")[0];
+
+    const hasArrow =
+      swiperEl.hasAttribute("slider-arrow") && nextBtn && prevBtn;
 
     const swiper = new Swiper(swiperEl, {
       slidesPerView: 1,
@@ -102,7 +112,7 @@ export function sliderParallax() {
       keyboard: !hasNoDrag,
       // mousewheel: !hasNoDrag,
       grabCursor: !hasNoDrag,
-      allowTouchMove: !hasNoDrag,
+      allowTouchMove: hasNoDrag ? false : true,
 
       autoplay: hasAutoplay
         ? {
@@ -113,8 +123,8 @@ export function sliderParallax() {
 
       navigation: hasArrow
         ? {
-            nextEl: $swiper.find(".arrow-next")[0],
-            prevEl: $swiper.find(".arrow-prev")[0]
+            nextEl: nextBtn,
+            prevEl: prevBtn
           }
         : false,
       on: {

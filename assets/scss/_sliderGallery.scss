@@ -14,6 +14,15 @@
       margin: 0 auto;
       max-width: calc(100% - 160px);
       position: relative;
+
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
+
+      .swiper {
+        padding: 0 24px;
+      }
+
       .swiper-arrow {
         width: 40px;
         height: 40px;
@@ -27,6 +36,11 @@
         transition:
           border 0.3s ease,
           background-color 0.3s ease;
+
+        @media (max-width: 991px) {
+          display: none;
+        }
+
         &:hover {
           border-color: var(--color-primary-3);
           background-color: var(--color-primary-3);
@@ -131,6 +145,15 @@
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 767px) {
+      top: 24px;
+      left: 24px;
+      width: calc(100% - 48px);
+      max-width: 100%;
+      transform: none;
+    }
+
     .name-room {
       font-size: 20px;
       line-height: 28px;
@@ -151,6 +174,11 @@
       gap: 8px;
       margin-top: auto;
       width: max-content;
+
+      @media (max-width: 767px) {
+        margin-top: 32px;
+      }
+
       span {
         font-size: 13px;
         line-height: 15px;

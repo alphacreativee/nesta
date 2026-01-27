@@ -3,6 +3,10 @@
 
   .section-wrapper {
     padding: 80px;
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
   }
 
   .swiper {
@@ -12,6 +16,12 @@
       width: 100%;
       aspect-ratio: 628 / 471;
       max-height: 471px;
+    }
+  }
+
+  .col-right {
+    @media (max-width: 991px) {
+      margin-top: 40px;
     }
   }
 
@@ -28,6 +38,10 @@
     .contact {
       margin-top: 40px;
       max-width: 520px;
+
+      @media (max-width: 991px) {
+        margin-top: 32px;
+      }
 
       li {
         display: flex;
@@ -58,6 +72,10 @@
       margin-top: 64px;
       max-width: 520px;
 
+      @media (max-width: 991px) {
+        margin-top: 55px;
+      }
+
       h4 {
         font-family: var(--font-heading);
         font-size: 13px;
@@ -70,6 +88,11 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
+
+        @media (max-width: 991px) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px 20px;
+        }
 
         li {
           display: flex;
@@ -104,6 +127,10 @@
         cursor: pointer;
         color: var(--color-black);
         transition: all 0.4s ease;
+
+        @media (max-width: 991px) {
+          margin-top: 12px;
+        }
 
         &.active {
           .icon {
@@ -143,6 +170,14 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .wrapper-slider-parallax {
+    .swiper-arrows {
+      @media (max-width: 991px) {
+        margin-top: 24px;
       }
     }
   }
