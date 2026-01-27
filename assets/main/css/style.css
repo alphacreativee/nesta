@@ -2791,6 +2791,11 @@ section.lightpick .lightpick__previous-action {
   margin: 40px auto 0;
   width: max-content;
 }
+@media (max-width: 991px) {
+  .modal-accommodation-detail .modal-content .btn-wrapper {
+    margin: 40x auto 0 0;
+  }
+}
 .modal-accommodation-detail .modal-content .btn-wrapper a {
   padding: 8px 20px 7px 20px;
 }
@@ -2801,12 +2806,33 @@ section.lightpick .lightpick__previous-action {
   background: url("../../images/bg-modal-accommodation-type.jpg") no-repeat center;
   background-size: cover;
 }
+@media (max-width: 767px) {
+  .modal-accommodation-detail .modal-body {
+    padding: 90px 24px;
+    flex-direction: column;
+  }
+}
 .modal-accommodation-detail .modal-body .modal-left {
   width: 60%;
+}
+@media (max-width: 767px) {
+  .modal-accommodation-detail .modal-body .modal-left {
+    width: 100%;
+  }
+}
+.modal-accommodation-detail .modal-body .modal-left .swiper-arrows {
+  margin-top: 24px;
 }
 .modal-accommodation-detail .modal-body .modal-right {
   width: 40%;
   padding-left: 45px;
+}
+@media (max-width: 767px) {
+  .modal-accommodation-detail .modal-body .modal-right {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 48px;
+  }
 }
 .modal-accommodation-detail .modal-body .modal-right .content-title {
   margin-bottom: 24px;
@@ -3253,15 +3279,21 @@ section.lightpick .lightpick__previous-action {
 }
 
 .destination-location {
-  padding: 80px;
+  padding: 0 80px 80px 80px;
+  background-color: var(--color-white);
 }
 @media (max-width: 991px) {
   .destination-location {
-    padding: 48px 24px;
+    padding: 32px 24px 48px;
   }
 }
 .destination-location .destination-title {
   margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .destination-location .destination-title {
+    margin-bottom: 32px;
+  }
 }
 .destination-location .destination-wrapper {
   display: grid;
@@ -3465,6 +3497,12 @@ section.lightpick .lightpick__previous-action {
   grid-column: 1/span 2;
   grid-row: 1/span 2;
 }
+@media (max-width: 767px) {
+  #locationModal .location-popup-list .location-popup-item:first-child {
+    grid-column: 1/-1;
+    grid-row: unset;
+  }
+}
 #locationModal .location-popup-list .location-popup-item:first-child .location-image {
   width: 100%;
   aspect-ratio: 410/230;
@@ -3546,8 +3584,18 @@ section.lightpick .lightpick__previous-action {
   grid-template-columns: 1fr 1fr;
   gap: 4px 40px;
 }
+@media (max-width: 767px) {
+  #locationModal .location-filter .filter-section-result {
+    grid-template-columns: 1fr;
+  }
+}
 #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n) {
   margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  #locationModal .location-filter .filter-section-result .filter-item:nth-child(10n) {
+    margin-bottom: 0;
+  }
 }
 #locationModal .location-filter .location-result {
   display: flex;
@@ -3789,6 +3837,11 @@ section.lightpick .lightpick__previous-action {
   position: unset;
   overflow-y: scroll;
 }
+@media (max-width: 991px) {
+  #modal-gallery .modal-body {
+    padding: 48px 24px;
+  }
+}
 #modal-gallery .modal-body::-webkit-scrollbar {
   width: 3px;
 }
@@ -3832,6 +3885,11 @@ section.lightpick .lightpick__previous-action {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
+}
+@media (max-width: 767px) {
+  #modal-gallery .modal-body .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 #modal-gallery .modal-body .gallery-grid__item {
   overflow: hidden;

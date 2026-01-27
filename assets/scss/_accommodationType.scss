@@ -159,6 +159,10 @@
       margin: 40px auto 0;
       width: max-content;
 
+      @media (max-width: 991px) {
+        margin: 40x auto 0 0;
+      }
+
       a {
         padding: 8px 20px 7px 20px;
       }
@@ -173,14 +177,33 @@
       center;
     background-size: cover;
 
+    @media (max-width: 767px) {
+      padding: 90px 24px;
+      flex-direction: column;
+    }
+
     .modal {
       &-left {
         width: 60%;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+
+        .swiper-arrows {
+          margin-top: 24px;
+        }
       }
 
       &-right {
         width: 40%;
         padding-left: 45px;
+
+        @media (max-width: 767px) {
+          width: 100%;
+          padding-left: 0;
+          margin-top: 48px;
+        }
 
         .content-title {
           margin-bottom: 24px;

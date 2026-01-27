@@ -1,12 +1,17 @@
 .destination-location {
-  padding: 80px;
+  padding: 0 80px 80px 80px;
+  background-color: var(--color-white);
 
   @media (max-width: 991px) {
-    padding: 48px 24px;
+    padding: 32px 24px 48px;
   }
 
   .destination-title {
     margin-bottom: 40px;
+
+    @media (max-width: 991px) {
+      margin-bottom: 32px;
+    }
   }
   .destination-wrapper {
     display: grid;
@@ -231,6 +236,12 @@
       &:first-child {
         grid-column: 1 / span 2;
         grid-row: 1 / span 2;
+
+        @media (max-width: 767px) {
+          grid-column: 1 / -1;
+          grid-row: unset;
+        }
+
         .location-image {
           width: 100%;
           aspect-ratio: 410 / 230;
@@ -320,9 +331,17 @@
       grid-template-columns: 1fr 1fr;
       gap: 4px 40px;
 
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+
       .filter-item {
         &:nth-child(10n) {
           margin-bottom: 20px;
+
+          @media (max-width: 767px) {
+            margin-bottom: 0;
+          }
         }
       }
     }

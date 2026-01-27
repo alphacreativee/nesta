@@ -240,6 +240,10 @@
     position: unset;
     overflow-y: scroll;
 
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
+
     &::-webkit-scrollbar {
       width: 3px;
     }
@@ -293,6 +297,10 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 24px;
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
 
       &__item {
         overflow: hidden;
