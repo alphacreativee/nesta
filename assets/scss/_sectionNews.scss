@@ -1,3 +1,11 @@
+.section-news.no-spacing-top .news-wrapper {
+  padding-top: 0;
+
+  @media (max-width: 991px) {
+    padding-top: 48px;
+  }
+}
+
 .news {
   &-wrapper {
     padding: 80px;

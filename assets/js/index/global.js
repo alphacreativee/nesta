@@ -296,36 +296,66 @@ export function effectText() {
       }
     );
   });
+
+  if ($(window).width() < 992) {
+    gsap.utils.toArray(".data-fade-in-mobile").forEach((element) => {
+      const delay = parseFloat(element.getAttribute("data-delay")) || 0;
+
+      gsap.fromTo(
+        element,
+        {
+          opacity: 0,
+          y: 20,
+          willChange: "opacity, transform"
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "sine.out",
+          delay: delay,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "bottom 80%"
+          }
+        }
+      );
+    });
+  }
 }
 
 export function animationItemsSection() {
-  if ($(window).width() < 992) return;
+  const isMobile = $(window).width() < 992;
 
-  // fade each items
-  const FADE_EASE = "ease";
+  const FADE_EASE = "power2.out";
   const LINE_EASE = "power1.out";
-  let ITEM_DURATION = 0.3;
+
+  const ITEM_DURATION = 0.4;
+  const ITEM_STAGGER = 0.07;
+  const MOVE_Y = 20;
 
   gsap.utils.toArray("[section-fade-each-item]").forEach((section) => {
-    if (section.hasAttribute("data-item-duration")) {
-      ITEM_DURATION = parseFloat(section.getAttribute("data-item-duration"));
-    }
-
     const items = section.querySelectorAll("[data-fade-item]");
+
+    const isExperience = section.closest(
+      ".section-experience,.section-accommodation"
+    );
+    if (isMobile && !isExperience) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top 65%",
-        toggleActions: "play none none none"
-        // markers: true,
+        toggleActions: "play none none none",
+        once: true
       }
     });
 
     items.forEach((item) => {
       const isLineItem = item.hasAttribute("fade-item-line");
 
-      // ITEM LINE
+      // ===== LINE ITEM =====
       if (isLineItem) {
         const split = new SplitText(item, {
           type: "lines",
@@ -333,42 +363,47 @@ export function animationItemsSection() {
           mask: "lines"
         });
 
-        gsap.set(split.lines, { yPercent: 120 });
+        gsap.set(split.lines, {
+          yPercent: 120,
+          force3D: true
+        });
 
         tl.to(split.lines, {
           yPercent: 0,
           duration: ITEM_DURATION,
           ease: LINE_EASE,
-          stagger: {
-            each: ITEM_DURATION / split.lines.length,
-            ease: "none"
-          }
+          force3D: true,
+          stagger: ITEM_STAGGER
         });
       }
 
-      // ITEM FADE
+      // ===== NORMAL FADE ITEM =====
       else {
-        gsap.set(item, { y: 30, opacity: 0 });
-
-        tl.to(item, {
-          y: 0,
-          opacity: 1,
-          duration: ITEM_DURATION,
-          ease: FADE_EASE
+        gsap.set(item, {
+          y: MOVE_Y,
+          opacity: 0,
+          force3D: true,
+          willChange: "transform, opacity"
         });
+
+        tl.to(
+          item,
+          {
+            y: 0,
+            opacity: 1,
+            duration: ITEM_DURATION,
+            ease: FADE_EASE,
+            force3D: true,
+            clearProps: "willChange"
+          },
+          "+=0"
+        ); // giữ flow tự nhiên
       }
     });
   });
 
   gsap.utils.toArray("[modal-fade-each-item]").forEach((modal) => {
-    let duration = ITEM_DURATION;
-
-    if (modal.hasAttribute("data-item-duration")) {
-      duration = parseFloat(modal.getAttribute("data-item-duration"));
-    }
-
     const items = modal.querySelectorAll("[data-fade-item]");
-
     const tl = gsap.timeline({ paused: true });
 
     items.forEach((item) => {
@@ -381,25 +416,33 @@ export function animationItemsSection() {
           mask: "lines"
         });
 
-        gsap.set(split.lines, { yPercent: 120 });
+        gsap.set(split.lines, {
+          yPercent: 120,
+          force3D: true
+        });
 
         tl.to(split.lines, {
           yPercent: 0,
-          duration: duration,
+          duration: ITEM_DURATION,
           ease: LINE_EASE,
-          stagger: {
-            each: duration / split.lines.length,
-            ease: "none"
-          }
+          force3D: true,
+          stagger: ITEM_STAGGER
         });
       } else {
-        gsap.set(item, { y: 30, opacity: 0 });
+        gsap.set(item, {
+          y: MOVE_Y,
+          opacity: 0,
+          force3D: true,
+          willChange: "transform, opacity"
+        });
 
         tl.to(item, {
           y: 0,
           opacity: 1,
-          duration: duration,
-          ease: FADE_EASE
+          duration: ITEM_DURATION,
+          ease: FADE_EASE,
+          force3D: true,
+          clearProps: "willChange"
         });
       }
     });
@@ -833,6 +876,12 @@ export function headerMobile() {
 export function sectionExperiences() {
   if ($(".section-experience").length < 1) return;
 
+  const percentParallax = $(window).width() < 992 ? 5 : 10;
+  const triggerItem =
+    $(window).width() < 991
+      ? ".section-experience"
+      : ".section-experience .col-image .image";
+
   document
     .querySelectorAll(".section-experience .image-parallax")
     .forEach((wrap) => {
@@ -841,12 +890,12 @@ export function sectionExperiences() {
 
       gsap.fromTo(
         img,
-        { yPercent: -10 },
+        { yPercent: `-${percentParallax}` },
         {
-          yPercent: 10, // parallax 10%
+          yPercent: percentParallax, // parallax 10%
           ease: "none",
           scrollTrigger: {
-            trigger: ".section-experience",
+            trigger: triggerItem,
             start: "top bottom",
             end: "bottom top",
             scrub: true

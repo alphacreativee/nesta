@@ -1,18 +1,23 @@
 .section-experience {
   background-color: var(--color-secondary-1);
 
-  @media (max-width: 991px) {
-    display: none;
-  }
-
   .section-wrapper {
     padding: 40px 80px;
+
+    @media (max-width: 991px) {
+      padding: 40px 24px;
+    }
   }
 
   .col-image {
     max-width: calc(calc(6 / 9) * 100%);
     width: 100%;
     margin-left: auto;
+
+    @media (max-width: 991px) {
+      max-width: 100%;
+    }
+
     .image {
       width: 100%;
       aspect-ratio: 625 / 600;
@@ -43,6 +48,15 @@
     @media screen and (min-width: 1500px) {
       max-width: 625px;
     }
+
+    @media (max-width: 991px) {
+      position: unset;
+      max-width: 100%;
+      background-color: transparent;
+      transform: none;
+      padding: 0 0 40px 0;
+    }
+
     .tag {
       text-align: center;
     }
@@ -57,6 +71,10 @@
     }
     .btn-wrapper {
       margin: 64px auto 0;
+
+      @media (max-width: 991px) {
+        margin: 16px auto 0;
+      }
     }
   }
   .col-image-one {
@@ -74,6 +92,11 @@
     display: flex;
     position: relative;
     margin-top: 90px;
+
+    @media (max-width: 991px) {
+      margin-top: 0;
+      flex-direction: column;
+    }
   }
 }
 
