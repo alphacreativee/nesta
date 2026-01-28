@@ -10,6 +10,11 @@
     .section-wrapper {
       padding-top: 0;
       padding-bottom: 80px;
+
+      @media (max-width: 991px) {
+        padding-bottom: 48px;
+        padding-top: 32px;
+      }
     }
   }
   .section-wrapper {
@@ -165,6 +170,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 80px 24px;
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
     .offer-item {
       .tag {
         display: none;

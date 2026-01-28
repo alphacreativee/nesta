@@ -58,10 +58,6 @@ export function sliderWithShadow() {
           slidesPerView: 3,
           spaceBetween: 0
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 0
-        },
         480: {
           slidesPerView: 2,
           spaceBetween: 0

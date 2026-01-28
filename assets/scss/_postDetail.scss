@@ -3,16 +3,34 @@
 
   .section-wrapper {
     padding: 80px;
+
+    @media (max-width: 991px) {
+      padding: 48px 24px;
+    }
   }
 
   .col-right {
     height: max-content;
     position: sticky;
     top: 100px;
+
+    @media (max-width: 991px) {
+      margin-top: 48px;
+    }
+
+    .swiper-arrows {
+      @media (max-width: 991px) {
+        margin-top: 32px;
+      }
+    }
   }
 
   .col-left {
     padding-right: 130px;
+
+    @media (max-width: 991px) {
+      padding-right: 0;
+    }
 
     .sub-title {
       margin-top: 16px;
@@ -21,6 +39,10 @@
 
     .desc {
       margin-top: 40px;
+
+      @media (max-width: 991px) {
+        margin-top: 32px;
+      }
 
       p {
         &:not(:first-child) {
@@ -37,6 +59,10 @@
     .contact {
       margin-top: 40px;
       max-width: 520px;
+
+      @media (max-width: 991px) {
+        margin-top: 32px;
+      }
 
       li {
         display: flex;
@@ -78,6 +104,14 @@
     margin: 40px auto 0;
     width: max-content;
 
+    @media (max-width: 991px) {
+      margin: 40px auto 0 0;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
     .button-global {
       padding: 8px 20px 7px;
       min-width: 150px;
@@ -100,6 +134,11 @@
   .modal-dialog {
     width: 100%;
     max-width: 900px;
+
+    @media (max-width: 991px) {
+      margin: 0 auto;
+      width: calc(100% - 48px);
+    }
   }
 
   .modal-body {
@@ -107,6 +146,16 @@
       center;
     background-size: cover;
     padding: 40px;
+
+    @media (max-width: 767px) {
+      padding: 40px 24px;
+    }
+  }
+
+  .button-close {
+    @media (max-width: 991px) {
+      right: 24px !important;
+    }
   }
 }
 
@@ -277,6 +326,7 @@
       font-family: var(--font-body);
       color: var(--color-gray-2);
       width: 85px;
+      padding-bottom: 0;
     }
     span {
       padding: 0 5.5px 0 2px;
