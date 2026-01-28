@@ -28,7 +28,9 @@ export function customDropdown() {
         e.stopPropagation();
 
         // dropdown nav tab
-        const isInSectionModel = dropdown.closest(".hotel-filter") !== null;
+        const isInSectionModel = dropdown.classList.contains("filter-dropdown");
+        console.log(isInSectionModel);
+
         const clickedText =
           item.querySelector("span")?.textContent.trim() || "";
         const clickedDataTab = item.dataset.tab || "";
@@ -322,6 +324,29 @@ export function effectText() {
         }
       );
     });
+
+    gsap.utils.toArray(".effect-line-mobile").forEach((description) => {
+      const split = new SplitText(description, {
+        type: "lines",
+        linesClass: "line",
+        mask: "lines"
+      });
+
+      gsap.fromTo(
+        split.lines,
+        { yPercent: 100, willChange: "transform" },
+        {
+          yPercent: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: description,
+            start: "top 80%"
+          }
+        }
+      );
+    });
   }
 }
 
@@ -341,7 +366,8 @@ export function animationItemsSection() {
     const isExperience = section.closest(
       ".section-experience,.section-accommodation"
     );
-    if (isMobile && !isExperience) return;
+    const isFadeInMobile = section.hasAttribute("enabled-fade-each-mobile");
+    if (isMobile && !isFadeInMobile) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -1024,10 +1050,10 @@ export function animationSubMenu() {
   });
 }
 
-export function sectionHotelFilter() {
-  if ($(".hotel-filter").length < 1) return;
+export function filterDropdownMobile() {
+  if ($(".filter-dropdown").length < 1 || $(window).width() > 991) return;
 
-  $(".hotel-filter .dropdown-custom-item").on("click", function () {
+  $(".filter-dropdown .dropdown-custom-item").on("click", function () {
     const span = $(this).find("span");
     if (!span.length) return;
 

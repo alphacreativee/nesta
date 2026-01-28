@@ -18,7 +18,7 @@ import {
   sectionExperiences,
   popupBookingMobile,
   animationSubMenu,
-  sectionHotelFilter,
+  filterDropdownMobile,
   bookingServices
 } from "../../main/js/global.min.js";
 import {
@@ -84,7 +84,7 @@ const init = () => {
   sectionExperiences();
   popupBookingMobile();
   animationSubMenu();
-  sectionHotelFilter();
+  filterDropdownMobile();
   bookingServices();
 };
 

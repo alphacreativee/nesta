@@ -310,10 +310,10 @@
         <div class="section-wrapper row g-0">
           <div class="col-lg-6 col-md-12 col-left">
             <div data-fade-item>
-              <h2 class="title heading-1 color-black">
+              <h2 class="title heading-1 color-black effect-line-mobile">
                 nesta the grand haonam
               </h2>
-              <div class="desc body-1 color-black">
+              <div class="desc body-1 color-black data-fade-in-mobile">
                 Tọa lạc tại vị trí đắc địa trên tuyến phố Hào Nam sầm uất, Nesta
                 – The Grand Haonam là tổ hợp hiện đại bao gồm trung tâm thương
                 mại, văn phòng, căn hộ cao cấp và nhà ở thấp tầng. Không chỉ
@@ -322,7 +322,10 @@
               </div>
             </div>
 
-            <ul class="contact body-1 color-black" data-fade-item>
+            <ul
+              class="contact body-1 color-black data-fade-in-mobile"
+              data-fade-item
+            >
               <li>
                 <div class="icon">
                   <img
@@ -350,7 +353,10 @@
                 >
               </li>
             </ul>
-            <div class="facilities body-1 color-black" data-fade-item>
+            <div
+              class="facilities body-1 color-black data-fade-in-mobile"
+              data-fade-item
+            >
               <h4>TIỆN ÍCH CHUNG</h4>
               <div class="facilities-wrapper">
                 <!-- desktop hiện 9 items / xuống mobile là 6 items -->
@@ -513,7 +519,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-right" data-fade-item>
+          <div
+            class="col-lg-6 col-md-12 col-right data-fade-in-mobile"
+            data-fade-item
+          >
             <div class="wrapper-slider-parallax position-relative">
               <div class="swiper" slider-parallax slider-arrow>
                 <div class="swiper-wrapper">
@@ -1375,7 +1384,7 @@
           >
             <h2 class="title heading-1 effect-line">ƯU ĐÃI NỔI BẬT</h2>
           </div>
-          <div class="offer-main">
+          <div class="offer-main data-fade-in-mobile">
             <div class="offer-slider slider-with-shadow position-relative">
               <div class="swiper">
                 <div class="swiper-wrapper">
@@ -1865,7 +1874,11 @@
         <!-- Khu vực hiển thị nội dung động (tên + mô tả + link) -->
         <div class="content-thumbnail-group"></div>
       </section>
-      <section class="section-gallery" section-fade-each-item>
+      <section
+        class="section-gallery"
+        section-fade-each-item
+        enabled-fade-each-mobile
+      >
         <div class="section-wrapper">
           <div
             class="section-top d-flex align-items-center justify-content-between"
@@ -2032,7 +2045,7 @@
               </svg>
             </button>
             <div class="modal-body">
-              <ul class="nav nav-tabs d-none d-lg-flex" role="tablist">
+              <ul class="nav nav-tabs d-none d-md-flex" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link active btn-body-font color-black"
@@ -2118,6 +2131,45 @@
                   </button>
                 </li>
               </ul>
+              <div class="dropdown-custom filter-dropdown d-flex d-md-none">
+                <div class="dropdown-custom-btn">
+                  <div class="value-select">
+                    <span data-tab="gallery-1">Tất cả</span>
+                  </div>
+                  <div class="icon">
+                    <svg
+                      width="8"
+                      height="5"
+                      viewBox="0 0 8 5"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.34082 0.5C6.67415 0.5 4.34082 2.5 3.67415 4.5C3.00749 2.5 0.674153 0.5 0.0074861 0.5"
+                        stroke="white"
+                        stroke-linejoin="bevel"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="dropdown-custom-menu">
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-2">Tổng quan</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-3">Phòng nghỉ</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-4">Sân vườn</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-5">Nhà hàng</span>
+                  </div>
+                  <div class="dropdown-custom-item">
+                    <span data-tab="gallery-6">Hồ bơi</span>
+                  </div>
+                </div>
+              </div>
               <div class="tab-content">
                 <div
                   class="tab-pane fade show active"

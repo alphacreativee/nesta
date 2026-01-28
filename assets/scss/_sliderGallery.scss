@@ -15,7 +15,7 @@
       max-width: calc(100% - 160px);
       position: relative;
 
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         max-width: 100%;
       }
 
@@ -146,12 +146,18 @@
     display: flex;
     flex-direction: column;
 
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
       top: 24px;
       left: 24px;
-      width: calc(100% - 48px);
-      max-width: 100%;
       transform: none;
+      width: 50%;
+      max-width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      width: calc(100% - 48px);
+      padding: 24px;
+      min-height: max-content;
     }
 
     .name-room {
