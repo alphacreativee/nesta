@@ -4460,6 +4460,11 @@ section.lightpick .lightpick__previous-action {
 .modal-success .modal-body {
   padding: 45px;
 }
+@media (max-width: 991px) {
+  .modal-success .modal-body {
+    padding: 24px;
+  }
+}
 .modal-success .modal-content {
   border: none;
   border-radius: 20px;
@@ -4679,6 +4684,9 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.section-contact .col-left .contact-box ul li:not(:first-child) {
+  margin-top: 8px;
 }
 .section-contact .col-left .contact-box a {
   transition: all 0.4s ease;
