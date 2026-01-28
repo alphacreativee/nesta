@@ -54,6 +54,10 @@
     .content {
       margin-top: 32px;
 
+      @media (max-width: 991px) {
+        margin-top: 24px;
+      }
+
       &-title {
         font-size: 20px;
         line-height: 28px;
@@ -75,6 +79,10 @@
         line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @media (max-width: 991px) {
+          margin-top: 12px;
+        }
       }
     }
 
