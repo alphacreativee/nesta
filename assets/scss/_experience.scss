@@ -103,6 +103,12 @@
 .image-parallax {
   overflow: hidden;
 
+  &.box-parallax-top {
+    img {
+      transform: translateY(-10%);
+    }
+  }
+
   img {
     width: 100%;
     height: 120% !important;

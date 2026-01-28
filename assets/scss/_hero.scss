@@ -80,6 +80,7 @@
       top: auto;
       transform: translate(0, 0);
       bottom: 24px;
+      max-width: calc(100% - 48px);
     }
     .current-tag {
       display: inline-block;

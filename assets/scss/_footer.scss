@@ -149,7 +149,7 @@
       }
 
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 12px;
 
       a {
@@ -164,6 +164,7 @@
         width: 16px;
         height: 16px;
         min-width: 16px;
+        transform: translateY(4px);
       }
     }
   }

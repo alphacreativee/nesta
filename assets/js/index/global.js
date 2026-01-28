@@ -523,12 +523,31 @@ export function fadeTextFooter() {
 }
 
 export function scrollToTop() {
-  document
-    .querySelector(".btn-scroll-top")
-    .addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  const btn = document.querySelector(".btn-scroll-top");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    const start = window.scrollY;
+    const duration = 800;
+    const startTime = performance.now();
+
+    function animateScroll(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      window.scrollTo(0, start * (1 - ease));
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  });
 }
+
 export function ctaRun() {
   const cta = document.getElementById("cta");
   if (!cta) return;
@@ -902,7 +921,7 @@ export function headerMobile() {
 export function sectionExperiences() {
   if ($(".section-experience").length < 1) return;
 
-  const percentParallax = $(window).width() < 992 ? 5 : 10;
+  const percentParallax = $(window).width() < 992 ? 7 : 10;
   const triggerItem =
     $(window).width() < 991
       ? ".section-experience"

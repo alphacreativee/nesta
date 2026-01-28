@@ -58,6 +58,19 @@
       }
     }
 
+    .contact-address {
+      li {
+        align-items: flex-start !important;
+      }
+
+      .icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        transform: translateY(5px);
+      }
+    }
+
     .contact-social {
       margin-top: 48px;
 
