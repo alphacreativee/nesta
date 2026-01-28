@@ -70,6 +70,10 @@
         align-items: center;
         gap: 24px;
 
+        li {
+          margin-top: 0 !important;
+        }
+
         a {
           transition: all 0.4s ease;
 

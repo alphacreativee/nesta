@@ -4130,7 +4130,7 @@ section.lightpick .lightpick__previous-action {
 .terms .tab-fixed .filter-item {
   height: 100%;
   overflow-y: scroll;
-  padding: 0 16px;
+  padding: 0 24px;
 }
 .terms .tab-fixed .filter-item::-webkit-scrollbar {
   width: 3px;
@@ -4897,6 +4897,9 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+.section-contact .col-left .contact-social ul li {
+  margin-top: 0 !important;
 }
 .section-contact .col-left .contact-social ul a {
   transition: all 0.4s ease;
