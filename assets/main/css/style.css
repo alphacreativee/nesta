@@ -1531,6 +1531,7 @@ section.lightpick .lightpick__previous-action {
 #header .header-sub-menu.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 #header .header-sub-menu.active .header-menu.mobile-layout {
   clip-path: inset(0);

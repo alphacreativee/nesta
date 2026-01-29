@@ -428,6 +428,8 @@
         // clip-path: inset(0);
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
+
         .header-menu.mobile-layout {
           clip-path: inset(0);
         }
