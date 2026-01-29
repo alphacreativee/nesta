@@ -2100,7 +2100,6 @@ section.lightpick .lightpick__previous-action {
   padding: 0 12px 40px;
 }
 .hotel-filter__item {
-  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -2148,6 +2147,7 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: var(--color-white);
 }
 .hotel-filter__item .content .content-title {
   margin-bottom: 12px;
@@ -2348,7 +2348,6 @@ section.lightpick .lightpick__previous-action {
 .offer-item .image {
   width: 100%;
   aspect-ratio: 410/510;
-  border-radius: 20px;
   overflow: hidden;
   position: relative;
 }
@@ -4836,6 +4835,9 @@ section.lightpick .lightpick__previous-action {
 }
 .news-detail .section-wrapper ol {
   list-style: decimal;
+}
+.news-detail__cta {
+  margin-top: 24px;
 }
 .news-detail__cta .share {
   display: flex;
