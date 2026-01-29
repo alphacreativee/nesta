@@ -1746,13 +1746,14 @@ section.lightpick .lightpick__previous-action {
   padding: 8px 16px;
   background-color: var(--color-white);
   border-radius: 20px;
-  width: max-content;
-  max-width: 80%;
   position: absolute;
   top: 16px;
   left: 16px;
   z-index: 2;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .news-main {
   position: relative;
