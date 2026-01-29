@@ -83,7 +83,7 @@ const init = () => {
   headerMobile();
   sectionExperiences();
   popupBookingMobile();
-  // animationSubMenu();
+  animationSubMenu();
   filterDropdownMobile();
   bookingServices();
 };

@@ -999,6 +999,8 @@ export function popupBookingMobile() {
   });
 }
 export function animationSubMenu() {
+  const isMobile = window.innerWidth < 992;
+
   const menuItemsWithChildren = document.querySelectorAll(
     "#header .header-menu > ul > li.menu-item-has-children",
   );
@@ -1024,48 +1026,102 @@ export function animationSubMenu() {
       });
     }
 
-    menuItem.addEventListener("mouseenter", function () {
-      if (subMenuItems.length > 0) {
-        gsap.to(subMenuItems, {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "power3.out",
-        });
-      }
+    if (isMobile) {
+      // Animation cho mobile - chỉ animate khi MỞ menu
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === "class") {
+            const hasShowMenu = subMenu?.classList.contains("show-menu");
 
-      if (btnViewHotel) {
-        gsap.to(btnViewHotel, {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          delay: subMenuItems.length * 0.08,
-          ease: "power3.out",
-        });
-      }
-    });
+            if (hasShowMenu) {
+              // Chỉ animate in khi mở menu
+              if (subMenuItems.length > 0) {
+                gsap.to(subMenuItems, {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.6,
+                  stagger: 0.08,
+                  ease: "power3.out",
+                });
+              }
 
-    menuItem.addEventListener("mouseleave", function () {
-      if (subMenuItems.length > 0) {
-        gsap.to(subMenuItems, {
-          y: 10,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.04,
-          ease: "power3.in",
-        });
-      }
+              if (btnViewHotel) {
+                gsap.to(btnViewHotel, {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.8,
+                  delay: subMenuItems.length * 0.08,
+                  ease: "power3.out",
+                });
+              }
+            } else {
+              // Khi đóng menu, reset về trạng thái ban đầu NGAY LẬP TỨC (không có animation)
+              if (subMenuItems.length > 0) {
+                gsap.set(subMenuItems, {
+                  y: 10,
+                  opacity: 0,
+                });
+              }
 
-      if (btnViewHotel) {
-        gsap.to(btnViewHotel, {
-          y: 10,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power3.in",
+              if (btnViewHotel) {
+                gsap.set(btnViewHotel, {
+                  y: 10,
+                  opacity: 0,
+                });
+              }
+            }
+          }
         });
+      });
+
+      if (subMenu) {
+        observer.observe(subMenu, { attributes: true });
       }
-    });
+    } else {
+      // Animation cho desktop với mouseenter/mouseleave
+      menuItem.addEventListener("mouseenter", function () {
+        if (subMenuItems.length > 0) {
+          gsap.to(subMenuItems, {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: "power3.out",
+          });
+        }
+
+        if (btnViewHotel) {
+          gsap.to(btnViewHotel, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: subMenuItems.length * 0.08,
+            ease: "power3.out",
+          });
+        }
+      });
+
+      menuItem.addEventListener("mouseleave", function () {
+        if (subMenuItems.length > 0) {
+          gsap.to(subMenuItems, {
+            y: 10,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.04,
+            ease: "power3.in",
+          });
+        }
+
+        if (btnViewHotel) {
+          gsap.to(btnViewHotel, {
+            y: 10,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power3.in",
+          });
+        }
+      });
+    }
   });
 }
 
