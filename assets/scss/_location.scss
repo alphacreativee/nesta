@@ -150,6 +150,10 @@
     border-radius: 12px;
     background-image: url("../../images/paper-texture-big.jpg");
     background-size: 100% 100%;
+
+    @media (max-width: 767px) {
+      border-radius: unset;
+    }
   }
   .modal-header {
     border-radius: 0;
@@ -184,6 +188,7 @@
 
     @media (max-width: 767px) {
       margin: 0;
+      height: 100svh;
     }
   }
   .location-popup-list {
