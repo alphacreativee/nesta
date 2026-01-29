@@ -828,6 +828,19 @@ export function headerMobile() {
   const subMenu = document.querySelector(".header-sub-menu");
   const header = document.querySelector("header");
 
+  // Lấy các menu items để animate
+  const menuItems = document.querySelectorAll(
+    ".header-menu.mobile-layout > ul > li > a",
+  );
+
+  // Set initial state
+  if (menuItems.length > 0) {
+    gsap.set(menuItems, {
+      y: 10,
+      opacity: 0,
+    });
+  }
+
   // Toggle hamburger menu
   hamburger.addEventListener("click", function () {
     this.classList.toggle("active");
@@ -845,6 +858,17 @@ export function headerMobile() {
       if (window.lenis) {
         window.lenis.stop();
       }
+
+      // Animate menu items vào
+      if (menuItems.length > 0) {
+        gsap.to(menuItems, {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power3.out",
+        });
+      }
     } else {
       // Enable scroll
       document.body.classList.remove("overflow-hidden");
@@ -856,6 +880,17 @@ export function headerMobile() {
 
       if (window.lenis) {
         window.lenis.start();
+      }
+
+      // Animate menu items ra (hoặc reset ngay)
+      if (menuItems.length > 0) {
+        gsap.to(menuItems, {
+          y: 10,
+          opacity: 0,
+          duration: 0.4,
+          stagger: 0.04,
+          ease: "power3.in",
+        });
       }
 
       // Remove active từ tất cả menu-item-has-children
@@ -880,7 +915,7 @@ export function headerMobile() {
   );
 
   menuItemsWithChildren.forEach((menuItem) => {
-    const menuLink = menuItem.querySelector(".menu-item-has-children > a");
+    const menuLink = menuItem.querySelector(":scope > a");
 
     if (menuLink) {
       menuLink.addEventListener("click", function (e) {
