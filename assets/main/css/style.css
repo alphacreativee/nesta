@@ -3199,8 +3199,10 @@ section.lightpick .lightpick__previous-action {
     max-width: 100%;
   }
 }
-.slider-gallery .thumbnail-list-wrapper .swiper {
-  padding: 0 24px;
+@media (max-width: 991px) {
+  .slider-gallery .thumbnail-list-wrapper .swiper {
+    padding: 0 24px;
+  }
 }
 .slider-gallery .thumbnail-list-wrapper .swiper-arrow {
   width: 40px;

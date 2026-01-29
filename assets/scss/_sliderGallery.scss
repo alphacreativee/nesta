@@ -20,7 +20,9 @@
       }
 
       .swiper {
-        padding: 0 24px;
+        @media (max-width: 991px) {
+          padding: 0 24px;
+        }
       }
 
       .swiper-arrow {
