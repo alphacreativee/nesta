@@ -1926,6 +1926,9 @@ section.lightpick .lightpick__previous-action {
 .section-experience {
   background-color: var(--color-secondary-1);
 }
+.section-experience.member-sec .col-content {
+  padding: 40px 90px;
+}
 .section-experience .section-wrapper {
   padding: 40px 80px;
 }
@@ -1966,7 +1969,7 @@ section.lightpick .lightpick__previous-action {
   background-color: #fff;
   transform: translateX(calc(-16.6666666667% - 40px));
   border-radius: 20px;
-  padding: 40px;
+  padding: 40px 72px;
   top: 32px;
 }
 @media screen and (min-width: 1500px) {
