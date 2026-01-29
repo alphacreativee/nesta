@@ -3430,9 +3430,6 @@ section.lightpick .lightpick__previous-action {
 .destination-location .destination-wrapper .location-review .location-item:hover .location-image img {
   transform: scale(1.03);
 }
-.destination-location .destination-wrapper .location-review .location-item:hover .location-info .time {
-  color: rgba(0, 0, 0, 0.5);
-}
 .destination-location .destination-wrapper .location-review .location-image {
   width: 100%;
   aspect-ratio: 195/104;
@@ -3567,9 +3564,6 @@ section.lightpick .lightpick__previous-action {
 }
 #locationModal .location-popup-list .location-popup-item:hover .location-image img {
   transform: scale(1.03);
-}
-#locationModal .location-popup-list .location-popup-item:hover .location-info .time {
-  color: rgba(0, 0, 0, 0.5);
 }
 #locationModal .location-popup-list .location-popup-item .location-image {
   overflow: hidden;
