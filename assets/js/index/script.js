@@ -19,16 +19,16 @@ import {
   popupBookingMobile,
   animationSubMenu,
   filterDropdownMobile,
-  bookingServices
+  bookingServices,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
   sliderWithShadow,
-  sliderParallax
+  sliderParallax,
 } from "../../main/js/slider.min.js";
 import {
   createFilterTab,
-  createFilterTabMulti
+  createFilterTabMulti,
 } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
@@ -83,7 +83,7 @@ const init = () => {
   headerMobile();
   sectionExperiences();
   popupBookingMobile();
-  animationSubMenu();
+  // animationSubMenu();
   filterDropdownMobile();
   bookingServices();
 };
