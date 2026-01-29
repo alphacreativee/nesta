@@ -68,11 +68,6 @@
               transform: scale(1.03);
             }
           }
-          .location-info {
-            .time {
-              color: rgba(0, 0, 0, 0.5);
-            }
-          }
         }
       }
       .location-image {
@@ -223,9 +218,6 @@
       &:hover {
         .location-image img {
           transform: scale(1.03);
-        }
-        .location-info .time {
-          color: rgba(0, 0, 0, 0.5);
         }
       }
       .location-image {
