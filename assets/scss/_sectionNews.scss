@@ -98,6 +98,10 @@
       left: 16px;
       z-index: 2;
       white-space: nowrap;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
