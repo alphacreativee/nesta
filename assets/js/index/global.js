@@ -828,12 +828,10 @@ export function headerMobile() {
   const subMenu = document.querySelector(".header-sub-menu");
   const header = document.querySelector("header");
 
-  // Lấy các menu items để animate
   const menuItems = document.querySelectorAll(
     ".header-menu.mobile-layout > ul > li > a",
   );
 
-  // Set initial state
   if (menuItems.length > 0) {
     gsap.set(menuItems, {
       y: 10,
@@ -841,25 +839,27 @@ export function headerMobile() {
     });
   }
 
-  // Toggle hamburger menu
   hamburger.addEventListener("click", function () {
     this.classList.toggle("active");
     subMenu.classList.toggle("active");
 
     if (this.classList.contains("active")) {
-      // Disable scroll
       document.body.classList.add("overflow-hidden");
 
-      // Thêm header-theme-light khi mở hamburger menu
       if (header) {
+        const hadLightTheme = header.classList.contains("header-theme-light");
+
         header.classList.add("header-theme-light");
+
+        if (!hadLightTheme) {
+          header.setAttribute("data-hamburger-light", "true");
+        }
       }
 
       if (window.lenis) {
         window.lenis.stop();
       }
 
-      // Animate menu items vào
       if (menuItems.length > 0) {
         gsap.to(menuItems, {
           y: 0,
@@ -870,19 +870,17 @@ export function headerMobile() {
         });
       }
     } else {
-      // Enable scroll
       document.body.classList.remove("overflow-hidden");
 
-      // Remove header-theme-light khi đóng hamburger menu
-      if (header) {
+      if (header && header.hasAttribute("data-hamburger-light")) {
         header.classList.remove("header-theme-light");
+        header.removeAttribute("data-hamburger-light");
       }
 
       if (window.lenis) {
         window.lenis.start();
       }
 
-      // Animate menu items ra (hoặc reset ngay)
       if (menuItems.length > 0) {
         gsap.to(menuItems, {
           y: 10,
@@ -893,7 +891,6 @@ export function headerMobile() {
         });
       }
 
-      // Remove active từ tất cả menu-item-has-children
       const menuItemsWithChildren = document.querySelectorAll(
         ".menu-item-has-children",
       );
@@ -901,7 +898,6 @@ export function headerMobile() {
         item.classList.remove("active");
       });
 
-      // Remove show-menu từ tất cả sub-menu
       const allSubMenus = document.querySelectorAll(".sub-menu");
       allSubMenus.forEach((menu) => {
         menu.classList.remove("show-menu");
@@ -909,7 +905,6 @@ export function headerMobile() {
     }
   });
 
-  // Toggle submenu cho menu-item-has-children
   const menuItemsWithChildren = document.querySelectorAll(
     ".menu-item-has-children",
   );
