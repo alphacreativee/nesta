@@ -8,7 +8,7 @@
   gap: 8px;
   transition:
     right 0.5s ease,
-    opacity 0.3s ease 0.15s; // Delay ngắn hơn để opacity bắt đầu sớm hơn
+    opacity 0.3s ease 0.15s;
   opacity: 1;
 
   @media (max-width: 991px) {
@@ -29,7 +29,7 @@
         opacity: 0;
         transition:
           transform 0.5s ease,
-          opacity 0.4s ease 0.1s; // Sau 0.15s (khoảng 18px) thì bắt đầu mờ
+          opacity 0.4s ease 0.1s;
         transition-delay: 0s;
       }
 
@@ -38,7 +38,7 @@
         opacity: 0;
         transition:
           transform 0.5s ease,
-          opacity 0.4s ease 0.1s; // Sau 0.15s (khoảng 18px) thì bắt đầu mờ
+          opacity 0.4s ease 0.1s;
         transition-delay: 0.1s;
       }
     }
@@ -57,34 +57,72 @@
         transition-delay: 0.15s;
       }
 
-      &:hover {
-        .cta-global {
-          background-color: var(--color-primary-3);
+      // Desktop: hover
+      @media (min-width: 992px) {
+        &:hover {
+          .cta-global {
+            background-color: var(--color-primary-3);
 
-          &::before {
-            opacity: 1;
-            visibility: visible;
-          }
-
-          img {
-            &:first-child {
-              transform: scale(0);
+            &::before {
+              opacity: 1;
+              visibility: visible;
             }
 
-            &:last-child {
-              transform: translate(-50%, -50%) scale(1);
+            img {
+              &:first-child {
+                transform: scale(0);
+              }
+
+              &:last-child {
+                transform: translate(-50%, -50%) scale(1);
+              }
+            }
+          }
+
+          .cta-list {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+
+            .cta-item {
+              transform: translateY(0) scale(1);
+              opacity: 1;
             }
           }
         }
+      }
 
-        .cta-list {
-          opacity: 1;
-          visibility: visible;
-          transition-delay: 0s;
+      // Mobile: is-active
+      @media (max-width: 991px) {
+        &.is-active {
+          .cta-global {
+            background-color: var(--color-primary-3);
 
-          .cta-item {
-            transform: translateY(0) scale(1);
+            &::before {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            img {
+              &:first-child {
+                transform: scale(0);
+              }
+
+              &:last-child {
+                transform: translate(-50%, -50%) scale(1);
+              }
+            }
+          }
+
+          .cta-list {
             opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+
+            .cta-item {
+              transform: translateY(0) scale(1);
+              opacity: 1;
+            }
           }
         }
       }
@@ -109,9 +147,7 @@
     &-item {
       width: 54px;
       height: 54px;
-
       display: flex;
-
       transform: translateY(20px) scale(0);
       transform-origin: center;
       opacity: 0;

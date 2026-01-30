@@ -20,6 +20,7 @@ import {
   animationSubMenu,
   filterDropdownMobile,
   bookingServices,
+  clickCta,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -36,7 +37,9 @@ import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 ("use strict");
 $ = jQuery;
 
-const lenis = new Lenis();
+const lenis = new Lenis({
+  smoothTouch: false,
+});
 window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
 gsap.ticker.add((time) => {
@@ -86,6 +89,7 @@ const init = () => {
   animationSubMenu();
   filterDropdownMobile();
   bookingServices();
+  clickCta();
 };
 
 preloadImages("img").then(() => {

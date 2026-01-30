@@ -848,7 +848,6 @@ export function headerMobile() {
 
       if (header) {
         const hadLightTheme = header.classList.contains("header-theme-light");
-
         header.classList.add("header-theme-light");
 
         if (!hadLightTheme) {
@@ -856,9 +855,15 @@ export function headerMobile() {
         }
       }
 
+      // Lock scroll - hỗ trợ cả Lenis và native scroll
       if (window.lenis) {
         window.lenis.stop();
       }
+
+      // Thêm backup cho iOS - prevent touch scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.width = "100%";
 
       if (menuItems.length > 0) {
         gsap.to(menuItems, {
@@ -870,7 +875,19 @@ export function headerMobile() {
         });
       }
     } else {
+      // Unlock scroll
+      const scrollY = document.body.style.top;
+
       document.body.classList.remove("overflow-hidden");
+
+      // Restore scroll position cho iOS
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
 
       if (header && header.hasAttribute("data-hamburger-light")) {
         header.classList.remove("header-theme-light");
@@ -925,7 +942,6 @@ export function headerMobile() {
     }
   });
 
-  // Handle all back buttons
   const backButtons = document.querySelectorAll(".sub-menu-back");
   backButtons.forEach((backButton) => {
     backButton.addEventListener("click", function (e) {
@@ -1184,4 +1200,27 @@ export function bookingServices() {
     startDate: moment().startOf("day").toDate(),
     endDate: moment().startOf("day").add(1, "days").toDate(),
   });
+}
+export function clickCta() {
+  const ctaWrapper = document.querySelector(".cta-wrapper");
+  const ctaGlobal = document.querySelector(".cta-global");
+
+  if (!ctaWrapper || !ctaGlobal) return;
+
+  const isMobile = window.matchMedia("(max-width: 991px)").matches;
+
+  if (isMobile) {
+    ctaGlobal.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      ctaWrapper.classList.toggle("is-active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!ctaWrapper.contains(e.target)) {
+        ctaWrapper.classList.remove("is-active");
+      }
+    });
+  }
 }
