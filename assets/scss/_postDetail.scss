@@ -129,6 +129,16 @@
     border-radius: 20px;
     border: none;
     overflow: hidden;
+
+    @media (max-width: 767px) {
+      border-radius: unset;
+    }
+  }
+
+  .title {
+    @media (max-width: 991px) {
+      padding-right: 80px;
+    }
   }
 
   .modal-dialog {
@@ -137,7 +147,8 @@
 
     @media (max-width: 991px) {
       margin: 0 auto;
-      width: calc(100% - 48px);
+      // width: calc(100% - 48px);
+      width: 100%;
     }
   }
 
@@ -148,13 +159,19 @@
     padding: 40px;
 
     @media (max-width: 767px) {
-      padding: 40px 24px;
+      padding: 24px 24px 40px;
+    }
+
+    @media (max-width: 480px) {
+      background: url("../../images/bg-modal-booking-mobile.jpg") no-repeat top;
     }
   }
 
   .button-close {
     @media (max-width: 991px) {
       right: 24px !important;
+      color: var(--color-black) !important;
+      border-color: rgba(0, 0, 0, 0.3) !important;
     }
   }
 }
@@ -197,7 +214,7 @@
 
     @media (max-width: 991px) {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 32px;
     }
   }
 

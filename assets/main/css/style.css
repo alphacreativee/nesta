@@ -2667,13 +2667,14 @@ section.lightpick .lightpick__previous-action {
 }
 .accommodation-detail .col-left .contact li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 .accommodation-detail .col-left .contact li .icon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  transform: translateY(5px);
 }
 .accommodation-detail .col-left .contact li:not(:first-child) {
   margin-top: 8px;
@@ -4464,6 +4465,16 @@ section.lightpick .lightpick__previous-action {
   border: none;
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  #modal-booking-services .modal-content {
+    border-radius: unset;
+  }
+}
+@media (max-width: 991px) {
+  #modal-booking-services .title {
+    padding-right: 80px;
+  }
+}
 #modal-booking-services .modal-dialog {
   width: 100%;
   max-width: 900px;
@@ -4471,7 +4482,7 @@ section.lightpick .lightpick__previous-action {
 @media (max-width: 991px) {
   #modal-booking-services .modal-dialog {
     margin: 0 auto;
-    width: calc(100% - 48px);
+    width: 100%;
   }
 }
 #modal-booking-services .modal-body {
@@ -4481,12 +4492,19 @@ section.lightpick .lightpick__previous-action {
 }
 @media (max-width: 767px) {
   #modal-booking-services .modal-body {
-    padding: 40px 24px;
+    padding: 24px 24px 40px;
+  }
+}
+@media (max-width: 480px) {
+  #modal-booking-services .modal-body {
+    background: url("../../images/bg-modal-booking-mobile.jpg") no-repeat top;
   }
 }
 @media (max-width: 991px) {
   #modal-booking-services .button-close {
     right: 24px !important;
+    color: var(--color-black) !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
   }
 }
 
@@ -4526,7 +4544,7 @@ section.lightpick .lightpick__previous-action {
 @media (max-width: 991px) {
   .wrapper-form-booking form {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
   }
 }
 .wrapper-form-booking .field-item {
@@ -5102,7 +5120,7 @@ section.lightpick .lightpick__previous-action {
 }
 @media (max-width: 991px) {
   .section-contact .col-right .wrapper-form-booking form {
-    gap: 32px;
+    gap: 40px;
   }
 }
 .section-contact .col-right .wrapper-form-booking .select-people .select-box {
