@@ -37,7 +37,9 @@ import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 ("use strict");
 $ = jQuery;
 
-const lenis = new Lenis();
+const lenis = new Lenis({
+  smoothTouch: false,
+});
 window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
 gsap.ticker.add((time) => {
