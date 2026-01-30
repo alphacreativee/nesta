@@ -188,4 +188,22 @@ export function sliderParallax() {
       }
     }
   });
+
+  // init on open modal
+  document
+    .querySelectorAll(".modal-accommodation-detail")
+    .forEach((modalEl) => {
+      modalEl.addEventListener("shown.bs.modal", () => {
+        const swiperEl = modalEl.querySelector("[slider-parallax]");
+
+        if (!swiperEl || !swiperEl.swiper) return;
+
+        const swiper = swiperEl.swiper;
+
+        swiper.update();
+        swiper.updateSlides();
+        swiper.updateProgress();
+        swiper.slideToLoop(0, 0, false);
+      });
+    });
 }
