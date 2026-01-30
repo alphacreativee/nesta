@@ -1438,7 +1438,7 @@ section.lightpick .lightpick__previous-action {
   #header .header-container {
     max-width: 100%;
     padding: 9.5px 24px;
-    border-bottom: 1px solid #8b8e90;
+    border-bottom: 1px solid #8b8b8c;
   }
 }
 #header .header-main {
@@ -4473,6 +4473,7 @@ section.lightpick .lightpick__previous-action {
 @media (max-width: 767px) {
   #modal-booking-services .modal-content {
     border-radius: unset;
+    min-height: 100svh;
   }
 }
 @media (max-width: 991px) {
