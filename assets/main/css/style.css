@@ -1587,6 +1587,19 @@ section.lightpick .lightpick__previous-action {
   z-index: 888;
   overflow-y: scroll;
 }
+#header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu::-webkit-scrollbar {
+  width: 3px;
+}
+#header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+#header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu::-webkit-scrollbar-thumb {
+  background: rgba(168, 116, 57, 0.5);
+  border-radius: 10px;
+}
+#header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-2);
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu {
     width: 50%;

@@ -469,6 +469,22 @@
                     // transform: translateX(100%);
                     z-index: 888;
                     overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                      width: 3px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                      background: transparent;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                      background: rgba(168, 116, 57, 0.5);
+                      border-radius: 10px;
+
+                      &:hover {
+                        background: var(--color-primary-2);
+                      }
+                    }
                     @media (min-width: 768px) and (max-width: 1023px) {
                       width: 50%;
                       right: 0;
