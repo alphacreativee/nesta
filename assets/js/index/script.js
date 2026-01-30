@@ -20,6 +20,7 @@ import {
   animationSubMenu,
   filterDropdownMobile,
   bookingServices,
+  clickCta,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -86,6 +87,7 @@ const init = () => {
   animationSubMenu();
   filterDropdownMobile();
   bookingServices();
+  clickCta();
 };
 
 preloadImages("img").then(() => {

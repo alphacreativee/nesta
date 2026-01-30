@@ -1185,3 +1185,26 @@ export function bookingServices() {
     endDate: moment().startOf("day").add(1, "days").toDate(),
   });
 }
+export function clickCta() {
+  const ctaWrapper = document.querySelector(".cta-wrapper");
+  const ctaGlobal = document.querySelector(".cta-global");
+
+  if (!ctaWrapper || !ctaGlobal) return;
+
+  const isMobile = window.matchMedia("(max-width: 991px)").matches;
+
+  if (isMobile) {
+    ctaGlobal.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      ctaWrapper.classList.toggle("is-active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!ctaWrapper.contains(e.target)) {
+        ctaWrapper.classList.remove("is-active");
+      }
+    });
+  }
+}
