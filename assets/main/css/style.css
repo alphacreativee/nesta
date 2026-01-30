@@ -388,13 +388,12 @@ main {
     height: auto;
     bottom: 0;
     padding: 24px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+    transition: transform 0.5s ease;
+    transform: translateY(100%);
+    border-radius: 12px 12px 0 0;
   }
   .booking-form-wrapper.active {
-    opacity: 1;
-    visibility: visible;
+    transform: translateY(0);
   }
 }
 .booking-form-wrapper.booking-fixed {
@@ -424,7 +423,8 @@ main {
 @media (max-width: 991px) {
   .booking-form-wrapper.booking-up .dropdown-custom-menu {
     margin-top: 12px;
-    border: 1px solid rgba(64, 64, 64, 0.3);
+    border-radius: unset;
+    padding: 12px;
   }
 }
 .booking-form-wrapper.booking-up .select-people .select-box {
@@ -436,6 +436,7 @@ main {
 @media (max-width: 991px) {
   .booking-form-wrapper.booking-up .select-people .select-box {
     margin-top: 12px;
+    padding: 12px;
   }
 }
 .booking-form-container {
@@ -485,6 +486,12 @@ main {
   transition: all 0.3s ease;
   transform: translateY(-100%);
   z-index: 3;
+}
+@media (max-width: 991px) {
+  .booking-form-container form .dropdown-custom-menu {
+    border-radius: unset;
+    background-color: var(--color-gray-1);
+  }
 }
 .booking-form-container form .dropdown-custom-menu.dropdown--active {
   opacity: 1;
@@ -548,7 +555,6 @@ main {
   color: var(--color-white);
   background-color: var(--color-primary-3);
   padding: 8px 20px;
-  text-transform: uppercase;
   font-family: var(--font-heading);
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -557,6 +563,7 @@ main {
   .booking-form-container form .button-find-room button {
     display: block;
     width: 100%;
+    border-radius: unset;
   }
 }
 .booking-form-container form .booking-form-item {
@@ -578,6 +585,7 @@ main {
 @media (max-width: 991px) {
   .booking-form-container form .booking-form-item:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
 }
 .booking-form-container form .select-people {
@@ -603,7 +611,8 @@ main {
 }
 @media (max-width: 991px) {
   .booking-form-container form .select-people .select-box {
-    border: 1px solid rgba(64, 64, 64, 0.3);
+    background-color: var(--color-gray-1);
+    border-radius: unset !important;
   }
 }
 .booking-form-container form .select-people .select-box.active {
@@ -658,6 +667,7 @@ section.lightpick {
   border-radius: 0;
   padding: 16px;
   box-shadow: none;
+  font-family: var(--font-body);
 }
 section.lightpick > * {
   font-family: var(--font-body);
@@ -667,6 +677,12 @@ section.lightpick .lightpick__day.is-start-date.is-in-range,
 section.lightpick .lightpick__day.is-end-date.is-in-range,
 section.lightpick .lightpick__day.is-start-date.is-in-range.is-flipped {
   background-color: var(--color-primary-3);
+}
+section.lightpick .lightpick__day.is-start-date {
+  border-radius: 50% 0 0 50%;
+}
+section.lightpick .lightpick__day.is-end-date {
+  border-radius: 0 50% 50% 0;
 }
 section.lightpick .lightpick__day.is-end-date,
 section.lightpick .lightpick__day.is-end-date:hover,
@@ -682,6 +698,9 @@ section.lightpick .lightpick__day.is-today {
 section.lightpick .lightpick__day-of-the-week {
   font-family: var(--font-body);
   font-weight: 600;
+}
+section.lightpick .lightpick__select {
+  color: var(--color-black);
 }
 section.lightpick .lightpick__month-title {
   margin-left: 0;
@@ -1389,6 +1408,11 @@ section.lightpick .lightpick__previous-action {
     font-size: 13px;
   }
 }
+@media (max-width: 991px) {
+  #header .header-menu ul li a {
+    font-size: 15px;
+  }
+}
 #header .header-menu ul li a.active {
   color: var(--color-primary-3) !important;
 }
@@ -1561,6 +1585,7 @@ section.lightpick .lightpick__previous-action {
   transition: all 0.3s ease;
   clip-path: inset(0 0 0 100%) !important;
   z-index: 888;
+  overflow-y: scroll;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu {
@@ -2674,7 +2699,7 @@ section.lightpick .lightpick__previous-action {
   transform: translateY(4px);
 }
 .accommodation-detail .col-left .facilities-more {
-  margin-top: 8px;
+  margin-top: 12px;
   height: 0;
   overflow: hidden;
 }
@@ -3061,11 +3086,7 @@ section.lightpick .lightpick__previous-action {
 #cta .cta-item {
   width: 54px;
   height: 54px;
-  border-radius: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-primary-2);
   transform: translateY(20px) scale(0);
   transform-origin: center;
   opacity: 0;
@@ -3080,8 +3101,21 @@ section.lightpick .lightpick__previous-action {
 #cta .cta-item:nth-child(1) {
   transition-delay: 0.15s;
 }
-#cta .cta-item:hover {
-  background-color: var(--color-primary-1);
+#cta .cta-item a {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-primary-2);
+  transition: all 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+#cta .cta-item a img {
+  width: 18px;
+  height: 18px;
+}
+#cta .cta-item a:hover {
+  background-color: var(--color-black);
 }
 #cta .cta-global {
   width: 54px;

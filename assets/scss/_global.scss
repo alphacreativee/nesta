@@ -144,12 +144,11 @@
       height: auto;
       bottom: 0;
       padding: 24px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
+      transition: transform 0.5s ease;
+      transform: translateY(100%);
+      border-radius: 12px 12px 0 0;
       &.active {
-        opacity: 1;
-        visibility: visible;
+        transform: translateY(0);
       }
     }
     &.booking-fixed {
@@ -182,7 +181,9 @@
         border-radius: 0 0 12px 12px;
         @media (max-width: 991px) {
           margin-top: 12px;
-          border: 1px solid rgba(64, 64, 64, 0.3);
+          border-radius: unset;
+          padding: 12px;
+          // border: 1px solid rgba(64, 64, 64, 0.3);
         }
       }
       .select-people {
@@ -193,6 +194,7 @@
           border-radius: 0 0 12px 12px;
           @media (max-width: 991px) {
             margin-top: 12px;
+            padding: 12px;
           }
         }
       }
@@ -240,6 +242,12 @@
           transition: all 0.3s ease;
           transform: translateY(-100%);
           z-index: 3;
+
+          @media (max-width: 991px) {
+            border-radius: unset;
+            background-color: var(--color-gray-1);
+          }
+
           &.dropdown--active {
             opacity: 1;
             visibility: visible;
@@ -306,13 +314,14 @@
           color: var(--color-white);
           background-color: var(--color-primary-3);
           padding: 8px 20px;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           font-family: var(--font-heading);
           border-radius: 8px;
           transition: all 0.3s ease;
           @media (max-width: 991px) {
             display: block;
             width: 100%;
+            border-radius: unset;
           }
         }
       }
@@ -332,6 +341,7 @@
         &:last-child {
           @media (max-width: 991px) {
             border-bottom: none;
+            padding-bottom: 0;
           }
         }
       }
@@ -355,7 +365,9 @@
           transform: translateY(-100%);
           z-index: 3;
           @media (max-width: 991px) {
-            border: 1px solid rgba(64, 64, 64, 0.3);
+            // border: 1px solid rgba(64, 64, 64, 0.3);
+            background-color: var(--color-gray-1);
+            border-radius: unset !important;
           }
           &.active {
             opacity: 1;
@@ -414,6 +426,7 @@ section.lightpick {
   border-radius: 0;
   padding: 16px;
   box-shadow: none;
+  font-family: var(--font-body);
   & > * {
     font-family: var(--font-body);
   }
@@ -422,6 +435,13 @@ section.lightpick {
   .lightpick__day.is-end-date.is-in-range,
   .lightpick__day.is-start-date.is-in-range.is-flipped {
     background-color: var(--color-primary-3);
+  }
+
+  .lightpick__day.is-start-date {
+    border-radius: 50% 0 0 50%;
+  }
+  .lightpick__day.is-end-date {
+    border-radius: 0 50% 50% 0;
   }
   .lightpick__day.is-end-date,
   .lightpick__day.is-end-date:hover,
@@ -438,6 +458,9 @@ section.lightpick {
   .lightpick__day-of-the-week {
     font-family: var(--font-body);
     font-weight: 600;
+  }
+  .lightpick__select {
+    color: var(--color-black);
   }
   .lightpick__month-title {
     margin-left: 0;
