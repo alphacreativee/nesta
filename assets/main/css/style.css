@@ -1604,6 +1604,13 @@ section.lightpick .lightpick__previous-action {
 #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a.menu-full-ks + .sub-menu .btn-view-hotel {
   margin-top: auto;
 }
+@media (max-width: 991px) {
+  #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > .sub-menu > ul > li.menu-item-has-children > a > .icon {
+    position: static;
+    margin: 0;
+    transform: translateY(0);
+  }
+}
 #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > .sub-menu.menu-max-width {
   position: fixed;
   opacity: 1;
@@ -1639,6 +1646,15 @@ section.lightpick .lightpick__previous-action {
 }
 #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > .sub-menu.menu-max-width .btn-view-hotel {
   margin-top: auto;
+}
+@media (max-width: 991px) {
+  #header .header-sub-menu .header-menu.mobile-layout ul li.menu-item-has-children > a > .icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: -14px;
+  }
 }
 #header .header-sub-menu .header-menu.mobile-layout ul li a {
   color: var(--color-black);

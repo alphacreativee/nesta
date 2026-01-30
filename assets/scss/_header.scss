@@ -487,6 +487,19 @@
                   }
                 }
                 & > .sub-menu {
+                  & > ul {
+                    & > li.menu-item-has-children {
+                      & > a {
+                        & > .icon {
+                          @media (max-width: 991px) {
+                            position: static;
+                            margin: 0;
+                            transform: translateY(0);
+                          }
+                        }
+                      }
+                    }
+                  }
                   &.menu-max-width {
                     position: fixed;
                     opacity: 1;
@@ -520,6 +533,17 @@
                     }
                     .btn-view-hotel {
                       margin-top: auto;
+                    }
+                  }
+                }
+                & > a {
+                  & > .icon {
+                    @media (max-width: 991px) {
+                      position: absolute;
+                      right: 0;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      margin-right: -14px;
                     }
                   }
                 }
