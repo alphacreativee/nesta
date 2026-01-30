@@ -189,6 +189,10 @@
       flex-direction: column;
     }
 
+    @media (max-width: 480px) {
+      background: url("../../images/bg-modal-booking-mobile.jpg") no-repeat top;
+    }
+
     .modal {
       &-left {
         width: 60%;

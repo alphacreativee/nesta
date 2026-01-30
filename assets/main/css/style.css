@@ -2955,6 +2955,11 @@ section.lightpick .lightpick__previous-action {
     flex-direction: column;
   }
 }
+@media (max-width: 480px) {
+  .modal-accommodation-detail .modal-body {
+    background: url("../../images/bg-modal-booking-mobile.jpg") no-repeat top;
+  }
+}
 .modal-accommodation-detail .modal-body .modal-left {
   width: 60%;
 }
