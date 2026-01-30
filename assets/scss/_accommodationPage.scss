@@ -15,10 +15,14 @@
         margin-bottom: 32px;
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 767px) {
         flex-direction: column;
         gap: 32px;
         align-items: flex-start !important;
+
+        position: sticky;
+        top: 8px;
+        z-index: 5;
       }
     }
 
