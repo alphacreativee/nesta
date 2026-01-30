@@ -468,7 +468,6 @@
                     clip-path: inset(0 0 0 100%) !important;
                     // transform: translateX(100%);
                     z-index: 888;
-                    overflow-y: scroll;
                     @media (min-width: 768px) and (max-width: 1023px) {
                       width: 50%;
                       right: 0;
