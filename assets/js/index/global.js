@@ -855,15 +855,9 @@ export function headerMobile() {
         }
       }
 
-      // Lock scroll - hỗ trợ cả Lenis và native scroll
       if (window.lenis) {
         window.lenis.stop();
       }
-
-      // Thêm backup cho iOS - prevent touch scroll
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.width = "100%";
 
       if (menuItems.length > 0) {
         gsap.to(menuItems, {
@@ -875,19 +869,7 @@ export function headerMobile() {
         });
       }
     } else {
-      // Unlock scroll
-      const scrollY = document.body.style.top;
-
       document.body.classList.remove("overflow-hidden");
-
-      // Restore scroll position cho iOS
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || "0") * -1);
-      }
 
       if (header && header.hasAttribute("data-hamburger-light")) {
         header.classList.remove("header-theme-light");
