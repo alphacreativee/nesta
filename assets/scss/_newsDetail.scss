@@ -94,7 +94,12 @@
   }
 
   &__cta {
-    margin-top: 24px;
+    margin-top: 40px;
+
+    @media (max-width: 991px) {
+      margin-top: 32px;
+    }
+
     .share {
       display: flex;
       align-items: center;
