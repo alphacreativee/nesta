@@ -36,7 +36,7 @@
       object-fit: cover;
     }
   }
-  &-video-banner {
+  &-slider-video {
     position: relative;
     width: 100%;
     height: 100svh;
@@ -171,5 +171,10 @@
   }
   .slider-content-import {
     height: auto;
+  }
+  .slider-pagination {
+    &.swiper-pagination-lock {
+      display: none;
+    }
   }
 }

@@ -1841,13 +1841,13 @@ section.lightpick .lightpick__previous-action {
   height: 100%;
   object-fit: cover;
 }
-.hero-video-banner {
+.hero-slider-video {
   position: relative;
   width: 100%;
   height: 100svh;
   overflow: hidden;
 }
-.hero-video-banner video {
+.hero-slider-video video {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1974,6 +1974,9 @@ section.lightpick .lightpick__previous-action {
 }
 .hero .slider-content-import {
   height: auto;
+}
+.hero .slider-pagination.swiper-pagination-lock {
+  display: none;
 }
 
 .section-experience {
