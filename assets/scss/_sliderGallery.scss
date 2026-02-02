@@ -147,10 +147,12 @@
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-
     @media (max-width: 991px) {
-      top: 24px;
+      max-width: 50%;
       left: 24px;
+    }
+    @media (max-width: 767px) {
+      top: 24px;
       transform: none;
       width: 50%;
       max-width: 100%;

@@ -33,6 +33,9 @@
     .desc {
       margin-top: 24px;
       max-width: 520px;
+      @media (max-width: 991px) {
+        max-width: 100%;
+      }
     }
 
     .contact {
@@ -75,6 +78,7 @@
 
       @media (max-width: 991px) {
         margin-top: 55px;
+        max-width: 100%;
       }
 
       h4 {
@@ -90,7 +94,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
 
-        @media (max-width: 991px) {
+        @media (max-width: 767px) {
           grid-template-columns: repeat(2, 1fr);
           gap: 12px 20px;
         }

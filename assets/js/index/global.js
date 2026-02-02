@@ -703,15 +703,46 @@ export function accommodationDetail() {
   const $btnTextLess = $btn.data("read-less");
   const duration = 500;
 
-  $more.css({
-    overflow: "hidden",
-    height: 0,
-    transition: `height ${duration}ms ease`,
-  });
+  // Hàm kiểm tra và set trạng thái theo màn hình
+  function checkScreenSize() {
+    const windowWidth = $(window).width();
+
+    if (windowWidth >= 768 && windowWidth <= 991) {
+      // Luôn mở trong khoảng 768-991px
+      $more.addClass("is-open");
+      $more.css({
+        height: "auto",
+        overflow: "visible",
+      });
+      $btn.hide(); // Ẩn button
+    } else {
+      // Ngoài khoảng này thì hoạt động bình thường
+      $btn.show();
+
+      if (!$more.hasClass("is-open")) {
+        $more.css({
+          overflow: "hidden",
+          height: 0,
+          transition: `height ${duration}ms ease`,
+        });
+      }
+    }
+  }
+
+  // Chạy khi load
+  checkScreenSize();
+
+  // Chạy khi resize
+  $(window).on("resize", checkScreenSize);
 
   $btn.on("click", function () {
+    // Kiểm tra kích thước màn hình
+    const windowWidth = $(window).width();
+    if (windowWidth >= 768 && windowWidth <= 991) {
+      return; // Không làm gì nếu trong khoảng 768-991px
+    }
+
     const isOpen = $more.hasClass("is-open");
-    const duration = 500;
 
     $btn.toggleClass("active");
 

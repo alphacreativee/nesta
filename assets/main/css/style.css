@@ -2656,6 +2656,11 @@ section.lightpick .lightpick__previous-action {
   margin-top: 24px;
   max-width: 520px;
 }
+@media (max-width: 991px) {
+  .accommodation-detail .col-left .desc {
+    max-width: 100%;
+  }
+}
 .accommodation-detail .col-left .contact {
   margin-top: 40px;
   max-width: 520px;
@@ -2692,6 +2697,7 @@ section.lightpick .lightpick__previous-action {
 @media (max-width: 991px) {
   .accommodation-detail .col-left .facilities {
     margin-top: 55px;
+    max-width: 100%;
   }
 }
 .accommodation-detail .col-left .facilities h4 {
@@ -2706,7 +2712,7 @@ section.lightpick .lightpick__previous-action {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .accommodation-detail .col-left .facilities-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px 20px;
@@ -3423,8 +3429,13 @@ section.lightpick .lightpick__previous-action {
 }
 @media (max-width: 991px) {
   .slider-gallery .content-thumbnail-group {
-    top: 24px;
+    max-width: 50%;
     left: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .slider-gallery .content-thumbnail-group {
+    top: 24px;
     transform: none;
     width: 50%;
     max-width: 100%;
@@ -4817,6 +4828,34 @@ section.lightpick .lightpick__previous-action {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  #modal-booking-services {
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 24px;
+    right: 24px;
+    max-width: calc(100% - 48px);
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  #modal-booking-services .modal-body {
+    padding-top: 64px;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  #modal-booking-services .button-close {
+    top: 32px;
+    right: 36px !important;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  #modal-booking-services .wrapper-form-booking form {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
 }
 
 .list-post-filter {

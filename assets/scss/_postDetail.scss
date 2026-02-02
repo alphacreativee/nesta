@@ -508,3 +508,30 @@
     }
   }
 }
+#modal-booking-services {
+  @media (max-width: 991px) and (min-width: 768px) {
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 24px;
+    right: 24px;
+    max-width: calc(100% - 48px);
+  }
+  .modal-body {
+    @media (max-width: 991px) and (min-width: 768px) {
+      padding-top: 64px;
+    }
+  }
+  .button-close {
+    @media (max-width: 991px) and (min-width: 768px) {
+      top: 32px;
+      right: 36px !important;
+    }
+  }
+  .wrapper-form-booking form {
+    @media (max-width: 991px) and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+  }
+}
