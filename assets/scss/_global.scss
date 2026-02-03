@@ -216,6 +216,10 @@
       align-items: center;
       grid-template-columns: 3fr 2.75fr 2.75fr 1.5fr max-content;
       gap: 24px;
+      @media (max-width: 1100px) {
+        gap: 12px;
+        grid-template-columns: 3fr 2.75fr 2.75fr max-content;
+      }
       @media (max-width: 991px) {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -328,6 +332,12 @@
       .booking-form-item {
         border-left: 1px solid rgba(64, 64, 64, 0.3);
         padding-left: 24px;
+        @media (max-width: 1300px) and (min-width: 992px) {
+          padding-left: 12px;
+          &:nth-child(4) {
+            display: none;
+          }
+        }
         @media (max-width: 991px) {
           padding-left: 0;
           border-left: none;

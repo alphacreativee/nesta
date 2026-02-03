@@ -39,6 +39,8 @@ $ = jQuery;
 
 const lenis = new Lenis({
   smoothTouch: false,
+  lerp: 0.08,
+  syncToNative: true,
 });
 window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
