@@ -526,7 +526,7 @@ main {
   font-weight: 500;
   font-family: var(--font-body);
   color: var(--color-gray-2);
-  width: 85px;
+  width: 90px;
 }
 .booking-form-container form .booking-time span {
   padding: 0 5.5px 0 2px;
