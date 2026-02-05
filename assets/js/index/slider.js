@@ -2,7 +2,9 @@ export function sectionNews() {
   if ($(".section-news").length < 1) return;
 
   document.querySelectorAll(".section-news").forEach((section) => {
-    const swiperEl = section.querySelector(".news-slider");
+    const swiperEl = section.querySelector(".news-slider .swiper");
+
+    if (!swiperEl) return;
 
     new Swiper(swiperEl, {
       slidesPerView: 3,
