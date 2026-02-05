@@ -67,6 +67,9 @@
 
     a {
       transition: all 0.4s ease;
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 500;
 
       &:hover {
         color: var(--color-primary-3);

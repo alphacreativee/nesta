@@ -949,6 +949,9 @@ section.lightpick .lightpick__previous-action {
 }
 .footer-brands a {
   transition: all 0.4s ease;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
 }
 .footer-brands a:hover {
   color: var(--color-primary-3);
