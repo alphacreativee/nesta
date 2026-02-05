@@ -977,7 +977,7 @@ export function sectionGallery() {
 //   });
 // }
 export function headerMobile() {
-  if (window.innerWidth >= 992) return;
+  if (window.innerWidth >= 1200) return;
 
   const hamburger = document.getElementById("hamburger");
   const subMenu = document.querySelector(".header-sub-menu");
