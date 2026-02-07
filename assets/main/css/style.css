@@ -318,12 +318,15 @@ main {
   position: relative;
   overflow: hidden;
 }
-.button-global:hover::before {
+.button-global:hover::before, .button-global.aloading::before {
   transition: height 0.5s ease-in-out;
   height: 200%;
 }
-.button-global:hover span {
+.button-global:hover span, .button-global.aloading span {
   color: var(--color-white);
+}
+.button-global.aloading span {
+  color: transparent !important;
 }
 .button-global::before {
   content: "";
@@ -342,6 +345,38 @@ main {
   position: relative;
   z-index: 2;
   white-space: nowrap;
+}
+
+a.aloading,
+button.aloading {
+  pointer-events: none;
+  position: relative;
+}
+a.aloading::after,
+button.aloading::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top: 2px solid var(--color-white);
+  border-right: 2px solid var(--color-white);
+  width: 20px;
+  height: 20px;
+  animation: spin-animation 1s linear infinite;
+  z-index: 2;
+  background: 0 0;
+}
+@keyframes spin-animation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .booking-form-wrapper {
@@ -4593,6 +4628,9 @@ section.lightpick .lightpick__previous-action {
 .wrapper-form-booking .field-item {
   position: relative;
   border-bottom: 1px solid var(--color-black);
+}
+.wrapper-form-booking .field-item.error {
+  border-color: red;
 }
 .wrapper-form-booking .field-item:has(textarea) {
   grid-column: 1/-1;

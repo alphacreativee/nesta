@@ -63,7 +63,8 @@
   position: relative;
   overflow: hidden;
 
-  &:hover {
+  &:hover,
+  &.aloading {
     &::before {
       // transform: translate3d(0, -5%, 0) scale3d(1, 1, 1);
 
@@ -72,6 +73,12 @@
     }
     span {
       color: var(--color-white);
+    }
+  }
+
+  &.aloading {
+    span {
+      color: transparent !important;
     }
   }
 
@@ -103,6 +110,42 @@
     white-space: nowrap;
   }
 }
+
+a,
+button {
+  &.aloading {
+    pointer-events: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      border-top: 2px solid var(--color-white);
+      border-right: 2px solid var(--color-white);
+      width: 20px;
+      height: 20px;
+      animation: spin-animation 1s linear infinite;
+      z-index: 2;
+      background: 0 0;
+    }
+
+    @keyframes spin-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  }
+}
+
 .booking-form {
   &-wrapper {
     position: absolute;

@@ -223,6 +223,10 @@
     position: relative;
     border-bottom: 1px solid var(--color-black);
 
+    &.error {
+      border-color: red;
+    }
+
     &:has(textarea) {
       grid-column: 1 / -1;
     }

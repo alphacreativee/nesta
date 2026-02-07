@@ -441,7 +441,7 @@
           </div>
           <div class="col-right col-lg-6 data-fade-in-mobile">
             <div class="wrapper-form-booking" data-fade-item>
-              <form action="">
+              <form action="" id="formContact">
                 <div class="field-item">
                   <input
                     type="text"
@@ -471,6 +471,7 @@
                   <label for="phone">Số điện thoại</label>
                 </div>
                 <div class="field-item active-label">
+                  <input type="hidden" value="123" name="hotel_id" />
                   <label for="">Khách sạn</label>
                   <div class="dropdown-custom select-destination">
                     <div
@@ -487,22 +488,22 @@
                       </div>
                     </div>
                     <div class="dropdown-custom-menu" data-lenis-prevent>
-                      <div class="dropdown-custom-item">
+                      <div class="dropdown-custom-item" data-id-hotel="1">
                         <span>Nesta Hanoi Hotel</span>
                       </div>
-                      <div class="dropdown-custom-item">
+                      <div class="dropdown-custom-item" data-id-hotel="2">
                         <span>Nesta Celia Danang Hotel</span>
                       </div>
-                      <div class="dropdown-custom-item">
+                      <div class="dropdown-custom-item" data-id-hotel="3">
                         <span>Nesta Danang Hotel</span>
                       </div>
-                      <div class="dropdown-custom-item">
+                      <div class="dropdown-custom-item" data-id-hotel="4">
                         <span>Nesta Hoian Resort & Spa</span>
                       </div>
-                      <div class="dropdown-custom-item">
+                      <div class="dropdown-custom-item" data-id-hotel="5">
                         <span>Nesta Valley Dalat Hotel</span>
                       </div>
-                      <div class="dropdown-custom-item">
+                      <div class="dropdown-custom-item" data-id-hotel="6">
                         <span>Nesta Saigon Hotel</span>
                       </div>
                     </div>
@@ -516,13 +517,7 @@
                   Bằng việc <span>‘GỬI THÔNG TIN’</span>, bạn đồng ý với
                   <a href="#">Chính sách bảo mật</a> của Nesta Hotel Group.
                 </div>
-                <button
-                  type="button"
-                  class="button-global"
-                  data-bs-target="#modal-success-contact"
-                  data-bs-toggle="modal"
-                  data-bs-dismiss="modal"
-                >
+                <button type="submit" class="button-global">
                   <span>gửi thông tin</span>
                 </button>
               </form>
