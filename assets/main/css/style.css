@@ -2243,6 +2243,22 @@ section.lightpick .lightpick__previous-action {
   height: auto;
   padding: 0 12px 40px;
 }
+.hotel-filter .swiper-arrow.arrow-prev {
+  transform: scale(-1) translate(100%, calc(50% + 20px));
+}
+@media (max-width: 991px) {
+  .hotel-filter .swiper-arrow.arrow-prev {
+    transform: scale(-1);
+  }
+}
+.hotel-filter .swiper-arrow.arrow-next {
+  transform: translate(100%, calc(-20px - 50%));
+}
+@media (max-width: 991px) {
+  .hotel-filter .swiper-arrow.arrow-next {
+    transform: none;
+  }
+}
 .hotel-filter__item {
   display: flex;
   flex-direction: column;

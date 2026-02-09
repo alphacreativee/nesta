@@ -66,6 +66,22 @@
     }
   }
 
+  .swiper-arrow.arrow-prev {
+    transform: scale(-1) translate(100%, calc(50% + 20px));
+
+    @media (max-width: 991px) {
+      transform: scale(-1);
+    }
+  }
+
+  .swiper-arrow.arrow-next {
+    transform: translate(100%, calc(calc(-20px) - 50%));
+
+    @media (max-width: 991px) {
+      transform: none;
+    }
+  }
+
   //   Hotel item
   &__item {
     display: flex;
