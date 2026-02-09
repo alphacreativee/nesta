@@ -4979,6 +4979,10 @@ section.lightpick .lightpick__previous-action {
   grid-template-columns: repeat(3, 1fr);
   gap: 60px 24px;
 }
+.list-post-filter .list-post.is-loading {
+  opacity: 0.4;
+  pointer-events: none;
+}
 @media (max-width: 991px) {
   .list-post-filter .list-post {
     grid-template-columns: repeat(2, 1fr);

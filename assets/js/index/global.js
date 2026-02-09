@@ -29,12 +29,14 @@ export function customDropdown() {
 
         // dropdown nav tab
         const isInSectionModel = dropdown.classList.contains("filter-dropdown");
-        console.log(isInSectionModel);
 
         const clickedText =
-          item.querySelector("span")?.textContent.trim() || "";
+          item.querySelector("span")?.textContent.trim() ||
+          item.textContent.trim();
+
         const clickedDataTab = item.dataset.tab || "";
 
+        /* ===== FILTER TAB (GIỮ NGUYÊN) ===== */
         if (isInSectionModel) {
           const spanEl = valueSelect.querySelector("span");
           if (spanEl) spanEl.textContent = clickedText;
@@ -45,43 +47,48 @@ export function customDropdown() {
           return;
         }
 
+        /* ===== SELECT TYPE ===== */
         if (isSelectType) {
-          const optionText = item.textContent;
-          displayText.textContent = optionText;
+          displayText.textContent = clickedText;
           dropdown.classList.add("selected");
         } else {
-          const currentImgEl = valueSelect.querySelector("img");
-          const currentImg = currentImgEl ? currentImgEl.src : "";
-          const currentText = valueSelect.querySelector("span").textContent;
-          const clickedHtml = item.innerHTML;
-
-          valueSelect.innerHTML = clickedHtml;
-
-          const isSelectTime = currentText.trim() === "Time";
-
-          if (!isSelectTime) {
-            if (currentImg) {
-              item.innerHTML = `<span>${currentText}</span><img src="${currentImg}" alt="" />`;
-            } else {
-              item.innerHTML = `<span>${currentText}</span>`;
-            }
-          }
+          /* ✨ FIX: KHÔNG REWRITE item.innerHTML NỮA ✨ */
+          const spanEl = valueSelect.querySelector("span");
+          if (spanEl) spanEl.textContent = clickedText;
         }
 
+        /* ===== DESTINATION SELECT ===== */
         const isSelectDestination =
           dropdown.classList.contains("select-destination");
 
-        console.log(isSelectDestination);
-
         if (isSelectDestination) {
           const hotelId = item.dataset.idHotel || "";
+          const hotelBookingUrl = item.dataset.bookingUrl || "";
 
-          const hiddenInput = document.querySelector(
-            'input[type="hidden"][name="hotel_id"]'
-          );
+          console.log("booking_url:", hotelBookingUrl);
 
-          if (hiddenInput) {
-            hiddenInput.value = hotelId;
+          /* giữ nguyên hotel_id */
+          if (hotelId) {
+            const hiddenHotelInput = document.querySelector(
+              'input[type="hidden"][name="hotel_id"]'
+            );
+            if (hiddenHotelInput) {
+              hiddenHotelInput.value = hotelId;
+            }
+          }
+
+          /* ✨ FIX BOOKING URL – KHÔNG MẤT DATA CLICK LẦN 2 ✨ */
+          if (hotelBookingUrl) {
+            const bookingInput = dropdown.querySelector(
+              'input[type="hidden"][name="booking_url"]'
+            );
+            if (bookingInput) {
+              bookingInput.value = hotelBookingUrl;
+            }
+
+            console.log("click");
+            console.log(bookingInput);
+            
           }
         }
 
@@ -1475,4 +1482,140 @@ export function formContact() {
       }
     });
   });
+}
+
+export function formBookingService() {
+  if ($("#formBookingService").length < 1) return;
+
+  $("#formBookingService").on("submit", function (e) {
+    e.preventDefault();
+
+    const $form = $(this);
+    const $inputName = $form.find("input[name='name']");
+    const $inputEmail = $form.find("input[name='email']");
+    const $inputPhone = $form.find("input[name='phone']");
+    const $inputHotel = $form.find("input[name='hotel_id']");
+    const $inputMessage = $form.find("textarea[name='message']");
+    const $adult = $form.find(".adult-value");
+    const $child = $form.find(".child-value");
+    const $arrival = $form.find("#checkInDateServices");
+    const $departure = $form.find("#checkOutDateServices");
+    const $buttonSubmit = $form.find("button[type='submit']");
+    const $emailRecipient = $buttonSubmit.attr("email-recipient");
+    const $serviceID = $form.find("input[name='service_id']");
+
+    let isValid = true;
+
+    $form.find("input").removeClass("error");
+
+    if ($inputName.val().trim() === "") {
+      $inputName.closest(".field-item").addClass("error");
+      isValid = false;
+    }
+
+    if ($inputPhone.val().trim() === "") {
+      $inputPhone.closest(".field-item").addClass("error");
+      isValid = false;
+    }
+
+    if ($inputEmail.val().trim() === "") {
+      $inputEmail.closest(".field-item").addClass("error");
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    $.ajax({
+      url: ajaxUrl,
+      type: "POST",
+      data: {
+        action: "submit_service_form",
+        name: $inputName.val().trim(),
+        phone: $inputPhone.val().trim(),
+        email: $inputEmail.val().trim(),
+        hotel: $inputHotel.val().trim(),
+        adult: $adult.text().trim(),
+        child: $child.text().trim(),
+        arrival: $arrival.val().trim(),
+        departure: $departure.val().trim(),
+        message: $inputMessage.val().trim(),
+        email_recipient: $emailRecipient.trim(),
+        serviceID: $serviceID.val().trim() || ""
+      },
+      beforeSend: function () {
+        $buttonSubmit.addClass("aloading");
+      },
+      success: function (res) {
+        $form[0].reset();
+        $form.find(".field-item").removeClass("error");
+        $buttonSubmit.removeClass("aloading");
+        $("#modal-booking-services").modal("hide");
+        $("#modal-success-services").modal("show");
+      },
+      error: function (xhr, status, error) {
+        console.error("Lỗi khi gửi form:", error);
+        $form.append(
+          '<span class="contact-message body-sm-regular" style="color: #FF0000;">Có lỗi xảy ra, vui lòng thử lại sau.</span>'
+        );
+        $buttonSubmit.removeClass("aloading");
+      }
+    });
+  });
+}
+
+export function bookingFormRedirect() {
+  const form = document.getElementById("bookingHotel");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const bookingUrl =
+      form.querySelector('input[name="booking_url"]')?.value || "";
+    if (!bookingUrl) return;
+
+    const checkInRaw = document.querySelector("#checkInDate")?.value || "";
+    const checkOutRaw = document.querySelector("#checkOutDate")?.value || "";
+
+    if (!checkInRaw || !checkOutRaw) return;
+
+    const checkIn = formatDateToISO(checkInRaw);
+    const checkOut = formatDateToISO(checkOutRaw);
+
+    const adults =
+      document.querySelector(".adult-value")?.textContent.trim() || 1;
+    const children =
+      document.querySelector(".child-value")?.textContent.trim() || 0;
+
+    const promoCode =
+      form.querySelector('input[placeholder*="khuyến mãi"]')?.value.trim() ||
+      "";
+
+    const dateIn = new Date(checkIn);
+    const dateOut = new Date(checkOut);
+    const stayNights = Math.max(
+      1,
+      Math.round((dateOut - dateIn) / (1000 * 60 * 60 * 24))
+    );
+
+    const url = new URL(bookingUrl);
+
+    url.searchParams.set("check_in", checkIn);
+    url.searchParams.set("check_out", checkOut);
+    // url.searchParams.set("stay_nights", stayNights);
+    url.searchParams.set("filter_adult", adults);
+    url.searchParams.set("filter_child", children);
+
+    if (promoCode) {
+      url.searchParams.set("promo_code", promoCode);
+    }
+
+    window.location.href = url.toString();
+  });
+
+  function formatDateToISO(dateStr) {
+    if (!dateStr) return "";
+    const [day, month, year] = dateStr.split("/");
+    return `${day}-${month}-${year}`;
+  }
 }
