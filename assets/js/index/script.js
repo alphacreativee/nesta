@@ -21,7 +21,9 @@ import {
   filterDropdownMobile,
   bookingServices,
   clickCta,
-  formContact
+  formContact,
+  formBookingService,
+  bookingFormRedirect
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -35,6 +37,7 @@ import {
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
 import { sliderGallery } from "../../main/js/sliderGallery.min.js";
+import { listPostFilter } from "../../main/js/filter.min.js";
 ("use strict");
 $ = jQuery;
 
@@ -94,6 +97,9 @@ const init = () => {
   bookingServices();
   clickCta();
   formContact();
+  listPostFilter();
+  formBookingService();
+  bookingFormRedirect();
 };
 
 preloadImages("img").then(() => {

@@ -1913,6 +1913,28 @@ section.lightpick .lightpick__previous-action {
   left: 0;
   object-fit: cover;
 }
+.hero-slider-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.25);
+  object-fit: cover;
+}
+@media (max-width: 1400px) {
+  .hero-slider-video iframe {
+    height: 100vh;
+    width: 177.78vh;
+    transform: scale(1);
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-bottom: 0;
+  }
+}
 .hero-image {
   position: relative;
   width: 100%;
@@ -4983,6 +5005,10 @@ section.lightpick .lightpick__previous-action {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px 24px;
+}
+.list-post-filter .list-post.is-loading {
+  opacity: 0.4;
+  pointer-events: none;
 }
 @media (max-width: 991px) {
   .list-post-filter .list-post {
