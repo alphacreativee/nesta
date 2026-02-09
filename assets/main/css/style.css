@@ -3428,6 +3428,9 @@ section.lightpick .lightpick__previous-action {
   transform: translateY(calc(-50% - 15px));
   transition: border 0.3s ease, background-color 0.3s ease;
 }
+.slider-gallery .thumbnail-list-wrapper .swiper-arrow.swiper-button-lock {
+  opacity: 0 !important;
+}
 @media (max-width: 991px) {
   .slider-gallery .thumbnail-list-wrapper .swiper-arrow {
     display: none;
@@ -3801,6 +3804,8 @@ section.lightpick .lightpick__previous-action {
 #locationModal .location-popup-list .location-popup-item .location-image {
   overflow: hidden;
   border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 190/104;
 }
 #locationModal .location-popup-list .location-popup-item .location-image img {
   width: 100%;
