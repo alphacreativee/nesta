@@ -70,17 +70,16 @@ export function listPostFilter() {
         action: functionFilter,
         term: term,
         page: page,
-        location: fixedLocation
+        filter_location: fixedLocation
       },
       beforeSend() {
         $(".list-post-filter .list-post").addClass("is-loading");
       },
       success(res) {
-        if (!res.success) return;
+        if (!res || !res.success) return;
 
         const $wrapper = $(".list-post-filter");
-
-        const $list = $(".list-post-filter .list-post");
+        const $list = $wrapper.find(".list-post");
 
         $list.html(res.data.posts);
         $wrapper.find(".pagination").remove();
@@ -104,16 +103,12 @@ export function listPostFilter() {
   // FILTER CLICK
   $(document).on(
     "click",
-    ".list-post-filter .filter-button,.list-post-filter .dropdown-custom-item span",
+    ".list-post-filter .filter-button, .list-post-filter .dropdown-custom-item span",
     function () {
       const tab = $(this).data("tab");
-
-      console.log(tab);
-
       if (!tab) return;
 
       currentTerm = tab === "all" ? "all" : tab.replace("post-category-", "");
-
       currentPage = 1;
 
       $(".list-post-filter .filter-button").removeClass("active");
@@ -129,13 +124,57 @@ export function listPostFilter() {
   $(document).on("click", ".list-post-filter .pagination a", function (e) {
     e.preventDefault();
 
-    const page = $(this).text();
-    if (!page) return;
+    const page = $(this).data("page") || parseInt($(this).text(), 10);
 
-    loadOffers(currentTerm, parseInt(page));
+    if (!page || isNaN(page)) return;
+
+    loadOffers(currentTerm, page);
   });
 
+  // AUTO LOAD khi có filter-location (tuỳ bạn bật)
   if (wrapper.hasClass("experience") && fixedLocation !== "all") {
-    loadOffers("all", 1);
+    // loadOffers("all", 1);
   }
+}
+
+export function filterDropdownBoostrapMobile() {
+  if ($(".filter-dropdown").length < 1 || $(window).width() > 991) return;
+
+  $(".filter-dropdown .dropdown-custom-item").on("click", function () {
+    const span = $(this).find("span");
+    if (!span.length) return;
+
+    const tabId = span.data("tab");
+
+    const trigger = $(`[data-bs-target="#${tabId}"]`);
+    if (trigger.length) {
+      const tab = new bootstrap.Tab(trigger[0]);
+      tab.show();
+    }
+  });
+}
+
+export function filterDropdownMobile() {
+  if ($(".filter-list-button").length < 1) return;
+
+  const filterListButton = $(".filter-list-button");
+  const dropdownMobile = filterListButton.siblings(".filter-dropdown");
+  const dropdownItemsMobile = dropdownMobile.find(".dropdown-custom-item");
+
+  const isPageAccommodations =
+    $(".section-accommodation, .destination-location").length > 0;
+
+  dropdownItemsMobile.on("click", function () {
+    const thisDataTab = $(this).find("span").data("tab");
+
+    if (isPageAccommodations) {
+      filterListButton
+        .find(`.filter-button[data-type="${thisDataTab}"]`)
+        .trigger("click");
+    } else {
+      filterListButton
+        .find(`.filter-button[data-tab="${thisDataTab}"]`)
+        .trigger("click");
+    }
+  });
 }

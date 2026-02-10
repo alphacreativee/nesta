@@ -18,12 +18,12 @@ import {
   sectionExperiences,
   popupBookingMobile,
   animationSubMenu,
-  filterDropdownMobile,
   bookingServices,
   clickCta,
   formContact,
   formBookingService,
-  bookingFormRedirect
+  bookingFormRedirect,
+  formNewsletter
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -37,7 +37,11 @@ import {
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
 import { sliderGallery } from "../../main/js/sliderGallery.min.js";
-import { listPostFilter } from "../../main/js/filter.min.js";
+import {
+  listPostFilter,
+  filterDropdownBoostrapMobile,
+  filterDropdownMobile
+} from "../../main/js/filter.min.js";
 ("use strict");
 $ = jQuery;
 
@@ -93,13 +97,15 @@ const init = () => {
   sectionExperiences();
   popupBookingMobile();
   animationSubMenu();
-  filterDropdownMobile();
+  filterDropdownBoostrapMobile();
   bookingServices();
   clickCta();
   formContact();
   listPostFilter();
   formBookingService();
   bookingFormRedirect();
+  formNewsletter();
+  filterDropdownMobile();
 };
 
 preloadImages("img").then(() => {

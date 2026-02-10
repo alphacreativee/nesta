@@ -146,6 +146,12 @@
   }
 
   &-address {
+    padding-right: 40px;
+
+    @media (max-width: 991px) {
+      padding-right: 0;
+    }
+
     li {
       &:not(:first-child) {
         margin-top: 8px;
@@ -180,6 +186,12 @@
     .field-item {
       width: 100%;
       position: relative;
+
+      &.error {
+        input {
+          border-color: red;
+        }
+      }
 
       input {
         height: 40px;
@@ -221,6 +233,18 @@
       min-width: max-content;
       transition: all 0.4s ease;
 
+      &.aloading {
+        pointer-events: none;
+
+        span {
+          color: transparent;
+        }
+
+        .icon {
+          opacity: 0;
+        }
+      }
+
       .icon {
         transition: all 0.4s ease;
       }
@@ -234,6 +258,14 @@
         }
       }
     }
+  }
+
+  .form-message {
+    color: red;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
   }
 
   &-social {
@@ -332,8 +364,13 @@
 
     ul {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 24px;
+
+      @media (max-width: 991px){
+        gap: 12px 24px;
+      }
 
       li {
         @media (max-width: 767px) {

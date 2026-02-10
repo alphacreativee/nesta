@@ -1042,6 +1042,14 @@ section.lightpick .lightpick__previous-action {
   height: auto;
   object-fit: contain;
 }
+.footer-address {
+  padding-right: 40px;
+}
+@media (max-width: 991px) {
+  .footer-address {
+    padding-right: 0;
+  }
+}
 .footer-address li:not(:first-child) {
   margin-top: 8px;
 }
@@ -1070,6 +1078,9 @@ section.lightpick .lightpick__previous-action {
 .footer .form .field-item {
   width: 100%;
   position: relative;
+}
+.footer .form .field-item.error input {
+  border-color: red;
 }
 .footer .form .field-item input {
   height: 40px;
@@ -1105,6 +1116,15 @@ section.lightpick .lightpick__previous-action {
   min-width: max-content;
   transition: all 0.4s ease;
 }
+.footer .form button.aloading {
+  pointer-events: none;
+}
+.footer .form button.aloading span {
+  color: transparent;
+}
+.footer .form button.aloading .icon {
+  opacity: 0;
+}
 .footer .form button .icon {
   transition: all 0.4s ease;
 }
@@ -1114,6 +1134,13 @@ section.lightpick .lightpick__previous-action {
 .footer .form button:hover .icon {
   transform: translateX(5px);
   color: var(--color-primary-3);
+}
+.footer .form-message {
+  color: red;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
 }
 .footer-social {
   margin-top: 55px;
@@ -1202,8 +1229,14 @@ section.lightpick .lightpick__previous-action {
 }
 .footer-term ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 24px;
+}
+@media (max-width: 991px) {
+  .footer-term ul {
+    gap: 12px 24px;
+  }
 }
 @media (max-width: 767px) {
   .footer-term ul li {
@@ -3874,6 +3907,11 @@ section.lightpick .lightpick__previous-action {
 #locationModal .location-filter .filter-section-multi {
   margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+  #locationModal .location-filter .filter-section-multi {
+    margin-bottom: 32px;
+  }
+}
 #locationModal .location-filter .filter-list-button {
   gap: 8px;
 }
@@ -5291,4 +5329,19 @@ section.lightpick .lightpick__previous-action {
 }
 .section-booking .section-wrapper {
   padding: 160px 0 80px;
+}
+.section-booking h1.title {
+  margin-bottom: 24px;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+@media (max-width: 47.937em) {
+  .section-booking h1.title {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 991px) {
+  .section-booking h1.title {
+    margin-bottom: 10px;
+  }
 }

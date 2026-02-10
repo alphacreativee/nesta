@@ -1,6 +1,6 @@
 export function customDropdown() {
   const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select",
+    ".dropdown-custom, .dropdown-custom-select"
   );
 
   dropdowns.forEach((dropdown) => {
@@ -70,7 +70,7 @@ export function customDropdown() {
           /* giữ nguyên hotel_id */
           if (hotelId) {
             const hiddenHotelInput = document.querySelector(
-              'input[type="hidden"][name="hotel_id"]',
+              'input[type="hidden"][name="hotel_id"]'
             );
             if (hiddenHotelInput) {
               hiddenHotelInput.value = hotelId;
@@ -80,7 +80,7 @@ export function customDropdown() {
           /* ✨ FIX BOOKING URL – KHÔNG MẤT DATA CLICK LẦN 2 ✨ */
           if (hotelBookingUrl) {
             const bookingInput = dropdown.querySelector(
-              'input[type="hidden"][name="booking_url"]',
+              'input[type="hidden"][name="booking_url"]'
             );
             if (bookingInput) {
               bookingInput.value = hotelBookingUrl;
@@ -129,9 +129,9 @@ export function scrollChangeBgHeader() {
       start: "top -10px",
       end: "+=100",
       onEnter: () => header.classList.add("header-theme-light"),
-      onLeaveBack: () => header.classList.remove("header-theme-light"),
+      onLeaveBack: () => header.classList.remove("header-theme-light")
       // markers: true,
-    },
+    }
   });
 }
 export function scrollFixedBookingForm() {
@@ -149,7 +149,7 @@ export function scrollFixedBookingForm() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-fixed"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-fixed")
     // markers: true,
   });
 }
@@ -166,7 +166,7 @@ export function checkScrollBookingUp() {
     endTrigger: "body",
     end: "bottom bottom",
     onEnter: () => bookingFormWrapper.classList.add("booking-up"),
-    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up"),
+    onLeaveBack: () => bookingFormWrapper.classList.remove("booking-up")
     // markers: true,
   });
 }
@@ -235,7 +235,7 @@ export function bookingTime() {
 
     onYearChange: function () {
       setTimeout(positionCalendar, 10);
-    },
+    }
   });
 
   const bookingCalendar = document.querySelector(".booking-calendar");
@@ -260,7 +260,7 @@ export function effectText() {
       {
         opacity: 0,
         y: 20,
-        willChange: "opacity, transform",
+        willChange: "opacity, transform"
       },
       {
         opacity: 1,
@@ -271,9 +271,9 @@ export function effectText() {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%",
-        },
-      },
+          end: "bottom 80%"
+        }
+      }
     );
   });
 
@@ -283,7 +283,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines",
+      mask: "lines"
     });
 
     gsap.fromTo(
@@ -294,8 +294,8 @@ export function effectText() {
         duration: 1,
         ease: "power3.out",
         stagger: 0.05,
-        delay: delay,
-      },
+        delay: delay
+      }
     );
   });
 
@@ -303,7 +303,7 @@ export function effectText() {
     const split = new SplitText(description, {
       type: "lines",
       linesClass: "line",
-      mask: "lines",
+      mask: "lines"
     });
 
     gsap.fromTo(
@@ -316,9 +316,9 @@ export function effectText() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: description,
-          start: "top 80%",
-        },
-      },
+          start: "top 80%"
+        }
+      }
     );
   });
 
@@ -331,7 +331,7 @@ export function effectText() {
         {
           opacity: 0,
           y: 20,
-          willChange: "opacity, transform",
+          willChange: "opacity, transform"
         },
         {
           opacity: 1,
@@ -342,9 +342,9 @@ export function effectText() {
           scrollTrigger: {
             trigger: element,
             start: "top 80%",
-            end: "bottom 80%",
-          },
-        },
+            end: "bottom 80%"
+          }
+        }
       );
     });
 
@@ -352,7 +352,7 @@ export function effectText() {
       const split = new SplitText(description, {
         type: "lines",
         linesClass: "line",
-        mask: "lines",
+        mask: "lines"
       });
 
       gsap.fromTo(
@@ -365,9 +365,9 @@ export function effectText() {
           stagger: 0.05,
           scrollTrigger: {
             trigger: description,
-            start: "top 80%",
-          },
-        },
+            start: "top 80%"
+          }
+        }
       );
     });
   }
@@ -387,7 +387,7 @@ export function animationItemsSection() {
     const items = section.querySelectorAll("[data-fade-item]");
 
     const isExperience = section.closest(
-      ".section-experience,.section-accommodation",
+      ".section-experience,.section-accommodation"
     );
     const isFadeInMobile = section.hasAttribute("enabled-fade-each-mobile");
     if (isMobile && !isFadeInMobile) return;
@@ -397,8 +397,8 @@ export function animationItemsSection() {
         trigger: section,
         start: "top 65%",
         toggleActions: "play none none none",
-        once: true,
-      },
+        once: true
+      }
     });
 
     items.forEach((item) => {
@@ -409,12 +409,12 @@ export function animationItemsSection() {
         const split = new SplitText(item, {
           type: "lines",
           linesClass: "line",
-          mask: "lines",
+          mask: "lines"
         });
 
         gsap.set(split.lines, {
           yPercent: 120,
-          force3D: true,
+          force3D: true
         });
 
         tl.to(split.lines, {
@@ -422,7 +422,7 @@ export function animationItemsSection() {
           duration: ITEM_DURATION,
           ease: LINE_EASE,
           force3D: true,
-          stagger: ITEM_STAGGER,
+          stagger: ITEM_STAGGER
         });
       }
 
@@ -432,7 +432,7 @@ export function animationItemsSection() {
           y: MOVE_Y,
           opacity: 0,
           force3D: true,
-          willChange: "transform, opacity",
+          willChange: "transform, opacity"
         });
 
         tl.to(
@@ -443,9 +443,9 @@ export function animationItemsSection() {
             duration: ITEM_DURATION,
             ease: FADE_EASE,
             force3D: true,
-            clearProps: "willChange",
+            clearProps: "willChange"
           },
-          "+=0",
+          "+=0"
         ); // giữ flow tự nhiên
       }
     });
@@ -462,12 +462,12 @@ export function animationItemsSection() {
         const split = new SplitText(item, {
           type: "lines",
           linesClass: "line",
-          mask: "lines",
+          mask: "lines"
         });
 
         gsap.set(split.lines, {
           yPercent: 120,
-          force3D: true,
+          force3D: true
         });
 
         tl.to(split.lines, {
@@ -475,14 +475,14 @@ export function animationItemsSection() {
           duration: ITEM_DURATION,
           ease: LINE_EASE,
           force3D: true,
-          stagger: ITEM_STAGGER,
+          stagger: ITEM_STAGGER
         });
       } else {
         gsap.set(item, {
           y: MOVE_Y,
           opacity: 0,
           force3D: true,
-          willChange: "transform, opacity",
+          willChange: "transform, opacity"
         });
 
         tl.to(item, {
@@ -491,7 +491,7 @@ export function animationItemsSection() {
           duration: ITEM_DURATION,
           ease: FADE_EASE,
           force3D: true,
-          clearProps: "willChange",
+          clearProps: "willChange"
         });
       }
     });
@@ -507,13 +507,13 @@ export function animationItemsSection() {
 }
 
 export function fadeTextFooter() {
-  // if ($(".section-accommodation").length > 0) return;
+  if ($(".section-accommodation").length > 0 || $(".list-post-filter").length > 0) return;
 
   const elements = document.querySelectorAll("[data-text-footer]");
 
   gsap.set(elements, {
     opacity: 0,
-    y: 20,
+    y: 20
   });
 
   let tlf = gsap.timeline({ paused: true });
@@ -522,15 +522,15 @@ export function fadeTextFooter() {
     elements,
     {
       opacity: 0,
-      y: 20,
+      y: 20
     },
     {
       opacity: 1,
       y: 0,
       stagger: 0.05,
       duration: 0.4,
-      ease: "power2.out",
-    },
+      ease: "power2.out"
+    }
   );
 
   ScrollTrigger.create({
@@ -538,7 +538,7 @@ export function fadeTextFooter() {
     start: "top 80%",
     animation: tlf,
     toggleActions: "play none none none",
-    invalidateOnRefresh: true, // Reset animation khi refresh
+    invalidateOnRefresh: true // Reset animation khi refresh
     // markers: true,
   });
 
@@ -594,7 +594,7 @@ export function ctaRun() {
       if (!isInFooter && !isShortPage()) {
         cta.classList.toggle("run-right", self.direction === 1);
       }
-    },
+    }
   });
 
   ScrollTrigger.create({
@@ -636,7 +636,7 @@ export function ctaRun() {
         cta.style.position = "fixed";
         cta.style.top = "";
       }
-    },
+    }
   });
 }
 
@@ -735,7 +735,7 @@ export function accommodationDetail() {
       $more.addClass("is-open");
       $more.css({
         height: "auto",
-        overflow: "visible",
+        overflow: "visible"
       });
       $btn.hide(); // Ẩn button
     } else {
@@ -746,7 +746,7 @@ export function accommodationDetail() {
         $more.css({
           overflow: "hidden",
           height: 0,
-          transition: `height ${duration}ms ease`,
+          transition: `height ${duration}ms ease`
         });
       }
     }
@@ -777,7 +777,7 @@ export function accommodationDetail() {
       $more.css({
         height: fullHeight + "px",
         overflow: "hidden",
-        transition: `height ${duration}ms ease`,
+        transition: `height ${duration}ms ease`
       });
 
       setTimeout(() => {
@@ -816,7 +816,7 @@ export function sectionGallery() {
       touchNavigation: true,
       loop: true,
       autoplayVideos: true,
-      onOpen: handleCustomArrow,
+      onOpen: handleCustomArrow
     });
   }
 
@@ -1007,13 +1007,13 @@ export function headerMobile() {
   const header = document.querySelector("header");
 
   const menuItems = document.querySelectorAll(
-    ".header-menu.mobile-layout > ul > li > a",
+    ".header-menu.mobile-layout > ul > li > a"
   );
 
   if (menuItems.length > 0) {
     gsap.set(menuItems, {
       y: 10,
-      opacity: 0,
+      opacity: 0
     });
   }
 
@@ -1050,7 +1050,7 @@ export function headerMobile() {
       // Chỉ apply fix cho Chrome iOS
       if (isChromeIOS) {
         document.addEventListener("touchmove", preventScroll, {
-          passive: false,
+          passive: false
         });
       }
 
@@ -1060,7 +1060,7 @@ export function headerMobile() {
           opacity: 1,
           duration: 0.6,
           stagger: 0.08,
-          ease: "power3.out",
+          ease: "power3.out"
         });
       }
     } else {
@@ -1078,7 +1078,7 @@ export function headerMobile() {
       // Remove fix cho Chrome iOS
       if (isChromeIOS) {
         document.removeEventListener("touchmove", preventScroll, {
-          passive: false,
+          passive: false
         });
       }
 
@@ -1088,12 +1088,12 @@ export function headerMobile() {
           opacity: 0,
           duration: 0.4,
           stagger: 0.04,
-          ease: "power3.in",
+          ease: "power3.in"
         });
       }
 
       const menuItemsWithChildren = document.querySelectorAll(
-        ".menu-item-has-children",
+        ".menu-item-has-children"
       );
       menuItemsWithChildren.forEach((item) => {
         item.classList.remove("active");
@@ -1107,7 +1107,7 @@ export function headerMobile() {
   });
 
   const menuItemsWithChildren = document.querySelectorAll(
-    ".menu-item-has-children",
+    ".menu-item-has-children"
   );
 
   menuItemsWithChildren.forEach((menuItem) => {
@@ -1172,9 +1172,9 @@ export function sectionExperiences() {
             trigger: triggerItem,
             start: "top bottom",
             end: "bottom top",
-            scrub: true,
-          },
-        },
+            scrub: true
+          }
+        }
       );
     });
 
@@ -1208,9 +1208,9 @@ export function sectionExperiences() {
           trigger: section,
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
-        },
-      },
+          scrub: true
+        }
+      }
     );
   });
 }
@@ -1231,7 +1231,7 @@ export function animationSubMenu() {
   const isMobile = window.innerWidth < 992;
 
   const menuItemsWithChildren = document.querySelectorAll(
-    "#header .header-menu > ul > li.menu-item-has-children",
+    "#header .header-menu > ul > li.menu-item-has-children"
   );
 
   menuItemsWithChildren.forEach((menuItem) => {
@@ -1244,14 +1244,14 @@ export function animationSubMenu() {
     if (subMenuItems.length > 0) {
       gsap.set(subMenuItems, {
         y: 10,
-        opacity: 0,
+        opacity: 0
       });
     }
 
     if (btnViewHotel) {
       gsap.set(btnViewHotel, {
         y: 10,
-        opacity: 0,
+        opacity: 0
       });
     }
 
@@ -1270,7 +1270,7 @@ export function animationSubMenu() {
                   opacity: 1,
                   duration: 0.6,
                   stagger: 0.08,
-                  ease: "power3.out",
+                  ease: "power3.out"
                 });
               }
 
@@ -1280,7 +1280,7 @@ export function animationSubMenu() {
                   opacity: 1,
                   duration: 0.8,
                   delay: subMenuItems.length * 0.08,
-                  ease: "power3.out",
+                  ease: "power3.out"
                 });
               }
             } else {
@@ -1288,14 +1288,14 @@ export function animationSubMenu() {
               if (subMenuItems.length > 0) {
                 gsap.set(subMenuItems, {
                   y: 10,
-                  opacity: 0,
+                  opacity: 0
                 });
               }
 
               if (btnViewHotel) {
                 gsap.set(btnViewHotel, {
                   y: 10,
-                  opacity: 0,
+                  opacity: 0
                 });
               }
             }
@@ -1315,7 +1315,7 @@ export function animationSubMenu() {
             opacity: 1,
             duration: 0.6,
             stagger: 0.08,
-            ease: "power3.out",
+            ease: "power3.out"
           });
         }
 
@@ -1325,7 +1325,7 @@ export function animationSubMenu() {
             opacity: 1,
             duration: 0.8,
             delay: subMenuItems.length * 0.08,
-            ease: "power3.out",
+            ease: "power3.out"
           });
         }
       });
@@ -1337,7 +1337,7 @@ export function animationSubMenu() {
             opacity: 0,
             duration: 0.6,
             stagger: 0.04,
-            ease: "power3.in",
+            ease: "power3.in"
           });
         }
 
@@ -1346,27 +1346,10 @@ export function animationSubMenu() {
             y: 10,
             opacity: 0,
             duration: 0.6,
-            ease: "power3.in",
+            ease: "power3.in"
           });
         }
       });
-    }
-  });
-}
-
-export function filterDropdownMobile() {
-  if ($(".filter-dropdown").length < 1 || $(window).width() > 991) return;
-
-  $(".filter-dropdown .dropdown-custom-item").on("click", function () {
-    const span = $(this).find("span");
-    if (!span.length) return;
-
-    const tabId = span.data("tab");
-
-    const trigger = $(`[data-bs-target="#${tabId}"]`);
-    if (trigger.length) {
-      const tab = new bootstrap.Tab(trigger[0]);
-      tab.show();
     }
   });
 }
@@ -1381,7 +1364,7 @@ export function bookingServices() {
     minDate: moment().startOf("now"),
     numberOfMonths: 1,
     startDate: moment().startOf("day").toDate(),
-    endDate: moment().startOf("day").add(1, "days").toDate(),
+    endDate: moment().startOf("day").add(1, "days").toDate()
   });
 }
 export function clickCta() {
@@ -1461,7 +1444,7 @@ export function formContact() {
         email: $inputEmail.val().trim(),
         hotel: $inputHotel.val().trim(),
         message: $inputMessage.val().trim(),
-        email_recipient: $emailRecipient.trim(),
+        email_recipient: $emailRecipient.trim()
       },
       beforeSend: function () {
         $buttonSubmit.addClass("aloading");
@@ -1475,10 +1458,10 @@ export function formContact() {
       error: function (xhr, status, error) {
         console.error("Lỗi khi gửi form:", error);
         $form.append(
-          '<span class="contact-message body-sm-regular" style="color: #FF0000;">Có lỗi xảy ra, vui lòng thử lại sau.</span>',
+          '<span class="contact-message body-sm-regular" style="color: #FF0000;">Có lỗi xảy ra, vui lòng thử lại sau.</span>'
         );
         $buttonSubmit.removeClass("aloading");
-      },
+      }
     });
   });
 }
@@ -1539,7 +1522,7 @@ export function formBookingService() {
         departure: $departure.val().trim(),
         message: $inputMessage.val().trim(),
         email_recipient: $emailRecipient.trim(),
-        serviceID: $serviceID.val().trim() || "",
+        serviceID: $serviceID.val().trim() || ""
       },
       beforeSend: function () {
         $buttonSubmit.addClass("aloading");
@@ -1554,10 +1537,10 @@ export function formBookingService() {
       error: function (xhr, status, error) {
         console.error("Lỗi khi gửi form:", error);
         $form.append(
-          '<span class="contact-message body-sm-regular" style="color: #FF0000;">Có lỗi xảy ra, vui lòng thử lại sau.</span>',
+          '<span class="contact-message body-sm-regular" style="color: #FF0000;">Có lỗi xảy ra, vui lòng thử lại sau.</span>'
         );
         $buttonSubmit.removeClass("aloading");
-      },
+      }
     });
   });
 }
@@ -1594,7 +1577,7 @@ export function bookingFormRedirect() {
     const dateOut = new Date(checkOut);
     const stayNights = Math.max(
       1,
-      Math.round((dateOut - dateIn) / (1000 * 60 * 60 * 24)),
+      Math.round((dateOut - dateIn) / (1000 * 60 * 60 * 24))
     );
 
     const url = new URL(bookingUrl);
@@ -1617,4 +1600,60 @@ export function bookingFormRedirect() {
     const [day, month, year] = dateStr.split("/");
     return `${day}-${month}-${year}`;
   }
+}
+
+export function formNewsletter() {
+  if ($("#form-newsletter").length < 1) return;
+
+  $("#form-newsletter").on("submit", function (e) {
+    e.preventDefault();
+
+    const thisForm = $(this);
+    const emailField = thisForm.find("input[type='email']");
+    const buttonSubmit = thisForm.find("button[type='submit']");
+
+    emailField.removeClass("error");
+    thisForm.siblings("span").remove();
+
+    if (!emailField.length) {
+      console.error("Không tìm thấy input email trong form.");
+      return;
+    }
+
+    const email = emailField.val() ? emailField.val().trim() : "";
+
+    if (!email) {
+      thisForm.find(".field-item").addClass("error");
+      return;
+    }
+
+    $.ajax({
+      type: "POST",
+      url: ajaxUrl,
+      data: {
+        action: "nesta_receive_newsletter",
+        email: email
+      },
+      beforeSend: function () {
+        console.log("Đang gửi dữ liệu...");
+        buttonSubmit.addClass("aloading");
+      },
+      success: function (res) {
+        thisForm.find(".form-message").remove();
+        thisForm.find(".field-item").removeClass("error");
+        buttonSubmit.removeClass("aloading");
+
+        if (res.success) {
+          thisForm[0].reset();
+          $("#modalNewsletterSuccess").modal("show");
+        } else {
+          thisForm.after(`<span class="form-message error">${res.data}</span>`);
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Lỗi khi gửi form:", error);
+        alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+      }
+    });
+  });
 }
