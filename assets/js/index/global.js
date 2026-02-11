@@ -507,7 +507,11 @@ export function animationItemsSection() {
 }
 
 export function fadeTextFooter() {
-  if ($(".section-accommodation").length > 0 || $(".list-post-filter").length > 0) return;
+  if (
+    $(".section-accommodation").length > 0 ||
+    $(".list-post-filter").length > 0
+  )
+    return;
 
   const elements = document.querySelectorAll("[data-text-footer]");
 
@@ -1589,7 +1593,7 @@ export function bookingFormRedirect() {
     url.searchParams.set("filter_child", children);
 
     if (promoCode) {
-      url.searchParams.set("promo_code", promoCode);
+      url.searchParams.set("coupon", promoCode);
     }
 
     window.location.href = url.toString();

@@ -45,6 +45,12 @@ body {
   line-height: 40px;
   font-weight: 400;
 }
+@media (max-width: 991px) {
+  .heading-2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
 
 .heading-3 {
   font-family: var(--font-heading);
@@ -304,6 +310,9 @@ main {
   .swiper-arrows .swiper-arrow.arrow-next {
     transform: none;
   }
+}
+.swiper-arrows .swiper-arrow.swiper-button-lock {
+  opacity: 0 !important;
 }
 
 .button-global {
@@ -1089,6 +1098,7 @@ section.lightpick .lightpick__previous-action {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 4px;
   color: var(--color-white);
+  border-radius: unset;
 }
 .footer .form .field-item input:focus-visible + label, .footer .form .field-item input:not(:placeholder-shown) + label {
   transform: translateY(-100%);
@@ -2950,6 +2960,7 @@ section.lightpick .lightpick__previous-action {
 
 .accommodation-item__horizontal {
   display: flex;
+  align-items: stretch;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 15px 0 rgba(0, 0, 0, 0.1);
@@ -2962,6 +2973,7 @@ section.lightpick .lightpick__previous-action {
 }
 .accommodation-item__horizontal .slider-wrapper {
   width: 50%;
+  flex: 1;
 }
 @media (max-width: 991px) {
   .accommodation-item__horizontal .slider-wrapper {
@@ -2996,7 +3008,6 @@ section.lightpick .lightpick__previous-action {
 .accommodation-item__horizontal .content {
   width: 50%;
   padding: 48px;
-  min-height: 400px;
   flex: 1;
   display: flex;
   flex-direction: column;
