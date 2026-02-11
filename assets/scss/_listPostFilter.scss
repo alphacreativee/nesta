@@ -76,6 +76,14 @@
     }
   }
 
+  &.new {
+    .list-post {
+      @media (max-width: 767px) {
+        gap: 48px;
+      }
+    }
+  }
+
   &.offers-post {
     .list-post {
       gap: 80px 24px;

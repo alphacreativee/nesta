@@ -4266,6 +4266,8 @@ section.lightpick .lightpick__previous-action {
 @media (max-width: 767px) {
   #modal-gallery .modal-body .filter-dropdown {
     width: 100%;
+    position: sticky;
+    top: 0;
   }
 }
 #modal-gallery .modal-body .nav-tabs {
@@ -5085,6 +5087,11 @@ section.lightpick .lightpick__previous-action {
   .list-post-filter .list-post {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .list-post-filter.new .list-post {
+    gap: 48px;
   }
 }
 .list-post-filter.offers-post .list-post {
