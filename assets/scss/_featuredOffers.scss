@@ -90,6 +90,10 @@
         opacity: 1;
       }
     }
+    .tag {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
   }
 
   .image {
@@ -176,7 +180,7 @@
     left: 32px;
     z-index: 4;
     width: max-content;
-
+    transition: all 0.4s;
     @media (max-width: 991px) {
       top: 16px;
       left: 16px;

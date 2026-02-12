@@ -2261,9 +2261,9 @@ section.lightpick .lightpick__previous-action {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  backdrop-filter: blur(65px);
   margin: 0;
-  border: 1px solid rgba(64, 64, 64, 0.3);
+  background-color: var(--color-primary-2);
+  color: var(--color-white);
   transition: all 0.4s ease;
 }
 .hotel-filter__top .nav-tabs .nav-link.active {
@@ -2272,8 +2272,8 @@ section.lightpick .lightpick__previous-action {
   pointer-events: none;
 }
 .hotel-filter__top .nav-tabs .nav-link:hover {
-  color: var(--color-black);
-  border-color: var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 .hotel-filter__slider .swiper {
   margin: 0 -12px;
@@ -2396,7 +2396,7 @@ section.lightpick .lightpick__previous-action {
   bottom: -1px;
   left: -50%;
   transform: translate(50%, 100%);
-  background-color: var(--color-white);
+  background-color: var(--color-primary-2);
   width: 100%;
   padding: 8px;
   clip-path: inset(0 0 100% 0);
@@ -2454,7 +2454,7 @@ section.lightpick .lightpick__previous-action {
   background-color: rgba(23, 75, 156, 0.1);
 }
 .dropdown-custom.filter-dropdown .dropdown-custom-item span {
-  color: var(--color-black);
+  color: var(--color-white);
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;
@@ -2551,6 +2551,10 @@ section.lightpick .lightpick__previous-action {
 .offer-item:hover .content .content-desc {
   opacity: 1;
 }
+.offer-item:hover .tag {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
 .offer-item .image {
   width: 100%;
   aspect-ratio: 410/510;
@@ -2629,6 +2633,7 @@ section.lightpick .lightpick__previous-action {
   left: 32px;
   z-index: 4;
   width: max-content;
+  transition: all 0.4s;
 }
 @media (max-width: 991px) {
   .offer-item .tag {
@@ -3924,22 +3929,20 @@ section.lightpick .lightpick__previous-action {
   font-size: 13px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-white);
+  background-color: var(--color-primary-2);
   padding: 8px 16px;
   border-radius: 20px;
-  border: 1px solid rgba(24, 24, 25, 0.3);
   transition: all 0.4s ease;
   cursor: pointer;
 }
 #locationModal .location-filter .filter-list-button .filter-button:hover {
   background-color: var(--color-black);
   color: var(--color-white);
-  border: 1px solid var(--color-black);
 }
 #locationModal .location-filter .filter-list-button .filter-button.active {
   background-color: var(--color-black);
   color: var(--color-white);
-  border: 1px solid var(--color-black);
 }
 #locationModal .location-filter .filter-section-result {
   display: grid;
@@ -4283,7 +4286,8 @@ section.lightpick .lightpick__previous-action {
   justify-content: center;
   border-radius: 20px;
   margin: 0;
-  background-color: var(--color-white);
+  background-color: var(--color-primary-2);
+  color: var(--color-white);
   transition: all 0.4s ease;
   border: none;
 }
@@ -5049,8 +5053,9 @@ section.lightpick .lightpick__previous-action {
   border-radius: 20px;
   backdrop-filter: blur(65px);
   margin: 0;
-  border: 1px solid rgba(64, 64, 64, 0.3);
+  background-color: var(--color-primary-2);
   transition: all 0.4s ease;
+  color: var(--color-white);
   cursor: pointer;
 }
 .list-post-filter .filter-list-button .filter-button.active {
@@ -5059,7 +5064,8 @@ section.lightpick .lightpick__previous-action {
   pointer-events: none;
 }
 .list-post-filter .filter-list-button .filter-button:hover {
-  border-color: var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 .list-post-filter .list-post {
   display: grid;
