@@ -25,36 +25,94 @@
       right: 24px;
 
       .cta-booking {
-        transform: translateX(30px);
+        transform: translateX(80px) scale(0.8);
         opacity: 0;
         transition:
-          transform 0.5s ease,
-          opacity 0.4s ease 0.1s;
-        transition-delay: 0s;
+          transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+          opacity 0.4s ease;
+        transition-delay: 0.5s;
       }
 
       .cta-wrapper {
-        transform: translateX(30px);
-        opacity: 0;
-        transition:
-          transform 0.5s ease,
-          opacity 0.4s ease 0.1s;
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    // Animation cho các items chạy ra lần lượt
+    .cta-item {
+      transform: translateX(80px) scale(0.8);
+      opacity: 0;
+
+      &:nth-child(1) {
+        transition-delay: 0s;
+      }
+
+      &:nth-child(2) {
         transition-delay: 0.1s;
       }
+
+      &:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.3s;
+      }
+    }
+
+    .cta-global {
+      transform: translateX(80px) scale(0.8);
+      opacity: 0;
+      transition-delay: 0.4s;
+    }
+  }
+
+  // Khi không có class run-right, items hiển thị bình thường
+  &:not(.run-right) {
+    @media (max-width: 991px) {
+      .cta-booking {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        transition-delay: 0s;
+      }
+    }
+
+    .cta-item {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+
+      &:nth-child(1) {
+        transition-delay: 0.5s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 0.4s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.2s;
+      }
+    }
+
+    .cta-global {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      transition-delay: 0.1s;
     }
   }
 
   .cta {
     &-wrapper {
-      position: relative;
-      opacity: 1;
-
       @media (max-width: 991px) {
         transform: translateX(0);
         transition:
           transform 0.5s ease,
           opacity 0.3s ease;
-        transition-delay: 0.15s;
       }
 
       // Desktop: hover
@@ -66,27 +124,6 @@
             &::before {
               opacity: 1;
               visibility: visible;
-            }
-
-            img {
-              &:first-child {
-                transform: scale(0);
-              }
-
-              &:last-child {
-                transform: translate(-50%, -50%) scale(1);
-              }
-            }
-          }
-
-          .cta-list {
-            opacity: 1;
-            visibility: visible;
-            transition-delay: 0s;
-
-            .cta-item {
-              transform: translateY(0) scale(1);
-              opacity: 1;
             }
           }
         }
@@ -113,60 +150,24 @@
               }
             }
           }
-
-          .cta-list {
-            opacity: 1;
-            visibility: visible;
-            transition-delay: 0s;
-
-            .cta-item {
-              transform: translateY(0) scale(1);
-              opacity: 1;
-            }
-          }
         }
       }
     }
 
     &-list {
-      position: absolute;
-      top: 0;
-      transform: translateY(-100%);
-      margin-top: -12px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      opacity: 0;
-      visibility: hidden;
-      transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-      transition-delay: 0.3s;
     }
 
     &-item {
       width: 54px;
       height: 54px;
       display: flex;
-      transform: translateY(20px) scale(0);
       transform-origin: center;
-      opacity: 0;
       transition:
-        transform 0.4s ease,
-        opacity 0.3s ease,
-        background-color 0.3s ease;
-
-      &:nth-child(3) {
-        transition-delay: 0.05s;
-      }
-
-      &:nth-child(2) {
-        transition-delay: 0.1s;
-      }
-
-      &:nth-child(1) {
-        transition-delay: 0.15s;
-      }
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.4s ease;
 
       a {
         width: 100%;
@@ -174,6 +175,7 @@
         border-radius: 50%;
         background-color: var(--color-primary-2);
         transition: all 0.3s ease;
+        display: flex;
         justify-content: center;
         align-items: center;
 
@@ -197,8 +199,11 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      transition: all 0.3s ease;
       cursor: pointer;
+      transition:
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.4s ease,
+        background-color 0.3s ease;
 
       &::before {
         content: "";
@@ -244,9 +249,9 @@
       min-height: 54px;
       transform: translateX(0);
       transition:
-        transform 0.5s ease,
-        opacity 0.3s ease;
-      transition-delay: 0s;
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.4s ease,
+        background-color 0.3s ease;
     }
 
     &:hover {
