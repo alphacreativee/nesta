@@ -112,7 +112,7 @@
       transform: scaleY(0);
       transform-origin: left bottom;
       transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
-      background-color: var(--color-primary-3);
+      background-color: rgba(168, 116, 57, 0.3);
       z-index: 3;
     }
     &::before {
