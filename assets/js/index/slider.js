@@ -9,9 +9,12 @@ export function sectionNews() {
     new Swiper(swiperEl, {
       slidesPerView: 3,
       spaceBetween: 24,
-      loop: false,
+      loop: true,
       speed: 800,
-      autoplay: false,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: true
+      },
       navigation: {
         prevEl: section.querySelector(".arrow-prev"),
         nextEl: section.querySelector(".arrow-next")
@@ -48,9 +51,12 @@ export function sliderWithShadow() {
     new Swiper(swiperEl, {
       slidesPerView: 3,
       spaceBetween: 0,
-      loop: false,
+      loop: true,
       speed: 800,
-      autoplay: false,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: true
+      },
       navigation: {
         prevEl: section.querySelector(".arrow-prev"),
         nextEl: section.querySelector(".arrow-next")
@@ -114,7 +120,7 @@ export function sliderParallax() {
 
       autoplay: hasAutoplay
         ? {
-            delay: 3500,
+            delay: 4000,
             disableOnInteraction: true
           }
         : false,

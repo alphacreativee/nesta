@@ -11,7 +11,7 @@
     background: url("../../images/bg-footer-desktop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center right;
     padding: 40px 80px 20px;
 
     @media (max-width: 991px) {
@@ -19,6 +19,7 @@
     }
 
     @media (max-width: 480px) {
+      background-position: center;
       background-image: url("../../images/bg-footer-mobile.jpg");
     }
 

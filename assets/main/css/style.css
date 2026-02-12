@@ -935,7 +935,7 @@ section.lightpick .lightpick__previous-action {
   background: url("../../images/bg-footer-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   padding: 40px 80px 20px;
 }
 @media (max-width: 991px) {
@@ -945,6 +945,7 @@ section.lightpick .lightpick__previous-action {
 }
 @media (max-width: 480px) {
   .footer-main {
+    background-position: center;
     background-image: url("../../images/bg-footer-mobile.jpg");
   }
 }
@@ -2237,11 +2238,11 @@ section.lightpick .lightpick__previous-action {
   }
 }
 .hotel-filter__top {
-  margin-bottom: 54px;
+  margin-bottom: 34px;
 }
 @media (max-width: 991px) {
   .hotel-filter__top {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
   }
 }
 @media (max-width: 767px) {
@@ -2284,7 +2285,12 @@ section.lightpick .lightpick__previous-action {
 }
 .hotel-filter__slider .swiper-slide {
   height: auto;
-  padding: 0 12px 40px;
+  padding: 20px 12px;
+}
+@media (max-width: 991px) {
+  .hotel-filter__slider .swiper-slide {
+    padding: 20px 12px 32px;
+  }
 }
 .hotel-filter .swiper-arrow.arrow-prev {
   transform: scale(-1) translate(100%, calc(50% + 20px));
@@ -2306,13 +2312,13 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   overflow: hidden;
 }
 @media (max-width: 991px) {
   .hotel-filter__item {
-    box-shadow: 0px 15px 8px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
   }
 }
 .hotel-filter__item:hover .content-title,
@@ -2500,23 +2506,23 @@ section.lightpick .lightpick__previous-action {
 }
 .featured-offers .section-wrapper .swiper-slide {
   height: auto;
-  padding: 0 12px 40px;
+  padding: 20px 12px;
 }
 @media (max-width: 991px) {
   .featured-offers .section-wrapper .swiper-slide {
-    padding: 0 12px 32px;
+    padding: 20px 12px 32px;
   }
 }
 .featured-offers .section-top {
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 @media (max-width: 991px) {
   .featured-offers .section-top {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
   }
 }
 .featured-offers .swiper-arrow.arrow-prev {
-  transform: scale(-1) translate(100%, calc(50% + 20px));
+  transform: scale(-1) translate(100%, 50%);
 }
 @media (max-width: 991px) {
   .featured-offers .swiper-arrow.arrow-prev {
@@ -2524,7 +2530,7 @@ section.lightpick .lightpick__previous-action {
   }
 }
 .featured-offers .swiper-arrow.arrow-next {
-  transform: translate(100%, calc(-20px - 50%));
+  transform: translate(100%, -50%);
 }
 @media (max-width: 991px) {
   .featured-offers .swiper-arrow.arrow-next {
@@ -2536,7 +2542,7 @@ section.lightpick .lightpick__previous-action {
   position: relative;
   overflow: hidden;
   display: block;
-  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
   border-radius: 20px;
 }
 .offer-item:hover img {
@@ -2699,17 +2705,16 @@ section.lightpick .lightpick__previous-action {
   border-radius: 20px;
   backdrop-filter: blur(65px);
   margin: 0;
-  border: 1px solid rgba(64, 64, 64, 0.3);
+  background-color: var(--color-primary-2);
   transition: all 0.4s ease;
   cursor: pointer;
+  color: var(--color-white);
+}
+.section-accommodation .filter-list-button .filter-button.active, .section-accommodation .filter-list-button .filter-button:hover {
+  background-color: var(--color-black);
 }
 .section-accommodation .filter-list-button .filter-button.active {
-  background-color: var(--color-black);
-  color: var(--color-white);
   pointer-events: none;
-}
-.section-accommodation .filter-list-button .filter-button:hover {
-  border-color: var(--color-black);
 }
 .section-accommodation .accommodation-grid {
   display: grid;
@@ -2729,11 +2734,10 @@ section.lightpick .lightpick__previous-action {
 }
 
 .accommodation-item {
-  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -2743,7 +2747,7 @@ section.lightpick .lightpick__previous-action {
   overflow: hidden;
 }
 .accommodation-item .image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .accommodation-item .image img {
   width: 100%;
@@ -2756,6 +2760,7 @@ section.lightpick .lightpick__previous-action {
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: var(--color-white);
 }
 .accommodation-item .content .content-title {
   margin-bottom: 12px;
@@ -2984,12 +2989,13 @@ section.lightpick .lightpick__previous-action {
   align-items: stretch;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 15px 0 rgba(0, 0, 0, 0.1);
-  background-color: var(--color-white);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  max-height: 425px;
 }
 @media (max-width: 991px) {
   .accommodation-item__horizontal {
     flex-direction: column;
+    max-height: unset;
   }
 }
 .accommodation-item__horizontal .slider-wrapper {
@@ -3032,6 +3038,7 @@ section.lightpick .lightpick__previous-action {
   flex: 1;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-white);
 }
 @media (max-width: 991px) {
   .accommodation-item__horizontal .content {
@@ -3059,6 +3066,11 @@ section.lightpick .lightpick__previous-action {
 .accommodation-item__horizontal .content-desc {
   margin-top: 40px;
   margin-bottom: 64px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 991px) {
   .accommodation-item__horizontal .content-desc {
@@ -3239,7 +3251,6 @@ section.lightpick .lightpick__previous-action {
     transform: translateX(30px);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.4s ease 0.1s;
-    transition-delay: 0.1s;
   }
 }
 #cta .cta-wrapper {
@@ -3250,7 +3261,6 @@ section.lightpick .lightpick__previous-action {
   #cta .cta-wrapper {
     transform: translateX(0);
     transition: transform 0.5s ease, opacity 0.3s ease;
-    transition-delay: 0.15s;
   }
 }
 #cta .cta-wrapper.hide-cta .cta-global {
@@ -5095,6 +5105,9 @@ section.lightpick .lightpick__previous-action {
 }
 .list-post-filter.offers-post .list-post {
   gap: 80px 24px;
+}
+.list-post-filter .offer-item {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .news-detail {

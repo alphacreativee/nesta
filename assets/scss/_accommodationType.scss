@@ -42,11 +42,12 @@
   align-items: stretch;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 15px 0 rgba(0, 0, 0, 0.1);
-  background-color: var(--color-white);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  max-height: 425px;
 
   @media (max-width: 991px) {
     flex-direction: column;
+    max-height: unset;
   }
 
   .slider-wrapper {
@@ -97,6 +98,7 @@
 
     display: flex;
     flex-direction: column;
+    background-color: var(--color-white);
     // height: max-content;
 
     @media (max-width: 991px) {
@@ -125,6 +127,11 @@
     &-desc {
       margin-top: 40px;
       margin-bottom: 64px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
 
       @media (max-width: 991px) {
         margin-top: 32px;

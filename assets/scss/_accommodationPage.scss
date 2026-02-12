@@ -37,18 +37,19 @@
         border-radius: 20px;
         backdrop-filter: blur(65px);
         margin: 0;
-        border: 1px solid rgba(64, 64, 64, 0.3);
+        // border: 1px solid rgba(64, 64, 64, 0.3);
+        background-color: var(--color-primary-2);
         transition: all 0.4s ease;
         cursor: pointer;
+        color: var(--color-white);
 
-        &.active {
+        &.active,
+        &:hover {
           background-color: var(--color-black);
-          color: var(--color-white);
-          pointer-events: none;
         }
 
-        &:hover {
-          border-color: var(--color-black);
+        &.active {
+          pointer-events: none;
         }
       }
     }
@@ -71,12 +72,11 @@
 }
 
 .accommodation-item {
-  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   height: 100%;
 
-  box-shadow: 0px 20px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   overflow: hidden;
 
@@ -87,7 +87,7 @@
 
     &:hover {
       img {
-        transform: scale(1.05);
+        transform: scale(1.1);
       }
     }
 
@@ -104,6 +104,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    background-color: var(--color-white);
 
     .content-title {
       margin-bottom: 12px;

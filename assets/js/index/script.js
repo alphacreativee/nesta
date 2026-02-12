@@ -23,7 +23,8 @@ import {
   formContact,
   formBookingService,
   bookingFormRedirect,
-  formNewsletter
+  formNewsletter,
+  closeTripadvidor
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
@@ -106,6 +107,7 @@ const init = () => {
   bookingFormRedirect();
   formNewsletter();
   filterDropdownMobile();
+  closeTripadvidor();
 };
 
 preloadImages("img").then(() => {
