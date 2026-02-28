@@ -2115,7 +2115,7 @@ section.lightpick .lightpick__previous-action {
   }
 }
 .section-experience .section-wrapper {
-  padding: 40px 80px;
+  padding: 40px 0;
 }
 @media (max-width: 991px) {
   .section-experience .section-wrapper {
@@ -2135,7 +2135,6 @@ section.lightpick .lightpick__previous-action {
 .section-experience .col-image .image {
   width: 100%;
   aspect-ratio: 625/600;
-  border-radius: 20px;
   overflow: hidden;
 }
 .section-experience .col-image .image img {
@@ -2156,6 +2155,8 @@ section.lightpick .lightpick__previous-action {
   border-radius: 20px;
   padding: 40px 72px;
   top: 32px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 @media screen and (min-width: 1500px) {
   .section-experience .col-content {
@@ -2169,7 +2170,35 @@ section.lightpick .lightpick__previous-action {
     background-color: transparent;
     transform: none;
     padding: 0 0 40px 0;
+    box-shadow: unset;
   }
+}
+.section-experience .col-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: left bottom;
+  transition: transform 0.4s cubic-bezier(0, 0, 0.58, 1);
+  background-color: rgba(168, 116, 57, 0.3);
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .section-experience .col-content::after {
+    display: none;
+  }
+}
+.section-experience .col-content .btn-arrow .icon {
+  transform: all 0.4s ease;
+}
+.section-experience .col-content:hover::after {
+  transform: scaleY(1);
+}
+.section-experience .col-content:hover .btn-arrow .icon {
+  transform: translateX(5px);
 }
 .section-experience .col-content .tag {
   text-align: center;
@@ -2192,10 +2221,10 @@ section.lightpick .lightpick__previous-action {
   }
 }
 .section-experience .col-image-one {
-  border-radius: 20px;
   overflow: hidden;
   width: 100%;
   aspect-ratio: 382/485;
+  border-radius: 0 20px 20px 0;
 }
 .section-experience .col-image-one img {
   width: 100%;
@@ -2216,6 +2245,15 @@ section.lightpick .lightpick__previous-action {
 
 .image-parallax {
   overflow: hidden;
+}
+.image-parallax.box-parallax-top {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px 0 0 20px !important;
+}
+@media (max-width: 991px) {
+  .image-parallax.box-parallax-top {
+    border-radius: 20px !important;
+  }
 }
 .image-parallax.box-parallax-top img {
   transform: translateY(-10%);
