@@ -118,32 +118,45 @@ document.addEventListener("DOMContentLoaded", function () {
   sliderWithShadow();
   sliderGallery();
 });
-document.querySelector(".promo-cta").addEventListener("click", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.querySelector(".popup-promo");
 
-  const code = this.querySelector("span").textContent.trim();
-  const baseUrl = this.getAttribute("href");
-  const msg = this.dataset.copied;
+  if (popup) {
+    document
+      .querySelector(".icon-close")
+      .addEventListener("click", function () {
+        popup.classList.add("hidden");
+      });
 
-  // Copy mã vào clipboard
-  const copyCode = () => {
-    const el = document.createElement("textarea");
-    el.value = code;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
-  };
+    document
+      .querySelector(".promo-cta")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
 
-  navigator.clipboard.writeText(code).catch(() => copyCode());
+        const code = this.querySelector("span").textContent.trim();
+        const baseUrl = this.getAttribute("href");
+        const msg = this.dataset.copied;
 
-  // Nếu có href thì redirect, không thì chỉ copy + alert
-  if (baseUrl && baseUrl !== "#" && baseUrl !== "") {
-    const url = new URL(baseUrl, window.location.origin);
-    url.searchParams.set("promocode", code);
-    window.location.href = url.toString();
-  } else {
-    alert(msg);
+        // Copy mã vào clipboard
+        const copyCode = () => {
+          const el = document.createElement("textarea");
+          el.value = code;
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand("copy");
+          document.body.removeChild(el);
+        };
+
+        navigator.clipboard.writeText(code).catch(() => copyCode());
+
+        if (baseUrl && baseUrl !== "#" && baseUrl !== "") {
+          const url = new URL(baseUrl, window.location.origin);
+          url.searchParams.set("promocode", code);
+          window.location.href = url.toString();
+        } else {
+          alert(msg);
+        }
+      });
   }
 });
 // event click element a
