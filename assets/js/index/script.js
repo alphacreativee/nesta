@@ -122,10 +122,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const popup = document.querySelector(".popup-promo");
 
   if (popup) {
+    if (window.innerWidth < 991) {
+      popup.classList.add("hidden");
+    }
     document
       .querySelector(".icon-close")
       .addEventListener("click", function () {
         popup.classList.add("hidden");
+      });
+
+    document
+      .querySelector(".cta-promo-popup")
+      .addEventListener("click", function () {
+        popup.classList.remove("hidden");
       });
 
     document
