@@ -134,7 +134,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document
       .querySelector(".cta-promo-popup")
       .addEventListener("click", function () {
-        popup.classList.remove("hidden");
+        if (popup.classList.contains("hidden")) {
+          popup.classList.remove("hidden");
+        } else {
+          popup.classList.add("hidden");
+        }
       });
 
     document
