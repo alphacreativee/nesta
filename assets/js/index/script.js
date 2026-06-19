@@ -24,16 +24,16 @@ import {
   formBookingService,
   bookingFormRedirect,
   formNewsletter,
-  closeTripadvidor
+  closeTripadvidor,
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
   sliderWithShadow,
-  sliderParallax
+  sliderParallax,
 } from "../../main/js/slider.min.js";
 import {
   createFilterTab,
-  createFilterTabMulti
+  createFilterTabMulti,
 } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
@@ -41,7 +41,7 @@ import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 import {
   listPostFilter,
   filterDropdownBoostrapMobile,
-  filterDropdownMobile
+  filterDropdownMobile,
 } from "../../main/js/filter.min.js";
 ("use strict");
 $ = jQuery;
@@ -49,7 +49,7 @@ $ = jQuery;
 const lenis = new Lenis({
   smoothTouch: false,
   lerp: 0.08,
-  syncToNative: true
+  syncToNative: true,
 });
 window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
@@ -118,7 +118,60 @@ document.addEventListener("DOMContentLoaded", function () {
   sliderWithShadow();
   sliderGallery();
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.querySelector(".popup-promo");
 
+  if (popup) {
+    if (window.innerWidth < 991) {
+      popup.classList.add("hidden");
+    }
+    document
+      .querySelector(".icon-close")
+      .addEventListener("click", function () {
+        popup.classList.add("hidden");
+      });
+
+    document
+      .querySelector(".cta-promo-popup")
+      .addEventListener("click", function () {
+        if (popup.classList.contains("hidden")) {
+          popup.classList.remove("hidden");
+        } else {
+          popup.classList.add("hidden");
+        }
+      });
+
+    document
+      .querySelector(".promo-cta")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const code = this.querySelector("span").textContent.trim();
+        const baseUrl = this.getAttribute("href");
+        const msg = this.dataset.copied;
+
+        // Copy mã vào clipboard
+        const copyCode = () => {
+          const el = document.createElement("textarea");
+          el.value = code;
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand("copy");
+          document.body.removeChild(el);
+        };
+
+        navigator.clipboard.writeText(code).catch(() => copyCode());
+
+        if (baseUrl && baseUrl !== "#" && baseUrl !== "") {
+          const url = new URL(baseUrl, window.location.origin);
+          url.searchParams.set("promocode", code);
+          window.location.href = url.toString();
+        } else {
+          alert(msg);
+        }
+      });
+  }
+});
 // event click element a
 let isLinkClicked = false;
 
