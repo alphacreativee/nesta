@@ -52,6 +52,8 @@ export function listPostFilter() {
     functionFilter = "filter_news";
   } else if (wrapper.hasClass("experience")) {
     functionFilter = "filter_experiences";
+  } else if (wrapper.hasClass("event")) {
+    functionFilter = "filter_events";
   }
 
   let fixedLocation =
@@ -70,16 +72,17 @@ export function listPostFilter() {
         action: functionFilter,
         term: term,
         page: page,
-        filter_location: fixedLocation
+        location: fixedLocation,
       },
       beforeSend() {
         $(".list-post-filter .list-post").addClass("is-loading");
       },
       success(res) {
-        if (!res || !res.success) return;
+        if (!res.success) return;
 
         const $wrapper = $(".list-post-filter");
-        const $list = $wrapper.find(".list-post");
+
+        const $list = $(".list-post-filter .list-post");
 
         $list.html(res.data.posts);
         $wrapper.find(".pagination").remove();
@@ -96,44 +99,46 @@ export function listPostFilter() {
       complete() {
         $(".list-post-filter .list-post").removeClass("is-loading");
         isLoading = false;
-      }
+      },
     });
   }
 
   // FILTER CLICK
   $(document).on(
     "click",
-    ".list-post-filter .filter-button, .list-post-filter .dropdown-custom-item span",
+    ".list-post-filter .filter-button,.list-post-filter .dropdown-custom-item span",
     function () {
       const tab = $(this).data("tab");
+
+      console.log(tab);
+
       if (!tab) return;
 
       currentTerm = tab === "all" ? "all" : tab.replace("post-category-", "");
+
       currentPage = 1;
 
       $(".list-post-filter .filter-button").removeClass("active");
       $('.list-post-filter .filter-button[data-tab="' + tab + '"]').addClass(
-        "active"
+        "active",
       );
 
       loadOffers(currentTerm, 1);
-    }
+    },
   );
 
   // PAGINATION CLICK
   $(document).on("click", ".list-post-filter .pagination a", function (e) {
     e.preventDefault();
 
-    const page = $(this).data("page") || parseInt($(this).text(), 10);
+    const page = $(this).text();
+    if (!page) return;
 
-    if (!page || isNaN(page)) return;
-
-    loadOffers(currentTerm, page);
+    loadOffers(currentTerm, parseInt(page));
   });
 
-  // AUTO LOAD khi có filter-location (tuỳ bạn bật)
   if (wrapper.hasClass("experience") && fixedLocation !== "all") {
-    // loadOffers("all", 1);
+    loadOffers("all", 1);
   }
 }
 
