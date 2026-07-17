@@ -24,16 +24,16 @@ import {
   formBookingService,
   bookingFormRedirect,
   formNewsletter,
-  closeTripadvidor,
+  closeTripadvidor
 } from "../../main/js/global.min.js";
 import {
   sectionNews,
   sliderWithShadow,
-  sliderParallax,
+  sliderParallax
 } from "../../main/js/slider.min.js";
 import {
   createFilterTab,
-  createFilterTabMulti,
+  createFilterTabMulti
 } from "../../main/js/tab.min.js";
 import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
 import { loading } from "../../main/js/loading.min.js";
@@ -41,7 +41,7 @@ import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 import {
   listPostFilter,
   filterDropdownBoostrapMobile,
-  filterDropdownMobile,
+  filterDropdownMobile
 } from "../../main/js/filter.min.js";
 ("use strict");
 $ = jQuery;
@@ -49,7 +49,7 @@ $ = jQuery;
 const lenis = new Lenis({
   smoothTouch: false,
   lerp: 0.08,
-  syncToNative: true,
+  syncToNative: true
 });
 window.lenis = lenis;
 lenis.on("scroll", ScrollTrigger.update);
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (popup) {
     if (window.innerWidth < 991) {
-      popup.classList.add("hidden");
+      // popup.classList.add("hidden");
     }
     document
       .querySelector(".icon-close")
