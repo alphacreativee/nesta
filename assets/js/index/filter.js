@@ -54,12 +54,23 @@ export function listPostFilter() {
     functionFilter = "filter_experiences";
   } else if (wrapper.hasClass("event")) {
     functionFilter = "filter_events";
+  } else if (wrapper.hasClass("destination")) {
+    functionFilter = "filter_destination";
   }
 
-  let fixedLocation =
-    typeof window.EXPERIENCE_FILTER_LOCATION === "number"
-      ? window.EXPERIENCE_FILTER_LOCATION
-      : "all";
+  // Lấy location cố định tùy theo loại wrapper
+  let fixedLocation = "all";
+  if (wrapper.hasClass("experience")) {
+    fixedLocation =
+      typeof window.EXPERIENCE_FILTER_LOCATION === "number"
+        ? window.EXPERIENCE_FILTER_LOCATION
+        : "all";
+  } else if (wrapper.hasClass("destination")) {
+    fixedLocation =
+      typeof window.DESTINATION_FILTER_LOCATION === "number"
+        ? window.DESTINATION_FILTER_LOCATION
+        : "all";
+  }
 
   function loadOffers(term, page = 1) {
     if (isLoading) return;
@@ -81,7 +92,6 @@ export function listPostFilter() {
         if (!res.success) return;
 
         const $wrapper = $(".list-post-filter");
-
         const $list = $(".list-post-filter .list-post");
 
         $list.html(res.data.posts);
@@ -109,13 +119,9 @@ export function listPostFilter() {
     ".list-post-filter .filter-button,.list-post-filter .dropdown-custom-item span",
     function () {
       const tab = $(this).data("tab");
-
-      console.log(tab);
-
       if (!tab) return;
 
       currentTerm = tab === "all" ? "all" : tab.replace("post-category-", "");
-
       currentPage = 1;
 
       $(".list-post-filter .filter-button").removeClass("active");
@@ -137,7 +143,11 @@ export function listPostFilter() {
     loadOffers(currentTerm, parseInt(page));
   });
 
-  if (wrapper.hasClass("experience") && fixedLocation !== "all") {
+  // Auto-load lần đầu nếu có location cố định
+  if (
+    (wrapper.hasClass("experience") || wrapper.hasClass("destination")) &&
+    fixedLocation !== "all"
+  ) {
     loadOffers("all", 1);
   }
 }
