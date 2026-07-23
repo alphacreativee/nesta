@@ -1,5 +1,5 @@
-import { preloadImages } from "../../main/js/utils.min.js";
 import {
+  loading,
   customDropdown,
   scrollChangeBgHeader,
   scrollFixedBookingForm,
@@ -27,21 +27,18 @@ import {
   closeTripadvidor
 } from "../../main/js/global.min.js";
 import {
-  sectionNews,
   sliderWithShadow,
-  sliderParallax
+  sliderParallax,
+  sliderGallery,
+  sliderChangeContent,
+  sectionNews
 } from "../../main/js/slider.min.js";
-import {
-  createFilterTab,
-  createFilterTabMulti
-} from "../../main/js/tab.min.js";
-import { sliderChangeContent } from "../../main/js/sliderChangeContent.min.js";
-import { loading } from "../../main/js/loading.min.js";
-import { sliderGallery } from "../../main/js/sliderGallery.min.js";
 import {
   listPostFilter,
   filterDropdownBoostrapMobile,
-  filterDropdownMobile
+  filterDropdownMobile,
+  createFilterTab,
+  createFilterTabMulti
 } from "../../main/js/filter.min.js";
 ("use strict");
 $ = jQuery;
@@ -72,14 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const init = () => {
+function init() {
   gsap.registerPlugin(ScrollTrigger);
   effectText();
   animationItemsSection();
   fadeTextFooter();
   customDropdown();
   createFilterTab();
-  sectionNews();
+
   scrollChangeBgHeader();
   // scrollFixedBookingForm();
   setOfferDescHeight();
@@ -108,17 +105,15 @@ const init = () => {
   formNewsletter();
   filterDropdownMobile();
   closeTripadvidor();
-};
-
-preloadImages("img").then(() => {
-  init();
-});
+  sectionNews();
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+  init();
+
   sliderWithShadow();
   sliderGallery();
-});
-document.addEventListener("DOMContentLoaded", function () {
+
   const popup = document.querySelector(".popup-promo");
 
   if (popup) {
