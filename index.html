@@ -128,16 +128,13 @@
                       />
                     </video>
                   </div> -->
-                  <div class="hero-slider-video">
-                    <iframe
-                      title="vimeo-player"
-                      src="https://player.vimeo.com/video/1163195345?controls=0&autoplay=1&loop=1&muted=1&playsinline=1"
-                      width="100%"
-                      height="100%"
-                      frameborder="0"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
+                  <div
+                    class="hero-slider-video"
+                    data-vimeo="1206072734"
+                    style="
+                      background-image: url(&quot;./assets/images/del/banner-1.webp&quot;);
+                    "
+                  ></div>
                   <div class="hero-slider-content d-none">
                     <div class="slider-tag">Nesta Celia DaNang</div>
                     <div class="slider-title">
@@ -1129,6 +1126,24 @@
           </div>
         </div>
       </section>
+
+      <script>
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            const el = document.querySelector(".hero-slider-video");
+
+            if (!el) return;
+
+            el.innerHTML = `
+      <iframe
+        src="https://player.vimeo.com/video/${el.dataset.vimeo}?background=1&autoplay=1&muted=1"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+      ></iframe>
+    `;
+          }, 500);
+        });
+      </script>
     </main>
     <!-- layout -->
     <!-- cta -->
