@@ -1232,6 +1232,9 @@ export function popupBookingMobile() {
   if (window.innerWidth >= 992) return;
   const ctaBooking = document.querySelector(".cta-booking");
   const popupBookingMobile = document.querySelector(".booking-form-wrapper");
+
+  if (!popupBookingMobile) return;
+
   const closeBtnPopup = popupBookingMobile.querySelector(".btn-booking-close");
   ctaBooking.addEventListener("click", function () {
     popupBookingMobile.classList.add("active");
